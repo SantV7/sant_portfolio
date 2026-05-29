@@ -1,3 +1,4 @@
+import './style/global.css'
 
 function App() {
 
