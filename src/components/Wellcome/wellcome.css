@@ -1,4 +1,8 @@
 #main_header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     background-color: transparent;
@@ -7,6 +11,10 @@
 
 #nick-name {
     font-family: 2.2rem;
+}
+
+#nav-global {
+    display: flex;
 }
 
 #nav-global > ul > li {
@@ -18,13 +26,23 @@
     cursor: pointer;
 }
 
+
+.navbar-mobile-style {
+    flex-flow: column nowrap;
+    
+    ul {
+        flex-flow: column nowrap;
+    }
+}
 .navbar-desktop-style {
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row nowrap;
 
     ul {
         display: flex;
+        flex-flow: row nowrap;
         gap: 10%;
     }
 }
+

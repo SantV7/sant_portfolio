@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react'
 
 const Wellcome = () => {
 
-    const [mobileView, setMobileView] = useState<number>(768)
+    const [mobileView, setMobileView] = useState<number>(window.innerWidth)
 
     useEffect(() => {
-        setMobileView(1)
+        const handleResize = () => setMobileView(window.innerWidth)
+        window.addEventListener('resize', handleResize)
+        return () => removeEventListener('resize', handleResize)
     }, [])
 
   return (
