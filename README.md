@@ -1,5 +1,6 @@
 # React + TypeScript + Vite
 
+Já baixei o npm i gsap e o npm i lucidereact@next
 
 
 
