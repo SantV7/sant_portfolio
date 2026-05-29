@@ -1,0 +1,30 @@
+#main_header {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    height: 100px;
+}
+
+#nick-name {
+    font-family: 2.2rem;
+}
+
+#nav-global > ul > li {
+    list-style-type: none;
+}
+
+#nav-global > ul > li > a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-desktop-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        display: flex;
+        gap: 10%;
+    }
+}
