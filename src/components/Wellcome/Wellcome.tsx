@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './wellcome.css'
-import { Ellipsis } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 const Wellcome = () => {
 
@@ -17,7 +17,7 @@ const Wellcome = () => {
             <h1 className='nick-name'>Sant v7</h1>
         </div>
 
-        <Ellipsis id='menu_btn' color='white' onClick={handleMenu} size={40} />
+        <Menu id='menu_btn' color='white' onClick={handleMenu} size={40} />
         {showMenu ? <nav id='main_navbar'>
             <ul id='ul-list'>
                 <li><a href="#">Home</a></li>

@@ -6,18 +6,14 @@ import { ArrowBigDown } from 'lucide-react';
 import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
 import { useState } from 'react';
+
+
 function App() {
 
+  const [backgroundVideo, setBackgroundVideo] = useState<string>(introVideo)
 
-  const videoBackground = {
-    pixelOne: introVideo,
-    pixelTwo: secondeIntroVideo
-  }
-
-  const [backgroundVideo, setBackgroundVideo] = useState<any>(videoBackground.pixelOne)
-
-  const prevBackground = () => setBackgroundVideo(videoBackground.pixelOne)
-  const nextBackground = () => setBackgroundVideo(videoBackground.pixelTwo)
+  const prevBackground = () => setBackgroundVideo(introVideo)
+  const nextBackground = () => setBackgroundVideo(secondeIntroVideo)
 
   
 
@@ -26,12 +22,11 @@ function App() {
     <>
     <Wellcome />
     <section id='intro-video'>
-      <video autoPlay muted loop playsInline id='bg-video'>
+      <video key={backgroundVideo} autoPlay muted loop playsInline id='bg-video'>
         <source type='video/mp4' src={backgroundVideo}/>
       </video>
       <div id='area_arrow'>
         <ArrowBigLeftDash onClick={prevBackground} className='change-bg' size={50} color='white'/>
-        <ArrowBigDown className='arrows' size={50} color='white'/>
         <ArrowBigRightDash onClick={nextBackground} className='change-bg' size={50} color='white'/>
       </div>
 
