@@ -33,9 +33,9 @@
 }
 
 #scroll_wellcome {
-    font-size: 2.78rem;
-    color: rgb(231, 219, 252);
-    text-shadow: 1px 1px 6px rgb(81, 66, 219);
+    font-size: 3.38rem;
+    color: rgb(220, 202, 250);
+    text-shadow: 3px 8px 10px rgb(107, 93, 231);
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
 }
 
@@ -67,10 +67,10 @@
 #main_navbar > #ul-list > .contact_btn {
     border: 1px solid rgba(255, 255, 255, 0.281);
     background-color: rgb(189, 120, 42); 
-    transition: ease 0.13s;
+    transition: ease 0.25s;
 
     &:hover {
-        scale: 1.02;
+        scale: 1.05;
     }
 }
 
@@ -89,9 +89,15 @@
     font-size: 1.2rem;
     padding: 10px 20px;
     width: 20%;
+    transition: 0.23s;
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
     border-radius: 10px;
+
+    &:hover {
+        border-bottom: 2px solid  blue;
+    }
+   
 }
 
 
@@ -114,12 +120,14 @@
 
     #main_navbar a {
         width: auto;
-        border-bottom: none;
+        border-radius: 4px;
         background: none;
         transition: ease 0.25s;
     }
 
     #main_navbar a:hover {
         background-color: royalblue;
+        border-bottom: 2px solid  rgb(78, 78, 184);
+        border-radius: 15px;
     }
 }
