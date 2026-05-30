@@ -12,14 +12,14 @@ function App() {
         <source type='video/mp4' src={introVideo}/>
       </video>
       <div id='area_arrow'>
-        <ArrowBigDown  size={50} color='white'/>
-        <ArrowBigDown  size={50} color='white'/>
-        <ArrowBigDown  size={50} color='white'/>
-        <ArrowBigDown  size={50} color='white'/>
+        <ArrowBigDown className='arrows'  size={50} color='white'/>
+        <ArrowBigDown className='arrows'  size={50} color='white'/>
+        <ArrowBigDown className='arrows'  size={50} color='white'/>
       </div>
 
-      <div>
+      <div className='scroller_indicator'>
         {/* scroll to bottom */}
+        <h1 id='scroll_wellcome'>Scroll to bottom</h1>
       </div>
     </section>
     </>

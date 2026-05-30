@@ -1,4 +1,7 @@
+
+
 #main_header {
+    font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,12 +17,35 @@
 
 .nick-name {
     color: white;
-    font-size: 1.8rem;
+    font-family: "Google Sans", sans-serif;
+    font-size: 2rem;
+}
+
+.scroller_indicator {
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#scroll_wellcome {
+    font-size: 2.78rem;
+    color: rgb(136, 109, 185);
+    text-shadow: 1px 1px 1px rgb(201, 201, 248);
+    font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
 }
 
 #menu_btn {
     cursor: pointer;
     display: block;
+}
+
+.arrows {
+    opacity: 650%;
 }
 
 #main_navbar {
@@ -32,7 +58,7 @@
 
 #main_navbar > #ul-list > .contact_btn {
     border: 1px solid rgba(255, 255, 255, 0.281);
-    background-color: rgb(135, 109, 177); 
+    background-color: rgb(189, 120, 42); 
     transition: ease 0.13s;
 
     &:hover {
@@ -80,6 +106,7 @@
         width: auto;
         border-bottom: none;
         background: none;
+        transition: ease 0.25s;
     }
 
     #main_navbar a:hover {
