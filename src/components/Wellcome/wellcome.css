@@ -30,6 +30,16 @@
     background-color: rgba(28, 27, 34, 0.377);
 }
 
+#main_navbar > #ul-list > .contact_btn {
+    border: 1px solid rgba(255, 255, 255, 0.281);
+    background-color: rgb(135, 109, 177); 
+    transition: ease 0.13s;
+
+    &:hover {
+        scale: 1.02;
+    }
+}
+
 #ul-list {
     display: flex;
     flex-direction: column;
@@ -44,10 +54,10 @@
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px 20px;
-    width: 80%;
+    width: 20%;
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -68,6 +78,7 @@
 
     #main_navbar a {
         width: auto;
+        border-bottom: none;
         background: none;
     }
 

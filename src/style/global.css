@@ -20,3 +20,13 @@
     object-fit: cover;
     z-index: -1;
 }
+
+#area_arrow {
+    position: absolute;
+    top: 400px;
+    width: 100%;
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -20,13 +20,15 @@ const Wellcome = () => {
         <Ellipsis id='menu_btn' color='white' onClick={handleMenu} size={40} />
         {showMenu ? <nav id='main_navbar'>
             <ul id='ul-list'>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">Skills</a></li>
-                <li><a href="#">Projetos</a></li>
-                <a href='#' className='contact_btn'>Contato</a>
+                <li><a href="#">Projects</a></li>
+                <a href='#' className='contact_btn'>Contact</a>
             </ul>
         </nav> : ''}
     </header>
+
+    
     </>
   )
 }
