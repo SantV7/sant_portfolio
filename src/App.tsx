@@ -1,8 +1,8 @@
 import Wellcome from './components/Wellcome/Wellcome'
 import './style/global.css'
 import introVideo from './assets/video/background_pixel.mp4'
-import secondeIntroVideo from './assets/video/pixel_two.mp4'
-import { ArrowBigDown } from 'lucide-react';
+import secondIntroVideo from './assets/video/pixel_two.mp4'
+import thirdIntro from './assets/video/pixel_three.mp4'
 import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
 import { useState } from 'react';
@@ -13,8 +13,10 @@ function App() {
   const [backgroundVideo, setBackgroundVideo] = useState<string>(introVideo)
 
   const prevBackground = () => setBackgroundVideo(introVideo)
-  const nextBackground = () => setBackgroundVideo(secondeIntroVideo)
+  const nextBackground = () => setBackgroundVideo(secondIntroVideo)
 
+  
+  //  tenho que colocar o terceiro video
   
 
 
