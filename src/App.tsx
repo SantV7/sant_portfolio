@@ -1,8 +1,8 @@
 import Wellcome from './components/Wellcome/Wellcome'
 import './style/global.css'
-import introVideo from './assets/video/background_pixel.mp4'
-import secondIntroVideo from './assets/video/pixel_two.mp4'
-import thirdIntro from './assets/video/pixel_three.mp4'
+import secondIntro from './assets/video/background_pixel.mp4'
+import thirdIntro from './assets/video/pixel_two.mp4'
+import firstIntro from './assets/video/pixel_three.mp4'
 import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const video = [introVideo, secondIntroVideo, thirdIntro]
+  const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
 
   const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1))

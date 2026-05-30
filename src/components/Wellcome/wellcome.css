@@ -65,6 +65,10 @@
 }
 
 #main_navbar > #ul-list > .contact_btn {
+    
+    letter-spacing: 1px;
+    font-size: 1.34rem;
+    border-radius: 11px;
     border: 1px solid rgba(255, 255, 255, 0.281);
     background-color: rgb(189, 120, 42); 
     transition: ease 0.25s;
@@ -102,6 +106,9 @@
 
 
 
+
+
+
 @media screen and (min-width: 1024px) {
     #menu_btn {
         display: none;
@@ -127,7 +134,7 @@
 
     #main_navbar a:hover {
         background-color: royalblue;
-        border-bottom: 2px solid  rgb(78, 78, 184);
+        border-bottom: 2px solid  rgb(140, 140, 228);
         border-radius: 15px;
     }
 }
