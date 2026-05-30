@@ -34,11 +34,19 @@
 
 #scroll_wellcome {
     font-size: 2.78rem;
-    color: rgb(136, 109, 185);
-    text-shadow: 1px 1px 1px rgb(201, 201, 248);
+    color: rgb(231, 219, 252);
+    text-shadow: 1px 1px 6px rgb(81, 66, 219);
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
 }
 
+.change-bg {
+    cursor: pointer;
+    transition: ease 0.23s;
+    
+    &:hover {
+        scale: 1.15;
+    }
+}
 #menu_btn {
     cursor: pointer;
     display: block;
@@ -85,6 +93,8 @@
     border-bottom: 2px solid rgb(152, 152, 233);
     border-radius: 10px;
 }
+
+
 
 @media screen and (min-width: 1024px) {
     #menu_btn {
