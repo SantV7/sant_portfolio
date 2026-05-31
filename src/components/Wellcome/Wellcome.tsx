@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './wellcome.css'
+import { ChartNoAxesGantt } from 'lucide-react';
 import { Menu } from 'lucide-react';
 
 const Wellcome = () => {
@@ -17,7 +18,7 @@ const Wellcome = () => {
             <h1 className='nick-name'>Sant v7</h1>
         </div>
 
-        <Menu id='menu_btn' color='white' onClick={handleMenu} size={37} />
+        {showMenu ? <ChartNoAxesGantt className='menu_btn'  onClick={handleMenu} size={37} color='white'/> : <Menu className='menu_btn' color='white' onClick={handleMenu} size={37} /> }
          <nav id='main_navbar' className={showMenu ? 'open' : ""}>
             <ul id='ul-list'>
                 <li><a href="#">Home</a></li>

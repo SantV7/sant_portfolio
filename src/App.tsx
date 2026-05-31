@@ -32,18 +32,17 @@ function App() {
       ease: 'power2.out',
     })
 
-
-
     const timeLine = gsap.timeline();
 
     
 timeLine.fromTo('#scroll_wellcome', 
-      { 
+      { y: -50,
         opacity: 0, 
         scale: 2 
       }, 
       { 
-        delay: 1.7,
+        y: 0,
+        delay: 1.35,
         opacity: 1, 
         scale: 1, 
         duration: 1.2, 
@@ -53,7 +52,7 @@ timeLine.fromTo('#scroll_wellcome',
     
     timeLine.to('#scroll_wellcome', {
       y: 25,
-      duration: 1.5,
+      duration: 1.7,
       repeat: -1,
       yoyo: true,
       ease: 'linear'
