@@ -1,11 +1,15 @@
-import { useState } from 'react'
+
 import './wellcome.css'
 import { ChartNoAxesGantt } from 'lucide-react';
 import { Menu } from 'lucide-react';
 
-const Wellcome = () => {
+interface MenuProps {
+ showMenu: any;
+ setShowMenu: any;
+}
 
-    const [ showMenu, setShowMenu ] = useState<boolean>(false)
+const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
+
     const handleMenu = () => setShowMenu(!showMenu)
 
     

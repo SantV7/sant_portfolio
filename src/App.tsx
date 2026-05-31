@@ -12,6 +12,8 @@ import gsap from 'gsap'
 
 function App() {
 
+  const [ showMenu, setShowMenu ] = useState<boolean>(false)
+
   const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
 
@@ -59,11 +61,13 @@ timeLine.fromTo('#scroll_wellcome',
       ease: 'linear'
     })
   }, [])
- 
+
+
+
 
   return (
     <>
-    <Wellcome />
+    <Wellcome showMenu={showMenu} setShowMenu={setShowMenu} />
     <section id='intro-video'>
       <video key={indexVideo} autoPlay muted loop playsInline id='bg-video'>
         <source type='video/mp4' src={video[indexVideo]}/>
@@ -76,12 +80,12 @@ timeLine.fromTo('#scroll_wellcome',
 
       <div className='scroller_indicator'>
 
-      <div className={`tooltip-message ${isHovered ? 'visible' : ''}`}>
-        
-Scroll down to learn more about this Frontend Software Engineer
+      <div className={`tooltip-message ${isHovered ? 'visible' : ''}`}>  
+        Scroll down to learn more about this Frontend Software Engineer.
       </div>
 
-        <h1 id='scroll_wellcome' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>Scroll Down</h1>
+        <h1 id='scroll_wellcome' onMouseEnter={() => {
+    if (!showMenu) setIsHovered(true)}} onMouseLeave={() => setIsHovered(false)}>Scroll Down</h1>
       </div>
 
 
