@@ -18,14 +18,15 @@ function App() {
   const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 & video.length) % video.length )
   const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 + video.length) % video.length )
 
+  const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
 
     gsap.fromTo('.change-bg', {
-
+      y: 40,
       scale: 0,
-      opacity: 0.45
+      opacity: 0
     }, {
-    
+      y: 0,
       scale: 1,
       duration: 1.5,
       opacity: 1,
@@ -58,7 +59,6 @@ timeLine.fromTo('#scroll_wellcome',
       ease: 'linear'
     })
   }, [])
-  
  
 
   return (
@@ -68,14 +68,25 @@ timeLine.fromTo('#scroll_wellcome',
       <video key={indexVideo} autoPlay muted loop playsInline id='bg-video'>
         <source type='video/mp4' src={video[indexVideo]}/>
       </video>
+      
       <div id='area_arrow'>
-        <ArrowBigLeftDash onClick={prevBackground} className='change-bg' size={50} color='white'/>
-        <ArrowBigRightDash onClick={nextBackground} className='change-bg' size={50} color='white'/>
+        <ArrowBigLeftDash onClick={prevBackground} className='change-bg' size={45} color='white'/>
+        <ArrowBigRightDash onClick={nextBackground} className='change-bg' size={45} color='white'/>
       </div>
 
       <div className='scroller_indicator'>
-        <h1 id='scroll_wellcome'>Scroll Down</h1>
+
+      <div className={`tooltip-message ${isHovered ? 'visible' : ''}`}>
+        
+Scroll down to learn more about this Frontend Software Engineer
       </div>
+
+        <h1 id='scroll_wellcome' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>Scroll Down</h1>
+      </div>
+
+
+
+
     </section>
     </>
   )
