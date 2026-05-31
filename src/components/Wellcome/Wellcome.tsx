@@ -4,10 +4,10 @@ import { Menu } from 'lucide-react';
 
 const Wellcome = () => {
 
-    const [showMenu, setShowMenu] = useState<boolean>(true)
+    const [ showMenu, setShowMenu ] = useState<boolean>(false)
     const handleMenu = () => setShowMenu(!showMenu)
 
-
+    
 
 
   return (
@@ -17,18 +17,22 @@ const Wellcome = () => {
             <h1 className='nick-name'>Sant v7</h1>
         </div>
 
-        <Menu id='menu_btn' color='white' onClick={handleMenu} size={40} />
-        {showMenu && <nav id='main_navbar'>
+        <Menu id='menu_btn' color='white' onClick={handleMenu} size={37} />
+         <nav id='main_navbar' className={showMenu ? 'open' : ""}>
             <ul id='ul-list'>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Skills</a></li>
                 <li><a href="#">Projects</a></li>
                 <a href='#' className='contact_btn'>Contact</a>
             </ul>
-        </nav>}
+        </nav>
     </header>
     </>
   )
 }
 
 export default Wellcome
+
+
+
+

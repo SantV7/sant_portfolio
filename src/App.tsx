@@ -5,7 +5,8 @@ import thirdIntro from './assets/video/pixel_two.mp4'
 import firstIntro from './assets/video/pixel_three.mp4'
 import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import gsap from 'gsap'
 
 
 
@@ -14,11 +15,52 @@ function App() {
   const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
 
-  const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1))
-  const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex + 1))
+  const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 & video.length) % video.length )
+  const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 + video.length) % video.length )
 
+  useEffect(() => {
+
+    gsap.fromTo('.change-bg', {
+
+      scale: 0,
+      opacity: 0.45
+    }, {
+    
+      scale: 1,
+      duration: 1.5,
+      opacity: 1,
+      ease: 'power2.out',
+    })
+
+
+
+    const timeLine = gsap.timeline();
+
+    
+timeLine.fromTo('#scroll_wellcome', 
+      { 
+        opacity: 0, 
+        scale: 2 
+      }, 
+      { 
+        delay: 1.7,
+        opacity: 1, 
+        scale: 1, 
+        duration: 1.2, 
+        ease: "power2.out" 
+      }
+    )
+    
+    timeLine.to('#scroll_wellcome', {
+      y: 25,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'linear'
+    })
+  }, [])
   
-  //  tenho que colocar o terceiro video
+ 
 
   return (
     <>

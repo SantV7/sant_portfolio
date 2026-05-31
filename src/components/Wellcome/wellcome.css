@@ -1,5 +1,4 @@
 
-
 #main_header {
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
     display: flex;
@@ -32,6 +31,7 @@
     justify-content: center;
 }
 
+
 #scroll_wellcome {
     font-size: 3.38rem;
     color: rgb(220, 202, 250);
@@ -47,6 +47,7 @@
         scale: 1.15;
     }
 }
+
 #menu_btn {
     cursor: pointer;
     display: block;
@@ -57,11 +58,18 @@
 }
 
 #main_navbar {
+    display: none;
     position: fixed;
     top: 75px;
     left: 0;
     width: 100%;
     background-color: rgba(28, 27, 34, 0.377);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+#main_navbar.open {
+    display: block; 
 }
 
 #main_navbar > #ul-list > .contact_btn {
@@ -92,7 +100,7 @@
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px 20px;
-    width: 20%;
+    width: 33%;
     transition: 0.23s;
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
@@ -115,6 +123,7 @@
     }
 
     #main_navbar {
+        display: block !important;
         position: static;
         width: auto;
         background: none;
