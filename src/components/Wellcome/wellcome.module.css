@@ -1,4 +1,4 @@
-#main_header {
+.main_header {
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     border-bottom-right-radius: 12px;    
 }
 
-.nick-name {
+.nick_name {
     color: white;
     font-family: "Google Sans", sans-serif;
     font-size: 2rem;

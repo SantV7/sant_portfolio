@@ -1,11 +1,11 @@
 
-import './wellcome.css'
+import styles from './wellcome.module.css'
 import { ChartNoAxesGantt } from 'lucide-react';
 import { Menu } from 'lucide-react';
 
 interface MenuProps {
- showMenu: any;
- setShowMenu: any;
+ showMenu: boolean;
+ setShowMenu: (void: boolean)
 }
 
 const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
@@ -17,9 +17,9 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
   return (
     <>
-    <header id='main_header'>
+    <header className={styles.main_header}>
         <div>
-            <h1 className='nick-name'>Sant v7</h1>
+            <h1 className={styles.nick_name}>Sant v7</h1>
         </div>
 
         {showMenu ? <ChartNoAxesGantt className='menu_btn'  onClick={handleMenu} size={37} color='white'/> : <Menu className='menu_btn' color='white' onClick={handleMenu} size={37} /> }
