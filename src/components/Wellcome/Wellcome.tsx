@@ -1,7 +1,11 @@
 
 import styles from './wellcome.module.css'
 import { ChartNoAxesGantt } from 'lucide-react';
+import { BrainCircuit } from 'lucide-react';
 import { Menu } from 'lucide-react';
+import { House } from 'lucide-react';
+import { SquaresExclude } from 'lucide-react';
+import { useState } from 'react';
 
 interface MenuProps {
  showMenu: boolean;
@@ -12,8 +16,33 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
     const handleMenu = () => setShowMenu(!showMenu)
 
-    
+    const [homeIcon, setHomeIcon] =useState<string>('transparent')
+    const [skillsIcon, setSkillsIcon] =useState<string>('transparent')
+    const [projectIcon, setProjectIcon] =useState<string>('transparent')
 
+    const showHomeIcon = () => {
+        setHomeIcon('white')
+    }
+
+    const hiddenHomeIcon = () => {
+        setHomeIcon('transparent')
+    }
+
+    const showSkillsIcon = () => {
+        setSkillsIcon('white')
+    }
+
+    const hiddenSkillsIcon = () => {
+        setSkillsIcon('transparent')
+    }
+    
+    const showProjectIcon = () => {
+        setProjectIcon('white')
+    }
+
+    const hiddenProjectIcon = () => {
+        setProjectIcon('transparent')
+    }
 
   return (
     <>
@@ -22,12 +51,32 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
             <h1 className={styles.nick_name}>Sant v7</h1>
         </div>
 
-        {showMenu ? <ChartNoAxesGantt className='menu_btn'  onClick={handleMenu} size={37} color='white'/> : <Menu className={styles.menu_btn} color='white' onClick={handleMenu} size={37} /> }
+        {showMenu ? <ChartNoAxesGantt className='menu_btn'
+          onClick={handleMenu}
+          size={37} color='white'/>
+          : <Menu className={styles.menu_btn}
+          color='white' onClick={handleMenu} size={37} /> }
+
          <nav className={`${styles.main_navbar} ${showMenu ? styles.open : ""}`}>
             <ul className={styles.ul_list}>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a onMouseEnter={showHomeIcon}
+                       onMouseOut={hiddenHomeIcon}
+                       href="#">Home <House className='icons_navbar_hover'
+                       color={homeIcon} size={25}/>
+                </a></li>
+
+
+                <li><a onMouseEnter={showSkillsIcon}
+                       onMouseOut={hiddenSkillsIcon} 
+                       href="#">Skills <BrainCircuit className='icons_navbar_hover'
+                       color={skillsIcon} size={26}/>
+                </a></li>
+
+                <li><a onMouseEnter={showProjectIcon}
+                       onMouseOut={hiddenProjectIcon} href="#">Projects <SquaresExclude className='icons_navbar_hover'
+                       color={projectIcon}/>
+                </a></li>
+
                 <a href='#' className={styles.contact_btn}>Contact</a>
             </ul>
         </nav>

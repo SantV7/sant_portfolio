@@ -1,10 +1,10 @@
-import './AboutMe.css'
+import styles from './AboutMe.module.css'
 const AboutMe = () => {
 
 
   return (
     <>
-    <section id="about-me">
+    <section className={styles['about-me']}>
 
 
     </section>
