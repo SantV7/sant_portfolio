@@ -60,6 +60,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
          <nav className={`${styles.main_navbar} ${showMenu ? styles.open : ""}`}>
             <ul className={styles.ul_list}>
                 <li><a onMouseEnter={showHomeIcon}
+                       onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
                        href="#">Home <House className='icons_navbar_hover'
                        color={homeIcon} size={25}/>
@@ -67,12 +68,14 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
 
                 <li><a onMouseEnter={showSkillsIcon}
+                       onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
                        href="#">Skills <BrainCircuit className='icons_navbar_hover'
                        color={skillsIcon} size={26}/>
                 </a></li>
 
                 <li><a onMouseEnter={showProjectIcon}
+                       onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon} href="#">Projects <SquaresExclude className='icons_navbar_hover'
                        color={projectIcon}/>
                 </a></li>

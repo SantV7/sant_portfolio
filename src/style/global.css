@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, rgb(16, 19, 22), rgb(30, 24, 39));
+    background-image: linear-gradient(to bottom, rgb(7, 8, 10), rgb(30, 24, 39));
     min-height: 100vh;
 }
 
