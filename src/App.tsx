@@ -7,6 +7,7 @@ import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap'
+import AboutMe from './components/AboutMe/AboutMe'
 
 
 
@@ -87,11 +88,11 @@ timeLine.fromTo('#scroll_wellcome',
         <h1 id='scroll_wellcome' onMouseEnter={() => {
     if (!showMenu) setIsHovered(true)}} onMouseLeave={() => setIsHovered(false)}>Scroll Down</h1>
       </div>
-
-
-
-
     </section>
+
+    <AboutMe />
+
+    
     </>
   )
 }
