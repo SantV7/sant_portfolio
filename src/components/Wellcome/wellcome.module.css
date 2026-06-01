@@ -11,8 +11,8 @@
     padding: 0 20px;
     background-color: rgba(70, 44, 100, 0.4);
     z-index: 100;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;    
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;    
 }
 
 .nick_name {
@@ -74,7 +74,7 @@
     border-color: rgb(107, 93, 231) transparent transparent transparent;
 }
 
-#scroll_wellcome {
+.scroll_wellcome {
     font-size: 3.2rem;
     color: rgb(220, 202, 250);
     text-shadow: 3px 2px 6px rgb(107, 93, 231);
@@ -99,7 +99,7 @@
     opacity: 1;
 }
 
-#main_navbar {
+.main_navbar {
     display: none;
     position: fixed;
     top: 75px;
@@ -110,11 +110,11 @@
     border-bottom-right-radius: 16px;
 }
 
-#main_navbar.open {
+.main_navbar.open {
     display: block; 
 }
 
-#main_navbar > #ul-list > .contact_btn {
+.main_navbar > .ul_list > .contact_btn {
     letter-spacing: 1px;
     font-size: 1.34rem;
     border-radius: 11px;
@@ -127,16 +127,16 @@
     }
 }
 
-#ul-list {
+.ul_list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 28px;
     padding: 30px 0;
     list-style: none;
 }
 
-#main_navbar a {
+.main_navbar a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
@@ -145,7 +145,7 @@
     transition: 0.23s;
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
-    border-radius: 10px;
+    border-radius: 4px;
 
     &:hover {
         border-bottom: 2px solid blue;
@@ -157,26 +157,26 @@
         display: none;
     }
 
-    #main_navbar {
+    .main_navbar {
         display: block !important;
         position: static;
         width: auto;
         background: none;
     }
 
-    #ul-list {
+    .ul_list {
         flex-direction: row;
         padding: 0;
     }
 
-    #main_navbar a {
+    .main_navbar a {
         width: auto;
         border-radius: 4px;
         background: none;
         transition: ease 0.25s;
     }
 
-    #main_navbar a:hover {
+    .main_navbar a:hover {
         background-color: royalblue;
         border-bottom: 2px solid rgb(140, 140, 228);
         border-radius: 15px;
