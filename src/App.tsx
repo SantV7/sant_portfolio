@@ -63,6 +63,13 @@ timeLine.fromTo('#scroll_wellcome',
     })
   }, [])
 
+  const toolTipActive = () => {if (!showMenu) setIsHovered(true)}
+
+
+
+  const toolTipAllowed = () => {setIsHovered(false)}
+
+
 
 
 
@@ -85,8 +92,8 @@ timeLine.fromTo('#scroll_wellcome',
         Scroll down to learn more about this Frontend Software Engineer.
       </div>
 
-        <h1 id='scroll_wellcome' onMouseEnter={() => {
-    if (!showMenu) setIsHovered(true)}} onMouseLeave={() => setIsHovered(false)}>Scroll Down</h1>
+        <h1 id='scroll_wellcome' onMouseEnter={() => 
+   toolTipActive()} onMouseLeave={() => toolTipAllowed()}>Scroll Down</h1>
       </div>
     </section>
 

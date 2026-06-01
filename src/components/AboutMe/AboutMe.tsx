@@ -1,10 +1,10 @@
 
 const AboutMe = () => {
 
-    
+
   return (
     <>
-    <section>
+    <section id="about-me">
 
 
     </section>
