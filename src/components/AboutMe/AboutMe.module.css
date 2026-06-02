@@ -1,0 +1,10 @@
+.about_me {
+    min-height: 200px;
+    width: 100%;
+    padding-top: 160px;
+    background-image: linear-gradient(90deg, rgb(65, 26, 65), rgb(47, 47, 87));
+}
+
+.apresentation {
+    text-align: center;
+}

@@ -25,7 +25,7 @@ function App() {
   const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
 
-    gsap.fromTo('.change-bg', {
+    gsap.fromTo(`.${styles['change-bg']}`, {
       y: 40,
       scale: 0,
       opacity: 0
@@ -83,8 +83,8 @@ timeLine.fromTo('#scroll_wellcome_gsap',
       </video>
       
       <div id='area_arrow'>
-        <ArrowBigLeftDash onClick={prevBackground} className={styles['change-bg']} size={45} color='white'/>
-        <ArrowBigRightDash onClick={nextBackground} className={styles['change-bg']} size={45} color='white'/>
+        <ArrowBigLeftDash onClick={prevBackground}  className={styles['change-bg']} size={45} color='white'/>
+        <ArrowBigRightDash onClick={nextBackground}  className={styles['change-bg']} size={45} color='white'/>
       </div>
 
       <div className={styles.scroller_indicator}>

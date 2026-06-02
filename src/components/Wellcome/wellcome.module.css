@@ -39,7 +39,7 @@
     bottom: 110%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background-image: linear-gradient(135deg, rgba(220, 202, 250, 0.95), rgba(133, 101, 185, 0.95));
+    background-color: rgba(220, 202, 250, 0.95);
     color: #2c1a4d;
     padding: 12px 18px;
     border-radius: 8px;
@@ -84,8 +84,10 @@
 .change-bg {
     cursor: pointer;
     transition: ease 0.23s;
+    border-radius: 50%;
     
     &:hover {
+        background-color: rgba(195, 208, 243, 0.116);
         scale: 1.15;
     }
 }
@@ -115,15 +117,19 @@
 }
 
 .main_navbar > .ul_list > .contact_btn {
+    padding: 10px 20px;
     letter-spacing: 1px;
-    font-size: 1.34rem;
+    font-size: 1.44rem;
     border-radius: 11px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.658);
     border: 1px solid rgba(255, 255, 255, 0.281);
     background-color: rgb(189, 120, 42); 
     transition: ease 0.25s;
 
     &:hover {
         scale: 1.05;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.904);
+        background-color: rgb(253, 159, 17);
     }
 }
 
@@ -175,6 +181,7 @@
         gap: 10px;
         align-items: center;
         width: auto;
+       
         text-align: center;
         border-right: 4px solid transparent;
         border-bottom: 3px solid rgba(255, 255, 255, 0.144);
@@ -190,3 +197,4 @@
         border-radius: 11px;
     }
 }
+

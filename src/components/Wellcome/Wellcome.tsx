@@ -4,8 +4,10 @@ import { ChartNoAxesGantt } from 'lucide-react';
 import { BrainCircuit } from 'lucide-react';
 import { Menu } from 'lucide-react';
 import { House } from 'lucide-react';
+import { Headset } from 'lucide-react';
 import { SquaresExclude } from 'lucide-react';
 import { useState } from 'react';
+
 
 interface MenuProps {
  showMenu: boolean;
@@ -16,9 +18,10 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
     const handleMenu = () => setShowMenu(!showMenu)
 
-    const [homeIcon, setHomeIcon] =useState<string>('transparent')
-    const [skillsIcon, setSkillsIcon] =useState<string>('transparent')
-    const [projectIcon, setProjectIcon] =useState<string>('transparent')
+    const [homeIcon, setHomeIcon] = useState<string>('transparent')
+    const [skillsIcon, setSkillsIcon] = useState<string>('transparent')
+    const [projectIcon, setProjectIcon] = useState<string>('transparent')
+    const [contactIcon, setContactIcon] = useState<string>('transparent')
 
     const showHomeIcon = () => {
         setHomeIcon('white')
@@ -43,6 +46,18 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
     const hiddenProjectIcon = () => {
         setProjectIcon('transparent')
     }
+
+    const showContactIcon = () => {
+        setContactIcon('white')
+    }
+
+    const hiddenContactIcon = () => {
+        setContactIcon('transparent')
+    }
+
+
+
+
 
   return (
     <>
@@ -80,7 +95,12 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        color={projectIcon}/>
                 </a></li>
 
-                <a href='#' className={styles.contact_btn}>Contact</a>
+                    <a onMouseEnter={showContactIcon}
+                       onMouseMove={showContactIcon}
+                       onMouseOut={hiddenContactIcon} 
+                       href='#'
+                       className={styles.contact_btn}>Contact 
+                       <Headset color={contactIcon} /></a>
             </ul>
         </nav>
     </header>
