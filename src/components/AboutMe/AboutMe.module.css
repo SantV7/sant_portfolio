@@ -1,10 +1,55 @@
 .about_me {
-    min-height: 200px;
+    min-height: 1000px;
     width: 100%;
     padding-top: 160px;
-    background-image: linear-gradient(90deg, rgb(65, 26, 65), rgb(47, 47, 87));
+
 }
 
 .apresentation {
     text-align: center;
+}
+
+.gsap_wia {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.identity {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.video_pc, .robot, .old_pc {
+    border-radius: 10px;
+    transition: ease 0.23s;
+}
+
+.video_pc:hover, .robot:hover, .old_pc:hover {
+    scale: 1.02;
+}
+
+.video_pc {
+    min-width: 44%;
+}
+
+.robot {
+    width: 49%;
+}
+
+.old_pc {
+    margin-top: 70px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .robot {
+        min-width: 80%;
+    }
 }
