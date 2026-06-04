@@ -18,6 +18,12 @@ const AboutMe = () => {
   // const developerRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
+    ScrollSmoother.create({
+      smooth: 1,
+      effects: true,
+      smoothTouch: true
+    })
+    
     gsap.fromTo(WhoRef.current, {
       opacity: 0,
       y: 60,
@@ -66,39 +72,40 @@ const AboutMe = () => {
 
 
 
-
-      <div className={styles.about_me_card}>
-        <header>
-          <h2>Vinícius</h2>
-          <h3>Level 18</h3>
-        </header>
-
-        <div className={styles.main_info}>
-          <img src="photo anime" alt="photo anime" />
-          <section className={styles.personal_data}>
-            <p className={styles.data_paragraph}>First Name: Vinícius</p>
-            <p className={styles.data_paragraph}>Last Name: Santos Oliveira</p>
-            <p className={styles.data_paragraph}>Age: 18</p>
-            <p className={styles.data_paragraph}>Profession: Software Engineer</p>
-            <p className={styles.data_paragraph}>Stack: Font-end</p>
-
-            <footer className={styles.info_card_footer}>
-              <p className={styles.data_paragraph}>Status: Active</p>
-              <button className={styles.more_info}>More</button>
-            </footer>
-          </section>
+<div className={styles.container_card}>
+        <div className={styles.about_me_card}>
+          <header>
+            <h2>Vinícius</h2>
+            <h3>Level 18</h3>
+          </header>
+  
+          <div className={styles.main_info}>
+            <img src="photo anime" alt="photo anime" />
+            <section className={styles.personal_data}>
+              <p className={styles.data_paragraph}>First Name: Vinícius</p>
+              <p className={styles.data_paragraph}>Last Name: Santos Oliveira</p>
+              <p className={styles.data_paragraph}>Age: 18</p>
+              <p className={styles.data_paragraph}>Profession: Software Engineer</p>
+              <p className={styles.data_paragraph}>Stack: Font-end</p>
+  
+              <footer className={styles.info_card_footer}>
+                <p className={styles.data_paragraph}>Status: Active</p>
+                <button className={styles.more_info}>More</button>
+              </footer>
+            </section>
+          </div>
+  
+          <div className={styles.grid_template}>
+            <div className="digital"></div>
+            <div className="city-bsb"></div>
+            <article className={styles.text_about_me}></article>
+          </div>
+  
+          <div>
+            {/* tenho qeu colocar o video aqui, ( do pc e piano) */}
+          </div>
         </div>
-
-        <div className={styles.grid_template}>
-          <div className="digital"></div>
-          <div className="city-bsb"></div>
-          <article className={styles.text_about_me}></article>
-        </div>
-
-        <div>
-          {/* tenho qeu colocar o video aqui, ( do pc e piano) */}
-        </div>
-      </div>
+</div>
       
     </section>
     </>
