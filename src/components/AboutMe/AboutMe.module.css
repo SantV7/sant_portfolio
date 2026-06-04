@@ -2,7 +2,6 @@
     min-height: 1000px;
     width: 100%;
     padding-top: 160px;
-
 }
 
 .apresentation {
@@ -15,41 +14,17 @@
     font-size: 3.5rem;
 }
 
-.identity {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-
-}
-
-.video_pc, .robot, .old_pc {
-    border-radius: 10px;
-    transition: ease 0.23s;
-}
-
-
-.video_pc {
-    max-width: 43%;
-    min-width: 39%;
-}
-
-.robot {
-    min-width: 35%;
-    max-width: 40%;
-}
 
 .old_pc {
-    margin-top: 70px;
+    margin-top:70px;
+    margin-left: -20px;
 }
 
 .keyboard_pixel {
-    max-width: 25%;
+    max-width: 23.7%;
     position:  absolute;
-    left: 11.3%;
-    top: 150%;
+    left: 50.7%;
+    top: 169%;
     transform: translate(-50%, -50%);
     transition: ease 0.3s;
 }
@@ -71,12 +46,18 @@
     justify-content: center;
     align-items: center;
 }
-.about_me_card {
 
+.about_me_card {
     min-width: 50%;
     max-width: 60%;
     border-radius: 4px;
     border: 2px solid white;
+}
+
+.video_pc {
+    background-color: gray;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -98,16 +79,7 @@
 
 
 
-@media screen and (max-width: 978px) {
-    .robot {
-        min-width: 80%;
-    }
-
-    .video_pc {
-        margin-top: 60px;
-        min-width: 100%;
-    }
-
+@media screen and (max-width: 1624px) {
     .keyboard_pixel {
         display: none;
     }

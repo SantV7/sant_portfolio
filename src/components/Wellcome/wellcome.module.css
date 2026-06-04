@@ -158,10 +158,18 @@
     }
 }
 
+.icons_navbar_hover {
+    display: none;
+}
+
 
 
 
 @media screen and (min-width: 1024px) {
+    .icons_navbar_hover {
+        display: block;
+    }    
+    
     .menu_btn {
         display: none;
     }
@@ -199,5 +207,6 @@
         border-bottom: 3px solid rgb(212, 212, 245);
         border-radius: 11px;
     }
+
 }
 

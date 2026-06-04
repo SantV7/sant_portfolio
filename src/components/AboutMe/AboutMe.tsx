@@ -8,22 +8,17 @@ import styles from './AboutMe.module.css'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
+
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutMe = () => {
   const WhoRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
-  //  const softwareEngineerRef = useRef<HTMLHeadingElement>(null)
-  // const developerRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    ScrollSmoother.create({
-      smooth: 1,
-      effects: true,
-      smoothTouch: true
-    })
-    
+
+
     gsap.fromTo(WhoRef.current, {
       opacity: 0,
       y: 60,
@@ -50,26 +45,10 @@ const AboutMe = () => {
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
         <h1 ref={WhoRef} className={styles.gsap_wia}>Sant v7</h1>
-
-
-
-        <section className={styles.identity}>
-          <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline >
-            <source src={newPc} type='video/mp4'/>
-          </video>
-
-           {/* <video className={styles.robot} preload='auto' autoPlay muted loop playsInline >
-            <source src={robot} type='video/mp4'/>
-          </video>     */}
-         
-        </section>
-
           <img className={styles.old_pc} src={oldPc} alt=" Old PC" />
 
           <img className={styles.keyboard_pixel} src={teclado_pixel} alt="Teclado" />
-
       </div>
-
 
 
 <div className={styles.container_card}>
@@ -101,8 +80,10 @@ const AboutMe = () => {
             <article className={styles.text_about_me}></article>
           </div>
   
-          <div>
-            {/* tenho qeu colocar o video aqui, ( do pc e piano) */}
+          <div >
+              <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline >
+                <source src={newPc} type='video/mp4'/>
+              </video>
           </div>
         </div>
 </div>

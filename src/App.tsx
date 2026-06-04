@@ -9,13 +9,12 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap'
 import AboutMe from './components/AboutMe/AboutMe'
 import styles from './components/Wellcome/wellcome.module.css'
-
-
+// 1. Importar o Lenis
+import Lenis from '@studio-freight/lenis'
 
 function App() {
 
   const [ showMenu, setShowMenu ] = useState<boolean>(false)
-
   const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
 
@@ -23,8 +22,25 @@ function App() {
   const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex + 1) % video.length)
 
   const [isHovered, setIsHovered] = useState(false);
-  useEffect(() => {
 
+  useEffect(() => {
+   
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+    })
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    
     gsap.fromTo(`.${styles['change-bg']}`, {
       y: 40,
       scale: 0,
@@ -39,8 +55,7 @@ function App() {
 
     const timeLine = gsap.timeline();
 
-    
-timeLine.fromTo('#scroll_wellcome_gsap', 
+    timeLine.fromTo('#scroll_wellcome_gsap', 
       { y: -50,
         opacity: 0, 
         scale: 2 
@@ -62,46 +77,45 @@ timeLine.fromTo('#scroll_wellcome_gsap',
       yoyo: true,
       ease: 'linear'
     })
+    
+    return () => {
+      lenis.destroy()
+    }
   }, [])
 
   const toolTipActive = () => {if (!showMenu) setIsHovered(true)}
-
-
-
   const toolTipAllowed = () => {setIsHovered(false)}
-
-
-
-
 
   return (
     <>
-    <Wellcome showMenu={showMenu} setShowMenu={setShowMenu} />
-    <section id='intro-video'>
-      <video key={indexVideo} preload='auto' autoPlay muted loop playsInline id='bg-video'>
-        <source type='video/mp4' src={video[indexVideo]}/>
-      </video>
+      <Wellcome showMenu={showMenu} setShowMenu={setShowMenu} />
       
-      <div id='area_arrow'>
-        <ArrowBigLeftDash onClick={prevBackground}  className={styles['change-bg']} size={45} color='white'/>
-        <ArrowBigRightDash onClick={nextBackground}  className={styles['change-bg']} size={45} color='white'/>
-      </div>
+      <section id='intro-video'>
+        <video key={indexVideo} preload='auto' autoPlay muted loop playsInline id='bg-video'>
+          <source type='video/mp4' src={video[indexVideo]}/>
+        </video>
+        
+        <div id='area_arrow'>
+          <ArrowBigLeftDash onClick={prevBackground} className={styles['change-bg']} size={45} color='white'/>
+          <ArrowBigRightDash onClick={nextBackground} className={styles['change-bg']} size={45} color='white'/>
+        </div>
 
-      <div className={styles.scroller_indicator}>
+        <div className={styles.scroller_indicator}>
+          <div className={`${styles['tooltip-message']} ${isHovered ? styles.visible : ''}`}>  
+            Scroll down to learn more about this Frontend Software Engineer.
+          </div>
 
-      <div className={`${styles['tooltip-message']} ${isHovered ? styles.visible : ''}`}>  
-        Scroll down to learn more about this Frontend Software Engineer.
-      </div>
+          <h1 id="scroll_wellcome_gsap" className={styles.scroll_wellcome} 
+              onMouseEnter={() => toolTipActive()} 
+              onMouseLeave={() => toolTipAllowed()}>
+            Scroll Down
+          </h1>
+        </div>
+      </section>
 
-        <h1 id="scroll_wellcome_gsap" className={styles.scroll_wellcome} onMouseEnter={() => 
-   toolTipActive()} onMouseLeave={() => toolTipAllowed()}>Scroll Down</h1>
-      </div>
-    </section>
-
-    <AboutMe />
-
-    
+      <AboutMe />
     </>
   )
 }
+
 export default App

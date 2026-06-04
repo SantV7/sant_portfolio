@@ -57,8 +57,6 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
 
 
-
-
   return (
     <>
     <header className={styles.main_header}>
@@ -66,7 +64,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
             <h1 className={styles.nick_name}>Sant v7</h1>
         </div>
 
-        {showMenu ? <ChartNoAxesGantt className='menu_btn'
+        {showMenu ? <ChartNoAxesGantt className={styles.menu_btn}
           onClick={handleMenu}
           size={37} color='white'/>
           : <Menu className={styles.menu_btn}
@@ -77,7 +75,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                 <li><a onMouseEnter={showHomeIcon}
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
-                       href="#">Home <House className='icons_navbar_hover'
+                       href="#">Home <House className={styles.icons_navbar_hover}
                        color={homeIcon} size={25}/>
                 </a></li>
 
@@ -85,13 +83,13 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                 <li><a onMouseEnter={showSkillsIcon}
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
-                       href="#">Skills <BrainCircuit className='icons_navbar_hover'
+                       href="#">Skills <BrainCircuit className={styles.icons_navbar_hover}
                        color={skillsIcon} size={26}/>
                 </a></li>
 
                 <li><a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
-                       onMouseOut={hiddenProjectIcon} href="#">Projects <SquaresExclude className='icons_navbar_hover'
+                       onMouseOut={hiddenProjectIcon} href="#">Projects <SquaresExclude className={styles.icons_navbar_hover}
                        color={projectIcon}/>
                 </a></li>
 
@@ -100,7 +98,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseOut={hiddenContactIcon} 
                        href='#'
                        className={styles.contact_btn}>Contact 
-                       <Headset color={contactIcon} /></a>
+                       <Headset className={styles.icons_navbar_hover} color={contactIcon} /></a>
             </ul>
         </nav>
     </header>
