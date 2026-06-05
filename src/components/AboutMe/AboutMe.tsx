@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
-import teclado_pixel from '../../assets/img/teclado.png'
+
 import styles from './AboutMe.module.css'
 import photo_anime from '../../assets/img/photo_anime.png'
 import robot from '../../assets/video/bg_about_me.mp4'
@@ -29,7 +29,7 @@ const AboutMe = () => {
       duration: 1.5,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 45%',
+        start: 'top 85%',
         end: 'center 50%',
         scrub: true
       }
@@ -40,9 +40,9 @@ const AboutMe = () => {
   return (
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
-        <h1 ref={WhoRef} className={styles.gsap_wia}>Sant v7</h1>
+        <h1 ref={WhoRef} className={styles.gsap_wia}>Sant</h1>
         <img className={styles.old_pc} src={oldPc} alt="Old PC" />
-        <img className={styles.keyboard_pixel} src={teclado_pixel} alt="Teclado" />
+        
       </div>
 
       <div className={styles.container_card}>
@@ -55,14 +55,14 @@ const AboutMe = () => {
             </div>
             <div className={styles.header_status}>
               <p>STANDBY</p>
-              <p>CONNECTION ESTABLISHED</p>
+              <p>CONNECTION ESTABLISHED IN 2026</p>
             </div>
           </header>
 
           <div className={styles.main_layout}>
             <aside className={styles.sidebar}>
               <div className={styles.side_buttons}>
-                <button className={styles.hud_btn}>SEARCH</button>
+                <button className={styles.hud_btn}>ID: 2007</button>
                 <button className={styles.hud_btn}>ARCHIVE</button>
               </div>
               <div className={styles.photo_frame}>
@@ -92,7 +92,7 @@ const AboutMe = () => {
                       <p><span>Eye Color:</span> 5'10</p> 
                       <p><span>Dominant Hand:</span> 5'10</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
-                      <p><span>Learning Goals:</span>Frontend: Angular, Next.js. Backend: Java, Kotlin. API & Query Languages: GraphQL. Testing: Jest</p>  
+                      <p><span>Learning Goals:</span>Frontend: Angular, Next.js.| Backend: Java, Kotlin. | API & Query Languages: GraphQL. | Testing: Jest</p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
 

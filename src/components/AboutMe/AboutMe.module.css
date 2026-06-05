@@ -11,11 +11,16 @@
     margin-bottom: 50px;
 }
 
+.apresentation > .old_pc {
+    margin-top: 130px;
+    margin-left: -50px;
+}
+
 .gsap_wia {
     font-family: 'Pixelify Sans', sans-serif;
     color: white;
-    font-size: 3rem;
-    text-shadow: 0 0 15px rgba(220, 202, 250, 0.5);
+    font-size: 3.7rem;
+    text-shadow: 0 0 10px rgba(220, 202, 250, 0.5);
 }
 
 .container_card {
@@ -57,11 +62,10 @@
 }
 
 .header_status {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     color: #508896;
     text-align: right;
 }
-
 
 .main_layout {
     display: grid;
@@ -69,7 +73,6 @@
     gap: 25px;
     padding: 30px 20px;
 }
-
 
 .sidebar {
     display: flex;
@@ -79,18 +82,16 @@
 
 .photo_frame {
     display: flex;
-    flex-flow: column nowrap; gap: 15px;
+    flex-flow: column nowrap;
+    gap: 15px;
     border: 1px solid #3a5b63;
     padding: 5px;
     background: rgba(58, 91, 99, 0.1);
-   
 }
 
 .photo_frame img {
     width: 100%;
-   
 }
-
 
 .hud_btn {
     background: #3a5b63;
@@ -98,9 +99,9 @@
     border: none;
     font-weight: bold;
     padding: 6px 15px;
-    font-size: 0.7rem;
+    font-size: 0.83rem;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     text-align: left;
     width: 100px;
     clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
@@ -119,18 +120,17 @@
 
 .data_grid p {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.15rem;
     border-bottom: 1px solid rgba(58, 91, 99, 0.2);
     padding-bottom: 5px;
 }
 
 .data_grid p span {
     color: #508896;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
     margin-right: 10px;
 }
-
 
 .info_card_footer {
     margin-top: 25px;
@@ -152,13 +152,17 @@
     font-size: 0.6rem;
     cursor: pointer;
 }
+
 .status_bar {
     color: rgb(214, 204, 250);
 }
 
-
 .video_container {
     padding: 0 20px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video_pc {
@@ -167,6 +171,7 @@
     border-radius: 5px;
     filter: blur(5px); 
     transition: ease 2.36s;
+    display: block;
 }
 
 .video_pc:hover {
@@ -174,14 +179,25 @@
     filter: blur(0px); 
 }
 
+
 .eye_issues { 
-    font-size: 1.7rem;
-    position:relative;
+    text-shadow: 1px 1px 1px rgb(7, 6, 24);
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
-    color: white;
+    transform: translate(-50%, -50%);
+    font-size: 2.05rem;
+    color: rgb(231, 225, 252);
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.5s;
+    font-family: poppins, Arial, Helvetica, sans-serif;
+}
 
+.video_container:hover .eye_issues {
+    opacity: 0;
 }
 
 @media screen and (max-width: 768px) {

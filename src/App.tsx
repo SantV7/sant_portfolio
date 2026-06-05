@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 2.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
@@ -57,7 +57,8 @@ function App() {
 
     timeLine.fromTo('#scroll_wellcome_gsap', 
       { y: -50, opacity: 0, scale: 2 }, 
-      { y: 0, delay: 1.35, opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }
+      { y: 0, delay: 1.35, opacity: 1,
+      scale: 1, duration: 1.2, ease: "power2.out" }
     )
     
     timeLine.to('#scroll_wellcome_gsap', {
