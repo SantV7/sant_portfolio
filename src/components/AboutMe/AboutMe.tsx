@@ -105,23 +105,22 @@ const AboutMe = () => {
 
 
               <footer className={styles.info_card_footer}>
-                <p className={styles.status_bar}>Status: Active</p>
                 <div className={styles.footer_btns}>
                    <button onClick={() => setCurriculumActive(true)} className={styles.hud_btn_sm}>CURRICULUM</button>
                    <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE</button>
                    { seeMore && (
-                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO <CircleX /></button>
+                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO <CircleX  /></button>
                    )}
                    
                 </div>
 
 
                 { curriculumActive && (
-                  <div>
+                  <div className={styles.sidebar_curriculum}>
                     <button className={styles.hud_btn_sm}>Download <Download /></button>
                     <button className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
-                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX /></button>
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX  size={38}/></button>
                   </div>
                 )
                 }

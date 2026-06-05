@@ -151,24 +151,38 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    gap: 10px;
     justify-content: space-around;
     border: 1px solid #3a5b63;
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: ease-in-out 0.1s;
-    font-weight: 550;
+    font-weight: 600;
+    transition: ease 0.26s;
     
 }
 
 .hud_btn_sm:hover {
     background-color: rgb(26, 29, 41);
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.328);
-    border-radius: 4px;
-    border-top-left-radius: 6px;
+    
+    border-top-left-radius: 10px;
     border-bottom: 3px solid white;
    
     
+}
+
+.sidebar_curriculum {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    justify-content: space-bet;
+    gap: 7px;
+    position: relative;
+    text-align: right;
+    padding: 5px 10px;
+    border-radius: 4px;
+
 }
 
 .status_bar {
