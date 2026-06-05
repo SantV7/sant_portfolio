@@ -13,6 +13,7 @@ import robot from '../../assets/video/bg_about_me.mp4'
 import { HardDriveDownload } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
+import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -99,11 +100,11 @@ const AboutMe = () => {
                       <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...</p>
                       <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                       <p><span>Height:</span> 5'10</p>     
-                      <p><span>Hair Color:</span>Dark brown</p>  
-                      <p><span>Eye Color:</span>Dark brown</p> 
-                      <p><span>Dominant Hand:</span> Right-handed</p>  
+                      <p><span>Hair Color:</span>Dark Brown</p>  
+                      <p><span>Eye Color:</span>Dark Brown</p> 
+                      <p><span>Dominant Hand:</span> Right-Handed</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
-                      <p><span>Learning Goals:</span>Frontend: Angular, Next.js.| Backend: Java, Kotlin. | API & Query Languages: GraphQL. | Testing: Jest</p>  
+                      <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
 
@@ -126,12 +127,12 @@ const AboutMe = () => {
 
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <button onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</button>
+                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</a>
                     <button className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
-                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX size={30}/></button>
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE THE RESUME <CircleX size={30}/></button>
                   </div>
-                )
+                 )
                 }
               </footer>
             </section>
@@ -141,7 +142,7 @@ const AboutMe = () => {
             <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline>
               <source src={newPc} type='video/mp4' />
             </video>
-            <p className={styles.eye_issues}>Developing vision issues</p>
+            <p className={styles.eye_issues}>DEVELOPING VISION ISSUES</p>
           </div>
         </div>
       </div>
