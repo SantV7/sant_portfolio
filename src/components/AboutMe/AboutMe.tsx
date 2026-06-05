@@ -1,13 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import teclado_pixel from '../../assets/img/teclado.png'
-
 import styles from './AboutMe.module.css'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-
+import photo_anime from '../../assets/img/photo_anime.png'
+import robot from '../../assets/video/bg_about_me.mp4'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,10 +14,10 @@ const AboutMe = () => {
   const WhoRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
+  const [curriculumActive, setCurriculumActive] = useState<boolean>(false)
+  const [seeMore, setSeeMore] = useState<boolean>(false)
 
   useEffect(() => {
-
-
     gsap.fromTo(WhoRef.current, {
       opacity: 0,
       y: 60,
@@ -35,61 +34,106 @@ const AboutMe = () => {
         scrub: true
       }
     })
-    return () => {ScrollTrigger.getAll().forEach((t) => t.kill())}
-    
+    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
 
-
   return (
-    <>
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
         <h1 ref={WhoRef} className={styles.gsap_wia}>Sant v7</h1>
-          <img className={styles.old_pc} src={oldPc} alt=" Old PC" />
-
-          <img className={styles.keyboard_pixel} src={teclado_pixel} alt="Teclado" />
+        <img className={styles.old_pc} src={oldPc} alt="Old PC" />
+        <img className={styles.keyboard_pixel} src={teclado_pixel} alt="Teclado" />
       </div>
 
-
-<div className={styles.container_card}>
+      <div className={styles.container_card}>
         <div className={styles.about_me_card}>
-          <header>
-            <h2>Vinícius</h2>
-            <h3>Level 18</h3>
+      
+          <header className={styles.card_header}>
+            <div className={styles.header_text}>
+              <h2>PERSONAL RECORD SYSTEM</h2>
+              <span className={styles.serial}>■ 5195028</span>
+            </div>
+            <div className={styles.header_status}>
+              <p>STANDBY</p>
+              <p>CONNECTION ESTABLISHED</p>
+            </div>
           </header>
-  
-          <div className={styles.main_info}>
-            <img src="photo anime" alt="photo anime" />
+
+          <div className={styles.main_layout}>
+            <aside className={styles.sidebar}>
+              <div className={styles.side_buttons}>
+                <button className={styles.hud_btn}>SEARCH</button>
+                <button className={styles.hud_btn}>ARCHIVE</button>
+              </div>
+              <div className={styles.photo_frame}>
+                <img src={photo_anime} alt="photo anime" />
+                <video preload='auto' autoPlay muted loop playsInline>
+                  <source type='video/mp4' src={robot}/>
+                </video>
+              </div>
+            </aside>
+            
             <section className={styles.personal_data}>
-              <p className={styles.data_paragraph}>First Name: Vinícius</p>
-              <p className={styles.data_paragraph}>Last Name: Santos Oliveira</p>
-              <p className={styles.data_paragraph}>Age: 18</p>
-              <p className={styles.data_paragraph}>Profession: Software Engineer</p>
-              <p className={styles.data_paragraph}>Stack: Font-end</p>
-  
+              <div className={styles.data_grid}>
+                <p><span>First Name:</span> Vinícius</p>
+                <p><span>Last Name:</span> Santos Oliveira</p>
+                <p><span>Age:</span> 18y</p>
+                <p><span>Profession:</span> Software Engineer</p>
+                <p><span>Stack:</span> Front-End</p>
+
+                  {seeMore && (
+                    <>
+                      <p><span>NickName:</span>Sant | Aivy | Vy</p>
+                      <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
+                      <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...</p>
+                      <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
+                      <p><span>Height:</span> 5'10</p>     
+                      <p><span>Hair Color:</span> 5'10</p>  
+                      <p><span>Eye Color:</span> 5'10</p> 
+                      <p><span>Dominant Hand:</span> 5'10</p>  
+                      <p><span>Weight:</span> 143 lbs</p> 
+                      <p><span>Learning Goals:</span>Frontend: Angular, Next.js. Backend: Java, Kotlin. API & Query Languages: GraphQL. Testing: Jest</p>  
+                      <p></p>  
+                      <p><span>IDE:</span>Visual Studio Code</p>  
+
+                                 
+                    </>
+                  )}
+              </div>
+
+
               <footer className={styles.info_card_footer}>
-                <p className={styles.data_paragraph}>Status: Active</p>
-                <button className={styles.more_info}>More</button>
+                <p className={styles.status_bar}>Status: Active</p>
+                <div className={styles.footer_btns}>
+                   <button onClick={() => setCurriculumActive(true)} className={styles.hud_btn_sm}>CURRICULUM</button>
+                   <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE</button>
+                   { seeMore && (
+                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE</button>
+                   )}
+                   
+                </div>
+
+
+                { curriculumActive && (
+                  <div>
+                    <button>Download</button>
+                    <button>See Curriculum here</button>
+                  </div>
+                )
+                }
               </footer>
             </section>
           </div>
-  
-          <div className={styles.grid_template}>
-            <div className="digital"></div>
-            <div className="city-bsb"></div>
-            <article className={styles.text_about_me}></article>
-          </div>
-  
-          <div >
-              <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline >
-                <source src={newPc} type='video/mp4'/>
-              </video>
+
+          <div className={styles.video_container}>
+            <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline>
+              <source src={newPc} type='video/mp4' />
+            </video>
+            <p className={styles.eye_issues}>Developing vision issues</p>
           </div>
         </div>
-</div>
-      
+      </div>
     </section>
-    </>
   )
 }
 

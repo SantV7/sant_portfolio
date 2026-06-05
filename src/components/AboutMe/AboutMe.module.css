@@ -1,43 +1,21 @@
 .about_me {
-    min-height: 1000px;
+    min-height: 100vh;
     width: 100%;
-    padding-top: 160px;
+    padding: 160px 20px 80px;
+    background-color: #07080a;
 }
 
 .apresentation {
     text-align: center;
+    position: relative;
+    margin-bottom: 50px;
 }
 
 .gsap_wia {
-    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
     color: white;
-    font-size: 3.5rem;
-}
-
-
-.old_pc {
-    margin-top:70px;
-    margin-left: -20px;
-}
-
-.keyboard_pixel {
-    max-width: 23.7%;
-    position:  absolute;
-    left: 50.7%;
-    top: 169%;
-    transform: translate(-50%, -50%);
-    transition: ease 0.3s;
-}
-
-.keyboard_pixel:hover {
-    scale: 1.03;
-}
-
-.pc_pixel {
-    max-width: 14%;
-    position: absolute;
-    right: 2%;
-    top: 150%;
+    font-size: 3rem;
+    text-shadow: 0 0 15px rgba(220, 202, 250, 0.5);
 }
 
 .container_card {
@@ -48,39 +26,178 @@
 }
 
 .about_me_card {
-    min-width: 50%;
-    max-width: 60%;
-    border-radius: 4px;
-    border: 2px solid white;
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(13, 17, 23, 0.95);
+    border: 1px solid #3a5b63;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 0 30px rgba(58, 91, 99, 0.2);
+}
+
+.card_header {
+    background: rgba(58, 91, 99, 0.2);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #3a5b63;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 70%, 80% 100%, 0 100%);
+}
+
+.header_text h2 {
+    font-size: 0.9rem;
+    color: #a3c9d1;
+    letter-spacing: 1px;
+}
+
+.serial {
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+}
+
+.header_status {
+    font-size: 0.6rem;
+    color: #508896;
+    text-align: right;
+}
+
+
+.main_layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 25px;
+    padding: 30px 20px;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.photo_frame {
+    display: flex;
+    flex-flow: column nowrap; gap: 15px;
+    border: 1px solid #3a5b63;
+    padding: 5px;
+    background: rgba(58, 91, 99, 0.1);
+   
+}
+
+.photo_frame img {
+    width: 100%;
+   
+}
+
+
+.hud_btn {
+    background: #3a5b63;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    padding: 6px 15px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.hud_btn:hover {
+    background: #a3c9d1;
+}
+
+.data_grid {
+    display: grid;
+    gap: 12px;
+    background: repeating-linear-gradient(0deg, rgba(58, 91, 99, 0.03) 0px, rgba(58, 91, 99, 0.03) 1px, transparent 1px, transparent 2px);
+}
+
+.data_grid p {
+    color: #fff;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(58, 91, 99, 0.2);
+    padding-bottom: 5px;
+}
+
+.data_grid p span {
+    color: #508896;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+
+.info_card_footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_btns {
+    display: flex;
+    gap: 10px;
+}
+
+.hud_btn_sm {
+    background: transparent;
+    color: #a3c9d1;
+    border: 1px solid #3a5b63;
+    padding: 4px 10px;
+    font-size: 0.6rem;
+    cursor: pointer;
+}
+.status_bar {
+    color: rgb(214, 204, 250);
+}
+
+
+.video_container {
+    padding: 0 20px 20px;
 }
 
 .video_pc {
-    background-color: gray;
     width: 100%;
-    height: auto;
+    border: 1px solid #3a5b63;
+    border-radius: 5px;
+    filter: blur(5px); 
+    transition: ease 2.36s;
 }
 
+.video_pc:hover {
+    scale: 1.003;
+    filter: blur(0px); 
+}
 
+.eye_issues { 
+    font-size: 1.7rem;
+    position:relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    color: white;
 
+}
 
+@media screen and (max-width: 768px) {
+    .main_layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        align-items: center;
+    }
+    
+    .about_me_card {
+        margin: 0 10px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1624px) {
-    .keyboard_pixel {
-        display: none;
+    .card_header {
+        clip-path: none; 
     }
 }

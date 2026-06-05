@@ -7,29 +7,26 @@ import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutMe from './components/AboutMe/AboutMe'
 import styles from './components/Wellcome/wellcome.module.css'
-// 1. Importar o Lenis
 import Lenis from '@studio-freight/lenis'
 
-function App() {
+gsap.registerPlugin(ScrollTrigger);
 
-  const [ showMenu, setShowMenu ] = useState<boolean>(false)
+function App() {
+  const [showMenu, setShowMenu] = useState<boolean>(false)
   const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
+  const [isHovered, setIsHovered] = useState(false);
 
   const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 + video.length) % video.length)
   const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex + 1) % video.length)
 
-  const [isHovered, setIsHovered] = useState(false);
-
   useEffect(() => {
-   
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
 
@@ -40,34 +37,27 @@ function App() {
 
     requestAnimationFrame(raf)
 
-    
-    gsap.fromTo(`.${styles['change-bg']}`, {
-      y: 40,
-      scale: 0,
-      opacity: 0
-    }, {
-      y: 0,
-      scale: 1,
-      duration: 1.5,
-      opacity: 1,
-      ease: 'power2.out',
-    })
+    gsap.to("#bg-video", {
+      scrollTrigger: {
+        trigger: "#intro-video",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      },
+      y: 150,
+      ease: "none"
+    });
+
+    gsap.fromTo(`.${styles['change-bg']}`, 
+      { y: 40, scale: 0, opacity: 0 }, 
+      { y: 0, scale: 1, duration: 1.5, opacity: 1, ease: 'power2.out' }
+    )
 
     const timeLine = gsap.timeline();
 
     timeLine.fromTo('#scroll_wellcome_gsap', 
-      { y: -50,
-        opacity: 0, 
-        scale: 2 
-      }, 
-      { 
-        y: 0,
-        delay: 1.35,
-        opacity: 1, 
-        scale: 1, 
-        duration: 1.2, 
-        ease: "power2.out" 
-      }
+      { y: -50, opacity: 0, scale: 2 }, 
+      { y: 0, delay: 1.35, opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }
     )
     
     timeLine.to('#scroll_wellcome_gsap', {
@@ -80,11 +70,12 @@ function App() {
     
     return () => {
       lenis.destroy()
+      ScrollTrigger.getAll().forEach(t => t.kill());
     }
   }, [])
 
-  const toolTipActive = () => {if (!showMenu) setIsHovered(true)}
-  const toolTipAllowed = () => {setIsHovered(false)}
+  const toolTipActive = () => { if (!showMenu) setIsHovered(true) }
+  const toolTipAllowed = () => { setIsHovered(false) }
 
   return (
     <>
@@ -105,7 +96,7 @@ function App() {
             Scroll down to learn more about this Frontend Software Engineer.
           </div>
 
-          <h1 id="scroll_wellcome_gsap" className={styles.scroll_wellcome} 
+          <h1 className={styles.scroll_wellcome} 
               onMouseEnter={() => toolTipActive()} 
               onMouseLeave={() => toolTipAllowed()}>
             Scroll Down

@@ -31,6 +31,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
 }
 
 .tooltip-message {
@@ -75,30 +76,28 @@
 }
 
 .scroll_wellcome {
-    font-size: 3.2rem;
+    font-size: 2.55rem;
     color: rgb(220, 202, 250);
     text-shadow: 3px 2px 6px rgb(54, 47, 116);
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
+    pointer-events: auto;
+    cursor: default;
 }
 
 .change-bg {
     cursor: pointer;
     transition: ease 0.23s;
     border-radius: 50%;
-    
-    &:hover {
-        background-color: rgba(195, 208, 243, 0.116);
-        scale: 1.15;
-    }
+}
+
+.change-bg:hover {
+    background-color: rgba(195, 208, 243, 0.116);
+    scale: 1.15;
 }
 
 .menu_btn {
     cursor: pointer;
     display: block;
-}
-
-.arrows {
-    opacity: 1;
 }
 
 .main_navbar {
@@ -114,23 +113,6 @@
 
 .main_navbar.open {
     display: block; 
-}
-
-.main_navbar > .ul_list > .contact_btn {
-    padding: 10px 20px;
-    letter-spacing: 1px;
-    font-size: 1.44rem;
-    border-radius: 11px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.658);
-    border: 1px solid rgba(255, 255, 255, 0.281);
-    background-color: rgb(189, 120, 42); 
-    transition: ease 0.25s;
-
-    &:hover {
-        scale: 1.05;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.904);
-        background-color: rgb(253, 159, 17);
-    }
 }
 
 .ul_list {
@@ -152,24 +134,10 @@
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
     border-radius: 4px;
-
-    &:hover {
-        border-bottom: 2px solid blue;
-    }
 }
-
-.icons_navbar_hover {
-    display: none;
-}
-
-
 
 
 @media screen and (min-width: 1024px) {
-    .icons_navbar_hover {
-        display: block;
-    }    
-    
     .menu_btn {
         display: none;
     }
@@ -192,8 +160,6 @@
         gap: 10px;
         align-items: center;
         width: auto;
-       
-        text-align: center;
         border-right: 4px solid transparent;
         border-bottom: 3px solid rgba(255, 255, 255, 0.144);
         border-radius: 4px;
@@ -208,5 +174,7 @@
         border-radius: 11px;
     }
 
+    .scroll_wellcome {
+         font-size: 3.6rem; 
+    }
 }
-
