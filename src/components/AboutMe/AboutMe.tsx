@@ -99,9 +99,9 @@ const AboutMe = () => {
                       <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...</p>
                       <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                       <p><span>Height:</span> 5'10</p>     
-                      <p><span>Hair Color:</span> 5'10</p>  
-                      <p><span>Eye Color:</span> 5'10</p> 
-                      <p><span>Dominant Hand:</span> 5'10</p>  
+                      <p><span>Hair Color:</span>Dark brown</p>  
+                      <p><span>Eye Color:</span>Dark brown</p> 
+                      <p><span>Dominant Hand:</span> Right-handed</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
                       <p><span>Learning Goals:</span>Frontend: Angular, Next.js.| Backend: Java, Kotlin. | API & Query Languages: GraphQL. | Testing: Jest</p>  
                       <p></p>  
