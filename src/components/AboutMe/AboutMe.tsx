@@ -3,9 +3,11 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
-
+import { CircleX } from 'lucide-react';
+import { Download } from 'lucide-react';
 import styles from './AboutMe.module.css'
 import photo_anime from '../../assets/img/photo_anime.png'
+import { ScanEye } from 'lucide-react';
 import robot from '../../assets/video/bg_about_me.mp4'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -108,7 +110,7 @@ const AboutMe = () => {
                    <button onClick={() => setCurriculumActive(true)} className={styles.hud_btn_sm}>CURRICULUM</button>
                    <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE</button>
                    { seeMore && (
-                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO</button>
+                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO <CircleX /></button>
                    )}
                    
                 </div>
@@ -116,10 +118,10 @@ const AboutMe = () => {
 
                 { curriculumActive && (
                   <div>
-                    <button className={styles.hud_btn_sm}>Download</button>
-                    <button className={styles.hud_btn_sm}>Show</button>
+                    <button className={styles.hud_btn_sm}>Download <Download /></button>
+                    <button className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
-                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM</button>
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX /></button>
                   </div>
                 )
                 }

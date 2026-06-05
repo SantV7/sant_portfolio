@@ -148,7 +148,10 @@
     background: transparent;
     color: #a3c9d1;
     border-bottom: 3px solid transparent;
-   
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
     border: 1px solid #3a5b63;
     padding: 10px 20px;
     font-size: 0.9rem;
