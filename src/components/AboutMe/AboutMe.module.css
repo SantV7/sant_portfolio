@@ -13,13 +13,13 @@
 
 .apresentation > .old_pc {
     margin-top: 70px;
-    margin-left: -50px;
+    max-width: 400px;
 }
 
 .gsap_wia {
     font-family: 'Pixelify Sans', sans-serif;
     color: white;
-    font-size: 4.3rem;
+    font-size: clamp(2rem, 8vw, 4.3rem); 
     text-shadow: 0 0 10px rgba(220, 202, 250, 0.5);
 }
 
@@ -35,7 +35,6 @@
     max-width: 1000px;
     background-color: rgba(13, 17, 23, 0.95);
     border: 1px solid #3a5b63;
-    padding: 0;
     position: relative;
     box-shadow: 0 0 30px rgba(58, 91, 99, 0.2);
 }
@@ -82,15 +81,17 @@
 
 .photo_frame {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     gap: 15px;
     border: 1px solid #3a5b63;
     padding: 5px;
     background: rgba(58, 91, 99, 0.1);
 }
 
-.photo_frame img {
+.photo_frame img, .photo_frame video {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
 .hud_btn {
@@ -101,15 +102,9 @@
     padding: 6px 15px;
     font-size: 0.85rem;
     cursor: pointer;
-    margin-bottom: 3px;
-    text-align: left;
-    width: 100px;
+    width: 110px;
     clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
     transition: 0.3s;
-}
-
-.hud_btn:hover {
-    background: #a3c9d1;
 }
 
 .data_grid {
@@ -123,6 +118,7 @@
     font-size: 1.15rem;
     border-bottom: 1px solid rgba(58, 91, 99, 0.2);
     padding-bottom: 5px;
+    word-break: break-word;
 }
 
 .data_grid p span {
@@ -135,119 +131,99 @@
 .info_card_footer {
     margin-top: 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .footer_btns {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .hud_btn_sm {
-    
     background: transparent;
     color: #a3c9d1;
     display: flex;
-    flex-flow: row nowrap;
     align-items: center;
     gap: 10px;
-    text-transform: uppercase;
-    justify-content: space-between;
     border: 1px solid #3a5b63;
-    border-right: 5px solid transparent;
-    padding: 10px 20px;
-    font-size: 0.95rem;
+    padding: 10px 15px;
+    font-size: 0.85rem;
     cursor: pointer;
     font-weight: 600;
-    transition: ease 0.3s;
+    transition: all 0.3s ease;
 }
 
 .hud_btn_sm:hover {
-    background-color: rgb(26, 29, 41);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.328);
-    
-    border-top-left-radius: 10px;
-    border-bottom: 2px solid white;
-   border-right: 5px solid white;
-    
+    background-color: rgba(58, 91, 99, 0.2);
+    border-right: 4px solid white;
 }
 
 .sidebar_curriculum {
     display: flex;
-    flex-flow: row-reverse wrap;
-    align-items: center;
-    justify-content: space-bet;
-    gap: 7px;
-    position: relative;
-    text-align: right;
-    padding: 5px 10px;
-    border-radius: 4px;
-
-}
-
-.status_bar {
-    font-size: 1.16rem;
-    color: rgb(214, 204, 250);
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border-top: 1px dashed #3a5b63;
 }
 
 .video_container {
     padding: 0 20px 20px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
 .video_pc {
     width: 100%;
     border: 1px solid #3a5b63;
-    border-radius: 5px;
-    filter: blur(5px); 
-    transition: ease 2.36s;
-    display: block;
+    filter: blur(4px);
+    transition: filter 0.5s ease;
 }
 
-.video_pc:hover {
-    scale: 1.003;
-    filter: blur(0px); 
+.video_container:hover .video_pc {
+    filter: blur(0);
 }
-
 
 .eye_issues { 
-    text-shadow: 1px 1px 1px rgb(7, 6, 24);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.05rem;
-    color: rgb(231, 225, 252);
+    font-size: 1.5rem;
+    color: white;
     font-weight: bold;
     text-align: center;
     pointer-events: none;
-    z-index: 10;
-    transition: opacity 0.5s;
-    font-family: poppins, Arial, Helvetica, sans-serif;
+    transition: opacity 0.3s;
 }
 
 .video_container:hover .eye_issues {
     opacity: 0;
 }
 
+
 @media screen and (max-width: 768px) {
+    .about_me { padding-top: 100px; }
+    
     .main_layout {
-        grid-template-columns: 1fr;
-    }
-    
-    .sidebar {
-        align-items: center;
-    }
-    
-    .about_me_card {
-        margin: 0 10px;
+        grid-template-columns: 1fr; 
+        padding: 20px 15px;
     }
 
     .card_header {
         clip-path: none; 
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .sidebar { align-items: center; }
+
+    .photo_frame { width: 100%; max-width: 300px; }
+
+    .hud_btn_sm { width: 100%; justify-content: center; }
+
+    .eye_issues { font-size: 1rem; }
+    
+    .apresentation > .old_pc { max-width: 180px; margin-left: 0; }
 }
