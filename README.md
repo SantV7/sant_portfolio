@@ -3,8 +3,6 @@
 Já baixei o npm i gsap e o npm i lucidereact@next
 
 
-falta fazer as coisas do curriculo
-- por os ICONS NOS BTNS
 
 
 

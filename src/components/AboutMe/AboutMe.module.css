@@ -141,25 +141,26 @@
 
 .footer_btns {
     display: flex;
-    gap: 17px;
+    gap: 20px;
 }
 
 .hud_btn_sm {
+    
     background: transparent;
     color: #a3c9d1;
-    border-bottom: 3px solid transparent;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     gap: 10px;
-    justify-content: space-around;
+    text-transform: uppercase;
+    justify-content: space-between;
     border: 1px solid #3a5b63;
+    border-right: 5px solid transparent;
     padding: 10px 20px;
     font-size: 0.95rem;
     cursor: pointer;
     font-weight: 600;
-    transition: ease 0.26s;
-    
+    transition: ease 0.3s;
 }
 
 .hud_btn_sm:hover {
@@ -167,8 +168,8 @@
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.328);
     
     border-top-left-radius: 10px;
-    border-bottom: 3px solid white;
-   
+    border-bottom: 2px solid white;
+   border-right: 5px solid white;
     
 }
 

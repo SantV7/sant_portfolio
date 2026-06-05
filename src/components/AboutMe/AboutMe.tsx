@@ -6,9 +6,13 @@ import newPc from '../../../src/assets/video/new_pc.mp4'
 import { CircleX } from 'lucide-react';
 import { Download } from 'lucide-react';
 import styles from './AboutMe.module.css'
+import { Workflow } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
 import { ScanEye } from 'lucide-react';
 import robot from '../../assets/video/bg_about_me.mp4'
+import { HardDriveDownload } from 'lucide-react';
+import { CircleEllipsis } from 'lucide-react';
+import { X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,6 +22,11 @@ const AboutMe = () => {
 
   const [curriculumActive, setCurriculumActive] = useState<boolean>(false)
   const [seeMore, setSeeMore] = useState<boolean>(false)
+  const [downloadIcon, setDownloadIcon] = useState<boolean>(false)
+  const [closeIcon, setCloseIcon] = useState<boolean>(false)
+  const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
+  
+  
 
   useEffect(() => {
     gsap.fromTo(WhoRef.current, {
@@ -106,10 +115,10 @@ const AboutMe = () => {
 
               <footer className={styles.info_card_footer}>
                 <div className={styles.footer_btns}>
-                   <button onClick={() => setCurriculumActive(true)} className={styles.hud_btn_sm}>CURRICULUM</button>
-                   <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE</button>
+                   <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')} className={styles.hud_btn_sm}>CURRICULUM <Workflow color={curriculumSetter} size={29}/></button>
+                   <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE <CircleEllipsis size={30} /></button>
                    { seeMore && (
-                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO <CircleX  /></button>
+                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>SHOW LESS {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}</button>
                    )}
                    
                 </div>
@@ -117,10 +126,10 @@ const AboutMe = () => {
 
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <button className={styles.hud_btn_sm}>Download <Download /></button>
+                    <button onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</button>
                     <button className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
-                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX  size={38}/></button>
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM <CircleX size={30}/></button>
                   </div>
                 )
                 }
