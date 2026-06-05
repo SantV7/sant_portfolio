@@ -12,14 +12,14 @@
 }
 
 .apresentation > .old_pc {
-    margin-top: 130px;
+    margin-top: 70px;
     margin-left: -50px;
 }
 
 .gsap_wia {
     font-family: 'Pixelify Sans', sans-serif;
     color: white;
-    font-size: 3.7rem;
+    font-size: 4.3rem;
     text-shadow: 0 0 10px rgba(220, 202, 250, 0.5);
 }
 
@@ -95,11 +95,11 @@
 
 .hud_btn {
     background: #3a5b63;
-    color: #000;
+    color: #c5ccf1;
     border: none;
     font-weight: bold;
     padding: 6px 15px;
-    font-size: 0.83rem;
+    font-size: 0.85rem;
     cursor: pointer;
     margin-bottom: 3px;
     text-align: left;
@@ -141,19 +141,35 @@
 
 .footer_btns {
     display: flex;
-    gap: 10px;
+    gap: 17px;
 }
 
 .hud_btn_sm {
     background: transparent;
     color: #a3c9d1;
+    border-bottom: 3px solid transparent;
+   
     border: 1px solid #3a5b63;
-    padding: 4px 10px;
-    font-size: 0.6rem;
+    padding: 10px 20px;
+    font-size: 0.9rem;
     cursor: pointer;
+    transition: ease-in-out 0.1s;
+    font-weight: 550;
+    
+}
+
+.hud_btn_sm:hover {
+    background-color: rgb(26, 29, 41);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.328);
+    border-radius: 4px;
+    border-top-left-radius: 6px;
+    border-bottom: 3px solid white;
+   
+    
 }
 
 .status_bar {
+    font-size: 1.16rem;
     color: rgb(214, 204, 250);
 }
 

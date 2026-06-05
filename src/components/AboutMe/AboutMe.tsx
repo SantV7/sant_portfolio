@@ -108,7 +108,7 @@ const AboutMe = () => {
                    <button onClick={() => setCurriculumActive(true)} className={styles.hud_btn_sm}>CURRICULUM</button>
                    <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE</button>
                    { seeMore && (
-                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE</button>
+                    <button onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>CLOSE MORE INFO</button>
                    )}
                    
                 </div>
@@ -116,8 +116,10 @@ const AboutMe = () => {
 
                 { curriculumActive && (
                   <div>
-                    <button>Download</button>
-                    <button>See Curriculum here</button>
+                    <button className={styles.hud_btn_sm}>Download</button>
+                    <button className={styles.hud_btn_sm}>Show</button>
+                     <br />
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE CURRICULUM</button>
                   </div>
                 )
                 }
@@ -138,3 +140,5 @@ const AboutMe = () => {
 }
 
 export default AboutMe
+
+
