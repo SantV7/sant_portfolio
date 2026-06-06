@@ -9,7 +9,6 @@ import styles from './AboutMe.module.css'
 import { Workflow } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
 import { ScanEye } from 'lucide-react';
-import robot from '../../assets/video/bg_about_me.mp4'
 import { HardDriveDownload } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
@@ -80,9 +79,6 @@ const AboutMe = () => {
               </div>
               <div className={styles.photo_frame}>
                 <img src={photo_anime} alt="photo anime" />
-                <video preload='auto' autoPlay muted loop playsInline>
-                  <source type='video/mp4' src={robot}/>
-                </video>
               </div>
             </aside>
             

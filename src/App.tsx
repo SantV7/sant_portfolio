@@ -37,7 +37,7 @@ function App() {
 
     requestAnimationFrame(raf)
 
-    gsap.fromTo('#wellcome_msg', {
+    gsap.fromTo('#welcome_msg', {
       y: -140,
       opacity: 0
     }, {
@@ -48,12 +48,21 @@ function App() {
 
     })
 
+    gsap.fromTo('.scroll_wellcome', {
+      y: -140,
+      opacity: 0
+    }, {
+      duration: 1.6,
+      opacity: 1,
+      y: 0,
+      ease: 'power2'
+    })
+
     gsap.to("#bg-video", {
       scrollTrigger: {
-        trigger: "#intro-video",
+        trigger: "#intro-video", 
         start: "top top",
-        end: "bottom top",
-        scrub: true
+        end: "bottom top", scrub: true
       },
       y: 150,
       ease: "none"
@@ -64,26 +73,22 @@ function App() {
         scale: 0,
         opacity: 0 }, 
       { y: 0,
-        scale: 1,
-        duration: 1.5,
-        opacity: 1,
-        ease: 'power2.out' }
+        scale: 1, duration: 1.5,
+        opacity: 1, ease: 'power2.out' }
     )
 
     const timeLine = gsap.timeline();
 
     timeLine.fromTo('#scroll_wellcome_gsap', 
       { y: -50, opacity: 0, scale: 2 }, 
-      { y: 0, delay: 1.35, opacity: 1,
+      { y: 0, delay: 0.85, opacity: 1,
       scale: 1, duration: 1.2, ease: "power2.out" }
     )
     
     timeLine.to('#scroll_wellcome_gsap', {
       y: 25,
-      duration: 1.7,
-      repeat: -1,
-      yoyo: true,
-      ease: 'linear'
+      duration: 1.4, repeat: -1,
+      yoyo: true, ease: 'linear'
     })
     
     return () => {
@@ -95,6 +100,9 @@ function App() {
   const toolTipActive = () => { if (!showMenu) setIsHovered(true) }
   const toolTipAllowed = () => { setIsHovered(false) }
 
+
+
+  
   return (
     <>
       <Welcome showMenu={showMenu} setShowMenu={setShowMenu} />
@@ -112,7 +120,7 @@ function App() {
         <div id='welcome_msg'>
           <h1>Welcome to my <span className="portfolio">Portfolio</span></h1>
           <p>This is a presentation from a beginner <span className="portfolio">Software Engineer.</span></p>
-          <p>Created by Vinícius in <span className="portfolio">2026</span>.</p>
+          <p>Created by Sant in <span className="portfolio">2026</span>.</p>
         </div>
 
         <div className={styles.scroller_indicator}>
@@ -120,9 +128,9 @@ function App() {
             Scroll down to learn more about this Frontend Software Engineer.
           </div>
 
-          <h1 className={styles.scroll_wellcome} 
-              onMouseEnter={() => toolTipActive()} 
-              onMouseLeave={() => toolTipAllowed()}>
+          <h1 id='scroll_wellcome_gsap' className={styles.scroll_wellcome} 
+            onMouseEnter={() => toolTipActive()} 
+            onMouseLeave={() => toolTipAllowed()}>
             Scroll Down
           </h1>
         </div>
