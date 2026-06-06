@@ -5,13 +5,18 @@ import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import { CircleX } from 'lucide-react';
 import { Download } from 'lucide-react';
+import { MailOpen } from 'lucide-react';
+import { ListTree } from 'lucide-react';
 import styles from './AboutMe.module.css'
 import { Workflow } from 'lucide-react';
+import { CodeXml } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
 import { ScanEye } from 'lucide-react';
 import { HardDriveDownload } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
 
 
@@ -27,6 +32,7 @@ const AboutMe = () => {
   const [closeIcon, setCloseIcon] = useState<boolean>(false)
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
   const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
+  const [emailIcon, setEmailIcon] = useState<boolean>(false)
   
 
   useEffect(() => {
@@ -36,9 +42,8 @@ const AboutMe = () => {
       scale: 0.55
     }, {
       opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 1.5,
+      y: 0, scale: 1,
+      duration: 1.5, 
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top 85%',
@@ -48,6 +53,9 @@ const AboutMe = () => {
     })
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
+
+
+
 
   return (
     <section ref={sectionRef} className={styles['about_me']}>
@@ -81,14 +89,36 @@ const AboutMe = () => {
                 <img src={photo_anime} alt="photo anime" />
               </div>
 
+
               { showMore && (
-               <section>
-                div
-
+                <> 
+               <section className={styles.contact_more}>
+                <h3 className={styles.more_data_sidebar}></h3>
+                <p>Brasília, Brazil</p>
+                <a onMouseEnter={() => setEmailIcon(true)} onMouseOut={() => setEmailIcon(false)} href="mailto:3izuna@gmail.com"> { emailIcon ? <MailOpen /> : <Mail />}Email</a>
+                <a href="https://github.com/SantV7" target='_blank'><FaGithub /> GitHub</a>
+                <a href="https://www.linkedin.com/in/viniciussant07" target='_blank'> <FaLinkedin /> LinkedIn</a>
+                <a href="https://www.instagram.com/__sant_v/" target='_blank'> <FaInstagram /> Instagram</a>
+                <a href="https://portfolio-santv7.vercel.app/" target='_blank'>Last Portfolio</a>
                </section>
+
+               <section className={styles.contact_more}>
+                <h3 className={styles.more_data_sidebar}>Education</h3>
+                <h4>Associate Degree in Systems Analysis and Development</h4>
+                <p>Universidade Católica de Brasília</p>
+                <p>Expected graduation: 2028</p>               
+               </section>
+
+               <section className={styles.contact_more}>
+                <h3 className={styles.more_data_sidebar}>Design & UX Skills</h3>
+                <div>
+                  <div>Figma</div>
+                  <div>UI Design</div>
+                  <div>UX Design</div>
+                </div>
+               </section>
+               </>
               )}
-
-
             </aside>
             
             <section className={styles.personal_data}>
@@ -113,6 +143,52 @@ const AboutMe = () => {
                       <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
+                    </>
+                  )}
+
+                  {showMore && (
+                    <>
+                    <div className={styles.about_me_txt}>
+                      <div>
+                        <div className={styles.about_me_title}>
+                          <ListTree />
+                          <h3 className={styles.more_data_sidebar}>ABOUT ME</h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={styles.more_data_flex}>
+                      <div>
+                        <h3 className={styles.more_data_sidebar}><CodeXml /> TECHNICAL SKILLS</h3>
+                        <div>
+                          <h4>■ Language:</h4>
+                          <p>JavaScript, TypeScript, HTML5, CSS3</p>
+
+                          <h4>■ Libraries and Frameworks:</h4>
+                          <p>React, Tailwind CSS, Sass & SCSS</p>      
+
+                          <h4>■ Animation and UI:</h4>
+                          <p>UI/UX Desing Principles, Figma</p> 
+
+                          <h4>■ Tools and Workflow:</h4>
+                          <p>Git, Github, REST APIs, Resposive Web Developement</p>       
+
+                          <h4>■ Language:</h4>
+                          <p>Portuguese - Native</p>   
+                          <p>English - Intermediate</p>   
+
+                          <p>■ Agile Methodologies:</p>   
+                          <p>Scrum, Kanban</p>            
+                        </div>
+                        
+                      </div>
+
+                      <div className={styles.more_data_projects}>
+                        <h3 className={styles.more_data_sidebar}><CodeXml /> PROJECTS</h3>
+                      </div>
+                      <div></div>
+                    </div>
+                    
                     </>
                   )}
               </div>
