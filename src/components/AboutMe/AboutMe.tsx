@@ -14,6 +14,7 @@ import { HardDriveDownload } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
 import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
+// import myCurriculum from '../../assets/img'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -26,7 +27,7 @@ const AboutMe = () => {
   const [downloadIcon, setDownloadIcon] = useState<boolean>(false)
   const [closeIcon, setCloseIcon] = useState<boolean>(false)
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
-  
+  const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   
 
   useEffect(() => {
@@ -134,6 +135,13 @@ const AboutMe = () => {
                   </div>
                  )
                 }
+
+                {showCurriculum && (
+                  <div className={styles.my_curriculum}>
+                  
+                  </div>
+                )}
+                
               </footer>
             </section>
           </div>
