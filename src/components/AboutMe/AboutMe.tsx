@@ -13,7 +13,7 @@ import { HardDriveDownload } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
 import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
-// import myCurriculum from '../../assets/img'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -104,8 +104,6 @@ const AboutMe = () => {
                       <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
-
-                                 
                     </>
                   )}
               </div>
@@ -125,7 +123,7 @@ const AboutMe = () => {
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
                     <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</a>
-                    <button onClick={() => setShowCurriculum(true)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
+                    <button onClick={() => setShowCurriculum(!showCurriculum)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
                     <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE THE RESUME <CircleX size={30}/></button>
                   </div>
@@ -133,11 +131,10 @@ const AboutMe = () => {
                 }
 
                 {showCurriculum && (
-                  <div className={styles.my_curriculum}>
-                  
+                  <div >
+             
                   </div>
                 )}
-                
               </footer>
             </section>
           </div>
