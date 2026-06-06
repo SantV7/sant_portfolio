@@ -13,14 +13,22 @@ import { CodeXml } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
 import { ScanEye } from 'lucide-react';
 import { HardDriveDownload } from 'lucide-react';
+import { BringToFront } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
 import { X } from 'lucide-react';
 import { Mail } from 'lucide-react';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
 
-
 gsap.registerPlugin(ScrollTrigger)
+
+interface ProjectList {
+  id: number;
+  imgUsage: string;
+  titleProject: string;
+  description: string;
+  
+}
 
 const AboutMe = () => {
   const WhoRef = useRef<HTMLHeadingElement>(null)
@@ -53,6 +61,13 @@ const AboutMe = () => {
     })
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
+
+  const projectLis: ProjectList[] = [
+    {id: 1, imgUsage: '', titleProject: 'Fintech Dashboard (MO Bank)', description: 'Implemented complex calculation logic and features for invoice management, and financial statements' },
+    {id: 2, imgUsage: '', titleProject: 'Dashboard for Currency and city data', description: '' },
+    {id: 3, imgUsage: '', titleProject: 'Services Contract Form', description: '' }
+  ]
+
 
 
 
@@ -159,7 +174,9 @@ const AboutMe = () => {
 
                     <div className={styles.more_data_flex}>
                       <div>
-                        <h3 className={styles.more_data_sidebar}><CodeXml /> TECHNICAL SKILLS</h3>
+                        <header>
+                          <h3 className={styles.more_data_sidebar}><CodeXml /> TECHNICAL SKILLS</h3>
+                        </header>
                         <div>
                           <h4>■ Language:</h4>
                           <p>JavaScript, TypeScript, HTML5, CSS3</p>
@@ -180,11 +197,24 @@ const AboutMe = () => {
                           <p>■ Agile Methodologies:</p>   
                           <p>Scrum, Kanban</p>            
                         </div>
-                        
                       </div>
 
                       <div className={styles.more_data_projects}>
-                        <h3 className={styles.more_data_sidebar}><CodeXml /> PROJECTS</h3>
+                        <header>
+                          <h3 className={styles.more_data_sidebar}><BringToFront /> PROJECTS</h3>
+                        </header>
+                        {projectLis.map((itemProject) => (
+                          <div key={itemProject.id}>
+                            <div>
+                              <img src={itemProject.imgUsage} alt="" />
+                            </div>
+                            <div>
+                              <h2>{itemProject.titleProject}</h2>
+                              <p>{itemProject.description}</p>
+                            </div>
+                          </div>
+                          
+                        ))}
                       </div>
                       <div></div>
                     </div>
@@ -214,12 +244,6 @@ const AboutMe = () => {
                   </div>
                  )
                 }
-
-                {showCurriculum && (
-                  <div >
-             
-                  </div>
-                )}
               </footer>
             </section>
           </div>
