@@ -19,8 +19,11 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
     const handleMenu = () => setShowMenu(!showMenu)
 
     const [homeIcon, setHomeIcon] = useState<string>('transparent')
+    
     const [skillsIcon, setSkillsIcon] = useState<string>('transparent')
+
     const [projectIcon, setProjectIcon] = useState<string>('transparent')
+
     const [contactIcon, setContactIcon] = useState<string>('transparent')
 
     const showHomeIcon = () => {

@@ -22,7 +22,7 @@ const AboutMe = () => {
   const sectionRef = useRef<HTMLElement>(null)
 
   const [curriculumActive, setCurriculumActive] = useState<boolean>(false)
-  const [seeMore, setSeeMore] = useState<boolean>(false)
+  const [showMore, setShowMore] = useState<boolean>(false)
   const [downloadIcon, setDownloadIcon] = useState<boolean>(false)
   const [closeIcon, setCloseIcon] = useState<boolean>(false)
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
@@ -80,6 +80,15 @@ const AboutMe = () => {
               <div className={styles.photo_frame}>
                 <img src={photo_anime} alt="photo anime" />
               </div>
+
+              { showMore && (
+               <section>
+                div
+
+               </section>
+              )}
+
+
             </aside>
             
             <section className={styles.personal_data}>
@@ -90,7 +99,7 @@ const AboutMe = () => {
                 <p><span>Profession:</span> Software Engineer</p>
                 <p><span>Stack:</span> Front-End</p>
 
-                  {seeMore && (
+                  {showMore && (
                     <>
                       <p><span>NickName:</span>Sant | Aivy | Vy</p>
                       <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
@@ -112,9 +121,9 @@ const AboutMe = () => {
               <footer className={styles.info_card_footer}>
                 <div className={styles.footer_btns}>
                    <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')} className={styles.hud_btn_sm}>CURRICULUM <Workflow color={curriculumSetter} size={29}/></button>
-                   <button onClick={() => setSeeMore(true)} className={styles.hud_btn_sm}>MORE <CircleEllipsis size={30} /></button>
-                   { seeMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setSeeMore(false)} className={styles.hud_btn_sm}>SHOW LESS {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}</button>
+                   <button onClick={() => setShowMore(true)} className={styles.hud_btn_sm}>MORE <CircleEllipsis size={30} /></button>
+                   { showMore && (
+                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>SHOW LESS {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}</button>
                    )}
                    
                 </div>
