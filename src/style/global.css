@@ -53,7 +53,7 @@ body {
 }
 
 
-#wellcome_msg {
+#welcome_msg {
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
     font-size: 1.75rem;
     position: relative;
@@ -64,21 +64,21 @@ body {
     flex-flow: column nowrap;
     color: rgb(241, 235, 255);
 }
-#wellcome_msg > h1 {
+#welcome_msg > h1 {
     margin-bottom: 5px;
 }
 
-#wellcome_msg > h1 #portfolio {
+#welcome_msg > h1 #portfolio {
     color: rgb(147, 140, 252);
     text-shadow: 0 1px 1px rgba(40, 33, 63, 0.623);
 }
 
 @media screen and (max-width: 768px) {
 
-    #wellcome_msg {
+    #welcome_msg {
         width: 100%;
         flex-flow: row wrap;
-        font-size: 1rem;
+        font-size: 1.3rem;
         left: 60%;
         right: auto;
         text-align: left;

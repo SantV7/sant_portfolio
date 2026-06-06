@@ -1,5 +1,5 @@
 
-import styles from './wellcome.module.css'
+import styles from './welcome.module.css'
 import { ChartNoAxesGantt } from 'lucide-react';
 import { BrainCircuit } from 'lucide-react';
 import { Menu } from 'lucide-react';

@@ -112,6 +112,7 @@
 }
 
 .main_navbar.open {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(46, 16, 46, 0.61));
     display: block; 
 }
 
@@ -125,24 +126,39 @@
 }
 
 .main_navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
     color: white;
     text-decoration: none;
     font-size: 1.4rem;
     padding: 10px 20px;
-    width: 33%;
-    transition: 0.23s;
+    text-align: center;
+    transition: 0.26s;
     text-align: center;
     border-bottom: 2px solid rgb(152, 152, 233);
     border-radius: 4px;
 }
 
 .main_header > nav > ul > .contact_btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
     border-radius: 7px;
     letter-spacing: 1px;
-    font-size: 1.85rem;
+    min-width: 53%;
     font-weight: 600;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.488);
     background-color: orange;
+}
+
+.main_header > nav > ul > .contact_btn:hover {
+    background-color: rgb(255, 175, 0);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.528);
 }
 
 
@@ -182,8 +198,16 @@
         border-bottom: 3px solid rgb(212, 212, 245);
         border-radius: 11px;
     }
+  
+    .main_header > nav > ul > .contact_btn {
+        min-width: 20%;
+    }
+
+    .main_header > nav > ul > .contact_btn:hover {
+        background-color: rgb(255, 200, 0);
+    }   
 
     .scroll_wellcome {
-         font-size: 3.6rem; 
+        font-size: 1.85rem;
     }
 }

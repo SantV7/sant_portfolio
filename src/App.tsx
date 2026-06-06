@@ -1,4 +1,4 @@
-import Wellcome from './components/Wellcome/Wellcome'
+import Welcome from './components/Welcome/Welcome'
 import './style/global.css'
 import secondIntro from './assets/video/background_pixel.mp4'
 import thirdIntro from './assets/video/pixel_two.mp4'
@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutMe from './components/AboutMe/AboutMe'
-import styles from './components/Wellcome/wellcome.module.css'
+import styles from './components/Welcome/welcome.module.css'
 import Lenis from '@studio-freight/lenis'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -97,7 +97,7 @@ function App() {
 
   return (
     <>
-      <Wellcome showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Welcome showMenu={showMenu} setShowMenu={setShowMenu} />
       
       <section id='intro-video'>
         <video key={indexVideo} preload='auto' autoPlay muted loop playsInline id='bg-video'>
@@ -109,8 +109,8 @@ function App() {
           <ArrowBigRightDash onClick={nextBackground} className={styles['change-bg']} size={45} color='white'/>
         </div>
 
-        <div id='wellcome_msg'>
-          <h1>Wellcome to my <span id="portfolio">Portfolio</span></h1>
+        <div id='welcome_msg'>
+          <h1>Welcome to my <span id="portfolio">Portfolio</span></h1>
           <p>This is a apresentation from a begginer software engineer</p>
         </div>
 
