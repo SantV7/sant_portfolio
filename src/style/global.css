@@ -64,13 +64,18 @@ body {
     flex-flow: column nowrap;
     color: rgb(241, 235, 255);
 }
+
 #welcome_msg > h1 {
     margin-bottom: 5px;
 }
 
-#welcome_msg > h1 #portfolio {
-    color: rgb(147, 140, 252);
-    text-shadow: 0 1px 1px rgba(40, 33, 63, 0.623);
+#welcome_msg > p {
+    margin-bottom: 5px;
+}
+
+.portfolio {
+    color: rgb(137, 110, 255);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.966);
 }
 
 @media screen and (max-width: 768px) {

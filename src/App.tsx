@@ -110,8 +110,9 @@ function App() {
         </div>
 
         <div id='welcome_msg'>
-          <h1>Welcome to my <span id="portfolio">Portfolio</span></h1>
-          <p>This is a apresentation from a begginer software engineer</p>
+          <h1>Welcome to my <span className="portfolio">Portfolio</span></h1>
+          <p>This is a presentation from a beginner <span className="portfolio">Software Engineer.</span></p>
+          <p>Created by Vinícius in <span className="portfolio">2026</span>.</p>
         </div>
 
         <div className={styles.scroller_indicator}>
