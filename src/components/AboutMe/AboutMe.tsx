@@ -129,7 +129,7 @@ const AboutMe = () => {
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
                     <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</a>
-                    <button className={styles.hud_btn_sm}>Show <ScanEye /></button>
+                    <button onClick={() => setShowCurriculum(true)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
                      <br />
                     <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE THE RESUME <CircleX size={30}/></button>
                   </div>

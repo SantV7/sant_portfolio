@@ -37,6 +37,17 @@ function App() {
 
     requestAnimationFrame(raf)
 
+    gsap.fromTo('#wellcome_msg', {
+      y: -140,
+      opacity: 0
+    }, {
+      duration: 1.6,
+      opacity: 1,
+      y: 0,
+      ease: 'power2'
+
+    })
+
     gsap.to("#bg-video", {
       scrollTrigger: {
         trigger: "#intro-video",
@@ -49,8 +60,14 @@ function App() {
     });
 
     gsap.fromTo(`.${styles['change-bg']}`, 
-      { y: 40, scale: 0, opacity: 0 }, 
-      { y: 0, scale: 1, duration: 1.5, opacity: 1, ease: 'power2.out' }
+      { y: 40,
+        scale: 0,
+        opacity: 0 }, 
+      { y: 0,
+        scale: 1,
+        duration: 1.5,
+        opacity: 1,
+        ease: 'power2.out' }
     )
 
     const timeLine = gsap.timeline();
@@ -90,6 +107,11 @@ function App() {
         <div id='area_arrow'>
           <ArrowBigLeftDash onClick={prevBackground} className={styles['change-bg']} size={45} color='white'/>
           <ArrowBigRightDash onClick={nextBackground} className={styles['change-bg']} size={45} color='white'/>
+        </div>
+
+        <div id='wellcome_msg'>
+          <h1>Wellcome to my <span id="portfolio">Portfolio</span></h1>
+          <p>This is a apresentation from a begginer software engineer</p>
         </div>
 
         <div className={styles.scroller_indicator}>

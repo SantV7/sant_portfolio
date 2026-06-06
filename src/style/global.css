@@ -53,8 +53,41 @@ body {
 }
 
 
+#wellcome_msg {
+    font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 1.75rem;
+    position: relative;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.486);
+    top: 200px;
+    left: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    color: rgb(241, 235, 255);
+}
+#wellcome_msg > h1 {
+    margin-bottom: 5px;
+}
+
+#wellcome_msg > h1 #portfolio {
+    color: rgb(147, 140, 252);
+    text-shadow: 0 1px 1px rgba(40, 33, 63, 0.623);
+}
+
 @media screen and (max-width: 768px) {
+
+    #wellcome_msg {
+        width: 100%;
+        flex-flow: row wrap;
+        font-size: 1rem;
+        left: 60%;
+        right: auto;
+        text-align: left;
+        transform: translate(-50%, -50%);
+    }
+    #wellcome_msg {
+        flex-flow: row wrap;
+    }
     #area_arrow {
-        padding: 0px 10px;
+        padding: 0 10px;
     }
 }
