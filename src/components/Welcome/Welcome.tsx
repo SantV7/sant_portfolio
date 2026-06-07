@@ -8,7 +8,6 @@ import { Headset } from 'lucide-react';
 import { SquaresExclude } from 'lucide-react';
 import { useState } from 'react';
 
-
 interface MenuProps {
  showMenu: boolean;
  setShowMenu: (value: boolean) => void
@@ -79,7 +78,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
                        href="#">Home <House className={styles.icons_navbar_hover}
-                       color={homeIcon} size={25}/>
+                       color={homeIcon} size={25} />
                 </a></li>
 
 
@@ -87,13 +86,14 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
                        href="#">Skills <BrainCircuit className={styles.icons_navbar_hover}
-                       color={skillsIcon} size={26}/>
+                       color={skillsIcon} size={26} />
                 </a></li>
 
                 <li><a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
-                       onMouseOut={hiddenProjectIcon} href="#">Projects <SquaresExclude className={styles.icons_navbar_hover}
-                       color={projectIcon}/>
+                       onMouseOut={hiddenProjectIcon}
+                       href="#">Projects <SquaresExclude className={styles.icons_navbar_hover}
+                       color={projectIcon} />
                 </a></li>
 
                     <a onMouseEnter={showContactIcon}

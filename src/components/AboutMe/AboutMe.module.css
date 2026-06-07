@@ -210,8 +210,23 @@
 
 .video_container:hover .eye_issues {
     opacity: 0;
- 
 }
+
+.more_data_title {
+    text-transform: uppercase;
+    color: #f1e9ff;
+}
+
+.links_reference {
+    color: #3a5b63;
+}
+
+.links_reference:hover {
+    text-decoration: underline;
+}
+
+
+
 
 
 
@@ -255,5 +270,13 @@
     .apresentation > .old_pc {
         max-width: 91%;
         margin-left: -23.5px;
+    }
+
+    .more_all_data {
+        display: flex;
+        text-align: left;
+        flex-flow: column nowrap;
+
+        gap: 60px;
     }
 }

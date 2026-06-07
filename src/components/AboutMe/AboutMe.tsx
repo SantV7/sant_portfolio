@@ -27,10 +27,15 @@ interface ProjectList {
   imgUsage: string;
   titleProject: string;
   description: string;
-  
+  nProject: number;
 }
 
+
+
+
+
 const AboutMe = () => {
+
   const WhoRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -41,6 +46,7 @@ const AboutMe = () => {
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
   const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
+  const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
   
 
   useEffect(() => {
@@ -62,10 +68,15 @@ const AboutMe = () => {
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
 
+
   const projectLis: ProjectList[] = [
-    {id: 1, imgUsage: '', titleProject: 'Fintech Dashboard (MO Bank)', description: 'Implemented complex calculation logic and features for invoice management, and financial statements' },
-    {id: 2, imgUsage: '', titleProject: 'Dashboard for Currency and city data', description: '' },
-    {id: 3, imgUsage: '', titleProject: 'Services Contract Form', description: '' }
+    {id: 1, imgUsage: 'img here', titleProject: 'Fintech Dashboard (MO Bank)',
+     description: 'Implemented complex calculation logic and features for invoice management, and financial statements',
+     nProject: 1},
+    {id: 2, imgUsage: 'img here', titleProject: 'Dashboard for Currency and city data',
+     description: 'img here', nProject: 2},
+    {id: 3, imgUsage: 'img here', titleProject: 'Services Contract Form',
+     description: 'img here', nProject: 3}
   ]
 
 
@@ -105,33 +116,68 @@ const AboutMe = () => {
               </div>
 
 
-              { showMore && (
+              { moreCurriculum && (
                 <> 
-               <section className={styles.contact_more}>
-                <h3 className={styles.more_data_sidebar}></h3>
-                <p>Brasília, Brazil</p>
-                <a onMouseEnter={() => setEmailIcon(true)} onMouseOut={() => setEmailIcon(false)} href="mailto:3izuna@gmail.com"> { emailIcon ? <MailOpen /> : <Mail />}Email</a>
-                <a href="https://github.com/SantV7" target='_blank'><FaGithub /> GitHub</a>
-                <a href="https://www.linkedin.com/in/viniciussant07" target='_blank'> <FaLinkedin /> LinkedIn</a>
-                <a href="https://www.instagram.com/__sant_v/" target='_blank'> <FaInstagram /> Instagram</a>
-                <a href="https://portfolio-santv7.vercel.app/" target='_blank'>Last Portfolio</a>
-               </section>
+               <div className={styles.more_all_data}>
+                 <section className={styles.contact_more}>
+                  <h3  className={styles.more_data_title}>CONTACT</h3>
+                  <p className={styles.links_reference} >Brasília, Brazil</p>
 
-               <section className={styles.contact_more}>
-                <h3 className={styles.more_data_sidebar}>Education</h3>
-                <h4>Associate Degree in Systems Analysis and Development</h4>
-                <p>Universidade Católica de Brasília</p>
-                <p>Expected graduation: 2028</p>               
-               </section>
+                  <a 
+                    className={styles.links_reference}  
+                    onMouseEnter={() => setEmailIcon(true)}
+                    onMouseOut={() => setEmailIcon(false)}
+                    href="mailto:3izuna@gmail.com"> 
+                    { emailIcon ? <MailOpen /> : <Mail />}Email
+                  </a>
 
-               <section className={styles.contact_more}>
-                <h3 className={styles.more_data_sidebar}>Design & UX Skills</h3>
-                <div>
-                  <div>Figma</div>
-                  <div>UI Design</div>
-                  <div>UX Design</div>
-                </div>
-               </section>
+                  <a 
+                    className={styles.links_reference}
+                    href="https://github.com/SantV7"
+                    target='_blank'>
+                    <FaGithub /> 
+                    GitHub
+                  </a>
+
+                  <a 
+                    className={styles.links_reference}
+                    href="https://www.linkedin.com/in/viniciussant07"
+                    target='_blank'>
+                    <FaLinkedin /> LinkedIn
+                  </a>
+
+                  <a 
+                    className={styles.links_reference}
+                    href="https://www.instagram.com/__sant_v/"
+                    target='_blank'>
+                    <FaInstagram />
+                    Instagram
+                  </a>
+
+                  <a 
+                    className={styles.links_reference}
+                    href="https://portfolio-santv7.vercel.app/"
+                    target='_blank'>
+                    Last Portfolio
+                  </a>
+                 </section>
+
+                 <section className={styles.contact_more}>
+                  <h3 className={styles.more_data_title}>Education</h3>
+                  <h4>Associate Degree in Systems Analysis and Development</h4>
+                  <p>Universidade Católica de Brasília</p>
+                  <p>Expected graduation: 2028</p>
+                 </section>
+
+                 <section className={styles.contact_more}>
+                  <h3 className={styles.more_data_title}>Design & UX Skills</h3>
+                  <div>
+                    <div>Figma</div>
+                    <div>UI Design</div>
+                    <div>UX Design</div>
+                  </div>
+                 </section>
+               </div>
                </>
               )}
             </aside>
@@ -161,13 +207,13 @@ const AboutMe = () => {
                     </>
                   )}
 
-                  {showMore && (
+                  { moreCurriculum && (
                     <>
                     <div className={styles.about_me_txt}>
                       <div>
                         <div className={styles.about_me_title}>
                           <ListTree />
-                          <h3 className={styles.more_data_sidebar}>ABOUT ME</h3>
+                          <h3 className={styles.more_data_title}>ABOUT ME</h3>
                         </div>
                       </div>
                     </div>
@@ -175,7 +221,7 @@ const AboutMe = () => {
                     <div className={styles.more_data_flex}>
                       <div>
                         <header>
-                          <h3 className={styles.more_data_sidebar}><CodeXml /> TECHNICAL SKILLS</h3>
+                          <h3 className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
                         </header>
                         <div>
                           <h4>■ Language:</h4>
@@ -199,48 +245,76 @@ const AboutMe = () => {
                         </div>
                       </div>
 
+
                       <div className={styles.more_data_projects}>
                         <header>
-                          <h3 className={styles.more_data_sidebar}><BringToFront /> PROJECTS</h3>
+                          <h3 className={styles.more_data_title}><BringToFront /> PROJECTS</h3>
                         </header>
                         {projectLis.map((itemProject) => (
                           <div key={itemProject.id}>
                             <div>
-                              <img src={itemProject.imgUsage} alt="" />
+                              <img src={itemProject.imgUsage} alt={`Imagem de projeto ${itemProject.nProject}`}/>
                             </div>
                             <div>
                               <h2>{itemProject.titleProject}</h2>
                               <p>{itemProject.description}</p>
                             </div>
                           </div>
-                          
                         ))}
                       </div>
                       <div></div>
                     </div>
-                    
                     </>
                   )}
               </div>
 
 
+
               <footer className={styles.info_card_footer}>
                 <div className={styles.footer_btns}>
-                   <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')} className={styles.hud_btn_sm}>CURRICULUM <Workflow color={curriculumSetter} size={29}/></button>
-                   <button onClick={() => setShowMore(true)} className={styles.hud_btn_sm}>MORE <CircleEllipsis size={30} /></button>
+                   <button onClick={() => setCurriculumActive(true)}
+                    onMouseEnter={() => setCurriculumSetter('white')}
+                    className={styles.hud_btn_sm}>
+                    CURRICULUM <Workflow color={curriculumSetter} size={29}/>
+                   </button>
+
+                   <button onClick={() => setMoreCurriculum(!moreCurriculum)}
+                    className={styles.hud_btn_sm}>
+                    {moreCurriculum ? 'CLOSE' : 'MORE'} 
+                    {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
+                   </button>
+
                    { showMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>SHOW LESS {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}</button>
+                    <button onMouseEnter={() => setCloseIcon(true)}
+                     onMouseOut={() => setCloseIcon(false)}
+                     onClick={() => setShowMore(false)}
+                     className={styles.hud_btn_sm}>
+                     SHOW LESS
+                    {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}
+                    </button>
                    )}
-                   
                 </div>
 
 
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>Download {downloadIcon ? <HardDriveDownload /> : <Download/>}</a>
-                    <button onClick={() => setShowCurriculum(!showCurriculum)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
+                    <a
+                     href={curriculumDownload}
+                     download="Vinicius_Software_Engineer.pdf"
+                     onMouseEnter={() => setDownloadIcon(true)}
+                     onMouseOut={() => setDownloadIcon(false)}
+                     className={styles.hud_btn_sm}>
+                     Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
+                   </a>
+
+                    <button onClick={() => setShowCurriculum(!showCurriculum)}
+                     className={styles.hud_btn_sm}>Show <ScanEye />
+                    </button>
                      <br />
-                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>CLOSE THE RESUME <CircleX size={30}/></button>
+                    <button onClick={() => setCurriculumActive(false)}
+                     className={styles.hud_btn_sm}>
+                     CLOSE THE RESUME <CircleX size={30}/>
+                    </button>
                   </div>
                  )
                 }
