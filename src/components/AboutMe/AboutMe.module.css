@@ -213,16 +213,31 @@
 }
 
 .more_data_title {
+    font-weight: 500;
     text-transform: uppercase;
-    color: #f1e9ff;
+    color: #a798c0ce;
+    margin-bottom: 15px;
+}
+.contact_more {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 17px;
 }
 
 .links_reference {
-    color: #3a5b63;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 12px;
+    color: #6b8991;
+    letter-spacing: 0.7px;
+    transition: ease 0.24s;
+    font-size: 1.17rem;
 }
 
-.links_reference:hover {
+a.links_reference:hover {
     text-decoration: underline;
+    color: #92beca;
 }
 
 

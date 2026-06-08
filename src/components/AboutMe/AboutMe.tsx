@@ -128,14 +128,14 @@ const AboutMe = () => {
                     onMouseEnter={() => setEmailIcon(true)}
                     onMouseOut={() => setEmailIcon(false)}
                     href="mailto:3izuna@gmail.com"> 
-                    { emailIcon ? <MailOpen /> : <Mail />}Email
+                    { emailIcon ? <MailOpen size={23}/> : <Mail size={23}/>}Email
                   </a>
 
                   <a 
                     className={styles.links_reference}
                     href="https://github.com/SantV7"
                     target='_blank'>
-                    <FaGithub /> 
+                    <FaGithub size={23}/> 
                     GitHub
                   </a>
 
@@ -143,14 +143,14 @@ const AboutMe = () => {
                     className={styles.links_reference}
                     href="https://www.linkedin.com/in/viniciussant07"
                     target='_blank'>
-                    <FaLinkedin /> LinkedIn
+                    <FaLinkedin size={23}/> LinkedIn
                   </a>
 
                   <a 
                     className={styles.links_reference}
                     href="https://www.instagram.com/__sant_v/"
                     target='_blank'>
-                    <FaInstagram />
+                    <FaInstagram size={23}/>
                     Instagram
                   </a>
 
@@ -193,15 +193,21 @@ const AboutMe = () => {
                   {showMore && (
                     <>
                       <p><span>NickName:</span>Sant | Aivy | Vy</p>
-                      <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
-                      <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...</p>
+                      <p><span>Favorite Games:</span>The Last Of Us / Uncharted 
+                       / Fortnite / Valorant / Warzone...
+                      </p>
+                      <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS,
+                       JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...
+                      </p>
                       <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                       <p><span>Height:</span> 5'10</p>     
                       <p><span>Hair Color:</span>Dark Brown</p>  
                       <p><span>Eye Color:</span>Dark Brown</p> 
                       <p><span>Dominant Hand:</span> Right-Handed</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
-                      <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
+                      <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend
+                       (Java, Kotlin), APIs (GraphQL), Testing (Jest)
+                      </p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
                     </>

@@ -74,34 +74,44 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
          <nav className={`${styles.main_navbar} ${showMenu ? styles.open : ""}`}>
             <ul className={styles.ul_list}>
-                <li><a onMouseEnter={showHomeIcon}
+                <li>
+                    <a onMouseEnter={showHomeIcon}
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
                        href="#">Home <House className={styles.icons_navbar_hover}
                        color={homeIcon} size={25} />
-                </a></li>
+                    </a>
+                </li>
 
 
-                <li><a onMouseEnter={showSkillsIcon}
+                <li>    
+                    <a onMouseEnter={showSkillsIcon}
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
-                       href="#">Skills <BrainCircuit className={styles.icons_navbar_hover}
+                       href="#">Skills <BrainCircuit
+                        className={styles.icons_navbar_hover}
                        color={skillsIcon} size={26} />
-                </a></li>
+                    </a>
+                </li>
 
-                <li><a onMouseEnter={showProjectIcon}
+                <li>
+                    <a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
-                       href="#">Projects <SquaresExclude className={styles.icons_navbar_hover}
+                       href="#">Projects <SquaresExclude
+                        className={styles.icons_navbar_hover}
                        color={projectIcon} />
-                </a></li>
+                    </a>
+                </li>
 
                     <a onMouseEnter={showContactIcon}
                        onMouseMove={showContactIcon}
                        onMouseOut={hiddenContactIcon} 
                        href='#'
                        className={styles.contact_btn}>Contact 
-                       <Headset className={styles.icons_navbar_hover} color={contactIcon} /></a>
+                       <Headset className={styles.icons_navbar_hover}
+                       color={contactIcon} />
+                    </a>
             </ul>
         </nav>
     </header>
