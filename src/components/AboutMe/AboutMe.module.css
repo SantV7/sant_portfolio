@@ -215,8 +215,7 @@
 .more_data_title {
     font-weight: 500;
     text-transform: uppercase;
-    color: #a798c0ce;
-    margin-bottom: 15px;
+    color: #b2c9fa;
 }
 .contact_more {
     display: flex;
@@ -227,17 +226,22 @@
 .links_reference {
     display: flex;
     flex-flow: row nowrap;
+    margin-left: 6px;
     align-items: center;
     gap: 12px;
-    color: #6b8991;
+    color: #ecfbffaf;
     letter-spacing: 0.7px;
-    transition: ease 0.24s;
+    transition: ease 0.27s;
     font-size: 1.17rem;
 }
 
 a.links_reference:hover {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: rgba(69, 54, 71, 0.226);
     text-decoration: underline;
-    color: #92beca;
+    color: rgb(194, 239, 252);
+    font-size: 1.19rem;
 }
 
 

@@ -15,6 +15,7 @@ import { ScanEye } from 'lucide-react';
 import { HardDriveDownload } from 'lucide-react';
 import { BringToFront } from 'lucide-react';
 import { CircleEllipsis } from 'lucide-react';
+import { HiLocationMarker } from "react-icons/hi";
 import { X } from 'lucide-react';
 import { Mail } from 'lucide-react';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
@@ -121,21 +122,21 @@ const AboutMe = () => {
                <div className={styles.more_all_data}>
                  <section className={styles.contact_more}>
                   <h3  className={styles.more_data_title}>CONTACT</h3>
-                  <p className={styles.links_reference} >Brasília, Brazil</p>
+                  <p className={styles.links_reference} > <HiLocationMarker color="#dabeff" size={25}/> Brasília, Brazil</p>
 
                   <a 
                     className={styles.links_reference}  
                     onMouseEnter={() => setEmailIcon(true)}
                     onMouseOut={() => setEmailIcon(false)}
                     href="mailto:3izuna@gmail.com"> 
-                    { emailIcon ? <MailOpen size={23}/> : <Mail size={23}/>}Email
+                    { emailIcon ? <MailOpen color="#b2c9ff" size={23}/> : <Mail color="#b2c9ff" size={23}/>}Email
                   </a>
 
                   <a 
                     className={styles.links_reference}
                     href="https://github.com/SantV7"
                     target='_blank'>
-                    <FaGithub size={23}/> 
+                    <FaGithub color="#b2c9ff" size={23}/> 
                     GitHub
                   </a>
 
@@ -143,14 +144,14 @@ const AboutMe = () => {
                     className={styles.links_reference}
                     href="https://www.linkedin.com/in/viniciussant07"
                     target='_blank'>
-                    <FaLinkedin size={23}/> LinkedIn
+                    <FaLinkedin color="#b2c9ff" size={23}/> LinkedIn
                   </a>
 
                   <a 
                     className={styles.links_reference}
                     href="https://www.instagram.com/__sant_v/"
                     target='_blank'>
-                    <FaInstagram size={23}/>
+                    <FaInstagram color="#b2c9ff" size={23}/>
                     Instagram
                   </a>
 
