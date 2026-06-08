@@ -11,6 +11,7 @@ import styles from './AboutMe.module.css'
 import { Workflow } from 'lucide-react';
 import { CodeXml } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
+import { GlobeOff } from 'lucide-react';
 import { ScanEye } from 'lucide-react';
 import { HardDriveDownload } from 'lucide-react';
 import { BringToFront } from 'lucide-react';
@@ -159,23 +160,30 @@ const AboutMe = () => {
                     className={styles.links_reference}
                     href="https://portfolio-santv7.vercel.app/"
                     target='_blank'>
+                    <GlobeOff color="#b2c9ff" size={23} />
                     Last Portfolio
                   </a>
                  </section>
 
                  <section className={styles.contact_more}>
                   <h3 className={styles.more_data_title}>Education</h3>
-                  <h4>Associate Degree in Systems Analysis and Development</h4>
-                  <p>Universidade Católica de Brasília</p>
-                  <p>Expected graduation: 2028</p>
+                  <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
+                  <p className={styles.format_txt}>Universidade Católica de Brasília</p>
+                  <p className={styles.format_txt}>Expected graduation: 2028</p>
                  </section>
 
                  <section className={styles.contact_more}>
                   <h3 className={styles.more_data_title}>Design & UX Skills</h3>
-                  <div>
-                    <div>Figma</div>
-                    <div>UI Design</div>
-                    <div>UX Design</div>
+                  <div className={styles.design_area_icons}>
+                    <div>
+                      <p className={styles.format_txt}>Figma</p>
+                    </div>
+                    <div>
+                      <p className={styles.format_txt}>UI Design</p>
+                    </div>
+                    <div>
+                      <p className={styles.format_txt}>UX Design</p>
+                    </div>
                   </div>
                  </section>
                </div>

@@ -68,7 +68,7 @@
 
 .main_layout {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: 25px;
     padding: 30px 20px;
 }
@@ -213,14 +213,25 @@
 }
 
 .more_data_title {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.493);
     font-weight: 500;
     text-transform: uppercase;
-    color: #b2c9fa;
+    color: #cadafd;
+    font-size: 1.4rem; 
+    font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 .contact_more {
     display: flex;
     flex-flow: column nowrap;
     gap: 17px;
+}
+
+.format_txt {
+    font-size: 1.14rem;
+    font-weight: 500;
+    color: #ecfbffe3;
+    font-family: poppins, Arial, Helvetica, sans-serif;
 }
 
 .links_reference {
@@ -231,18 +242,43 @@
     gap: 12px;
     color: #ecfbffaf;
     letter-spacing: 0.7px;
+    font-family: poppins, Arial, Helvetica, sans-serif;
     transition: ease 0.27s;
     font-size: 1.17rem;
+    
 }
 
 a.links_reference:hover {
     border-radius: 10px;
     padding: 10px 15px;
-    background-color: rgba(69, 54, 71, 0.226);
+    background-color: rgba(69, 54, 71, 0.156);
     text-decoration: underline;
     color: rgb(194, 239, 252);
     font-size: 1.19rem;
 }
+
+.design_area_icons {
+    display: flex;
+    gap: 10px;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.design_area_icons > div {
+    border: 1px solid rgba(217, 201, 253, 0.274);
+    padding: 10px 5px;
+    border-radius: 7px;
+    display: flex;
+    gap: 8px;
+    flex-flow: column nowrap;
+    box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.356);
+}
+
+.design_area_icons > div:hover {
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.656);
+}
+
 
 
 
