@@ -3,8 +3,9 @@ interface CardPros {
     imgP: string;
     nameP: string;
     descP: string;
+    urlP: string
 }
-const Card = ({id, imgP, nameP, descP}: CardPros) => {
+const Card = ({id, imgP, nameP, descP, urlP}: CardPros) => {
   return (
     <>
     <div key={id}>
@@ -13,6 +14,7 @@ const Card = ({id, imgP, nameP, descP}: CardPros) => {
         </div>
         <h3>{nameP}</h3>
         <p>{descP}</p>
+        <a href={urlP}>Ver projeto</a>
     </div>
     </>
   )
