@@ -1,3 +1,6 @@
+import styles from './Card.module.css'
+
+
 interface CardPros {
     id: number;
     imgP: string;
@@ -5,16 +8,19 @@ interface CardPros {
     descP: string;
     urlP: string
 }
+
+
 const Card = ({id, imgP, nameP, descP, urlP}: CardPros) => {
   return (
     <>
-    <div key={id}>
-        <div>
+    <div className={styles.card_interface} key={id}>
+        <div className={styles.area_img_project}>
             <img src={imgP} alt="Imagem de projeto" />
         </div>
-        <h3>{nameP}</h3>
-        <p>{descP}</p>
-        <a href={urlP}>Ver projeto</a>
+
+        <h3 className={styles.title_project}>{nameP}</h3>
+        <p className={styles.description_project}>{descP}</p>
+        <a className={styles.btn_project} target="_blank" href={urlP}>Ver projeto</a>
     </div>
     </>
   )
