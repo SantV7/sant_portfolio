@@ -1,9 +1,13 @@
 .card_interface {
-
+    border-radius: 6px;
+    border-left: 5px solid black;
+    border-bottom: 3px solid black;
 }
 
-.area_img_project {
-
+.area_img_project img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .title_project {

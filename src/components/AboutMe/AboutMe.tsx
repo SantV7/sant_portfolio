@@ -193,6 +193,8 @@ const AboutMe = () => {
                       <p><span>Eye Color:</span>Dark Brown</p> 
                       <p><span>Dominant Hand:</span> Right-Handed</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
+                      <p><span>Mother:</span> Maria</p> 
+                      <p><span>Father:</span> Jóse</p> 
                       <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend
                        (Java, Kotlin), APIs (GraphQL), Testing (Jest)
                       </p>  

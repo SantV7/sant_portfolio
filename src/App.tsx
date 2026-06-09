@@ -11,6 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutMe from './components/AboutMe/AboutMe'
 import styles from './components/Welcome/welcome.module.css'
 import Lenis from '@studio-freight/lenis'
+import Project from './components/Projects/Project'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,6 +138,7 @@ function App() {
       </section>
 
       <AboutMe />
+      <Project />
     </>
   )
 }
