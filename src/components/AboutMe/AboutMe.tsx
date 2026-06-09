@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { 
-  CircleX, Download, MailOpen, ListTree, Workflow, Info, 
-  ScanEye, GlobeOff, CodeXml, HardDriveDownload,  CircleEllipsis, X, Mail 
+import { CircleX, Download, MailOpen, ListTree, Workflow, Info, ScanEye, GlobeOff, CodeXml, HardDriveDownload,  CircleEllipsis, X, Mail 
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
-import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt } from "react-icons/fa"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, } from "react-icons/fa"
 import { SiTypescript, SiTailwindcss } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" // Estavam faltando estes
 
@@ -147,16 +145,23 @@ const AboutMe = () => {
                  </section>
 
                  <section className={styles.contact_more}>
-                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Design & UX Skills</h3>
+                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/>
+                   Design & UX Skills</h3>
                   <div className={styles.design_area_icons}>
                     <div>
-                      <p className={styles.format_txt}><FaFigma size={31} color="#F24E1E" />Figma</p>
+                      <p className={styles.format_txt}>
+                        <FaFigma size={31} color="#F24E1E" />
+                      Figma</p>
                     </div>
                     <div>
-                      <p className={styles.format_txt}><MdOutlineDesignServices size={33} color="#a3c9d1" /> UI Design</p>
+                      <p className={styles.format_txt}>
+                        <MdOutlineDesignServices size={33} color="#a3c9d1" />
+                       UI Design</p>
                     </div>
                     <div>
-                      <p className={styles.format_txt}> <MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</p>
+                      <p className={styles.format_txt}> 
+                        <MdOutlineDevices size={30} color="#a3c9d1" />
+                       UX Design</p>
                     </div>
                   </div>
                  </section>

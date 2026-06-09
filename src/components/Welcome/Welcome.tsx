@@ -89,7 +89,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
                        href="#">Skills <BrainCircuit
-                        className={styles.icons_navbar_hover}
+                       className={styles.icons_navbar_hover}
                        color={skillsIcon} size={26} />
                     </a>
                 </li>
@@ -99,7 +99,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
                        href="#">Projects <SquaresExclude
-                        className={styles.icons_navbar_hover}
+                       className={styles.icons_navbar_hover}
                        color={projectIcon} />
                     </a>
                 </li>
