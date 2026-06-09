@@ -7,7 +7,7 @@ import { HiLocationMarker } from "react-icons/hi"
 import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, } from "react-icons/fa"
 import { SiTypescript, SiTailwindcss } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" // Estavam faltando estes
-
+import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import photo_anime from '../../assets/img/photo_anime.png'
@@ -343,6 +343,7 @@ const AboutMe = () => {
           </div>
 
           <div className={styles.video_container}>
+            <img className={styles.nt_img} src={notebookImg} alt="Notebook " />
             <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline>
               <source src={newPc} type='video/mp4' />
             </video>

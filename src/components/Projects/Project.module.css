@@ -1,0 +1,30 @@
+.project_sect {
+
+}
+
+.header_project {
+
+}
+
+.title_sect {
+
+}
+
+.flex_jb {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.paragraph_introduction {
+
+}
+
+.illustration {
+
+}
+
+.sect_view_projects {
+
+}
