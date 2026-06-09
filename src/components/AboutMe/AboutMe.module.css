@@ -32,7 +32,7 @@
 
 .about_me_card {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1700px;
     background-color: rgba(13, 17, 23, 0.95);
     border: 1px solid #3a5b63;
     position: relative;
@@ -61,14 +61,14 @@
 }
 
 .header_status {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: #508896;
     text-align: right;
 }
 
 .main_layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 245px 1fr;
     gap: 25px;
     padding: 30px 20px;
 }
@@ -171,14 +171,21 @@
 .video_container {
     padding: 0 20px 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .video_pc {
-    width: 100%;
+    width:90%;
+   
     border: 1px solid #3a5b63;
-    filter: blur(4px);
-    transition: filter 0.5s ease;
+    filter: blur(7px);
+    transition: filter 0.9s ease;
 }
 
 .video_container:hover .video_pc {
@@ -190,7 +197,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     color: white;
     font-weight: bold;
     text-align: center;
@@ -199,7 +206,7 @@
 }
 
 .video_container video {
-    transition: ease 0.35s;
+    transition: ease 0.65s;
 }
 
 .video_container video:hover {
@@ -213,6 +220,11 @@
 }
 
 .more_data_title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 5px 0;
+    gap: 10px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.493);
     font-weight: 500;
@@ -221,6 +233,96 @@
     font-size: 1.4rem; 
     font-family: "poppins", Arial, Helvetica, sans-serif;
 }
+
+.more_data_flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    align-items: start;
+    margin-top: 15px;
+}
+
+
+#about_me_area  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    margin: 0 auto;
+    max-width: 650px;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.box_info {
+    border: 1px solid rgba(91, 91, 110, 0.45);
+    background: rgba(9, 15, 24, 0.88);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+    padding: 22px 24px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.box_info h4 {
+    font-size: 1.15rem;
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    color: #cbd9ff;
+    margin-bottom: 12px;
+}
+
+.box_info p {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin-left: 0;
+    line-height: 1.7;
+    border-bottom: none;
+    color: #e8f0ff;
+}
+
+.skills_first {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #5f82d1;
+}
+
+.skills_first h4 {
+    font-size: 1rem;
+    color: #a8c7ff;
+    margin: 0;
+}
+
+.skills_first p {
+    margin: 0;
+    color: #dfe8ff;
+}
+
+#about_title, #technical_title, #projects_title, #tech_design_title {
+    font-size: 1.1rem;
+    font-weight: 550;
+    border: none;
+    margin-bottom: 8px;
+}
+
+#projects_box img {
+    border: 1px solid rgba(255, 255, 255, 0.459);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.185);
+    transition: ease 0.3s;
+    border-radius: 5px;
+}
+
+#projects_box img:hover {
+    scale: 1.03;
+}
+
+.flex_skills {
+    display: grid;
+    gap: 20px;
+}
+
 .contact_more {
     display: flex;
     flex-flow: column nowrap;
@@ -228,9 +330,16 @@
 }
 
 .format_txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column nowrap;
+    gap: 10px;
     font-size: 1.14rem;
     font-weight: 500;
     color: #ecfbffe3;
+    padding: 4px;
     font-family: poppins, Arial, Helvetica, sans-serif;
 }
 
@@ -272,22 +381,59 @@ a.links_reference:hover {
     gap: 8px;
     flex-flow: column nowrap;
     box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.356);
+    transition: 0.25s;
 }
 
 .design_area_icons > div:hover {
     border-radius: 7px;
+    background-color: rgba(128, 128, 128, 0.158);
     box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.656);
+}
+
+.format_icons_about_me {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.all_icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.format_icons_skills {
+    padding: 5px ;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    color: rgba(255, 255, 255, 0.897);
+    transition: 0.23s;
+}
+
+.format_icons_skills:hover {
+    scale: 1.08;
+    border-radius: 15px;
+    background-color: rgba(128, 128, 128, 0.158);
 }
 
 
 
 
 
-
-
-
-@media screen and (max-width: 768px) {
-    .about_me { padding-top: 100px; }
+@media screen and (max-width: 808px) {
+    .about_me { 
+        padding-top: 100px; 
+    
+    }
     
     .main_layout {
         grid-template-columns: 1fr; 
@@ -334,4 +480,91 @@ a.links_reference:hover {
 
         gap: 60px;
     }
+
+    .icon_set {
+        flex-flow: column nowrap;
+    }
+
+    #about_title, #tech_design_title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+
+    .flex_about_me {
+        flex-flow: column nowrap;
+    }
+
+    #about_me_area p {
+        font-size: 1.1rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .more_data_title {
+        font-size: 1.2rem;
+    }
+
+    .design_area_icons {
+        flex-flow: column nowrap;
+        gap: 15px;
+    }
+
+    .all_icons {
+        gap: 15px;
+    }
 }
+
+
+@media screen and (max-width: 600px) {
+    .about_me {
+        padding: 80px 15px 60px;
+    }
+
+    .main_layout {
+        padding: 15px 10px;
+    }
+
+    #about_me_area p {
+        font-size: 1rem;
+        max-width: 95%;
+    }
+
+    .more_data_title {
+        font-size: 1.1rem;
+        padding-top: 15px;
+    }
+
+    .box_info {
+        padding: 8px 12px;
+    }
+
+    .format_txt {
+        font-size: 1rem;
+    }
+
+    .links_reference {
+        font-size: 1rem;
+    }
+
+    .format_icons_skills {
+        font-size: 1rem;
+        padding: 3px;
+    }
+
+}
+
+@media screen and (max-width: 950px) {
+    .more_data_flex {
+        display: flex;
+        gap: 15px;
+        flex-flow: column nowrap;
+    } 
+    
+    .flex_skills {
+        gap: 16px;
+    }   
+}
+

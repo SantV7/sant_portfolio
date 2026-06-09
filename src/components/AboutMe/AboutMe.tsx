@@ -1,38 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { 
+  CircleX, Download, MailOpen, ListTree, Workflow, Info, 
+  ScanEye, GlobeOff, CodeXml, HardDriveDownload,  CircleEllipsis, X, Mail 
+} from 'lucide-react'
+import { HiLocationMarker } from "react-icons/hi"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt } from "react-icons/fa"
+import { SiTypescript, SiTailwindcss } from "react-icons/si"
+import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" // Estavam faltando estes
+
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
-import { CircleX } from 'lucide-react';
-import { Download } from 'lucide-react';
-import { MailOpen } from 'lucide-react';
-import { ListTree } from 'lucide-react';
-import styles from './AboutMe.module.css'
-import { Workflow } from 'lucide-react';
-import { CodeXml } from 'lucide-react';
 import photo_anime from '../../assets/img/photo_anime.png'
-import { GlobeOff } from 'lucide-react';
-import { ScanEye } from 'lucide-react';
-import { HardDriveDownload } from 'lucide-react';
-import { BringToFront } from 'lucide-react';
-import { CircleEllipsis } from 'lucide-react';
-import { HiLocationMarker } from "react-icons/hi";
-import { X } from 'lucide-react';
-import { Mail } from 'lucide-react';
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
+import styles from './AboutMe.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
-
-interface ProjectList {
-  id: number;
-  imgUsage: string;
-  titleProject: string;
-  description: string;
-  nProject: number;
-}
-
-
 
 
 
@@ -70,16 +54,6 @@ const AboutMe = () => {
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
 
-
-  const projectLis: ProjectList[] = [
-    {id: 1, imgUsage: 'img here', titleProject: 'Fintech Dashboard (MO Bank)',
-     description: 'Implemented complex calculation logic and features for invoice management, and financial statements',
-     nProject: 1},
-    {id: 2, imgUsage: 'img here', titleProject: 'Dashboard for Currency and city data',
-     description: 'img here', nProject: 2},
-    {id: 3, imgUsage: 'img here', titleProject: 'Services Contract Form',
-     description: 'img here', nProject: 3}
-  ]
 
 
 
@@ -122,7 +96,7 @@ const AboutMe = () => {
                 <> 
                <div className={styles.more_all_data}>
                  <section className={styles.contact_more}>
-                  <h3  className={styles.more_data_title}>CONTACT</h3>
+                  <h3  className={styles.more_data_title}><Info size={19} color='orange'/> CONTACT</h3>
                   <p className={styles.links_reference} > <HiLocationMarker color="#dabeff" size={25}/> Brasília, Brazil</p>
 
                   <a 
@@ -166,23 +140,23 @@ const AboutMe = () => {
                  </section>
 
                  <section className={styles.contact_more}>
-                  <h3 className={styles.more_data_title}>Education</h3>
+                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
                   <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
                   <p className={styles.format_txt}>Universidade Católica de Brasília</p>
                   <p className={styles.format_txt}>Expected graduation: 2028</p>
                  </section>
 
                  <section className={styles.contact_more}>
-                  <h3 className={styles.more_data_title}>Design & UX Skills</h3>
+                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Design & UX Skills</h3>
                   <div className={styles.design_area_icons}>
                     <div>
-                      <p className={styles.format_txt}>Figma</p>
+                      <p className={styles.format_txt}><FaFigma size={31} color="#F24E1E" />Figma</p>
                     </div>
                     <div>
-                      <p className={styles.format_txt}>UI Design</p>
+                      <p className={styles.format_txt}><MdOutlineDesignServices size={33} color="#a3c9d1" /> UI Design</p>
                     </div>
                     <div>
-                      <p className={styles.format_txt}>UX Design</p>
+                      <p className={styles.format_txt}> <MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</p>
                     </div>
                   </div>
                  </section>
@@ -193,7 +167,7 @@ const AboutMe = () => {
             
             <section className={styles.personal_data}>
               <div className={styles.data_grid}>
-                <p><span>First Name:</span> Vinícius</p>
+                <p><span>Player:</span> Vinícius</p>
                 <p><span>Last Name:</span> Santos Oliveira</p>
                 <p><span>Age:</span> 18y</p>
                 <p><span>Profession:</span> Software Engineer</p>
@@ -224,60 +198,84 @@ const AboutMe = () => {
 
                   { moreCurriculum && (
                     <>
-                    <div className={styles.about_me_txt}>
-                      <div>
+                    <div id={styles.about_me_area} className={styles.box_info}>
+                  
                         <div className={styles.about_me_title}>
-                          <ListTree />
-                          <h3 className={styles.more_data_title}>ABOUT ME</h3>
+                          <header>
+                            <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
+                          </header>
+                          <p>
+                            Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React, JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP. Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally, I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
+                          </p>
                         </div>
-                      </div>
-                    </div>
+
+
+                     
+                         
+                          <div className={styles.format_icons_about_me}>
+                   
+                          <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'}Technologies & design tools</h3>
+                  
+                                <div className={styles.all_icons}>
+                                  <div className={styles.format_icons_skills}> <FaHtml5 size={30} color="#E34F26" /> HTML5</div>
+                                  <div className={styles.format_icons_skills}> <FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
+                                  <div className={styles.format_icons_skills}> <SiTailwindcss size={30} color="#06B6D4" /> Tailwind</div>
+                                  <div className={styles.format_icons_skills}> <FaSass size={30} color="#CC6699" /> SCSS</div>
+                                  <div className={styles.format_icons_skills}> <FaReact size={30} color="#61DAFB" /> React</div>
+                                  <div className={styles.format_icons_skills}> <SiTypescript size={28} color="#3178C6" /> TypeScript</div>
+                                  <div className={styles.format_icons_skills}> <FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                                  
+                                  <div className={styles.format_icons_skills}> <MdOutlineDesignServices size={30} color="#a3c9d1" /> UI Design</div>
+                                  <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills}> <FaGithub size={30} color="#FFFFFF" /> GitHub</a >
+                                  <div className={styles.format_icons_skills}> <FaFigma size={28} color="#F24E1E" /> Figma</div>
+                                  
+                                  <div className={styles.format_icons_skills}> <MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
+                                </div>
+                          </div>
+                        </div>
+               
 
                     <div className={styles.more_data_flex}>
-                      <div>
+                      <div id={styles.technical_box} className={styles.box_info}>
                         <header>
-                          <h3 className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
+                          <h3 id={styles.technical_title} className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
                         </header>
-                        <div>
-                          <h4>■ Language:</h4>
-                          <p>JavaScript, TypeScript, HTML5, CSS3</p>
+                        <div className={styles.flex_skills}>
+                          <div className={styles.skills_first}>
+                            <h4>■ Language:</h4>
+                            <p>- JavaScript, TypeScript, HTML5, CSS3</p>
+                          </div>
 
-                          <h4>■ Libraries and Frameworks:</h4>
-                          <p>React, Tailwind CSS, Sass & SCSS</p>      
+                          <div className={styles.skills_first}>
+                            <h4>■ Libraries and Frameworks:</h4>
+                            <p>- React, Tailwind CSS, Sass & SCSS</p>
+                          </div>      
 
-                          <h4>■ Animation and UI:</h4>
-                          <p>UI/UX Desing Principles, Figma</p> 
+                          <div className={styles.skills_first}>
+                            <h4>■ Animation and UI:</h4>
+                            <p>- UI/UX Desing Principles, Figma</p>
+                          </div>
 
-                          <h4>■ Tools and Workflow:</h4>
-                          <p>Git, Github, REST APIs, Resposive Web Developement</p>       
+                          <div className={styles.skills_first}>
+                            <h4>■ Tools and Workflow:</h4>
+                            <p>- Git, Github, REST APIs, Resposive Web Developement</p>
+                          </div>      
 
-                          <h4>■ Language:</h4>
-                          <p>Portuguese - Native</p>   
-                          <p>English - Intermediate</p>   
+                          <div className={styles.skills_first}>
+                            <h4>■ Language:</h4>
+                            <p>- Portuguese - Native</p>
+                            <p>- English - Intermediate</p>
+                          </div>  
 
-                          <p>■ Agile Methodologies:</p>   
-                          <p>Scrum, Kanban</p>            
+                          <div className={styles.skills_first}>
+                            <h4>■ Agile Methodologies:</h4>
+                            <p>- Scrum, Kanban</p>
+                          </div>           
                         </div>
                       </div>
 
 
-                      <div className={styles.more_data_projects}>
-                        <header>
-                          <h3 className={styles.more_data_title}><BringToFront /> PROJECTS</h3>
-                        </header>
-                        {projectLis.map((itemProject) => (
-                          <div key={itemProject.id}>
-                            <div>
-                              <img src={itemProject.imgUsage} alt={`Imagem de projeto ${itemProject.nProject}`}/>
-                            </div>
-                            <div>
-                              <h2>{itemProject.titleProject}</h2>
-                              <p>{itemProject.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <div></div>
+         
                     </div>
                     </>
                   )}
@@ -319,7 +317,8 @@ const AboutMe = () => {
                      onMouseEnter={() => setDownloadIcon(true)}
                      onMouseOut={() => setDownloadIcon(false)}
                      className={styles.hud_btn_sm}>
-                     Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
+                     Download
+                    {downloadIcon ? <HardDriveDownload /> : <Download/>}
                    </a>
 
                     <button onClick={() => setShowCurriculum(!showCurriculum)}
@@ -328,7 +327,8 @@ const AboutMe = () => {
                      <br />
                     <button onClick={() => setCurriculumActive(false)}
                      className={styles.hud_btn_sm}>
-                     CLOSE THE RESUME <CircleX size={30}/>
+                     CLOSE THE RESUME 
+                     <CircleX size={30}/>
                     </button>
                   </div>
                  )
