@@ -1,8 +1,8 @@
 .about_me {
     min-height: 100vh;
     width: 100%;
-    padding: 160px 20px 80px;
-    background-image: linear-gradient(to bottom, rgb(10, 6, 10),  #111316);
+    padding: 90px 20px 30px;
+    background-image: linear-gradient(to bottom, rgb(10, 6, 10), #111316);
 }
 
 .apresentation {
@@ -32,7 +32,7 @@
 
 .about_me_card {
     width: 100%;
-    max-width: 1700px;
+    max-width: 1400px;
     background-color: rgba(13, 17, 23, 0.95);
     border: 1px solid #3a5b63;
     position: relative;
@@ -133,10 +133,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 100px;
 }
 
 .footer_btns {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -148,16 +150,18 @@
     align-items: center;
     gap: 10px;
     border: 1px solid #3a5b63;
-    padding: 10px 15px;
-    font-size: 0.85rem;
+    padding: 15px 30px;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
+    border-radius: 3px;
+    transition: 0.3s ease;
 }
 
 .hud_btn_sm:hover {
     border-right: 4px solid white;
     border-top-left-radius: 11px;
+    background-color:#23272e;
 }
 
 .sidebar_curriculum {
@@ -172,21 +176,31 @@
     position: relative;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: stretch;
+   
     overflow: hidden;
     width: 100%;
-    max-width: 100%;
     margin: 0 auto;
+    background: black;
 }
 
 .nt_img {
-    height: auto;
-    width: 30%;
+    width: 27%;
+    height: 550px; 
+    object-fit: cover;
+    filter: saturate(40%);
+    transition: 0.3s;
 }
+
+.nt_img:hover {
+    filter: saturate(100%);
+}
+
 .video_pc {
-    width:90%;
-   
-    border: 1px solid #3a5b63;
+    width: 73%;
+    height: 550px; 
+    object-fit: cover;
+    border-left: 1px solid #3a5b63;
     filter: blur(7px);
     transition: filter 0.9s ease;
 }
@@ -198,7 +212,7 @@
 .eye_issues { 
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 62%;
     transform: translate(-50%, -50%);
     font-size: 2.1rem;
     color: white;
@@ -206,15 +220,11 @@
     text-align: center;
     pointer-events: none;
     transition: opacity 1.2s;
+    z-index: 2;
 }
 
 .video_container video {
-    transition: ease 0.65s;
-}
-
-.video_container video:hover {
-    border-radius: 5px;
-    scale: 1.004
+    transition: ease 0.85s;
 }
 
 
@@ -245,8 +255,7 @@
     margin-top: 15px;
 }
 
-
-#about_me_area  p {
+#about_me_area p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -357,7 +366,6 @@
     font-family: poppins, Arial, Helvetica, sans-serif;
     transition: ease 0.27s;
     font-size: 1.17rem;
-    
 }
 
 a.links_reference:hover {
@@ -428,14 +436,9 @@ a.links_reference:hover {
     background-color: rgba(128, 128, 128, 0.158);
 }
 
-
-
-
-
 @media screen and (max-width: 808px) {
     .about_me { 
         padding-top: 100px; 
-    
     }
     
     .main_layout {
@@ -458,6 +461,7 @@ a.links_reference:hover {
         max-width: 230px;
         border-radius: 50%;
     }
+
     .photo_frame img {
          border-radius: 50%;
     }
@@ -467,107 +471,17 @@ a.links_reference:hover {
         justify-content: center;
     }
 
+    .nt_img, .video_pc {
+        width: 100%;
+        height: auto;
+    }
+
+    .video_container {
+        flex-direction: column;
+    }
+
     .eye_issues {
+        left: 50%;
         font-size: 1rem;
-    }
-    
-    .apresentation > .old_pc {
-        max-width: 91%;
-        margin-left: -23.5px;
-    }
-
-    .more_all_data {
-        display: flex;
-        text-align: left;
-        flex-flow: column nowrap;
-
-        gap: 60px;
-    }
-
-    .icon_set {
-        flex-flow: column nowrap;
-    }
-
-    #about_title, #tech_design_title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin-bottom: 14px;
-    }
-
-    .flex_about_me {
-        flex-flow: column nowrap;
-    }
-
-    #about_me_area p {
-        font-size: 1.1rem;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .more_data_title {
-        font-size: 1.2rem;
-    }
-
-    .design_area_icons {
-        flex-flow: column nowrap;
-        gap: 15px;
-    }
-
-    .all_icons {
-        gap: 15px;
     }
 }
-
-
-@media screen and (max-width: 600px) {
-    .about_me {
-        padding: 80px 15px 60px;
-    }
-
-    .main_layout {
-        padding: 15px 10px;
-    }
-
-    #about_me_area p {
-        font-size: 1rem;
-        max-width: 95%;
-    }
-
-    .more_data_title {
-        font-size: 1.1rem;
-        padding-top: 15px;
-    }
-
-    .box_info {
-        padding: 8px 12px;
-    }
-
-    .format_txt {
-        font-size: 1rem;
-    }
-
-    .links_reference {
-        font-size: 1rem;
-    }
-
-    .format_icons_skills {
-        font-size: 1rem;
-        padding: 3px;
-    }
-
-}
-
-@media screen and (max-width: 950px) {
-    .more_data_flex {
-        display: flex;
-        gap: 15px;
-        flex-flow: column nowrap;
-    } 
-    
-    .flex_skills {
-        gap: 16px;
-    }   
-}
-

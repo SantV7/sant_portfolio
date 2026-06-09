@@ -296,7 +296,10 @@ const AboutMe = () => {
                     CURRICULUM <Workflow color={curriculumSetter} size={29}/>
                    </button>
 
-                   <button onClick={() => setMoreCurriculum(!moreCurriculum)}
+                   <button onClick={() => {
+                    setMoreCurriculum(!moreCurriculum)
+                    setShowMore(!moreCurriculum)
+                    }}
                     className={styles.hud_btn_sm}>
                     {moreCurriculum ? 'CLOSE' : 'MORE'} 
                     {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
