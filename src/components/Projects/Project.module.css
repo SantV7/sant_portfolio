@@ -28,3 +28,31 @@
 .sect_view_projects {
 
 }
+
+.card_intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.card_intro_flex {
+    height: 400px;
+    background-color: rgb(53, 30, 53);
+    display: flex;
+    border-radius: 5px;
+    padding: 15px;
+    flex-flow: row nowrap;
+    align-items: center;
+    max-width: 1100px;
+   
+    justify-content: center;
+}
+
+.card_intro_flex  {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 1.7em;
+    color: white;
+}
+

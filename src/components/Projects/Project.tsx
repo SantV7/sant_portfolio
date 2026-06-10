@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import dashboardProject from '../../assets/img/projects/dashboard_first.png'
 import fintechBank from '../../assets/img/projects/fintech_bank.png'
 import pizzariaProject from '../../assets/img/projects/pizzaria.png'
@@ -24,6 +24,25 @@ const Project = () => {
         {id: 3, imgProject: pizzariaProject, nameProject: 'Landing Page - Pizzaria', descProject: 'descrição dps', urlProject: '' }
     ])
 
+    const [data, SetData] = useState<string>()
+
+    function updateTime() {
+      const newD = new Date()
+      setInterval(() => {
+        const hour: number = newD.getHours()
+        const minutes: number = newD.getMinutes()
+        const seconds: number = newD.getSeconds()
+        SetData(`${hour}:${minutes}: ${seconds}`)
+      }, 1000);
+
+    }
+
+    useEffect(() => {
+      updateTime()
+    }, [])
+
+    // fazer atualização de hora
+
 
 
   return (
@@ -37,6 +56,29 @@ const Project = () => {
                 <div className={styles.illustration}></div>
              </div>
         </header>
+
+
+        <div className={styles.card_intro}>
+          <div className={styles.card_intro_flex}>
+            <div>
+              <div>
+                <header>
+                  <div>
+                    <h3>Responsive</h3>
+                    <h3>Design</h3>
+                    <h3>Functional</h3>
+                  </div>
+                  <div>
+                    <h3>{data}</h3>
+                  </div>
+                </header>
+              </div>
+              <div>img</div>
+            </div>
+
+          </div>
+        </div>
+
 
         <div className={styles.sect_view_projects}>
             {myProjects.map((itemP) => (
