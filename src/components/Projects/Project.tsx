@@ -52,7 +52,7 @@ const Project = () => {
         const mStr = minutes.toString().padStart(2,'0')
         const sStr = seconds.toString().padStart(2, '0')
 
-        SetData(`${hStr}:${mStr}:${sStr}`)
+        SetData(`${hStr}:${mStr}:${sStr}h`)
       }, 1000);
       
       return () => clearInterval(timerSetter)
@@ -68,6 +68,7 @@ const Project = () => {
         <div className={styles.card_intro}>
           <div className={styles.card_intro_flex}>
             <div className={styles.aten}>
+
               <div className={styles.box_info}>
                 <header>
                   <div>
@@ -75,16 +76,22 @@ const Project = () => {
                     <h3>Design</h3>
                     <h3>Functional</h3>
                   </div>
+
                   <div>
                     <h3>{data}</h3>
                   </div>
                 </header>
+
+                <h3 className={styles.main_title_card}>My projects in <span>2026</span></h3>
+                <div className={styles.context_paragraph}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit expedita ducimus quo molestiae commodi hic consequuntur sint! Saepe sed recusandae, omnis quas aperiam minima nemo vero similique dicta laboriosam nulla.</p>
+                </div>
               </div>
+
               <div className={styles.img_older_pc}>
                 <img src={pc_project} alt="old pc" />
               </div>
             </div>
-
           </div>
         </div>
 
