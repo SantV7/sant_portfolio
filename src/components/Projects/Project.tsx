@@ -3,7 +3,7 @@ import dashboardProject from '../../assets/img/projects/dashboard_first.png'
 import fintechBank from '../../assets/img/projects/fintech_bank.png'
 import pizzariaProject from '../../assets/img/projects/pizzaria.png'
 import Card from "./Card/Card";
-
+import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
 
 
@@ -19,49 +19,56 @@ interface ProjectsProps {
 const Project = () => {
 
     const [myProjects]= useState<ProjectsProps[]>([
-        {id: 1, imgProject: fintechBank, nameProject: 'Fintanch Bank MO', descProject: 'descrição dps', urlProject: '' },
-        {id: 2, imgProject: dashboardProject, nameProject: 'Dashboard coins and weather', descProject: 'descrição dps', urlProject: '' },
-        {id: 3, imgProject: pizzariaProject, nameProject: 'Landing Page - Pizzaria', descProject: 'descrição dps', urlProject: '' }
+        {id: 1, imgProject: fintechBank,
+         nameProject: 'Fintanch Bank MO',
+         descProject: 'descrição dps',
+        urlProject: ''},
+        {id: 2,
+         imgProject: dashboardProject,
+         nameProject: 'Dashboard coins and weather',
+         descProject: 'descrição dps',
+         urlProject: ''},
+        {id: 3,
+         imgProject: pizzariaProject,
+         nameProject: 'Landing Page - Pizzaria',
+         descProject: 'descrição dps',
+         urlProject: ''}
     ])
+
 
     const [data, SetData] = useState<string>()
 
-    function updateTime() {
-      const newD = new Date()
-      setInterval(() => {
-        const hour: number = newD.getHours()
-        const minutes: number = newD.getMinutes()
-        const seconds: number = newD.getSeconds()
-        SetData(`${hour}:${minutes}: ${seconds}`)
-      }, 1000);
 
-    }
+
 
     useEffect(() => {
-      updateTime()
+      const timerSetter = setInterval(() => {
+        const newD = new Date()
+        const hour = newD.getHours()
+        const minutes = newD.getMinutes()
+        const seconds = newD.getSeconds()
+
+        const hStr = hour.toString().padStart(2, '0')
+        const mStr = minutes.toString().padStart(2,'0')
+        const sStr = seconds.toString().padStart(2, '0')
+
+        SetData(`${hStr}:${mStr}:${sStr}`)
+      }, 1000);
+      
+      return () => clearInterval(timerSetter)
     }, [])
 
-    // fazer atualização de hora
 
 
 
   return (
     <>
     <section className={styles.project_sect}>
-        <header className={styles.header_project}>
-             <h1 className={styles.title_sect}>My projects</h1>
-
-             <div className={styles.flex_jb}>
-                <div className={styles.paragraph_introduction}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nulla iure, ullam quisquam quae labore officiis corrupti. Exercitationem libero odio eaque tempore dolor itaque perferendis earum, debitis tempora ab aspernatur? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore corporis deserunt quas nisi obcaecati quam, aspernatur ratione dignissimos laudantium minima dolor aut ipsa consectetur dicta quibusdam atque. Eius, non deserunt?</div>
-                <div className={styles.illustration}></div>
-             </div>
-        </header>
-
 
         <div className={styles.card_intro}>
           <div className={styles.card_intro_flex}>
-            <div>
-              <div>
+            <div className={styles.aten}>
+              <div className={styles.box_info}>
                 <header>
                   <div>
                     <h3>Responsive</h3>
@@ -73,7 +80,9 @@ const Project = () => {
                   </div>
                 </header>
               </div>
-              <div>img</div>
+              <div className={styles.img_older_pc}>
+                <img src={pc_project} alt="old pc" />
+              </div>
             </div>
 
           </div>
