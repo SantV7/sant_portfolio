@@ -1,29 +1,30 @@
 
+import gsap from 'gsap';
 import styles from './welcome.module.css'
-import { ChartNoAxesGantt } from 'lucide-react';
-import { BrainCircuit } from 'lucide-react';
-import { Menu } from 'lucide-react';
-import { House } from 'lucide-react';
-import { Headset } from 'lucide-react';
-import { SquaresExclude } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, Headset, House, SquaresExclude, BrainCircuit, ChartNoAxesGantt } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+
 
 interface MenuProps {
  showMenu: boolean;
  setShowMenu: (value: boolean) => void
 }
 
+
+
 const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
     const handleMenu = () => setShowMenu(!showMenu)
 
     const [homeIcon, setHomeIcon] = useState<string>('transparent')
-    
     const [skillsIcon, setSkillsIcon] = useState<string>('transparent')
-
     const [projectIcon, setProjectIcon] = useState<string>('transparent')
-
     const [contactIcon, setContactIcon] = useState<string>('transparent')
+
+    const linkHomeRef = useRef<HTMLLIElement | null>(null)
+
+    const linkProjectRef = useRef<HTMLLIElement | null>(null)
+    const linkSkillsRef = useRef<HTMLLIElement | null>(null)
 
     const showHomeIcon = () => {
         setHomeIcon('white')
@@ -57,6 +58,43 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
         setContactIcon('transparent')
     }
 
+            useEffect(() => {
+            gsap.fromTo(linkHomeRef.current, {
+            
+                opacity: 0,
+                scale: 0.3
+            }, {
+               
+                opacity: 1,
+                scale: 1,
+                duration: 0.75,
+                ease: 'power2'
+             })
+
+            gsap.fromTo(linkSkillsRef.current, {
+                opacity: 0,
+                scale: 0.3
+            }, {
+              
+                opacity: 1,
+                scale: 1,
+                duration: 0.75,
+                ease: 'power2'
+             })
+
+            gsap.fromTo(linkProjectRef.current, {
+              
+                opacity: 0,
+                scale: 0.3
+            }, {
+               
+                opacity: 1,
+                scale: 1,
+                duration: 0.75,
+                ease: 'power2'
+             })             
+        }, [])
+
 
 
   return (
@@ -74,7 +112,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
          <nav className={`${styles.main_navbar} ${showMenu ? styles.open : ""}`}>
             <ul className={styles.ul_list}>
-                <li>
+                <li ref={linkHomeRef}>
                     <a onMouseEnter={showHomeIcon}
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
@@ -84,8 +122,8 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                 </li>
 
 
-                <li>    
-                    <a onMouseEnter={showSkillsIcon}
+                <li ref={linkSkillsRef}>    
+                    <a  onMouseEnter={showSkillsIcon}
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
                        href="#">Skills <BrainCircuit
@@ -94,7 +132,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     </a>
                 </li>
 
-                <li>
+                <li ref={linkProjectRef}>
                     <a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
