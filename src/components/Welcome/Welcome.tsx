@@ -22,9 +22,9 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
     const [contactIcon, setContactIcon] = useState<string>('transparent')
 
     const linkHomeRef = useRef<HTMLLIElement | null>(null)
-
     const linkProjectRef = useRef<HTMLLIElement | null>(null)
     const linkSkillsRef = useRef<HTMLLIElement | null>(null)
+    const btnContactRef = useRef<HTMLAnchorElement | null>(null)
 
     const showHomeIcon = () => {
         setHomeIcon('white')
@@ -60,39 +60,32 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
             useEffect(() => {
             gsap.fromTo(linkHomeRef.current, {
-            
-                opacity: 0,
-                scale: 0.3
+                opacity: 0, scale: 0.3
             }, {
-               
-                opacity: 1,
-                scale: 1,
-                duration: 0.75,
-                ease: 'power2'
+                opacity: 1, scale: 1,
+                duration: 0.75, ease: 'power2'
              })
 
             gsap.fromTo(linkSkillsRef.current, {
-                opacity: 0,
-                scale: 0.3
+                opacity: 0, scale: 0.3
             }, {
               
-                opacity: 1,
-                scale: 1,
-                duration: 0.75,
-                ease: 'power2'
+                opacity: 1, scale: 1,
+                duration: 0.75, ease: 'power2'
              })
 
-            gsap.fromTo(linkProjectRef.current, {
-              
-                opacity: 0,
-                scale: 0.3
+            gsap.fromTo(linkProjectRef.current, {     
+                opacity: 0, scale: 0.3
             }, {
-               
-                opacity: 1,
-                scale: 1,
-                duration: 0.75,
-                ease: 'power2'
-             })             
+                opacity: 1, scale: 1,
+                duration: 0.75, ease: 'power2'
+             })   
+ 
+            gsap.fromTo(btnContactRef.current, {     
+                 x: 50
+            }, {
+                x: 0,  duration: 0.35, ease: 'power2'
+             })              
         }, [])
 
 
@@ -142,7 +135,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     </a>
                 </li>
 
-                    <a onMouseEnter={showContactIcon}
+                    <a ref={btnContactRef} onMouseEnter={showContactIcon}
                        onMouseMove={showContactIcon}
                        onMouseOut={hiddenContactIcon} 
                        href='#'
