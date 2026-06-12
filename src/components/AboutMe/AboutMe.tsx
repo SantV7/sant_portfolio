@@ -95,14 +95,19 @@ const AboutMe = () => {
                <div className={styles.more_all_data}>
                  <section className={styles.contact_more}>
                   <h3  className={styles.more_data_title}><Info size={19} color='orange'/> CONTACT</h3>
-                  <p className={styles.links_reference} > <HiLocationMarker color="#dabeff" size={25}/> Brasília, Brazil</p>
+
+                  <p className={styles.links_reference} >
+                     <HiLocationMarker color="#dabeff"
+                    size={25}/> Brasília, Brazil</p>
 
                   <a 
                     className={styles.links_reference}  
                     onMouseEnter={() => setEmailIcon(true)}
                     onMouseOut={() => setEmailIcon(false)}
                     href="mailto:3izuna@gmail.com"> 
-                    { emailIcon ? <MailOpen color="#b2c9ff" size={23}/> : <Mail color="#b2c9ff" size={23}/>}Email
+                    { emailIcon ? <MailOpen color="#b2c9ff"
+                     size={23}/> : <Mail color="#b2c9ff" size={23}/>}
+                     Email
                   </a>
 
                   <a 
@@ -212,31 +217,75 @@ const AboutMe = () => {
                             <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
                           </header>
                           <p>
-                            Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React, JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP. Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally, I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
+                            Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React,
+                            JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP.
+                            Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced
+                            in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally,
+                            I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
                           </p>
                         </div>
 
 
-                     
-                         
                           <div className={styles.format_icons_about_me}>
                    
                           <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'}Technologies & design tools</h3>
                   
                                 <div className={styles.all_icons}>
-                                  <div className={styles.format_icons_skills}> <FaHtml5 size={30} color="#E34F26" /> HTML5</div>
-                                  <div className={styles.format_icons_skills}> <FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
-                                  <div className={styles.format_icons_skills}> <SiTailwindcss size={30} color="#06B6D4" /> Tailwind</div>
-                                  <div className={styles.format_icons_skills}> <FaSass size={30} color="#CC6699" /> SCSS</div>
-                                  <div className={styles.format_icons_skills}> <FaReact size={30} color="#61DAFB" /> React</div>
-                                  <div className={styles.format_icons_skills}> <SiTypescript size={28} color="#3178C6" /> TypeScript</div>
-                                  <div className={styles.format_icons_skills}> <FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                                  <div className={styles.format_icons_skills}>
+                                    <FaHtml5 size={30} color="#E34F26" /> 
+                                    HTML5
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                    <FaCss3Alt size={30} color="#1572B6" /> 
+                                    CSS3
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                    <SiTailwindcss size={30} color="#06B6D4" /> 
+                                    Tailwind
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                    <FaSass size={30} color="#CC6699" /> 
+                                    SCSS
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                    <FaReact size={30} color="#61DAFB" /> 
+                                    React
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                    <SiTypescript size={28} color="#3178C6" /> 
+                                    TypeScript
+                                  </div>
+
+                                  <div className={styles.format_icons_skills}>
+                                   <FaJs size={30} color="#F7DF1E" /> 
+                                   JavaScript
+                                  </div>
                                   
-                                  <div className={styles.format_icons_skills}> <MdOutlineDesignServices size={30} color="#a3c9d1" /> UI Design</div>
-                                  <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills}> <FaGithub size={30} color="#FFFFFF" /> GitHub</a >
-                                  <div className={styles.format_icons_skills}> <FaFigma size={28} color="#F24E1E" /> Figma</div>
+                                  <div className={styles.format_icons_skills}> 
+                                    <MdOutlineDesignServices size={30} color="#a3c9d1"/>
+                                      UI Design
+                                  </div>
+
+                                  <a target='_blank' href='https://github.com/SantV7' 
+                                   className={styles.format_icons_skills}> <FaGithub 
+                                   size={30} color="#FFFFFF" /> 
+                                   GitHub
+                                  </a >
+
+                                  <div className={styles.format_icons_skills}>
+                                    <FaFigma size={28} color="#F24E1E" /> 
+                                    Figma
+                                  </div>
                                   
-                                  <div className={styles.format_icons_skills}> <MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
+                                  <div className={styles.format_icons_skills}> 
+                                   <MdOutlineDevices size={30} color="#a3c9d1" />
+                                    UX Design
+                                  </div>
                                 </div>
                           </div>
                         </div>
