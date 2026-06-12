@@ -38,16 +38,27 @@ function App() {
 
     requestAnimationFrame(raf)
 
-    gsap.fromTo('#welcome_msg', {
+    gsap.fromTo('#welcome_msg_gsap', {
       y: -140,
       opacity: 0
     }, {
-      duration: 1.6,
+      duration: 1.2,
       opacity: 1,
       y: 0,
       ease: 'power2'
 
     })
+
+    gsap.fromTo('.welcome_apresentation', {
+      x: -110,
+      opacity: 0
+    }, {
+      duration: 1.5,
+      opacity: 1,
+      x: 0,
+      ease: 'power2'
+
+    })    
 
     gsap.fromTo('.scroll_wellcome', {
       y: -140,
@@ -87,7 +98,7 @@ function App() {
     )
     
     timeLine.to('#scroll_wellcome_gsap', {
-      y: 25,
+      y: 40,
       duration: 1.4, repeat: -1,
       yoyo: true, ease: 'linear'
     })
@@ -119,9 +130,9 @@ function App() {
         </div>
 
         <div id='welcome_msg'>
-          <h1>Welcome to my <span className="portfolio">Portfolio</span></h1>
-          <p>This is a presentation from a beginner <span className="portfolio">Software Engineer.</span></p>
-          <p>Created by Sant in <span className="portfolio">2026</span>.</p>
+          <h1 id='welcome_msg_gsap'>Welcome to my <span className="portfolio">Portfolio</span></h1>
+          <p className='welcome_apresentation'>This is a presentation from a beginner <span className="portfolio">Software Engineer.</span></p>
+          <p className='welcome_apresentation'>Created by Sant in <span className="portfolio">2026</span>.</p>
         </div>
 
         <div className={styles.scroller_indicator}>

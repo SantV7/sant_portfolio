@@ -1,5 +1,5 @@
 .project_sect {
-    background-image: linear-gradient(to bottom, rgb(19, 12, 32), white);
+    background-image: linear-gradient(to bottom, rgb(30, 20, 53), rgb(58, 44, 63));
     margin-top: 300px;
 }
 
@@ -29,11 +29,11 @@
     color: white;
     font-size: 1.7em;
     font-family: poppins, Arial, Helvetica, sans-serif;
-    transition:  0.86s ease;
+    transition:  0.36s ease;
 }
 
 .card_intro_flex:hover {
-    scale: 1.03;
+    scale: 1.02;
     background-position: right center;
 }
 
