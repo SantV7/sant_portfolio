@@ -19,7 +19,6 @@ interface ProjectsProps {
 }
 
 
-
 const Project = () => {
 
     const projectAreaRef = useRef<HTMLDivElement>(null);
@@ -82,7 +81,7 @@ const Project = () => {
         scrollTrigger: {
           trigger: projectAreaRef.current,
           start: 'top 80%',
-          end: 'bottom 20%'
+          end: 'bottom 30%'
         }
       })
 
@@ -147,8 +146,6 @@ const Project = () => {
           end: 'bottom 20%'
         }        
       })      
-
-
     }, [])
 
 
@@ -171,11 +168,11 @@ const Project = () => {
                   </div>
 
                   <div>
-                    <h3>{data}</h3>
+                    <h3 className={styles.font_orange}>{data}</h3>
                   </div>
                 </header>
 
-                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span>2026</span></h3>
+                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
                 <div className={styles.context_paragraph}>
                   <p ref={paragraphRef}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit expedita ducimus quo molestiae commodi hic consequuntur sint! Saepe sed recusandae, omnis quas aperiam minima nemo vero similique dicta laboriosam nulla.</p>
                 </div>

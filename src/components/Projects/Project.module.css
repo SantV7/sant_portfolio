@@ -35,6 +35,11 @@
     background-position: right center;
 }
 
+.card_intro_flex:hover .font_orange {
+    color: rgb(255, 208, 0);
+}
+
+
 .aten {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -72,7 +77,7 @@
     margin-bottom: 40px;
 }
 
-.main_title_card span {
+.font_orange {
     border-bottom: 3px solid yellow;
     border-radius: 2px;
     color: rgb(255, 166, 0);

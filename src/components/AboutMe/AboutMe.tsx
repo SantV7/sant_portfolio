@@ -6,7 +6,7 @@ import { CircleX, Download, MailOpen, ListTree, Workflow, Info, ScanEye, GlobeOf
 import { HiLocationMarker } from "react-icons/hi"
 import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, } from "react-icons/fa"
 import { SiTypescript, SiTailwindcss } from "react-icons/si"
-import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" // Estavam faltando estes
+import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" 
 import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
@@ -31,6 +31,7 @@ const AboutMe = () => {
   const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
   const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
+  const pczin = useRef<HTMLImageElement | null>(null)
   
 
   useEffect(() => {
@@ -52,6 +53,24 @@ const AboutMe = () => {
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
   }, [])
 
+  useEffect(() => {
+    gsap.fromTo(pczin.current, {
+      rotate: 90,
+      scale: 0.6
+    }, {
+      rotate: 0,
+      ease: 'power2',
+      duration: 1.6,
+      scale: 1,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+        end: 'center 90%',
+        scrub: true
+      }
+    })
+  }, [])
+
 
 
 
@@ -61,7 +80,7 @@ const AboutMe = () => {
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
         <h1 ref={WhoRef} className={styles.gsap_wia}>Sant's <br />information</h1>
-        <img className={styles.old_pc} src={oldPc} alt="Old PC" />
+        <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />
       </div>
 
       <div className={styles.container_card}>
