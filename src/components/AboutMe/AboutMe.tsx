@@ -60,9 +60,8 @@ const AboutMe = () => {
   return (
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
-        <h1 ref={WhoRef} className={styles.gsap_wia}>Sant</h1>
+        <h1 ref={WhoRef} className={styles.gsap_wia}>Sant's <br />information</h1>
         <img className={styles.old_pc} src={oldPc} alt="Old PC" />
-        
       </div>
 
       <div className={styles.container_card}>
@@ -133,7 +132,7 @@ const AboutMe = () => {
                     Instagram
                   </a>
 
-                  <a 
+                  <a id={styles.m_last}
                     className={styles.links_reference}
                     href="https://portfolio-santv7.vercel.app/"
                     target='_blank'>
@@ -146,7 +145,7 @@ const AboutMe = () => {
                   <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
                   <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
                   <p className={styles.format_txt}>Universidade Católica de Brasília</p>
-                  <p className={styles.format_txt}>Expected graduation: 2028</p>
+                  <p id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
                  </section>
 
                  <section className={styles.contact_more}>

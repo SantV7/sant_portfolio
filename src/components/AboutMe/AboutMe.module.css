@@ -177,7 +177,6 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
-   
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
@@ -227,7 +226,6 @@
     transition: ease 0.85s;
 }
 
-
 .video_container:hover .eye_issues {
     opacity: 0;
 }
@@ -238,7 +236,7 @@
     align-items: center;
     margin: 5px 0;
     gap: 10px;
-    padding-top: 20px;
+    padding-top: 13px;
     border-top: 1px solid rgba(255, 255, 255, 0.493);
     font-weight: 500;
     text-transform: uppercase;
@@ -255,6 +253,12 @@
     margin-top: 15px;
 }
 
+.about_me_title {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(216, 182, 255, 0.404);
+}
+
 #about_me_area p {
     display: flex;
     justify-content: center;
@@ -263,7 +267,8 @@
     margin: 0 auto;
     max-width: 650px;
     font-size: 1.25rem;
-    text-align: center;
+    text-align: left;
+    padding-bottom: 20px;
 }
 
 .box_info {
@@ -290,6 +295,9 @@
     border-bottom: none;
     color: #e8f0ff;
 }
+#m_last, #expected {
+    padding-bottom: 17px;
+}
 
 .skills_first {
     display: flex;
@@ -299,15 +307,25 @@
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.04);
     border-left: 3px solid #5f82d1;
+    border: 1px solid transparent;
+    transition: ease-in 0.25s;
+}
+
+.skills_first:hover {
+    scale: 1.004;
+    border: 1px solid rgba(255, 255, 255, 0.158);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
+    background: rgb(23, 33, 53);
 }
 
 .skills_first h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #a8c7ff;
     margin: 0;
 }
 
 .skills_first p {
+    font-size: 1.04rem;
     margin: 0;
     color: #dfe8ff;
 }
@@ -316,7 +334,7 @@
     font-size: 1.1rem;
     font-weight: 550;
     border: none;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 #projects_box img {
@@ -345,7 +363,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     flex-flow: column nowrap;
     gap: 10px;
     font-size: 1.14rem;
@@ -404,8 +422,9 @@ a.links_reference:hover {
 .format_icons_about_me {
     padding: 20px;
     width: 100%;
-    height: 100%;
-    border-radius: 4px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border: 1px solid rgba(206, 157, 252, 0.274);
 }
 
 .all_icons {
@@ -436,7 +455,25 @@ a.links_reference:hover {
     background-color: rgba(128, 128, 128, 0.158);
 }
 
+
+
+
+
 @media screen and (max-width: 808px) {
+
+    .gsap_wia {
+        font-size: 2.3rem;
+    }
+    .old_pc {
+        width: 84vw;
+        margin-left: -20px;
+        transition: ease 0.3s;
+    }
+
+    .old_pc:hover {
+        scale: 1.035;
+    }
+
     .about_me { 
         padding-top: 100px; 
     }
@@ -483,5 +520,9 @@ a.links_reference:hover {
     .eye_issues {
         left: 50%;
         font-size: 1rem;
+    }
+
+    .nt_img  {
+        max-height: 250px;
     }
 }

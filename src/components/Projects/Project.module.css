@@ -3,8 +3,6 @@
     margin-top: 300px;
 }
 
-
-
 .card_intro {
     padding-top: 300px;
     display: flex;
@@ -62,11 +60,14 @@
 
 .box_info > header > div {
     display: flex;
+    font-family: "Tektur", sans-serif;
     flex-flow: row nowrap;
     gap: 20px;
 }
 
 .main_title_card {
+    font-family: "Audiowide", sans-serif; 
+    letter-spacing: 1.3px;
     font-size: 3rem;
     margin-bottom: 40px;
 }
@@ -85,6 +86,7 @@
 
 .context_paragraph  p {
     font-size: 1.6rem;
+    font-family: "Tektur", sans-serif; 
 }
 
 .box_info > header > div > h3 {
@@ -101,7 +103,14 @@
     width: 100%;
     border-radius: 6px;
 }
+ 
 
+.sect_view_projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
 
 
 

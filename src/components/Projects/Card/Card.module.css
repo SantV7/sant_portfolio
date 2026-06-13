@@ -1,16 +1,67 @@
 .card_interface {
+    min-width: 440px;
     border-radius: 6px;
-    border-left: 5px solid black;
-    border-bottom: 3px solid black;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.527);
+    background-image: linear-gradient(to bottom, rgb(30, 30, 66), rgb(10, 6, 19));
+}
+
+
+.card_interface > header {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    padding: 10px 20px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+    background-color: rgb(23, 13, 34);
+}
+
+.card_interface h3 {
+    font-size: 1.36rem;
+    font-family: "Audiowide", sans-serif;
+    letter-spacing: 1.3px; 
+    color: white;
+}
+
+.main_stylying {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 20px;
 }
 
 .area_img_project img {
     width: 300px;
     height: 300px;
     object-fit: cover;
+    display: none;
 }
 
-.title_project {
+.flex_circle {
+    flex-flow: row nowrap;
+    display: flex;
+    gap: 5px;
+}
+
+.circle_project {
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#orange_circle {
+    background-color: rgb(255, 251, 0);
+}
+
+#orange_yellow {
+    background-color: yellow;
+}
+#orange_green {
+    background-color: rgb(28, 187, 28);
+}
+
+/* .title_project {
 
 }
 
@@ -20,4 +71,4 @@
 
 .btn_project {
 
-}
+} */

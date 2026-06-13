@@ -33,16 +33,14 @@ const Project = () => {
 
     const [myProjects]= useState<ProjectsProps[]>([
         {id: 1, imgProject: fintechBank,
-         nameProject: 'Fintanch Bank MO',
+          nameProject: 'Fintanch Bank MO',
          descProject: 'descrição dps',
         urlProject: ''},
-        {id: 2,
-         imgProject: dashboardProject,
+        {id: 2, imgProject: dashboardProject,
          nameProject: 'Dashboard coins and weather',
          descProject: 'descrição dps',
          urlProject: ''},
-        {id: 3,
-         imgProject: pizzariaProject,
+        {id: 3, imgProject: pizzariaProject,
          nameProject: 'Landing Page - Pizzaria',
          descProject: 'descrição dps',
          urlProject: ''}
