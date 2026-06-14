@@ -10,12 +10,27 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutMe from './components/AboutMe/AboutMe'
 import styles from './components/Welcome/welcome.module.css'
+import Error404 from './components/error/Error404'
 import Lenis from '@studio-freight/lenis'
 import Project from './components/Projects/Project'
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+
+  const[isPageNotFound, setIsPageNotFound] = useState<Boolean>(false)
+
+  useEffect(() => {
+    if(window.location.pathname !== '/') {
+      setIsPageNotFound(true)
+    }
+  }, [])
+
+  if(isPageNotFound) {
+    return <Error404 />
+  }
+
+
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const video = [firstIntro, secondIntro, thirdIntro]
   const [indexVideo, setIndexVideo] = useState<number>(0)
