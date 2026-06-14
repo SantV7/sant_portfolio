@@ -130,6 +130,11 @@ function App() {
 
   
   return (
+    <div>
+      {isPageNotFound ? (
+        <Error404 />
+      ): (
+
     <>
       <Welcome showMenu={showMenu} setShowMenu={setShowMenu} />
       
@@ -165,7 +170,10 @@ function App() {
       <AboutMe />
       <Project />
     </>
+          )}
+    </div>
   )
 }
+
 
 export default App
