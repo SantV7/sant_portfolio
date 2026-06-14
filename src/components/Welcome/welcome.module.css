@@ -76,23 +76,12 @@
 }
 
 .scroll_wellcome {
-    font-size: 2.55rem;
+    font-size: 2.35rem;
     color: rgb(220, 202, 250);
     text-shadow: 3px 2px 6px rgb(45, 38, 116);
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
     pointer-events: auto;
     cursor: default;
-}
-
-.change-bg {
-    cursor: pointer;
-    transition: ease 0.23s;
-    border-radius: 50%;
-}
-
-.change-bg:hover {
-    background-color: rgba(195, 208, 243, 0.116);
-    scale: 1.15;
 }
 
 .menu_btn {

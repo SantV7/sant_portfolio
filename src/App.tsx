@@ -1,9 +1,6 @@
 import Welcome from './components/Welcome/Welcome'
 import './style/global.css'
-
 import firstIntro from './assets/video/pixel_three.mp4'
-import { ArrowBigLeftDash } from 'lucide-react';
-import { ArrowBigRightDash } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -135,10 +132,7 @@ function App() {
           <source type='video/mp4' src={firstIntro}/>
         </video>
         
-        <div id='area_arrow'>
-          <ArrowBigLeftDash className={styles['change-bg']} size={0.01} color='transparent'/>
-          <ArrowBigRightDash className={styles['change-bg']} size={0.01} color='transparent'/>
-        </div>
+    
 
         <div id='welcome_msg'>
           <h1 id='welcome_msg_gsap'>Welcome to my <span className="portfolio">Portfolio</span></h1>
