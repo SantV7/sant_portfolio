@@ -172,9 +172,13 @@ const Project = () => {
                   </div>
                 </header>
 
-                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
+                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in 
+                  <span className={styles.font_orange}>2026</span>
+                </h3>
                 <div className={styles.context_paragraph}>
-                  <p ref={paragraphRef}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit expedita ducimus quo molestiae commodi hic consequuntur sint! Saepe sed recusandae, omnis quas aperiam minima nemo vero similique dicta laboriosam nulla.</p>
+                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. 
+                    My focus is on transforming complex ideas into functional, fast, and visually appealing  web applications, 
+                    delivering the ultimate user experience and optimized performance..</p>
                 </div>
               </div>
 
