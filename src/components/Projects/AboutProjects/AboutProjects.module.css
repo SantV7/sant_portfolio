@@ -1,0 +1,7 @@
+.about_projects {
+    padding: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+}
