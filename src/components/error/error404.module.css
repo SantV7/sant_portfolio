@@ -18,12 +18,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .left_four,
 .right_four {
-    font-size: clamp(12rem, 20vw, 24rem);
+    font-size: clamp(5rem, 18vw, 24rem);
     font-weight: 900;
     color: white;
     line-height: 1;
@@ -38,7 +42,8 @@
 .girl_area {
     position: relative;
     z-index: 5;
-    width: clamp(220px, 30vw, 520px);
+    width: clamp(120px, 32vw, 520px);
+    flex-shrink: 1;
 }
 
 .girl_area::before {
@@ -67,20 +72,6 @@
 
 @media (max-width: 768px) {
     .area_center {
-        flex-direction: column;
         gap: 10px;
-    }
-
-    .girl_area {
-        order: 2;
-        width: 250px;
-    }
-
-    .left_four {
-        order: 1;
-    }
-
-    .right_four {
-        order: 3;
     }
 }
