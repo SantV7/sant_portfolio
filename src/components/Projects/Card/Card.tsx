@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FaReact, FaCode } from 'react-icons/fa';
+import { SiTypescript, SiGreensock, SiFigma } from 'react-icons/si';
 import styles from './Card.module.css';
 
 interface CardPros {
@@ -11,6 +13,29 @@ interface CardPros {
 
 const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const renderTechBadges = (projectName: string) => {
+    const name = projectName.toLowerCase();
+    
+    const techs = [
+      { name: 'React', icon: <FaReact />, show: true },
+      { name: 'TypeScript', icon: <SiTypescript />, show: !name.includes('coins') },
+      { name: 'GSAP', icon: <SiGreensock />, show: !name.includes('pizzaria') },
+      { name: 'UI/UX', icon: <SiFigma />, show: true },
+      { name: 'API', icon: <FaCode />, show: name.includes('coins') }
+    ];
+
+    return (
+      <div className={styles.tech_container}>
+        {techs.map((tech, index) => tech.show && (
+          <span key={index} className={styles.tech_badge} title={tech.name}>
+            {tech.icon}
+            <small>{tech.name}</small>
+          </span>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className={styles.card_interface} key={id}>
@@ -33,6 +58,8 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
 
       <div className={`${styles.info_project} ${isOpen ? styles.open : ''}`}>
         <p className={styles.description_project}>{descP}</p>
+        
+        {isOpen && renderTechBadges(nameP)}
         
         <div className={styles.actions_project}>
           <button 
