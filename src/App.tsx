@@ -1,7 +1,6 @@
 import Welcome from './components/Welcome/Welcome'
 import './style/global.css'
-import secondIntro from './assets/video/background_pixel.mp4'
-import thirdIntro from './assets/video/pixel_two.mp4'
+
 import firstIntro from './assets/video/pixel_three.mp4'
 import { ArrowBigLeftDash } from 'lucide-react';
 import { ArrowBigRightDash } from 'lucide-react';
@@ -28,12 +27,9 @@ function App() {
 
 
   const [showMenu, setShowMenu] = useState<boolean>(false)
-  const video = [firstIntro, secondIntro, thirdIntro]
-  const [indexVideo, setIndexVideo] = useState<number>(0)
+
   const [isHovered, setIsHovered] = useState(false);
 
-  const prevBackground = () => setIndexVideo((prevIndex) => (prevIndex - 1 + video.length) % video.length)
-  const nextBackground = () => setIndexVideo((prevIndex) => (prevIndex + 1) % video.length)
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -135,13 +131,13 @@ function App() {
       <Welcome showMenu={showMenu} setShowMenu={setShowMenu} />
       
       <section id='intro-video'>
-        <video key={indexVideo} preload='auto' autoPlay muted loop playsInline id='bg-video'>
-          <source type='video/mp4' src={video[indexVideo]}/>
+        <video preload='auto' autoPlay muted loop playsInline id='bg-video'>
+          <source type='video/mp4' src={firstIntro}/>
         </video>
         
         <div id='area_arrow'>
-          <ArrowBigLeftDash onClick={prevBackground} className={styles['change-bg']} size={45} color='white'/>
-          <ArrowBigRightDash onClick={nextBackground} className={styles['change-bg']} size={45} color='white'/>
+          <ArrowBigLeftDash className={styles['change-bg']} size={45} color='transparent'/>
+          <ArrowBigRightDash className={styles['change-bg']} size={45} color='transparent'/>
         </div>
 
         <div id='welcome_msg'>
