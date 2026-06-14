@@ -26,10 +26,6 @@ function App() {
     }
   }, [])
 
-  if(isPageNotFound) {
-    return <Error404 />
-  }
-
 
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const video = [firstIntro, secondIntro, thirdIntro]
