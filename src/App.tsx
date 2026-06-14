@@ -136,8 +136,8 @@ function App() {
         </video>
         
         <div id='area_arrow'>
-          <ArrowBigLeftDash className={styles['change-bg']} size={45} color='transparent'/>
-          <ArrowBigRightDash className={styles['change-bg']} size={45} color='transparent'/>
+          <ArrowBigLeftDash className={styles['change-bg']} size={0.01} color='transparent'/>
+          <ArrowBigRightDash className={styles['change-bg']} size={0.01} color='transparent'/>
         </div>
 
         <div id='welcome_msg'>
