@@ -4,37 +4,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #43206f 0%,
-            #241536 45%,
-            #0c0c16 100%
-        );
+    background: radial-gradient(
+        circle at center,
+        #43206f 0%,
+        #241536 45%,
+        #0c0c16 100%
+    );
 }
 
 .area_center {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-flow: row nowrap;
+    gap: 40px;
 }
 
 .left_four,
 .right_four {
-    position: absolute;
-
-    font-size: clamp(12rem, 25vw, 24rem);
+    font-size: clamp(12rem, 20vw, 24rem);
     font-weight: 900;
     color: white;
     line-height: 1;
-
     z-index: 1;
-
     text-shadow:
         0 0 15px #8b8bff,
         0 0 30px #8b8bff,
@@ -42,39 +35,23 @@
         0 0 100px #8b8bff;
 }
 
-.left_four {
-    right: 180px;
-}
-
-.right_four {
-    left: 180px;
-}
-
 .girl_area {
     position: relative;
     z-index: 5;
-    width: clamp(220px, 40vw, 520px);
+    width: clamp(220px, 30vw, 520px);
 }
 
 .girl_area::before {
     content: '';
-
     position: absolute;
-
     top: 50%;
     left: 50%;
-
     width: 300px;
     height: 300px;
-
     transform: translate(-50%, -50%);
-
     border-radius: 50%;
-
     background: rgba(122, 234, 255, 0.25);
-
     filter: blur(90px);
-
     z-index: -1;
 }
 
@@ -82,7 +59,6 @@
     width: 100%;
     height: auto;
     display: block;
-
     filter:
         drop-shadow(0 0 10px rgba(120, 255, 255, .7))
         drop-shadow(0 0 30px rgba(120, 255, 255, .5))
@@ -90,16 +66,21 @@
 }
 
 @media (max-width: 768px) {
-    .left_four {
-        margin-right: 15px;
-    }
-    .right_four {
-        margin-left: 15px;
+    .area_center {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .girl_area {
-        top: -25px;
+        order: 2;
+        width: 250px;
     }
 
- 
+    .left_four {
+        order: 1;
+    }
+
+    .right_four {
+        order: 3;
+    }
 }
