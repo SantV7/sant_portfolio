@@ -16,7 +16,7 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
 
   const renderTechBadges = (projectName: string) => {
     const name = projectName.toLowerCase();
-    
+
     const techs = [
       { name: 'React', icon: <FaReact />, show: true },
       { name: 'TypeScript', icon: <SiTypescript />, show: !name.includes('coins') },
@@ -24,6 +24,7 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
       { name: 'UI/UX', icon: <SiFigma />, show: true },
       { name: 'API', icon: <FaCode />, show: name.includes('coins') }
     ];
+
 
     return (
       <div className={styles.tech_container}>
