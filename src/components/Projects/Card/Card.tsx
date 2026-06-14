@@ -1,18 +1,18 @@
-import styles from './Card.module.css'
-
+import { useState } from 'react';
+import styles from './Card.module.css';
 
 interface CardPros {
-    id: number;
-    imgP: string;
-    nameP: string;
-    descP: string;
-    urlP: string
+  id: number;
+  imgP: string;
+  nameP: string;
+  descP: string;
+  urlP: string;
 }
 
+const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const Card = ({id, imgP, nameP, descP, urlP}: CardPros) => {
   return (
-    <>
     <div className={styles.card_interface} key={id}>
       <header>
         <div className={styles.main_stylying}>
@@ -26,18 +26,28 @@ const Card = ({id, imgP, nameP, descP, urlP}: CardPros) => {
           </div>
         </div>
       </header>
-      
-        <div className={styles.area_img_project}>
-            <img src={imgP} alt="Imagem de projeto" />
-        </div>
 
-        <div className={styles.info_project}>
-          <p className={styles.description_project}>{descP}</p>
-          <a className={styles.btn_project} target="_blank" href={urlP}>Ver projeto</a>
+      <div className={styles.area_img_project}>
+        <img src={imgP} alt={nameP} />
+      </div>
+
+      <div className={`${styles.info_project} ${isOpen ? styles.open : ''}`}>
+        <p className={styles.description_project}>{descP}</p>
+        
+        <div className={styles.actions_project}>
+          <button 
+            className={styles.btn_toggle} 
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? 'Fechar' : 'Ler mais'}
+          </button>
+          <a className={styles.btn_project} target="_blank" rel="noreferrer" href={urlP}>
+            Ver projeto
+          </a>
         </div>
+      </div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

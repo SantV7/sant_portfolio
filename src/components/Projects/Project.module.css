@@ -1,5 +1,5 @@
 .project_sect {
-    background-image: linear-gradient(to bottom, rgb(30, 20, 53), rgb(58, 44, 63));
+    background-image: linear-gradient(to bottom, rgb(17, 11, 32), rgb(69, 60, 73));
     margin-top: 300px;
 }
 
@@ -146,7 +146,6 @@
     }
 
     .sect_view_projects {
-        background-color: orange;
         flex-flow: column nowrap;
         
     }
