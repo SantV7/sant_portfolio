@@ -46,7 +46,6 @@ function App() {
       opacity: 1,
       y: 0,
       ease: 'power2'
-
     })
 
     gsap.fromTo('.welcome_apresentation', {

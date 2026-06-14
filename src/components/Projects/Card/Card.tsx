@@ -30,8 +30,11 @@ const Card = ({id, imgP, nameP, descP, urlP}: CardPros) => {
         <div className={styles.area_img_project}>
             <img src={imgP} alt="Imagem de projeto" />
         </div>
-        <p className={styles.description_project}>{descP}</p>
-        <a className={styles.btn_project} target="_blank" href={urlP}>Ver projeto</a>
+
+        <div className={styles.info_project}>
+          <p className={styles.description_project}>{descP}</p>
+          <a className={styles.btn_project} target="_blank" href={urlP}>Ver projeto</a>
+        </div>
     </div>
     </>
   )

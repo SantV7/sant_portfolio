@@ -114,10 +114,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    flex-flow: row wrap;
+    gap: 60px;
+    padding: 0 10px;
 }
-
-
 
 
 
@@ -127,11 +127,13 @@
     .project_sect {
         margin-top: 50px;
     }
+
     .card_intro_flex {
         border-radius: 0;
         min-width: 100%;
         min-height: 770px;
     }
+
     .aten {
         display: flex;
         height: auto;
@@ -143,5 +145,9 @@
         max-width: 100%;
     }
 
-
+    .sect_view_projects {
+        background-color: orange;
+        flex-flow: column nowrap;
+        
+    }
 }

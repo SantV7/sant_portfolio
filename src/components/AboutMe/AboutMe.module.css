@@ -460,22 +460,21 @@ a.links_reference:hover {
 
 
 @media screen and (max-width: 808px) {
-
     .gsap_wia {
         font-size: 2.3rem;
     }
+
     .old_pc {
         width: 84vw;
         margin-left: -20px;
         transition: ease 0.3s;
     }
 
-    .old_pc:hover {
-        scale: 1.035;
-    }
-
     .about_me { 
-        padding-top: 100px; 
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 100%;
+        padding-top: 100px;
     }
     
     .main_layout {
