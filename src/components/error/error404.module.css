@@ -1,7 +1,6 @@
 .error_page {
     width: 100%;
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +18,10 @@
 
 .area_center {
     position: relative;
-
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-flow: row nowrap;
 }
 
 .left_four,
@@ -54,7 +53,6 @@
 .girl_area {
     position: relative;
     z-index: 5;
-
     width: clamp(220px, 40vw, 520px);
 }
 
@@ -92,12 +90,16 @@
 }
 
 @media (max-width: 768px) {
-    .area_center {
-        flex-direction: column;
+    .left_four {
+        margin-right: 15px;
+    }
+    .right_four {
+        margin-left: 15px;
     }
 
-    .left_four,
-    .right_four {
-        position: static;
+    .girl_area {
+        top: -25px;
     }
+
+ 
 }
