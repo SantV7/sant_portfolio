@@ -382,17 +382,15 @@
     color: #ecfbffaf;
     letter-spacing: 0.7px;
     font-family: poppins, Arial, Helvetica, sans-serif;
-    transition: ease 0.27s;
+    transition: ease 0.67s;
     font-size: 1.17rem;
 }
 
 a.links_reference:hover {
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 5px 0;
     background-color: rgba(69, 54, 71, 0.156);
-    text-decoration: underline;
     color: rgb(194, 239, 252);
-    font-size: 1.19rem;
 }
 
 .design_area_icons {
@@ -524,4 +522,5 @@ a.links_reference:hover {
     .nt_img  {
         max-height: 250px;
     }
+
 }

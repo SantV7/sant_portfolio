@@ -35,14 +35,16 @@ function App() {
       smoothWheel: true,
     })
 
+    let rafId: number;
+
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
 
-    gsap.fromTo('#welcome_msg_gsap', {
+    const animMsg = gsap.fromTo('#welcome_msg_gsap', {
       y: -140,
       opacity: 0
     }, {
@@ -52,7 +54,7 @@ function App() {
       ease: 'power2'
     })
 
-    gsap.fromTo('.welcome_apresentation', {
+    const animApres = gsap.fromTo('.welcome_apresentation', {
       x: -110,
       opacity: 0
     }, {
@@ -60,10 +62,9 @@ function App() {
       opacity: 1,
       x: 0,
       ease: 'power2'
-
     })    
 
-    gsap.fromTo('.scroll_wellcome', {
+    const animScroll = gsap.fromTo('.scroll_wellcome', {
       y: -140,
       opacity: 0
     }, {
@@ -73,7 +74,7 @@ function App() {
       ease: 'power2'
     })
 
-    gsap.to("#bg-video", {
+    const animBgVideo = gsap.to("#bg-video", {
       scrollTrigger: {
         trigger: "#intro-video", 
         start: "top top",
@@ -83,7 +84,7 @@ function App() {
       ease: "none"
     });
 
-    gsap.fromTo(`.${styles['change-bg']}`, 
+    const animChangeBg = gsap.fromTo(`.${styles['change-bg']}`, 
       { y: 40,
         scale: 0,
         opacity: 0 }, 
@@ -107,8 +108,15 @@ function App() {
     })
     
     return () => {
-      lenis.destroy()
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      animMsg.kill();
+      animApres.kill();
+      animScroll.kill();
+      animBgVideo.scrollTrigger?.kill();
+      animBgVideo.kill();
+      animChangeBg.kill();
+      timeLine.kill();
     }
   }, [])
 
@@ -116,8 +124,6 @@ function App() {
   const toolTipAllowed = () => { setIsHovered(false) }
 
 
-
-  
   return (
     <div>
       {isPageNotFound ? (
@@ -160,6 +166,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App

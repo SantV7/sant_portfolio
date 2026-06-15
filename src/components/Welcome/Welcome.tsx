@@ -1,16 +1,12 @@
-
 import gsap from 'gsap';
 import styles from './welcome.module.css'
 import { Menu, Headset, House, SquaresExclude, BrainCircuit, ChartNoAxesGantt } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-
 interface MenuProps {
  showMenu: boolean;
  setShowMenu: (value: boolean) => void
 }
-
-
 
 const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 
@@ -58,37 +54,41 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
         setContactIcon('transparent')
     }
 
-            useEffect(() => {
-            gsap.fromTo(linkHomeRef.current, {
-                opacity: 0, scale: 0.3
-            }, {
-                opacity: 1, scale: 1,
-                duration: 0.75, ease: 'power2'
-             })
+    useEffect(() => {
+        const animHome = gsap.fromTo(linkHomeRef.current, {
+            opacity: 0, scale: 0.3
+        }, {
+            opacity: 1, scale: 1,
+            duration: 0.75, ease: 'power2'
+         })
 
-            gsap.fromTo(linkSkillsRef.current, {
-                opacity: 0, scale: 0.3
-            }, {
-              
-                opacity: 1, scale: 1,
-                duration: 0.75, ease: 'power2'
-             })
+        const animSkills = gsap.fromTo(linkSkillsRef.current, {
+            opacity: 0, scale: 0.3
+        }, {
+            opacity: 1, scale: 1,
+            duration: 0.75, ease: 'power2'
+         })
 
-            gsap.fromTo(linkProjectRef.current, {     
-                opacity: 0, scale: 0.3
-            }, {
-                opacity: 1, scale: 1,
-                duration: 0.75, ease: 'power2'
-             })   
- 
-            gsap.fromTo(btnContactRef.current, {     
-                 x: 50
-            }, {
-                x: 0,  duration: 0.35, ease: 'power2'
-             })              
-        }, [])
+        const animProject = gsap.fromTo(linkProjectRef.current, {     
+            opacity: 0, scale: 0.3
+        }, {
+            opacity: 1, scale: 1,
+            duration: 0.75, ease: 'power2'
+         })   
 
+        const animContact = gsap.fromTo(btnContactRef.current, {     
+             x: 50
+        }, {
+            x: 0,  duration: 0.35, ease: 'power2'
+         })              
 
+        return () => {
+            animHome.kill()
+            animSkills.kill()
+            animProject.kill()
+            animContact.kill()
+        }
+    }, [])
 
   return (
     <>
@@ -151,7 +151,3 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
 }
 
 export default Wellcome
-
-
-
-

@@ -16,8 +16,6 @@ import styles from './AboutMe.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-
-
 const AboutMe = () => {
 
   const WhoRef = useRef<HTMLHeadingElement>(null)
@@ -31,6 +29,9 @@ const AboutMe = () => {
   const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
   const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
+  const container_scroll = useRef<HTMLDivElement | null>(null)
+  const btn_archieve_one = useRef<HTMLButtonElement | null>(null)
+  const btn_archieve_two = useRef<HTMLButtonElement | null>(null)
   const pczin = useRef<HTMLImageElement | null>(null)
   
 
@@ -54,7 +55,7 @@ const AboutMe = () => {
   }, [])
 
   useEffect(() => {
-    gsap.fromTo(pczin.current, {
+    const animPc = gsap.fromTo(pczin.current, {
       rotate: 90,
       scale: 0.6
     }, {
@@ -69,12 +70,49 @@ const AboutMe = () => {
         scrub: true
       }
     })
+
+    const animBtn1 = gsap.fromTo(btn_archieve_one.current, {
+      scale: 0.6,
+      opacity: 0,
+      y: 40
+    }, {
+      ease: 'power2',
+      duration: 0.3,
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'center 90%',
+        scrub: true
+      }
+    })
+
+    const animBtn2 = gsap.fromTo(btn_archieve_two.current, {
+      scale: 0.6,
+      opacity: 0,
+      y: 40
+    }, {
+      ease: 'power2',
+      duration: 0.3,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'top 50%',
+        scrub: true
+      }
+    })   
+
+    return () => {
+      animPc.scrollTrigger?.kill();
+      animBtn1.scrollTrigger?.kill();
+      animBtn2.scrollTrigger?.kill();
+    }
   }, [])
-
-
-
-
-
 
   return (
     <section ref={sectionRef} className={styles['about_me']}>
@@ -83,8 +121,8 @@ const AboutMe = () => {
         <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />
       </div>
 
-      <div className={styles.container_card}>
-        <div className={styles.about_me_card}>
+      <div  className={styles.container_card}>
+        <div ref={container_scroll} className={styles.about_me_card}>
       
           <header className={styles.card_header}>
             <div className={styles.header_text}>
@@ -100,8 +138,8 @@ const AboutMe = () => {
           <div className={styles.main_layout}>
             <aside className={styles.sidebar}>
               <div className={styles.side_buttons}>
-                <button className={styles.hud_btn}>ID: 2007</button>
-                <button className={styles.hud_btn}>ARCHIVE</button>
+                <button ref={btn_archieve_one} className={styles.hud_btn}>ID: 2007</button>
+                <button ref={btn_archieve_two} className={styles.hud_btn}>ARCHIVE</button>
               </div>
               <div className={styles.photo_frame}>
                 <img src={photo_anime} alt="photo anime" />
@@ -169,7 +207,7 @@ const AboutMe = () => {
 
                  <section className={styles.contact_more}>
                   <h3 className={styles.more_data_title}><Info size={19} color='orange'/>
-                   Design & UX Skills</h3>
+                    Design & UX Skills</h3>
                   <div className={styles.design_area_icons}>
                     <div>
                       <p className={styles.format_txt}>
@@ -280,8 +318,8 @@ const AboutMe = () => {
                                   </div>
 
                                   <div className={styles.format_icons_skills}>
-                                   <FaJs size={30} color="#F7DF1E" /> 
-                                   JavaScript
+                                    <FaJs size={30} color="#F7DF1E" /> 
+                                    JavaScript
                                   </div>
                                   
                                   <div className={styles.format_icons_skills}> 
@@ -307,7 +345,7 @@ const AboutMe = () => {
                                 </div>
                           </div>
                         </div>
-               
+                
 
                     <div className={styles.more_data_flex}>
                       <div id={styles.technical_box} className={styles.box_info}>
@@ -428,5 +466,3 @@ const AboutMe = () => {
 }
 
 export default AboutMe
-
-

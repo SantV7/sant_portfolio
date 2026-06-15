@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import styles from './AboutProjects.module.css'
 
 interface ProjectFocus {
@@ -15,7 +16,6 @@ interface ProjectFocus {
 
 const AboutProjects = () => {
 
-
     const focus: ProjectFocus = {
         uiAndUx: 'UI/UX',
         design: 'Design student',
@@ -28,6 +28,65 @@ const AboutProjects = () => {
             {pratics:'Boas práticas'}
         ]
     }
+
+    const card1 = useRef<HTMLDivElement | null>(null)
+    const card2 = useRef<HTMLDivElement | null>(null)
+    const card3 = useRef<HTMLDivElement | null>(null)
+    const card4 = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        gsap.fromTo(card1.current, {
+            opacity: 0,
+            scale: 0.85,
+            x: -20
+        }, {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        })
+
+        gsap.fromTo(card2.current, {
+            opacity: 0,
+            scale: 0.85,
+            x: -25
+        }, {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        })      
+        
+        gsap.fromTo(card3.current, {
+            opacity: 0,
+            scale: 0.65,
+            y: 35,
+            borderRadius: 7
+        }, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+            borderRadius: 0
+        })       
+        
+        gsap.fromTo(card4.current, {
+            opacity: 0,
+            scale: 0.65,
+            y: -10,
+            borderRadius: 7
+        }, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.65,
+            ease: 'power2.out',
+            borderRadius: 0,
+        })            
+    }, [])
 
   return (
     <>
