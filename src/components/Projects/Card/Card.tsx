@@ -12,6 +12,8 @@ interface CardPros {
 }
 
 const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
+
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const renderTechBadges = (projectName: string) => {

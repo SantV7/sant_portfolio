@@ -39,6 +39,13 @@ const AboutMe = () => {
   const standyRef = useRef< HTMLDivElement| null>(null) 
   const imgRef = useRef<HTMLDivElement | null>(null)
 
+  const p1_g = useRef<HTMLParagraphElement  | null>(null)
+  const p2_g = useRef<HTMLParagraphElement  | null>(null)
+  const contactRef = useRef<HTMLDivElement| null>(null)
+  const linksContainerRef = useRef<HTMLDivElement | null>(null)
+
+  const aboutRef = useRef<HTMLDivElement | null>(null)
+
   useEffect(() => {
     gsap.fromTo(WhoRef.current, {
       opacity: 0,
@@ -134,7 +141,7 @@ const AboutMe = () => {
       y: 40
     }, {
       ease: 'power2',
-      duration: 0.35,
+      duration: 0.37,
       y: 0,
       opacity: 1,
       scale: 1,
@@ -179,10 +186,10 @@ const AboutMe = () => {
         trigger: container_scroll.current,
         start: 'top 80%',
         end: 'top 30%',
-        markers: true,
         scrub: true
       }
     })   
+
 
     return () => {
       animPc.scrollTrigger?.kill();
@@ -192,12 +199,99 @@ const AboutMe = () => {
       animBtn2.scrollTrigger?.kill();
       standyGsap.scrollTrigger?.kill();
       imgGsap.scrollTrigger?.kill();
+
     }
   }, [])
 
-  
 
+  useEffect(() => {
+    const p1_Gsap = gsap.fromTo(p1_g.current, {
+      opacity: 0,
+      x: -30
+    }, {
+      ease: 'power2',
+      duration: 0.55,
+      x: 0,
+      opacity: 1
+    }) 
 
+    const p2_Gsap = gsap.fromTo(p2_g.current, {
+      opacity: 0,
+      x: -35
+    }, {
+      ease: 'power2',
+      duration: 0.65,
+      x: 0,
+      opacity: 1
+    }) 
+
+    const about_Gsap = gsap.fromTo(aboutRef.current, {
+      scale: 0.6,
+      opacity: 0,
+      y: 100
+    }, {
+      ease: 'power2',
+      duration: 0.65,
+      y: 0,
+      scale: 1,
+      opacity: 1
+    }) 
+
+    return () => {
+      p2_Gsap.kill()
+      p1_Gsap.kill()
+      about_Gsap.kill()
+    }
+  }, [showMore])
+
+  useEffect(() => {
+    if (moreCurriculum && linksContainerRef.current) {
+      const targets = linksContainerRef.current.querySelectorAll(`.${styles.links_reference}`);
+      
+      targets.forEach((target) => {
+        const textNode = Array.from(target.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (textNode && textNode.textContent?.trim()) {
+          const originalText = textNode.textContent;
+          const wrapper = document.createElement('span');
+          wrapper.style.display = 'inline-block';
+          
+          wrapper.innerHTML = originalText.split('').map(char => 
+            char === ' ' ? '&nbsp;' : `<span class="gsap-char" style="display:inline-block;opacity:0">${char}</span>`
+          ).join('');
+          
+          target.replaceChild(wrapper, textNode);
+        }
+      });
+
+      const allChars = linksContainerRef.current.querySelectorAll('.gsap-char');
+      const icons = linksContainerRef.current.querySelectorAll('svg');
+
+      const tl = gsap.timeline();
+
+      tl.fromTo(icons, {
+        opacity: 0,
+        x: -15
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 0.4,
+        ease: 'power1.out',
+        stagger: 0.08
+      });
+
+      tl.fromTo(allChars, {
+        opacity: 0,
+        x: -10
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        ease: 'power1.out',
+        stagger: 0.02
+      }, "-=0.3");
+
+    }
+  }, [moreCurriculum])
 
   return (
     <section ref={sectionRef} className={styles['about_me']}>
@@ -234,7 +328,7 @@ const AboutMe = () => {
               { moreCurriculum && (
                 <> 
                <div className={styles.more_all_data}>
-                 <section className={styles.contact_more}>
+                 <section ref={linksContainerRef} className={styles.contact_more}>
                   <h3  className={styles.more_data_title}><Info size={19} color='orange'/> CONTACT</h3>
 
                   <p className={styles.links_reference} >
@@ -283,11 +377,11 @@ const AboutMe = () => {
                   </a>
                  </section>
 
-                 <section className={styles.contact_more}>
+                 <section ref={contactRef} className={styles.contact_more}>
                   <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
                   <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
-                  <p className={styles.format_txt}>Universidade Católica de Brasília</p>
-                  <p id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
+                  <p ref={p1_g} className={styles.format_txt}>Universidade Católica de Brasília</p>
+                  <p ref={p2_g} id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
                  </section>
 
                  <section className={styles.contact_more}>
@@ -307,7 +401,7 @@ const AboutMe = () => {
                     <div>
                       <p className={styles.format_txt}> 
                         <MdOutlineDevices size={30} color="#a3c9d1" />
-                       UX Design</p>
+                        UX Design</p>
                     </div>
                   </div>
                  </section>
@@ -328,10 +422,10 @@ const AboutMe = () => {
                     <>
                       <p><span>NickName:</span>Sant | Aivy | Vy</p>
                       <p><span>Favorite Games:</span>The Last Of Us / Uncharted 
-                       / Fortnite / Valorant / Warzone...
+                        / Fortnite / Valorant / Warzone...
                       </p>
                       <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS,
-                       JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...
+                        JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...
                       </p>
                       <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                       <p><span>Height:</span> 5'10</p>     
@@ -342,7 +436,7 @@ const AboutMe = () => {
                       <p><span>Mother:</span> Maria</p> 
                       <p><span>Father:</span> Jóse</p> 
                       <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend
-                       (Java, Kotlin), APIs (GraphQL), Testing (Jest)
+                        (Java, Kotlin), APIs (GraphQL), Testing (Jest)
                       </p>  
                       <p></p>  
                       <p><span>IDE:</span>Visual Studio Code</p>  
@@ -353,7 +447,7 @@ const AboutMe = () => {
                     <>
                     <div id={styles.about_me_area} className={styles.box_info}>
                   
-                        <div className={styles.about_me_title}>
+                        <div ref={aboutRef} className={styles.about_me_title}>
                           <header>
                             <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
                           </header>
