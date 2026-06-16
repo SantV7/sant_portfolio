@@ -73,13 +73,13 @@
     }
 
     .about_projects {
-        max-width: 1100px;
+        max-width: 1210px;
         height: 400px;
         display: grid;
         grid-template-columns: 1fr 1fr 370px;
         grid-template-rows: repeat(2, 1fr);
         place-items: center;
-        gap: 9px;
+        gap: 5px;
     }
 
     .g1, .g2, .g3, .g4 {
