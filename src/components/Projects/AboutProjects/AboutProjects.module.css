@@ -37,20 +37,9 @@
     box-sizing: border-box;
 }
 
-.g1 {
-    background-color: rgba(47, 28, 77, 0.418);
-} 
-
-.g2 {
-    background-color: rgba(47, 28, 77, 0.418);
-} 
-
-.g3 {
-    background-color: rgba(45, 49, 61, 0.438);
-} 
 
 .g4 {
-    background-color: rgba(45, 49, 61, 0.438);
+    
     flex-direction: column;
     gap: 10px;
 } 
@@ -74,7 +63,7 @@
 
 @media screen and (min-width: 879px){ 
     .more_info_project {
-        margin-top: 230px;
+        margin-top: 360px;
         padding: 0;
     }
 

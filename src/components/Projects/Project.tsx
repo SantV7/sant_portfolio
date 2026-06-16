@@ -47,10 +47,10 @@ const Project = () => {
     ])
 
     const [data, SetData] = useState<string>()
-
-
+   
 
     useEffect(() => {
+
       const timerSetter = setInterval(() => {
         const newD = new Date()
         const hour = newD.getHours()
@@ -147,6 +147,7 @@ const Project = () => {
           end: 'bottom 20%'
         }        
       })      
+       
     }, [])
 
 
