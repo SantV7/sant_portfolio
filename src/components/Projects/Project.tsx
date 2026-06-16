@@ -7,6 +7,7 @@ import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AboutProjects from "./AboutProjects/AboutProjects";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -203,7 +204,10 @@ const Project = () => {
             ))}
         </div>
 
+        <AboutProjects />
+
     </section>
+       
     </>
   )
 }

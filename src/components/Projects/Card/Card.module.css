@@ -103,7 +103,9 @@
     font-weight: 600;
     padding: 10px 15px;
     border-radius: 4px;
-    font-size: 0.85rem;
+    font-size: 1.02rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.274);
+    letter-spacing: 1px;
     font-family: "Tektur", sans-serif;
     text-align: center;
     text-decoration: none;
@@ -188,11 +190,20 @@
 }
 
 
-
+@media screen and (max-width: 768px) {
+    .card_interface {
+        min-width: 100%;
+    }
+    
+}
 
 @media screen and (max-width: 1024px) {
     .card_interface {
         width: 100%;
         max-width: 450px;
+    }
+
+    .area_img_project img {
+        filter: saturate(100%);
     }
 }

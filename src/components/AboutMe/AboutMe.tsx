@@ -29,11 +29,15 @@ const AboutMe = () => {
   const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
   const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
+
   const container_scroll = useRef<HTMLDivElement | null>(null)
   const btn_archieve_one = useRef<HTMLButtonElement | null>(null)
   const btn_archieve_two = useRef<HTMLButtonElement | null>(null)
   const pczin = useRef<HTMLImageElement | null>(null)
-  
+  const recordRef = useRef< HTMLHeadingElement| null>(null)
+  const numId = useRef< HTMLSpanElement| null>(null) 
+  const standyRef = useRef< HTMLDivElement| null>(null) 
+  const imgRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     gsap.fromTo(WhoRef.current, {
@@ -84,21 +88,37 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 80%',
-        end: 'center 90%',
+        end: 'center 60%',
         scrub: true
       }
     })
+  
 
-    const animBtn2 = gsap.fromTo(btn_archieve_two.current, {
-      scale: 0.6,
+    const surge = gsap.fromTo(recordRef.current, {
       opacity: 0,
-      y: 40
+      x: -30
     }, {
       ease: 'power2',
-      duration: 0.3,
+      duration: 0.5,
+      x: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'top 50%',
+        scrub: true
+      }
+    })      
+
+
+    const surge2 = gsap.fromTo(numId.current, {
+      opacity: 0,
+      y: 20
+    }, {
+      ease: 'power2',
+      duration: 0.5,
       y: 0,
       opacity: 1,
-      scale: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 80%',
@@ -107,12 +127,77 @@ const AboutMe = () => {
       }
     })   
 
+
+    const animBtn2 = gsap.fromTo(btn_archieve_two.current, {
+      scale: 0.6,
+      opacity: 0,
+      y: 40
+    }, {
+      ease: 'power2',
+      duration: 0.35,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'top 60%',
+        scrub: true
+      }
+    })   
+
+
+    const standyGsap = gsap.fromTo(standyRef.current, {
+      scale: 0.87,
+      opacity: 0,
+      x: 40
+    }, {
+      ease: 'power2',
+      duration: 0.55,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'top 50%',
+        scrub: true
+      }
+    })      
+
+    const imgGsap = gsap.fromTo(imgRef.current, {
+      scale: 0.35,
+      opacity: 0,
+      y: 20
+    }, {
+      ease: 'power2',
+      duration: 0.55,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: container_scroll.current,
+        start: 'top 80%',
+        end: 'top 30%',
+        markers: true,
+        scrub: true
+      }
+    })   
+
     return () => {
       animPc.scrollTrigger?.kill();
+      surge.scrollTrigger?.kill();
+      surge2.scrollTrigger?.kill();
       animBtn1.scrollTrigger?.kill();
       animBtn2.scrollTrigger?.kill();
+      standyGsap.scrollTrigger?.kill();
+      imgGsap.scrollTrigger?.kill();
     }
   }, [])
+
+  
+
+
 
   return (
     <section ref={sectionRef} className={styles['about_me']}>
@@ -126,10 +211,10 @@ const AboutMe = () => {
       
           <header className={styles.card_header}>
             <div className={styles.header_text}>
-              <h2>PERSONAL RECORD SYSTEM</h2>
-              <span className={styles.serial}>■ 5195028</span>
+              <h2 ref={recordRef}>PERSONAL RECORD SYSTEM</h2>
+              <span ref={numId} className={styles.serial}>■ 5195028</span>
             </div>
-            <div className={styles.header_status}>
+            <div ref={standyRef} className={styles.header_status}>
               <p>STANDBY</p>
               <p>CONNECTION ESTABLISHED IN 2026</p>
             </div>
@@ -141,7 +226,7 @@ const AboutMe = () => {
                 <button ref={btn_archieve_one} className={styles.hud_btn}>ID: 2007</button>
                 <button ref={btn_archieve_two} className={styles.hud_btn}>ARCHIVE</button>
               </div>
-              <div className={styles.photo_frame}>
+              <div ref={imgRef} className={styles.photo_frame}>
                 <img src={photo_anime} alt="photo anime" />
               </div>
 
