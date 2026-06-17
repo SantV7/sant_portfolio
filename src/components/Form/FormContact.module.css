@@ -68,8 +68,10 @@
 }
 
 .textareaField {
-  resize: vertical;
-  min-height: 120px;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    resize: vertical;
+    min-height: 170px;
 }
 
 .submitBtn {

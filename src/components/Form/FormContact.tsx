@@ -2,9 +2,9 @@ import { useState, type FormEvent } from 'react'
 import styles from './FormContact.module.css'
 
 const FormContact = () => {
-  const [nome, setNome] = useState('')
-  const [email, setEmail] = useState('')
-  const [mensagem, setMensagem] = useState('')
+  const [nome, setNome] = useState('Seu nome completo')
+  const [email, setEmail] = useState('emailFake@exemplo.com')
+  const [mensagem, setMensagem] = useState('Digite sua mensagem aqui...')
   const [erro, setErro] = useState('')
   const [sucesso, setSucesso] = useState(false)
 
@@ -43,9 +43,10 @@ const FormContact = () => {
               type="text" 
               id="nome"
               value={nome}
+              onFocus={() => setNome("")}
               onChange={(event) => setNome(event.target.value)}
               className={styles.inputField}
-              placeholder="Seu nome completo"
+              
             />
           </div>
 
@@ -55,9 +56,9 @@ const FormContact = () => {
               type="text" 
               id="email"
               value={email}
+              onFocus={() => setEmail("")}
               onChange={(event) => setEmail(event.target.value)}
               className={styles.inputField}
-              placeholder="seuemail@exemplo.com"
             />
           </div>
 
@@ -66,9 +67,9 @@ const FormContact = () => {
             <textarea 
               id="mensagem"
               value={mensagem}
+              onFocus={() => setMensagem("")}
               onChange={(event) => setMensagem(event.target.value)}
               className={styles.textareaField}
-              placeholder="Digite sua mensagem aqui..."
             />
           </div>
 

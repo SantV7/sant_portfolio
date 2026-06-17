@@ -162,7 +162,7 @@ function App() {
 
       <AboutMe />
       <Project />
-      <FormContact />
+      
     </>
           )}
     </div>
