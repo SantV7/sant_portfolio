@@ -76,8 +76,8 @@ const AboutMe = () => {
       scale: 1,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 73%',
-        end: 'center 90%',
+        start: 'top 63%',
+        end: 'center 80%',
         scrub: true
       }
     })
@@ -94,8 +94,8 @@ const AboutMe = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 65%',
-        end: 'center 60%',
+        start: 'top 51%',
+        end: 'center 50%',
         scrub: true
       }
     })
@@ -112,7 +112,7 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 68%',
-        end: 'top 50%',
+        end: 'center 50%',
         scrub: true
       }
     })      
@@ -129,7 +129,7 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 68%',
-        end: 'top 50%',
+        end: 'center 50%',
         scrub: true
       }
     })   
@@ -147,8 +147,8 @@ const AboutMe = () => {
       scale: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 65%',
-        end: 'top 60%',
+        start: 'top 51%',
+        end: 'center 50%',
         scrub: true
       }
     })   
@@ -167,7 +167,7 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 68%',
-        end: 'top 50%',
+        end: 'center 50%',
         scrub: true
       }
     })      
@@ -185,7 +185,7 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: container_scroll.current,
         start: 'top 80%',
-        end: 'top 30%',
+        end: 'center 30%',
         scrub: true
       }
     })   
@@ -425,7 +425,7 @@ const AboutMe = () => {
                         / Fortnite / Valorant / Warzone...
                       </p>
                       <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS,
-                        JavaScript, TypeScript, React, UI/UX, Figma, Gsap, Git, GitHub...
+                        JavaScript, TypeScript, React, UI/UX, Figma, GSAP, Git, GitHub...
                       </p>
                       <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                       <p><span>Height:</span> 5'10</p>     
@@ -434,7 +434,7 @@ const AboutMe = () => {
                       <p><span>Dominant Hand:</span> Right-Handed</p>  
                       <p><span>Weight:</span> 143 lbs</p> 
                       <p><span>Mother:</span> Maria</p> 
-                      <p><span>Father:</span> Jóse</p> 
+                      <p><span>Father:</span> José</p> 
                       <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend
                         (Java, Kotlin), APIs (GraphQL), Testing (Jest)
                       </p>  
@@ -544,12 +544,12 @@ const AboutMe = () => {
 
                           <div className={styles.skills_first}>
                             <h4>■ Animation and UI:</h4>
-                            <p>- UI/UX Desing Principles, Figma</p>
+                            <p>- UI/UX Design Principles, Figma</p>
                           </div>
 
                           <div className={styles.skills_first}>
                             <h4>■ Tools and Workflow:</h4>
-                            <p>- Git, Github, REST APIs, Resposive Web Developement</p>
+                            <p>- Git, GitHub, REST APIs, Responsive Web Development</p>
                           </div>      
 
                           <div className={styles.skills_first}>
@@ -606,23 +606,23 @@ const AboutMe = () => {
                 { curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
                     <a
-                     href={curriculumDownload}
-                     download="Vinicius_Software_Engineer.pdf"
-                     onMouseEnter={() => setDownloadIcon(true)}
-                     onMouseOut={() => setDownloadIcon(false)}
-                     className={styles.hud_btn_sm}>
-                     Download
+                      href={curriculumDownload}
+                      download="Vinicius_Software_Engineer.pdf"
+                      onMouseEnter={() => setDownloadIcon(true)}
+                      onMouseOut={() => setDownloadIcon(false)}
+                      className={styles.hud_btn_sm}>
+                      Download
                     {downloadIcon ? <HardDriveDownload /> : <Download/>}
-                   </a>
+                    </a>
 
                     <button onClick={() => setShowCurriculum(!showCurriculum)}
-                     className={styles.hud_btn_sm}>Show <ScanEye />
+                      className={styles.hud_btn_sm}>Show <ScanEye />
                     </button>
                      <br />
                     <button onClick={() => setCurriculumActive(false)}
-                     className={styles.hud_btn_sm}>
-                     CLOSE THE RESUME 
-                     <CircleX size={30}/>
+                      className={styles.hud_btn_sm}>
+                      CLOSE THE RESUME 
+                      <CircleX size={30}/>
                     </button>
                   </div>
                  )
