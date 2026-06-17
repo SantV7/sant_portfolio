@@ -76,7 +76,7 @@ const AboutMe = () => {
       scale: 1,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 80%',
+        start: 'top 73%',
         end: 'center 90%',
         scrub: true
       }
@@ -94,7 +94,7 @@ const AboutMe = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 80%',
+        start: 'top 65%',
         end: 'center 60%',
         scrub: true
       }
@@ -111,7 +111,7 @@ const AboutMe = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 80%',
+        start: 'top 68%',
         end: 'top 50%',
         scrub: true
       }
@@ -128,7 +128,7 @@ const AboutMe = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 80%',
+        start: 'top 68%',
         end: 'top 50%',
         scrub: true
       }
@@ -147,7 +147,7 @@ const AboutMe = () => {
       scale: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 80%',
+        start: 'top 65%',
         end: 'top 60%',
         scrub: true
       }
@@ -166,7 +166,7 @@ const AboutMe = () => {
       scale: 1,
       scrollTrigger: {
         trigger: container_scroll.current,
-        start: 'top 80%',
+        start: 'top 68%',
         end: 'top 50%',
         scrub: true
       }
