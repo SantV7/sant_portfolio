@@ -9,6 +9,7 @@ import styles from './components/Welcome/welcome.module.css'
 import Error404 from './components/error/Error404'
 import Lenis from '@studio-freight/lenis'
 import Project from './components/Projects/Project'
+import FormContact from './components/Form/FormContact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -161,6 +162,7 @@ function App() {
 
       <AboutMe />
       <Project />
+      <FormContact />
     </>
           )}
     </div>
