@@ -6,6 +6,7 @@ import Card from "./Card/Card";
 import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
 import { gsap } from 'gsap';
+import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +44,11 @@ const Project = () => {
         {id: 3, imgProject: pizzariaProject,
          nameProject: 'Landing Page - Pizzaria',
          descProject: 'Aplicação interativa para visualização de sabores, foco na experiência de cliente ter uma pré-visualização  dos itens que serão requisitados.',
-         urlProject: 'https://pizzaria-zeta-six.vercel.app/'}
+         urlProject: 'https://pizzaria-zeta-six.vercel.app/'},
+        {id: 4, imgProject: gameReveal,
+         nameProject: 'Game - Game Reveal',
+         descProject: 'Aplicação interativa de um jogo de revelar palavras, aplicando lógica de alterações de estados e tratamento de dados.',
+         urlProject: 'https://game-reveal.vercel.app/'}         
     ])
 
     const [data, SetData] = useState<string>()
