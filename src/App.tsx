@@ -75,6 +75,7 @@ function App() {
       ease: 'power2'
     })
 
+
     const animBgVideo = gsap.to("#bg-video", {
       scrollTrigger: {
         trigger: "#intro-video", 
@@ -120,7 +121,7 @@ function App() {
       timeLine.kill();
     }
   }, [])
-
+  
   const toolTipActive = () => { if (!showMenu) setIsHovered(true) }
   const toolTipAllowed = () => { setIsHovered(false) }
 
