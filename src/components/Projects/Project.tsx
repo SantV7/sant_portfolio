@@ -92,7 +92,7 @@ const Project = () => {
       })
 
       gsap.fromTo(listRef.current, {
-        x: -220,
+        x: -130,
         opacity: 0,
       }, {
         x:0, 
@@ -102,54 +102,53 @@ const Project = () => {
         scrollTrigger: {
           trigger: projectAreaRef.current,
           start: 'top 80%',
-          end: 'bottom 20%'
+          end: 'center 20%'
         }        
       })
 
       gsap.fromTo(titleTxtRef.current, {
-        x: -150,
+        x: -100,
         opacity: 0,
       }, {
         x:0, 
-        delay: 0.7,
         opacity: 1,
         duration: 0.68,
         scrollTrigger: {
           trigger: projectAreaRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%'
+          start: 'top 22%',
+          end: 'center: 66%'
         }        
       })
 
       gsap.fromTo(paragraphRef.current, {
-        x: -150,
+        x: -90,
         opacity: 0,
-        scale: 0.87
+        scale: 0.92
       }, {
         x:0, 
-        delay: 0.84,
         opacity: 1,
         scale: 1,
         duration: 0.55,
         scrollTrigger: {
           trigger: projectAreaRef.current,
           start: 'top 80%',
-          end: 'bottom 20%'
+          end: 'center 20%',
+          scrub: true
         }        
       })
 
       gsap.fromTo(imgCardRef.current, {
-        x: 170,
+        x: 100,
         opacity: 0,
       }, {
-        x:0, 
-        delay: 0.5,
+        x:0,
         opacity: 1,
         duration: 0.85,
         scrollTrigger: {
           trigger: projectAreaRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%'
+          start: 'top 83%',
+          end: 'center 60%',
+          scrub: true
         }        
       })      
        
