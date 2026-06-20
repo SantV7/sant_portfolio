@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaReact, FaCode } from 'react-icons/fa';
 import { SiTypescript, SiGreensock, SiFigma } from 'react-icons/si';
 import styles from './Card.module.css';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface CardPros {
   id: number;
@@ -12,9 +17,39 @@ interface CardPros {
 }
 
 const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
-
-  
   const [isOpen, setIsOpen] = useState(false);
+  
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = cardRef.current;
+
+    if (element) {
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element, 
+            start: 'top 85%', 
+            toggleActions: 'play none none reverse', 
+            scrub: true
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   const renderTechBadges = (projectName: string) => {
     const name = projectName.toLowerCase();
@@ -26,7 +61,6 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
       { name: 'UI/UX', icon: <SiFigma />, show: true },
       { name: 'API', icon: <FaCode />, show: name.includes('coins') }
     ];
-
 
     return (
       <div className={styles.tech_container}>
@@ -41,7 +75,8 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
   };
 
   return (
-    <div className={styles.card_interface} key={id}>
+    // Adicionada a ref={cardRef} aqui
+    <div ref={cardRef} className={styles.card_interface} key={id}>
       <header>
         <div className={styles.main_stylying}>
           <div className={styles.flex_circle}>
