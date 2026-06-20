@@ -17,7 +17,6 @@ import styles from './AboutMe.module.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutMe = () => {
-
   const WhoRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -34,9 +33,9 @@ const AboutMe = () => {
   const btn_archieve_one = useRef<HTMLButtonElement | null>(null)
   const btn_archieve_two = useRef<HTMLButtonElement | null>(null)
   const pczin = useRef<HTMLImageElement | null>(null)
-  const recordRef = useRef< HTMLHeadingElement| null>(null)
-  const numId = useRef< HTMLSpanElement| null>(null) 
-  const standyRef = useRef< HTMLDivElement| null>(null) 
+  const recordRef = useRef<HTMLHeadingElement| null>(null)
+  const numId = useRef<HTMLSpanElement| null>(null) 
+  const standyRef = useRef<HTMLDivElement| null>(null) 
   const imgRef = useRef<HTMLDivElement | null>(null)
 
   const p1_g = useRef<HTMLParagraphElement  | null>(null)
@@ -47,250 +46,247 @@ const AboutMe = () => {
   const aboutRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    gsap.fromTo(WhoRef.current, {
-      opacity: 0,
-      y: 60,
-      scale: 0.55
-    }, {
-      opacity: 1,
-      y: 0, scale: 1,
-      duration: 1.5, 
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 85%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()) }
+    const ctx = gsap.context(() => {
+      gsap.fromTo(WhoRef.current, {
+        opacity: 0,
+        y: 60,
+        scale: 0.55
+      }, {
+        opacity: 1,
+        y: 0, 
+        scale: 1,
+        duration: 1.5, 
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 85%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })
+
+      gsap.fromTo(pczin.current, {
+        rotate: 90,
+        scale: 0.6
+      }, {
+        rotate: 0,
+        ease: 'power2.out',
+        duration: 1.6,
+        scale: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 63%',
+          end: 'center 80%',
+          scrub: true
+        }
+      })
+
+      gsap.fromTo(btn_archieve_one.current, {
+        scale: 0.6,
+        opacity: 0,
+        y: 40
+      }, {
+        ease: 'power2.out',
+        duration: 0.3,
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 51%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })
+
+      gsap.fromTo(recordRef.current, {
+        opacity: 0,
+        x: -30
+      }, {
+        ease: 'power2.out',
+        duration: 0.5,
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 68%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })      
+
+      gsap.fromTo(numId.current, {
+        opacity: 0,
+        y: 20
+      }, {
+        ease: 'power2.out',
+        duration: 0.5,
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 68%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })   
+
+      gsap.fromTo(btn_archieve_two.current, {
+        scale: 0.6,
+        opacity: 0,
+        y: 40
+      }, {
+        ease: 'power2.out',
+        duration: 0.37,
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 51%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })   
+
+      gsap.fromTo(standyRef.current, {
+        scale: 0.87,
+        opacity: 0,
+        x: 40
+      }, {
+        ease: 'power2.out',
+        duration: 0.55,
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 68%',
+          end: 'center 50%',
+          scrub: true
+        }
+      })      
+
+      gsap.fromTo(imgRef.current, {
+        scale: 0.35,
+        opacity: 0,
+        y: 20
+      }, {
+        ease: 'power2.out',
+        duration: 0.55,
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        scrollTrigger: {
+          trigger: container_scroll.current,
+          start: 'top 80%',
+          end: 'center 30%',
+          scrub: true
+        }
+      })   
+    }, sectionRef)
+
+    return () => ctx.revert()
   }, [])
 
   useEffect(() => {
-    const animPc = gsap.fromTo(pczin.current, {
-      rotate: 90,
-      scale: 0.6
-    }, {
-      rotate: 0,
-      ease: 'power2',
-      duration: 1.6,
-      scale: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 63%',
-        end: 'center 80%',
-        scrub: true
-      }
-    })
+    if (!showMore) return
 
-    const animBtn1 = gsap.fromTo(btn_archieve_one.current, {
-      scale: 0.6,
-      opacity: 0,
-      y: 40
-    }, {
-      ease: 'power2',
-      duration: 0.3,
-      y: 0,
-      scale: 1,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 51%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })
-  
+    const ctx = gsap.context(() => {
+      gsap.fromTo(p1_g.current, {
+        opacity: 0,
+        x: -30
+      }, {
+        ease: 'power2.out',
+        duration: 0.55,
+        x: 0,
+        opacity: 1
+      }) 
 
-    const surge = gsap.fromTo(recordRef.current, {
-      opacity: 0,
-      x: -30
-    }, {
-      ease: 'power2',
-      duration: 0.5,
-      x: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 68%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })      
+      gsap.fromTo(p2_g.current, {
+        opacity: 0,
+        x: -35
+      }, {
+        ease: 'power2.out',
+        duration: 0.65,
+        x: 0,
+        opacity: 1
+      }) 
 
+      gsap.fromTo(aboutRef.current, {
+        scale: 0.6,
+        opacity: 0,
+        y: 100
+      }, {
+        ease: 'power2.out',
+        duration: 0.65,
+        y: 0,
+        scale: 1,
+        opacity: 1
+      }) 
+    }, sectionRef)
 
-    const surge2 = gsap.fromTo(numId.current, {
-      opacity: 0,
-      y: 20
-    }, {
-      ease: 'power2',
-      duration: 0.5,
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 68%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })   
-
-
-    const animBtn2 = gsap.fromTo(btn_archieve_two.current, {
-      scale: 0.6,
-      opacity: 0,
-      y: 40
-    }, {
-      ease: 'power2',
-      duration: 0.37,
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 51%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })   
-
-
-    const standyGsap = gsap.fromTo(standyRef.current, {
-      scale: 0.87,
-      opacity: 0,
-      x: 40
-    }, {
-      ease: 'power2',
-      duration: 0.55,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 68%',
-        end: 'center 50%',
-        scrub: true
-      }
-    })      
-
-    const imgGsap = gsap.fromTo(imgRef.current, {
-      scale: 0.35,
-      opacity: 0,
-      y: 20
-    }, {
-      ease: 'power2',
-      duration: 0.55,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      scrollTrigger: {
-        trigger: container_scroll.current,
-        start: 'top 80%',
-        end: 'center 30%',
-        scrub: true
-      }
-    })   
-
-
-    return () => {
-      animPc.scrollTrigger?.kill();
-      surge.scrollTrigger?.kill();
-      surge2.scrollTrigger?.kill();
-      animBtn1.scrollTrigger?.kill();
-      animBtn2.scrollTrigger?.kill();
-      standyGsap.scrollTrigger?.kill();
-      imgGsap.scrollTrigger?.kill();
-
-    }
-  }, [])
-
-
-  useEffect(() => {
-    const p1_Gsap = gsap.fromTo(p1_g.current, {
-      opacity: 0,
-      x: -30
-    }, {
-      ease: 'power2',
-      duration: 0.55,
-      x: 0,
-      opacity: 1
-    }) 
-
-    const p2_Gsap = gsap.fromTo(p2_g.current, {
-      opacity: 0,
-      x: -35
-    }, {
-      ease: 'power2',
-      duration: 0.65,
-      x: 0,
-      opacity: 1
-    }) 
-
-    const about_Gsap = gsap.fromTo(aboutRef.current, {
-      scale: 0.6,
-      opacity: 0,
-      y: 100
-    }, {
-      ease: 'power2',
-      duration: 0.65,
-      y: 0,
-      scale: 1,
-      opacity: 1
-    }) 
-
-    return () => {
-      p2_Gsap.kill()
-      p1_Gsap.kill()
-      about_Gsap.kill()
-    }
+    return () => ctx.revert()
   }, [showMore])
 
   useEffect(() => {
-    if (moreCurriculum && linksContainerRef.current) {
-      const targets = linksContainerRef.current.querySelectorAll(`.${styles.links_reference}`);
+    if (!moreCurriculum || !linksContainerRef.current) return
+
+    const ctx = gsap.context(() => {
+      const container = linksContainerRef.current
+      if (!container) return
+
+      const targets = container.querySelectorAll(`.${styles.links_reference}`)
       
       targets.forEach((target) => {
-        const textNode = Array.from(target.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        const textNode = Array.from(target.childNodes).find(node => node.nodeType === Node.TEXT_NODE)
         if (textNode && textNode.textContent?.trim()) {
-          const originalText = textNode.textContent;
-          const wrapper = document.createElement('span');
-          wrapper.style.display = 'inline-block';
+          const originalText = textNode.textContent
+          const wrapper = document.createElement('span')
+          wrapper.style.display = 'inline-block'
           
           wrapper.innerHTML = originalText.split('').map(char => 
             char === ' ' ? '&nbsp;' : `<span class="gsap-char" style="display:inline-block;opacity:0">${char}</span>`
-          ).join('');
+          ).join('')
           
-          target.replaceChild(wrapper, textNode);
+          target.replaceChild(wrapper, textNode)
         }
-      });
+      })
 
-      const allChars = linksContainerRef.current.querySelectorAll('.gsap-char');
-      const icons = linksContainerRef.current.querySelectorAll('svg');
+      const allChars = container.querySelectorAll('.gsap-char')
+      const icons = container.querySelectorAll('svg')
 
-      const tl = gsap.timeline();
+      if (icons.length === 0 && allChars.length === 0) return
 
-      tl.fromTo(icons, {
-        opacity: 0,
-        x: -15
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 0.4,
-        ease: 'power1.out',
-        stagger: 0.08
-      });
+      const tl = gsap.timeline()
 
-      tl.fromTo(allChars, {
-        opacity: 0,
-        x: -10
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 0.5,
-        ease: 'power1.out',
-        stagger: 0.02
-      }, "-=0.3");
+      if (icons.length > 0) {
+        tl.fromTo(icons, {
+          opacity: 0,
+          x: -15
+        }, {
+          opacity: 1,
+          x: 0,
+          duration: 0.4,
+          ease: 'power1.out',
+          stagger: 0.08
+        })
+      }
 
-    }
+      if (allChars.length > 0) {
+        tl.fromTo(allChars, {
+          opacity: 0,
+          x: -10
+        }, {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          ease: 'power1.out',
+          stagger: 0.02
+        }, icons.length > 0 ? "-=0.3" : "<")
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
   }, [moreCurriculum])
 
   return (
@@ -300,9 +296,8 @@ const AboutMe = () => {
         <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />
       </div>
 
-      <div  className={styles.container_card}>
+      <div className={styles.container_card}>
         <div ref={container_scroll} className={styles.about_me_card}>
-      
           <header className={styles.card_header}>
             <div className={styles.header_text}>
               <h2 ref={recordRef}>PERSONAL RECORD SYSTEM</h2>
@@ -324,89 +319,56 @@ const AboutMe = () => {
                 <img src={photo_anime} alt="photo anime" />
               </div>
 
+              {moreCurriculum && (
+                <div className={styles.more_all_data}>
+                  <section ref={linksContainerRef} className={styles.contact_more}>
+                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/> CONTACT</h3>
+                    <p className={styles.links_reference}>
+                      <HiLocationMarker color="#dabeff" size={25}/> Brasília, Brazil
+                    </p>
+                    <a 
+                      className={styles.links_reference}  
+                      onMouseEnter={() => setEmailIcon(true)}
+                      onMouseOut={() => setEmailIcon(false)}
+                      href="mailto:3izuna@gmail.com"> 
+                      {emailIcon ? <MailOpen color="#b2c9ff" size={23}/> : <Mail color="#b2c9ff" size={23}/>} Email
+                    </a>
+                    <a className={styles.links_reference} href="https://github.com/SantV7" target='_blank' rel="noreferrer">
+                      <FaGithub color="#b2c9ff" size={23}/> GitHub
+                    </a>
+                    <a className={styles.links_reference} href="https://www.linkedin.com/in/viniciussant07" target='_blank' rel="noreferrer">
+                      <FaLinkedin color="#b2c9ff" size={23}/> LinkedIn
+                    </a>
+                    <a className={styles.links_reference} href="https://www.instagram.com/__sant_v/" target='_blank' rel="noreferrer">
+                      <FaInstagram color="#b2c9ff" size={23}/> Instagram
+                    </a>
+                    <a id={styles.m_last} className={styles.links_reference} href="https://portfolio-santv7.vercel.app/" target='_blank' rel="noreferrer">
+                      <GlobeOff color="#b2c9ff" size={23} /> Last Portfolio
+                    </a>
+                  </section>
 
-              { moreCurriculum && (
-                <> 
-               <div className={styles.more_all_data}>
-                 <section ref={linksContainerRef} className={styles.contact_more}>
-                  <h3  className={styles.more_data_title}><Info size={19} color='orange'/> CONTACT</h3>
+                  <section ref={contactRef} className={styles.contact_more}>
+                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
+                    <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
+                    <p ref={p1_g} className={styles.format_txt}>Universidade Católica de Brasília</p>
+                    <p ref={p2_g} id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
+                  </section>
 
-                  <p className={styles.links_reference} >
-                     <HiLocationMarker color="#dabeff"
-                    size={25}/> Brasília, Brazil</p>
-
-                  <a 
-                    className={styles.links_reference}  
-                    onMouseEnter={() => setEmailIcon(true)}
-                    onMouseOut={() => setEmailIcon(false)}
-                    href="mailto:3izuna@gmail.com"> 
-                    { emailIcon ? <MailOpen color="#b2c9ff"
-                     size={23}/> : <Mail color="#b2c9ff" size={23}/>}
-                     Email
-                  </a>
-
-                  <a 
-                    className={styles.links_reference}
-                    href="https://github.com/SantV7"
-                    target='_blank'>
-                    <FaGithub color="#b2c9ff" size={23}/> 
-                    GitHub
-                  </a>
-
-                  <a 
-                    className={styles.links_reference}
-                    href="https://www.linkedin.com/in/viniciussant07"
-                    target='_blank'>
-                    <FaLinkedin color="#b2c9ff" size={23}/> LinkedIn
-                  </a>
-
-                  <a 
-                    className={styles.links_reference}
-                    href="https://www.instagram.com/__sant_v/"
-                    target='_blank'>
-                    <FaInstagram color="#b2c9ff" size={23}/>
-                    Instagram
-                  </a>
-
-                  <a id={styles.m_last}
-                    className={styles.links_reference}
-                    href="https://portfolio-santv7.vercel.app/"
-                    target='_blank'>
-                    <GlobeOff color="#b2c9ff" size={23} />
-                    Last Portfolio
-                  </a>
-                 </section>
-
-                 <section ref={contactRef} className={styles.contact_more}>
-                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
-                  <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
-                  <p ref={p1_g} className={styles.format_txt}>Universidade Católica de Brasília</p>
-                  <p ref={p2_g} id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
-                 </section>
-
-                 <section className={styles.contact_more}>
-                  <h3 className={styles.more_data_title}><Info size={19} color='orange'/>
-                    Design & UX Skills</h3>
-                  <div className={styles.design_area_icons}>
-                    <div>
-                      <p className={styles.format_txt}>
-                        <FaFigma size={31} color="#F24E1E" />
-                      Figma</p>
+                  <section className={styles.contact_more}>
+                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Design & UX Skills</h3>
+                    <div className={styles.design_area_icons}>
+                      <div>
+                        <p className={styles.format_txt}><FaFigma size={31} color="#F24E1E" /> Figma</p>
+                      </div>
+                      <div>
+                        <p className={styles.format_txt}><MdOutlineDesignServices size={33} color="#a3c9d1" /> UI Design</p>
+                      </div>
+                      <div>
+                        <p className={styles.format_txt}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className={styles.format_txt}>
-                        <MdOutlineDesignServices size={33} color="#a3c9d1" />
-                       UI Design</p>
-                    </div>
-                    <div>
-                      <p className={styles.format_txt}> 
-                        <MdOutlineDevices size={30} color="#a3c9d1" />
-                        UX Design</p>
-                    </div>
-                  </div>
-                 </section>
-               </div>
-               </>
+                  </section>
+                </div>
               )}
             </aside>
             
@@ -418,215 +380,131 @@ const AboutMe = () => {
                 <p><span>Profession:</span> Software Engineer</p>
                 <p><span>Stack:</span> Front-End</p>
 
-                  {showMore && (
-                    <>
-                      <p><span>NickName:</span>Sant | Aivy | Vy</p>
-                      <p><span>Favorite Games:</span>The Last Of Us / Uncharted 
-                        / Fortnite / Valorant / Warzone...
+                {showMore && (
+                  <>
+                    <p><span>NickName:</span>Sant | Aivy | Vy</p>
+                    <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
+                    <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, GSAP, Git, GitHub...</p>
+                    <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
+                    <p><span>Height:</span> 5'10</p>     
+                    <p><span>Hair Color:</span>Dark Brown</p>  
+                    <p><span>Eye Color:</span>Dark Brown</p> 
+                    <p><span>Dominant Hand:</span> Right-Handed</p>  
+                    <p><span>Weight:</span> 143 lbs</p> 
+                    <p><span>Mother:</span> Maria</p> 
+                    <p><span>Father:</span> José</p> 
+                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
+                    <p></p>  
+                    <p><span>IDE:</span>Visual Studio Code</p>  
+                  </>
+                )}
+
+                {moreCurriculum && (
+                  <div id={styles.about_me_area} className={styles.box_info}>
+                    <div ref={aboutRef} className={styles.about_me_title}>
+                      <header>
+                        <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
+                      </header>
+                      <p>
+                        Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React,
+                        JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP.
+                        Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced
+                        in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally,
+                        I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
                       </p>
-                      <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS,
-                        JavaScript, TypeScript, React, UI/UX, Figma, GSAP, Git, GitHub...
-                      </p>
-                      <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
-                      <p><span>Height:</span> 5'10</p>     
-                      <p><span>Hair Color:</span>Dark Brown</p>  
-                      <p><span>Eye Color:</span>Dark Brown</p> 
-                      <p><span>Dominant Hand:</span> Right-Handed</p>  
-                      <p><span>Weight:</span> 143 lbs</p> 
-                      <p><span>Mother:</span> Maria</p> 
-                      <p><span>Father:</span> José</p> 
-                      <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend
-                        (Java, Kotlin), APIs (GraphQL), Testing (Jest)
-                      </p>  
-                      <p></p>  
-                      <p><span>IDE:</span>Visual Studio Code</p>  
-                    </>
-                  )}
-
-                  { moreCurriculum && (
-                    <>
-                    <div id={styles.about_me_area} className={styles.box_info}>
-                  
-                        <div ref={aboutRef} className={styles.about_me_title}>
-                          <header>
-                            <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
-                          </header>
-                          <p>
-                            Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React,
-                            JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP.
-                            Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced
-                            in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally,
-                            I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
-                          </p>
-                        </div>
-
-
-                          <div className={styles.format_icons_about_me}>
-                   
-                          <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'}Technologies & design tools</h3>
-                  
-                                <div className={styles.all_icons}>
-                                  <div className={styles.format_icons_skills}>
-                                    <FaHtml5 size={30} color="#E34F26" /> 
-                                    HTML5
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <FaCss3Alt size={30} color="#1572B6" /> 
-                                    CSS3
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <SiTailwindcss size={30} color="#06B6D4" /> 
-                                    Tailwind
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <FaSass size={30} color="#CC6699" /> 
-                                    SCSS
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <FaReact size={30} color="#61DAFB" /> 
-                                    React
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <SiTypescript size={28} color="#3178C6" /> 
-                                    TypeScript
-                                  </div>
-
-                                  <div className={styles.format_icons_skills}>
-                                    <FaJs size={30} color="#F7DF1E" /> 
-                                    JavaScript
-                                  </div>
-                                  
-                                  <div className={styles.format_icons_skills}> 
-                                    <MdOutlineDesignServices size={30} color="#a3c9d1"/>
-                                      UI Design
-                                  </div>
-
-                                  <a target='_blank' href='https://github.com/SantV7' 
-                                   className={styles.format_icons_skills}> <FaGithub 
-                                   size={30} color="#FFFFFF" /> 
-                                   GitHub
-                                  </a >
-
-                                  <div className={styles.format_icons_skills}>
-                                    <FaFigma size={28} color="#F24E1E" /> 
-                                    Figma
-                                  </div>
-                                  
-                                  <div className={styles.format_icons_skills}> 
-                                   <MdOutlineDevices size={30} color="#a3c9d1" />
-                                    UX Design
-                                  </div>
-                                </div>
-                          </div>
-                        </div>
-                
-
-                    <div className={styles.more_data_flex}>
-                      <div id={styles.technical_box} className={styles.box_info}>
-                        <header>
-                          <h3 id={styles.technical_title} className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
-                        </header>
-                        <div className={styles.flex_skills}>
-                          <div className={styles.skills_first}>
-                            <h4>■ Language:</h4>
-                            <p>- JavaScript, TypeScript, HTML5, CSS3</p>
-                          </div>
-
-                          <div className={styles.skills_first}>
-                            <h4>■ Libraries and Frameworks:</h4>
-                            <p>- React, Tailwind CSS, Sass & SCSS</p>
-                          </div>      
-
-                          <div className={styles.skills_first}>
-                            <h4>■ Animation and UI:</h4>
-                            <p>- UI/UX Design Principles, Figma</p>
-                          </div>
-
-                          <div className={styles.skills_first}>
-                            <h4>■ Tools and Workflow:</h4>
-                            <p>- Git, GitHub, REST APIs, Responsive Web Development</p>
-                          </div>      
-
-                          <div className={styles.skills_first}>
-                            <h4>■ Language:</h4>
-                            <p>- Portuguese - Native</p>
-                            <p>- English - Intermediate</p>
-                          </div>  
-
-                          <div className={styles.skills_first}>
-                            <h4>■ Agile Methodologies:</h4>
-                            <p>- Scrum, Kanban</p>
-                          </div>           
-                        </div>
-                      </div>
-
-
-         
                     </div>
-                    </>
-                  )}
+
+                    <div className={styles.format_icons_about_me}>
+                      <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'}Technologies & design tools</h3>
+                      <div className={styles.all_icons}>
+                        <div className={styles.format_icons_skills}><FaHtml5 size={30} color="#E34F26" /> HTML5</div>
+                        <div className={styles.format_icons_skills}><FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
+                        <div className={styles.format_icons_skills}><SiTailwindcss size={30} color="#06B6D4" /> Tailwind</div>
+                        <div className={styles.format_icons_skills}><FaSass size={30} color="#CC6699" /> SCSS</div>
+                        <div className={styles.format_icons_skills}><FaReact size={30} color="#61DAFB" /> React</div>
+                        <div className={styles.format_icons_skills}><SiTypescript size={28} color="#3178C6" /> TypeScript</div>
+                        <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                        <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
+                        <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills} rel="noreferrer">
+                          <FaGithub size={30} color="#FFFFFF" /> GitHub
+                        </a>
+                        <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
+                        <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {moreCurriculum && (
+                  <div className={styles.more_data_flex}>
+                    <div id={styles.technical_box} className={styles.box_info}>
+                      <header>
+                        <h3 id={styles.technical_title} className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
+                      </header>
+                      <div className={styles.flex_skills}>
+                        <div className={styles.skills_first}>
+                          <h4>■ Language:</h4>
+                          <p>- JavaScript, TypeScript, HTML5, CSS3</p>
+                        </div>
+                        <div className={styles.skills_first}>
+                          <h4>■ Libraries and Frameworks:</h4>
+                          <p>- React, Tailwind CSS, Sass & SCSS</p>
+                        </div>      
+                        <div className={styles.skills_first}>
+                          <h4>■ Animation and UI:</h4>
+                          <p>- UI/UX Design Principles, Figma</p>
+                        </div>
+                        <div className={styles.skills_first}>
+                          <h4>■ Tools and Workflow:</h4>
+                          <p>- Git, GitHub, REST APIs, Responsive Web Development</p>
+                        </div>      
+                        <div className={styles.skills_first}>
+                          <h4>■ Language:</h4>
+                          <p>- Portuguese - Native</p>
+                          <p>- English - Intermediate</p>
+                        </div>  
+                        <div className={styles.skills_first}>
+                          <h4>■ Agile Methodologies:</h4>
+                          <p>- Scrum, Kanban</p>
+                        </div>           
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-
-
 
               <footer className={styles.info_card_footer}>
                 <div className={styles.footer_btns}>
-                   <button onClick={() => setCurriculumActive(true)}
-                    onMouseEnter={() => setCurriculumSetter('white')}
-                    className={styles.hud_btn_sm}>
+                  <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')} className={styles.hud_btn_sm}>
                     CURRICULUM <Workflow color={curriculumSetter} size={29}/>
-                   </button>
+                  </button>
 
-                   <button onClick={() => {
+                  <button onClick={() => {
                     setMoreCurriculum(!moreCurriculum)
                     setShowMore(!moreCurriculum)
-                    }}
-                    className={styles.hud_btn_sm}>
-                    {moreCurriculum ? 'CLOSE' : 'MORE'} 
-                    {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
-                   </button>
+                  }} className={styles.hud_btn_sm}>
+                    {moreCurriculum ? 'CLOSE' : 'MORE'} {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
+                  </button>
 
-                   { showMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)}
-                     onMouseOut={() => setCloseIcon(false)}
-                     onClick={() => setShowMore(false)}
-                     className={styles.hud_btn_sm}>
-                     SHOW LESS
-                    {closeIcon ? <X  size={38}/> : <CircleX  size={38} />}
+                  {showMore && (
+                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>
+                      SHOW LESS {closeIcon ? <X size={38}/> : <CircleX size={38} />}
                     </button>
-                   )}
+                  )}
                 </div>
 
-
-                { curriculumActive && (
+                {curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a
-                      href={curriculumDownload}
-                      download="Vinicius_Software_Engineer.pdf"
-                      onMouseEnter={() => setDownloadIcon(true)}
-                      onMouseOut={() => setDownloadIcon(false)}
-                      className={styles.hud_btn_sm}>
-                      Download
-                    {downloadIcon ? <HardDriveDownload /> : <Download/>}
+                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
+                      Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
                     </a>
-
-                    <button onClick={() => setShowCurriculum(!showCurriculum)}
-                      className={styles.hud_btn_sm}>Show <ScanEye />
-                    </button>
-                     <br />
-                    <button onClick={() => setCurriculumActive(false)}
-                      className={styles.hud_btn_sm}>
-                      CLOSE THE RESUME 
-                      <CircleX size={30}/>
+                    <button onClick={() => setShowCurriculum(!showCurriculum)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
+                    <br />
+                    <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>
+                      CLOSE THE RESUME <CircleX size={30}/>
                     </button>
                   </div>
-                 )
-                }
+                )}
               </footer>
             </section>
           </div>
