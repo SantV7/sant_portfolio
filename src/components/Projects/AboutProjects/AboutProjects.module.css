@@ -65,7 +65,8 @@
 @media screen and (min-width: 879px) { 
   .more_info_project {
     margin-top: 360px;
-    padding: 0;
+    margin-bottom: 130px;
+    padding: 0 11px;
   }
 
   .title_focus {

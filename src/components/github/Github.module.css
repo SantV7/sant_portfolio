@@ -1,0 +1,136 @@
+.github_sec {
+    font-family: "Pixelify Sans", Arial, Helvetica, sans-serif;
+    width: 100%;
+    min-height: 600px;
+    background-image: linear-gradient(100deg, rgb(237, 240, 255), rgb(127, 95, 159));
+    padding: 10px 20px;
+}
+
+
+.h_github {
+    margin-bottom: 85px;
+}
+
+.h_github  h2 {
+    margin-top: 83px;
+    font-size: 3.95rem;
+    text-align: center;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.495);
+    color: rgb(22, 22, 59);
+}
+
+.flex_github {
+    margin-top: 110px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.content_txt {
+    width: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+.content_txt h3 {
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.426);
+    font-size: 3.35rem;
+    font-weight: 700;
+}
+
+.content_txt p {
+    color: rgb(82, 72, 90);
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.526);
+    max-width: 530px;
+    font-weight: 600;
+    font-family: "Pixelify Sans", Arial, Helvetica, sans-serif;
+    font-size: 2.34rem;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+}
+
+.s_one, .s_two {
+    border-bottom: 4px solid rgba(128, 128, 255, 0.437);
+    letter-spacing: 0.5px;
+    font-style: italic;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.385);
+}
+
+.s_one {
+    color: rgb(45, 25, 99);
+}
+
+.s_two {
+    color: rgb(16, 60, 129);
+}
+
+.img_github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+  .github_mobile {
+    object-fit: contain;
+  }
+
+  .main_info_github {
+    width: 100%;
+    margin-bottom: 200px;
+  }
+
+.main_info_github  > header {
+    text-align: center;
+    padding: 10px;
+}
+
+.font_tech {
+    font-size: 2.45rem;
+    font-family: "Tektur", Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px rgba(186, 179, 255, 0.541);
+}
+
+.github_link {
+    font-family: "Pixelify Sans";
+    color: rgb(78, 22, 78);
+}
+
+
+.commits {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.github_cards_container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.calendar_img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    background-color: rgba(14, 6, 17, 0.947);
+    padding: 25px;
+}
+
+
+.streak_img {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 540px;
+    border-radius: 11px;
+    height: auto;
+}
