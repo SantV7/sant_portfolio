@@ -1,5 +1,9 @@
-import { useState, type FormEvent } from 'react'
+import { useState, useEffect, useRef, type FormEvent } from 'react'
 import styles from './FormContact.module.css'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const FormContact = () => {
   const [nome, setNome] = useState('Seu nome completo')
@@ -8,6 +12,57 @@ const FormContact = () => {
   const [erro, setErro] = useState('')
   const [sucesso, setSucesso] = useState(false)
 
+  const containerRef = useRef<HTMLTextAreaElement | null>(null)
+  const formBoxRef = useRef<HTMLFormElement | null>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      
+      gsap.fromTo(formBoxRef.current, {
+        opacity: 0,
+        rotationX: -15, 
+        transformPerspective: 1000, 
+        y: 80,
+        scale: 0.95
+      }, {
+        opacity: 1,
+        rotationX: 0,
+        y: 0,
+        scale: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%', 
+          end: 'top 35%',   
+          scrub: 1 
+        }
+      })
+
+      const formElements = formBoxRef.current?.querySelectorAll(`.${styles.inputGroup}, .${styles.submitBtn}`);
+      
+      if (formElements && formElements.length > 0) {
+        gsap.fromTo(formElements, {
+          opacity: 0,
+          y: 30,
+        }, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15, 
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 75%',
+            end: 'top 25%',
+            scrub: 1
+          }
+        })
+      }
+
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [])
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     setErro('')
@@ -15,16 +70,15 @@ const FormContact = () => {
 
     if (!nome.trim() || !email.trim() || !mensagem.trim()) {
       setErro('Por favor, preencha todos os campos.')
-      return
+      return;
     }
 
     if (!email.includes('@')) {
       setErro('Por favor, insira um e-mail válido.')
-      return
+      return;
     }
 
     setSucesso(true)
-
     setNome('')
     setEmail('')
     setMensagem('')
@@ -32,8 +86,8 @@ const FormContact = () => {
 
   return (
     <>
-      <section className={styles.container}>
-        <form onSubmit={handleSubmit} className={styles.formBox}>
+      <section ref={containerRef as any} className={styles.container}>
+        <form ref={formBoxRef} onSubmit={handleSubmit} className={styles.formBox}>
           {erro && <p className={styles.errorMsg}>{erro}</p>}
           {sucesso && <p className={styles.successMsg}>Mensagem enviada com sucesso!</p>}
 
@@ -46,7 +100,6 @@ const FormContact = () => {
               onFocus={() => setNome("")}
               onChange={(event) => setNome(event.target.value)}
               className={styles.inputField}
-              
             />
           </div>
 
@@ -80,4 +133,4 @@ const FormContact = () => {
   )
 }
 
-export default FormContact
+export default FormContact;

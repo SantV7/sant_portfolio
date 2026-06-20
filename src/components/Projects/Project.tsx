@@ -9,8 +9,8 @@ import { gsap } from 'gsap';
 import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
-gsap.registerPlugin(ScrollTrigger);
 
+gsap.registerPlugin(ScrollTrigger);
 
 interface ProjectsProps {
     id: number;
@@ -20,19 +20,15 @@ interface ProjectsProps {
     urlProject: string
 }
 
-
 const Project = () => {
-
     const projectAreaRef = useRef<HTMLDivElement>(null);
     const mainBoxRef = useRef<HTMLDivElement>(null);
-
     const listRef = useRef<HTMLDivElement>(null);
     const titleTxtRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);
-
     const imgCardRef = useRef<HTMLImageElement>(null);
 
-    const [myProjects]= useState<ProjectsProps[]>([
+    const [myProjects] = useState<ProjectsProps[]>([
         {id: 1, imgProject: fintechBank,
           nameProject: 'Fintanch Bank MO',
          descProject: 'Plataforma financeira desenvolvida em React e TypeScript para gerenciamento de faturas e extratos, com foco em tipagem segura, consistência de cálculos e interface responsiva.',
@@ -52,10 +48,8 @@ const Project = () => {
     ])
 
     const [data, SetData] = useState<string>()
-   
 
     useEffect(() => {
-
       const timerSetter = setInterval(() => {
         const newD = new Date()
         const hour = newD.getHours()
@@ -73,98 +67,95 @@ const Project = () => {
     }, [])
 
     useEffect(() => {
+      const ctx = gsap.context(() => {
+        gsap.fromTo(mainBoxRef.current, {
+          opacity: 0,
+          scale: 0.6,
+          y: 60
+        }, {
+          ease: 'power2.in',
+          duration: 0.4,
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          scrollTrigger: {
+            trigger: projectAreaRef.current,
+            start: 'top 80%',
+            end: 'bottom 30%'
+          }
+        })
 
-      gsap.fromTo(mainBoxRef.current, {
-        opacity: 0,
-        scale: 0.6,
-        y: 60
-      }, {
-        ease: 'power2.in',
-        duration: 0.4,
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        scrollTrigger: {
-          trigger: projectAreaRef.current,
-          start: 'top 80%',
-          end: 'bottom 30%'
-        }
-      })
+        gsap.fromTo(listRef.current, {
+          x: -130,
+          opacity: 0,
+        }, {
+          x:0, 
+          delay: 0.5,
+          opacity:1,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: projectAreaRef.current,
+            start: 'top 80%',
+            end: 'center 20%'
+          }        
+        })
 
-      gsap.fromTo(listRef.current, {
-        x: -130,
-        opacity: 0,
-      }, {
-        x:0, 
-        delay: 0.5,
-        opacity:1,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: projectAreaRef.current,
-          start: 'top 80%',
-          end: 'center 20%'
-        }        
-      })
+        gsap.fromTo(titleTxtRef.current, {
+          x: -100,
+          opacity: 0,
+        }, {
+          x:0, 
+          opacity: 1,
+          duration: 0.68,
+          scrollTrigger: {
+            trigger: projectAreaRef.current,
+            start: 'top 22%',
+            end: 'center 66%'
+          }        
+        })
 
-      gsap.fromTo(titleTxtRef.current, {
-        x: -100,
-        opacity: 0,
-      }, {
-        x:0, 
-        opacity: 1,
-        duration: 0.68,
-        scrollTrigger: {
-          trigger: projectAreaRef.current,
-          start: 'top 22%',
-          end: 'center: 66%'
-        }        
-      })
+        gsap.fromTo(paragraphRef.current, {
+          x: -90,
+          opacity: 0,
+          scale: 0.92
+        }, {
+          x:0, 
+          opacity: 1,
+          scale: 1,
+          duration: 0.55,
+          scrollTrigger: {
+            trigger: projectAreaRef.current,
+            start: 'top 80%',
+            end: 'center 20%',
+            scrub: true
+          }        
+        })
 
-      gsap.fromTo(paragraphRef.current, {
-        x: -90,
-        opacity: 0,
-        scale: 0.92
-      }, {
-        x:0, 
-        opacity: 1,
-        scale: 1,
-        duration: 0.55,
-        scrollTrigger: {
-          trigger: projectAreaRef.current,
-          start: 'top 80%',
-          end: 'center 20%',
-          scrub: true
-        }        
-      })
+        gsap.fromTo(imgCardRef.current, {
+          x: 100,
+          opacity: 0,
+        }, {
+          x:0,
+          opacity: 1,
+          duration: 0.85,
+          scrollTrigger: {
+            trigger: projectAreaRef.current,
+            start: 'top 83%',
+            end: 'center 60%',
+            scrub: true
+          }        
+        })
+      }, projectAreaRef);
 
-      gsap.fromTo(imgCardRef.current, {
-        x: 100,
-        opacity: 0,
-      }, {
-        x:0,
-        opacity: 1,
-        duration: 0.85,
-        scrollTrigger: {
-          trigger: projectAreaRef.current,
-          start: 'top 83%',
-          end: 'center 60%',
-          scrub: true
-        }        
-      })      
-       
+      return () => ctx.revert();
     }, [])
-
-
-
 
   return (
     <>
     <section ref={projectAreaRef} id="project_area" className={styles.project_sect}>
-
         <div className={styles.card_intro}>
           <div ref={mainBoxRef}  className={styles.card_intro_flex}>
             <div className={styles.aten}>
-
               <div className={styles.box_info}>
                 <header>
                   <div ref={listRef}>
@@ -172,29 +163,21 @@ const Project = () => {
                     <h3>Design</h3>
                     <h3>Functional</h3>
                   </div>
-
                   <div>
                     <h3 className={styles.font_orange}>{data}</h3>
                   </div>
                 </header>
-
-                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in 
-                  <span className={styles.font_orange}>2026</span>
-                </h3>
+                <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
                 <div className={styles.context_paragraph}>
-                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. 
-                    My focus is on transforming complex ideas into functional, fast, and visually appealing  web applications, 
-                    delivering the ultimate user experience and optimized performance..</p>
+                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. My focus is on transforming complex ideas into functional, fast, and visually appealing  web applications, delivering the ultimate user experience and optimized performance..</p>
                 </div>
               </div>
-
               <div ref={imgCardRef} className={styles.img_older_pc}>
                 <img src={pc_project} alt="old pc" />
               </div>
             </div>
           </div>
         </div>
-
 
         <div className={styles.sect_view_projects}>
             {myProjects.map((itemP) => (
@@ -208,13 +191,10 @@ const Project = () => {
               />
             ))}
         </div>
-
         <AboutProjects />
-
     </section>
-       
     </>
   )
 }
 
-export default Project
+export default Project;

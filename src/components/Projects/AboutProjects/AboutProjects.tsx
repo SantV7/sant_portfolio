@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react';
 import styles from './AboutProjects.module.css';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ProjectFocus {
   uiAndUx: string;
@@ -44,18 +48,8 @@ const AboutProjects = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(titleFocus.current, {
-        opacity: 0,
-        scale: 0.65,
-        y: 15,
-      }, {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.35,
-        ease: 'power2.out',
-      });
-
+      
+      // Cards animados pelo Scroll
       gsap.fromTo(card1.current, {
         opacity: 0,
         scale: 0.85,
