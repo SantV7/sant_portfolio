@@ -10,6 +10,7 @@ import Error404 from './components/error/Error404'
 import Lenis from '@studio-freight/lenis'
 import Project from './components/Projects/Project'
 import Github from './components/github/Github';
+import { FormationData } from './components/Formation/FormationData';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -147,6 +148,7 @@ function App() {
           <AboutMe />
           <Project />
           <Github />
+          <FormationData />
         </>
       )}
     </div>
