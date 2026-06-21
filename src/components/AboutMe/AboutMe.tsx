@@ -75,8 +75,7 @@ const AboutMe = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 63%',
-          end: 'center 80%',
-          scrub: true
+          end: 'center 80%'
         }
       })
 
