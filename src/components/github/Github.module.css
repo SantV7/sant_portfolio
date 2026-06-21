@@ -6,12 +6,11 @@
     padding: 10px 20px;
 }
 
-
 .h_github {
     margin-bottom: 85px;
 }
 
-.h_github  h2 {
+.h_github h2 {
     margin-top: 83px;
     font-size: 3.95rem;
     text-align: center;
@@ -26,7 +25,6 @@
     justify-content: space-around;
     align-items: center;
 }
-
 
 .content_txt {
     width: 40%;
@@ -74,16 +72,16 @@
     width: 60%;
 }
 
-  .github_mobile {
+.github_mobile {
     object-fit: contain;
-  }
+}
 
-  .main_info_github {
+.main_info_github {
     width: 100%;
     margin-bottom: 200px;
-  }
+}
 
-.main_info_github  > header {
+.main_info_github > header {
     text-align: center;
     padding: 10px;
 }
@@ -98,7 +96,6 @@
     font-family: "Pixelify Sans";
     color: rgb(78, 22, 78);
 }
-
 
 .commits {
     display: flex;
@@ -117,7 +114,6 @@
     max-width: 1200px;
 }
 
-
 .calendar_img {
     width: 100%;
     height: auto;
@@ -126,11 +122,66 @@
     padding: 25px;
 }
 
-
 .streak_img {
     margin-top: 40px;
     width: 100%;
     max-width: 540px;
     border-radius: 11px;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .h_github {
+        margin-bottom: 40px;
+    }
+
+    .h_github h2 {
+        font-size: 2.2rem;
+        margin-top: 40px;
+    }
+
+    .flex_github {
+        margin-top: 40px;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .content_txt {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .content_txt h3 {
+        font-size: 2.5rem;
+    }
+
+    .content_txt p {
+        font-size: 1.35rem;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+
+    .img_github {
+        width: 100%;
+    }
+
+    .github_mobile {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .font_tech {
+        font-size: 1.5rem;
+    }
+
+    .github_cards_container {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .calendar_img {
+        padding: 12px;
+    }
 }

@@ -126,8 +126,7 @@ const Project = () => {
           scrollTrigger: {
             trigger: projectAreaRef.current,
             start: 'top 80%',
-            end: 'center 20%',
-            scrub: true
+            end: 'center 20%'
           }        
         })
 
@@ -141,8 +140,7 @@ const Project = () => {
           scrollTrigger: {
             trigger: projectAreaRef.current,
             start: 'top 83%',
-            end: 'center 60%',
-            scrub: true
+            end: 'center 60%'
           }        
         })
       }, projectAreaRef);
