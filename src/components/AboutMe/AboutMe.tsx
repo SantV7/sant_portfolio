@@ -27,7 +27,6 @@ const AboutMe = () => {
   const [downloadIcon, setDownloadIcon] = useState<boolean>(false)
   const [closeIcon, setCloseIcon] = useState<boolean>(false)
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
-  const [showCurriculum, setShowCurriculum] = useState<boolean>(false)
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
   const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
 
@@ -479,7 +478,7 @@ const AboutMe = () => {
                     <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
                       Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
                     </a>
-                    {/* O BOTÃO 'SHOW' E O ÍCONE SCANEYE FORAM REMOVIDOS DAQUI */}
+                
                     <br />
                     <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>
                       CLOSE THE RESUME <CircleX size={30}/>
