@@ -3,7 +3,6 @@ import styles from './AboutProjects.module.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 interface ProjectFocus {
@@ -14,16 +13,16 @@ interface ProjectFocus {
   responsiveness: string;
   contentG4: string[];
   tips: {
-    tratament?: string;
+    treatment?: string;
     validation?: string;
-    pratics?: string;
+    practices?: string;
   }[];
 }
 
 const AboutProjects = () => {
   const focus: ProjectFocus = {
     uiAndUx: 'UI/UX',
-    design: 'Design student',
+    design: 'Design Student',
     structure: 'Clean Code and Semantics',
     development: 'Front-End Development',
     responsiveness: 'Responsive Design',
@@ -33,9 +32,9 @@ const AboutProjects = () => {
       'Mobile-First Workflow'
     ],
     tips: [
-      { tratament: 'Tratamento de dados' },
-      { validation: 'Validação' },
-      { pratics: 'Boas práticas' }
+      { treatment: 'Data processing' },
+      { validation: 'Validation' },
+      { practices: 'Best practices' }
     ]
   };
 
@@ -48,8 +47,6 @@ const AboutProjects = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      
-      // Cards animados pelo Scroll
       gsap.fromTo(card1.current, {
         opacity: 0,
         scale: 0.85,

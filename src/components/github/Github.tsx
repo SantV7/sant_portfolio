@@ -154,19 +154,19 @@ const Github = () => {
             <section ref={sectGithub} className={styles.github_sec}>
                 <header className={styles.h_github}>
                     <div>
-                        <h2 ref={titleGithub}>My Github data</h2>
+                        <h2 ref={titleGithub}>My GitHub data</h2>
                     </div>
 
                     <div className={styles.flex_github}>
                         <div className={styles.content_txt}>
-                            <h3 ref={h3Github}>Github</h3>
+                            <h3 ref={h3Github}>GitHub</h3>
                             <p ref={pGithub}>
-                              Here is information from my <span className={styles.s_one }>GitHub</span>, such as streaks, <span className={styles.s_two}>activity frequency</span>, and <span className={styles.s_one}>commits</span>.
+                                Here is information from my <span className={styles.s_one}>GitHub</span>, such as streaks, <span className={styles.s_two}>activity frequency</span>, and <span className={styles.s_one}>commits</span>.
                             </p>
                         </div>
 
                         <div ref={imgDivGithub} className={styles.img_github}>
-                            <img className={styles.github_mobile} src={githubMobile} alt="Icon Github" />
+                            <img className={styles.github_mobile} src={githubMobile} alt="GitHub Icon" />
                         </div>
                     </div>
                 </header>
@@ -183,7 +183,7 @@ const Github = () => {
                             <img 
                                 ref={calendarImgGithub}
                                 src="https://ghchart.rshah.org/0f4c81/santv7" 
-                                alt="Calendário de contribuições do GitHub" 
+                                alt="GitHub contributions calendar" 
                                 className={styles.calendar_img}
                             />
                             

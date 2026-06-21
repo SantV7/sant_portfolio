@@ -29,22 +29,34 @@ const Project = () => {
     const imgCardRef = useRef<HTMLImageElement>(null);
 
     const [myProjects] = useState<ProjectsProps[]>([
-        {id: 1, imgProject: fintechBank,
-          nameProject: 'Fintanch Bank MO',
-         descProject: 'Plataforma financeira desenvolvida em React e TypeScript para gerenciamento de faturas e extratos, com foco em tipagem segura, consistência de cálculos e interface responsiva.',
-        urlProject: 'https://invoice-manager-mobile-vy.vercel.app/'},
-        {id: 2, imgProject: dashboardProject,
-         nameProject: 'Dashboard coins and weather',
-         descProject: 'O Dashboard Coins and Weather é um painel web responsivo projetado para centralizar informações globais essenciais em tempo real. O projeto integra APIs para monitorar a cotação e conversão de principais moedas mundiais, exibir dados climáticos atualizados de capitais estratégicas e acompanhar o fuso horário local de cada região. Foca em precisão de dados.',
-         urlProject: 'https://dashboard-coins.vercel.app/'},
-        {id: 3, imgProject: pizzariaProject,
-         nameProject: 'Landing Page - Pizzaria',
-         descProject: 'Aplicação interativa para visualização de sabores, foco na experiência de cliente ter uma pré-visualização  dos itens que serão requisitados.',
-         urlProject: 'https://pizzaria-zeta-six.vercel.app/'},
-        {id: 4, imgProject: gameReveal,
-         nameProject: 'Game - Game Reveal',
-         descProject: 'Aplicação interativa de um jogo de revelar palavras, aplicando lógica de alterações de estados e tratamento de dados.',
-         urlProject: 'https://game-reveal.vercel.app/'}         
+        {
+            id: 1, 
+            imgProject: fintechBank,
+            nameProject: 'Fintech Bank MO',
+            descProject: 'A financial platform developed with React and TypeScript for managing invoices and statements, focusing on secure typing, calculation consistency, and a responsive interface.',
+            urlProject: 'https://invoice-manager-mobile-vy.vercel.app/'
+        },
+        {
+            id: 2, 
+            imgProject: dashboardProject,
+            nameProject: 'Coins and Weather Dashboard',
+            descProject: 'A responsive web dashboard designed to centralize essential global information in real time. The project integrates APIs to monitor the exchange rates and conversion of major world currencies, display updated weather data from strategic capitals, and track the local time zone of each region, with a strong focus on data accuracy.',
+            urlProject: 'https://dashboard-coins.vercel.app/'
+        },
+        {
+            id: 3, 
+            imgProject: 'Pizzeria Landing Page',
+            nameProject: 'Landing Page - Pizzaria',
+            descProject: 'An interactive application for viewing flavors, focusing on providing clients with a preview of the items they intend to order to enhance their experience.',
+            urlProject: 'https://pizzaria-zeta-six.vercel.app/'
+        },
+        {
+            id: 4, 
+            imgProject: gameReveal,
+            nameProject: 'Game Reveal',
+            descProject: 'An interactive word-guessing game applying state management logic and data processing handling.',
+            urlProject: 'https://game-reveal.vercel.app/'
+        }         
     ])
 
     const [data, SetData] = useState<string>()
@@ -167,7 +179,7 @@ const Project = () => {
                 </header>
                 <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
                 <div className={styles.context_paragraph}>
-                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. My focus is on transforming complex ideas into functional, fast, and visually appealing  web applications, delivering the ultimate user experience and optimized performance..</p>
+                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. My focus is on transforming complex ideas into functional, fast, and visually appealing web applications, delivering an exceptional user experience and optimized performance.</p>
                 </div>
               </div>
               <div ref={imgCardRef} className={styles.img_older_pc}>

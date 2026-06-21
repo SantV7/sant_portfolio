@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { CircleX, Download, MailOpen, ListTree, Workflow, Info, ScanEye, GlobeOff, CodeXml, HardDriveDownload,  CircleEllipsis, X, Mail 
+// REMOVIDO: ScanEye do import abaixo
+import { 
+  CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff, CodeXml, HardDriveDownload, CircleEllipsis, X, Mail 
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
-import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, } from "react-icons/fa"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma } from "react-icons/fa"
 import { SiTypescript, SiTailwindcss } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" 
 import notebookImg from '../../assets/img/notebook.jpeg'
@@ -38,11 +40,10 @@ const AboutMe = () => {
   const standyRef = useRef<HTMLDivElement| null>(null) 
   const imgRef = useRef<HTMLDivElement | null>(null)
 
-  const p1_g = useRef<HTMLParagraphElement  | null>(null)
-  const p2_g = useRef<HTMLParagraphElement  | null>(null)
+  const p1_g = useRef<HTMLParagraphElement | null>(null)
+  const p2_g = useRef<HTMLParagraphElement | null>(null)
   const contactRef = useRef<HTMLDivElement| null>(null)
   const linksContainerRef = useRef<HTMLDivElement | null>(null)
-
   const aboutRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -235,26 +236,7 @@ const AboutMe = () => {
       if (!container) return
 
       const targets = container.querySelectorAll(`.${styles.links_reference}`)
-      
-      targets.forEach((target) => {
-        const textNode = Array.from(target.childNodes).find(node => node.nodeType === Node.TEXT_NODE)
-        if (textNode && textNode.textContent?.trim()) {
-          const originalText = textNode.textContent
-          const wrapper = document.createElement('span')
-          wrapper.style.display = 'inline-block'
-          
-          wrapper.innerHTML = originalText.split('').map(char => 
-            char === ' ' ? '&nbsp;' : `<span class="gsap-char" style="display:inline-block;opacity:0">${char}</span>`
-          ).join('')
-          
-          target.replaceChild(wrapper, textNode)
-        }
-      })
-
-      const allChars = container.querySelectorAll('.gsap-char')
       const icons = container.querySelectorAll('svg')
-
-      if (icons.length === 0 && allChars.length === 0) return
 
       const tl = gsap.timeline()
 
@@ -267,12 +249,12 @@ const AboutMe = () => {
           x: 0,
           duration: 0.4,
           ease: 'power1.out',
-          stagger: 0.08
+          strainer: 0.08
         })
       }
 
-      if (allChars.length > 0) {
-        tl.fromTo(allChars, {
+      if (targets.length > 0) {
+        tl.fromTo(targets, {
           opacity: 0,
           x: -10
         }, {
@@ -280,7 +262,7 @@ const AboutMe = () => {
           x: 0,
           duration: 0.5,
           ease: 'power1.out',
-          stagger: 0.02
+          stagger: 0.05
         }, icons.length > 0 ? "-=0.3" : "<")
       }
     }, sectionRef)
@@ -328,7 +310,7 @@ const AboutMe = () => {
                     <a 
                       className={styles.links_reference}  
                       onMouseEnter={() => setEmailIcon(true)}
-                      onMouseOut={() => setEmailIcon(false)}
+                      onMouseLeave={() => setEmailIcon(false)}
                       href="mailto:3izuna@gmail.com"> 
                       {emailIcon ? <MailOpen color="#b2c9ff" size={23}/> : <Mail color="#b2c9ff" size={23}/>} Email
                     </a>
@@ -442,7 +424,7 @@ const AboutMe = () => {
                       </header>
                       <div className={styles.flex_skills}>
                         <div className={styles.skills_first}>
-                          <h4>■ Language:</h4>
+                          <h4>■ Languages:</h4>
                           <p>- JavaScript, TypeScript, HTML5, CSS3</p>
                         </div>
                         <div className={styles.skills_first}>
@@ -458,7 +440,7 @@ const AboutMe = () => {
                           <p>- Git, GitHub, REST APIs, Responsive Web Development</p>
                         </div>      
                         <div className={styles.skills_first}>
-                          <h4>■ Language:</h4>
+                          <h4>■ Spoken Languages:</h4>
                           <p>- Portuguese - Native</p>
                           <p>- English - Intermediate</p>
                         </div>  
@@ -486,7 +468,7 @@ const AboutMe = () => {
                   </button>
 
                   {showMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)} onMouseOut={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>
+                    <button onMouseEnter={() => setCloseIcon(true)} onMouseLeave={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>
                       SHOW LESS {closeIcon ? <X size={38}/> : <CircleX size={38} />}
                     </button>
                   )}
@@ -494,10 +476,10 @@ const AboutMe = () => {
 
                 {curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseOut={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
+                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
                       Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
                     </a>
-                    <button onClick={() => setShowCurriculum(!showCurriculum)} className={styles.hud_btn_sm}>Show <ScanEye /></button>
+                    {/* O BOTÃO 'SHOW' E O ÍCONE SCANEYE FORAM REMOVIDOS DAQUI */}
                     <br />
                     <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>
                       CLOSE THE RESUME <CircleX size={30}/>
@@ -521,4 +503,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default AboutMe;

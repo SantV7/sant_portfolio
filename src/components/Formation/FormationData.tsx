@@ -34,7 +34,7 @@ export const FormationData = () => {
 
       <main className={styles.area_txt}>
         <article className={styles.about_my_course}>
-          <h2>Analysis and Systems Development</h2>
+          <h2>Systems Analysis and Development</h2>
           <h3>About my course</h3>
           <p>It is a higher education degree focused on training practical and agile professionals for the technology market. The core purpose of the program is to teach how to design, develop, analyze, test, and implement information systems and applications for various industries. Unlike more theoretical majors, ADS is highly tailored to actual corporate needs, covering everything from programming logic and databases to software engineering and information security, allowing for a fast-paced entry into the tech workforce.</p>
         </article>

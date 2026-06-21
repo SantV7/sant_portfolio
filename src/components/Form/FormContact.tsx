@@ -6,13 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
 
 const FormContact = () => {
-  const [nome, setNome] = useState('Seu nome completo')
-  const [email, setEmail] = useState('emailFake@exemplo.com')
-  const [mensagem, setMensagem] = useState('Digite sua mensagem aqui...')
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [mensagem, setMensagem] = useState('')
   const [erro, setErro] = useState('')
   const [sucesso, setSucesso] = useState(false)
 
-  const containerRef = useRef<HTMLTextAreaElement | null>(null)
+  const containerRef = useRef<HTMLElement | null>(null)
   const formBoxRef = useRef<HTMLFormElement | null>(null)
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const FormContact = () => {
 
   return (
     <>
-      <section ref={containerRef as any} className={styles.container}>
+      <section ref={containerRef} className={styles.container}>
         <form ref={formBoxRef} onSubmit={handleSubmit} className={styles.formBox}>
           {erro && <p className={styles.errorMsg}>{erro}</p>}
           {sucesso && <p className={styles.successMsg}>Mensagem enviada com sucesso!</p>}
@@ -96,8 +96,8 @@ const FormContact = () => {
             <input 
               type="text" 
               id="nome"
+              placeholder="Seu nome completo"
               value={nome}
-              onFocus={() => setNome("")}
               onChange={(event) => setNome(event.target.value)}
               className={styles.inputField}
             />
@@ -106,10 +106,10 @@ const FormContact = () => {
           <div className={styles.inputGroup}>
             <label htmlFor="email">E-mail:</label>
             <input 
-              type="text" 
+              type="email" 
               id="email"
+              placeholder="emailFake@exemplo.com"
               value={email}
-              onFocus={() => setEmail("")}
               onChange={(event) => setEmail(event.target.value)}
               className={styles.inputField}
             />
@@ -119,8 +119,8 @@ const FormContact = () => {
             <label htmlFor="mensagem">Mensagem:</label>
             <textarea 
               id="mensagem"
+              placeholder="Digite sua mensagem aqui..."
               value={mensagem}
-              onFocus={() => setMensagem("")}
               onChange={(event) => setMensagem(event.target.value)}
               className={styles.textareaField}
             />
