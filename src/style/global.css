@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap'); /* font-family: "Tektur", sans-serif;  */
-
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-/* font-family: "Audiowide", sans-serif; */
 
 * {
     margin: 0;
@@ -53,12 +50,11 @@ body {
     pointer-events: none;
 }
 
-#area_arrow , 
+#area_arrow, 
 #area_arrow .change-bg {
     pointer-events: auto;
     cursor: pointer;
 }
-
 
 #welcome_msg {
     font-family: "Pixelify Sans", sans-serif, Arial, Helvetica, sans-serif;
@@ -73,14 +69,34 @@ body {
 }
 
 .intro_tag {
-    max-width: 230px;
-    border-bottom: 3px solid rgb(95, 95, 255);
+    position: relative;
+    width: max-content;
     padding-bottom: 14px;
     font-size: 1.73rem;
     color: rgb(255, 255, 255);
     margin-bottom: 15px;    
-    text-shadow: 1px 2px 41px rgb(171, 130, 236);
+    text-shadow: 1px 2px 26px rgb(171, 130, 236);
     letter-spacing: 2px;
+}
+
+.intro_tag::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 65px;
+    height: 3px;
+    background-color: rgb(67, 67, 187);
+}
+
+#welcome_msg > h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 166px;
+    height: 2px;
+    background-color:  rgb(64, 108, 253);
 }
 
 #welcome_msg > h1 {
@@ -91,23 +107,36 @@ body {
     margin-bottom: 21px;
     max-width: 720px;
     padding-bottom: 10px;
-    border-bottom: 4px solid rgb(64, 108, 253);
+    
 }
 
 #port_shadow {
+    letter-spacing: 1.65px;
     text-shadow: 1px 2px 38px rgb(116, 70, 189);
 }
+
 #opp {
     color: rgb(109, 109, 253);
     text-shadow: 1px 1px 1px rgb(229, 234, 253);
-    border-bottom: 3px solid rgba(190, 138, 26, 0.897);
+
     border-radius: 2px;
     padding-bottom: 6px;
+}
+
+#opp::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 133px;
+    height: 2px;
+    background-color: rgba(190, 138, 26, 0.911);
 }
 
 #welcome_msg > p {
     line-height: 1.45;
     letter-spacing: 0.4px;
+    text-shadow: 3px 3px 12px rgba(10, 13, 43, 0.87);
     margin-bottom: 35px;
 }
 
@@ -121,19 +150,33 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-
     #welcome_msg {
+        padding: 0 25px;
+        position: absolute;
+        top: 41%; 
+        left: 50%;        
         width: 100%;
         flex-flow: row wrap;
         font-size: 1.3rem;
-        left: 60%;
         right: auto;
         text-align: left;
         transform: translate(-50%, -50%);
     }
+
+    #welcome_msg > h1 {
+        font-size: 2.67rem;
+        max-width: 100%;
+    }
+
+    #max_msg_ap {
+        max-width: 100%;
+    }
+  
     #wellcome_msg {
+        background-color: orange;
         flex-flow: row wrap;
     }
+
     #area_arrow {
         padding: 0 10px;
     }
