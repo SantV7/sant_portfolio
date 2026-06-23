@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import dashboardProject from '../../assets/img/projects/dashboard_first.png'
 import fintechBank from '../../assets/img/projects/fintech_bank.png'
-import pizzariaProject from '../../assets/img/projects/pizzaria.png'
+
 import Card from "./Card/Card";
 import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
