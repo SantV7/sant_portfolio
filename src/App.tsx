@@ -42,23 +42,32 @@ function App() {
 
     const ctx = gsap.context(() => {
       gsap.fromTo('#welcome_msg_gsap', {
-        y: -140,
+        y: -125,
         opacity: 0
       }, {
-        duration: 1.2,
+        duration: 1.35,
         opacity: 1,
         y: 0,
-        ease: 'power2'
+        ease: 'sine.out'
       })
+
+      gsap.fromTo('#hi_there', {
+        opacity: 0
+      }, {
+        delay: 1.45,
+        duration: 1.21,
+        opacity: 1,
+        ease: 'power2.out',
+      })        
 
       gsap.fromTo('.welcome_apresentation', {
         x: -110,
         opacity: 0
       }, {
-        duration: 1.5,
+        duration: 1.44,
         opacity: 1,
         x: 0,
-        ease: 'power2'
+        ease: 'power2.out'
       })    
 
       gsap.fromTo('.scroll_wellcome', {
@@ -96,7 +105,7 @@ function App() {
       
       timeLine.to('#scroll_wellcome_gsap', {
         y: 40,
-        duration: 1.4, 
+        duration: 1.12, 
         repeat: -1,
         yoyo: true, 
         ease: 'linear'
@@ -127,14 +136,15 @@ function App() {
             </video>
             
             <div id='welcome_msg'>
-              <h1 id='welcome_msg_gsap'>Welcome to my <span className="portfolio">Portfolio</span></h1>
-              <p className='welcome_apresentation'>This is a presentation from a beginner <span className="portfolio">Software Engineer.</span></p>
-              <p className='welcome_apresentation'>Created by Sant in <span className="portfolio">2026</span>.</p>
+              <div className='intro_tag' id='hi_there'>👾 HI THERE!</div>
+              <h1 id='welcome_msg_gsap'>Welcome to  my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
+              <p className='welcome_apresentation' id='max_msg_ap'>A presentation by an aspiring Software Engineer <span className="portfolio">Software Engineer</span> <span style={{color: "orange"}}>|</span> <span className="portfolio">Frontend Developer. <span id='opp'>Open to new opportunities.</span></span></p>
+              <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>. Based in Brazil.</p>
             </div>
 
             <div className={styles.scroller_indicator}>
               <div className={`${styles['tooltip-message']} ${isHovered ? styles.visible : ''}`}>  
-                Scroll down to learn more about this Frontend Software Engineer.
+                Scroll down to learn more about this Frontend Software Engineer | Frontend Developer.
               </div>
 
               <h1 id='scroll_wellcome_gsap' className={styles.scroll_wellcome} 

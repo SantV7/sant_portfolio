@@ -72,12 +72,47 @@ body {
     color: rgb(241, 235, 255);
 }
 
+.intro_tag {
+    max-width: 230px;
+    border-bottom: 3px solid rgb(95, 95, 255);
+    padding-bottom: 14px;
+    font-size: 1.73rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;    
+    text-shadow: 1px 2px 41px rgb(171, 130, 236);
+    letter-spacing: 2px;
+}
+
 #welcome_msg > h1 {
-    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 4.7rem;
+    line-height: 0.95;
+    text-shadow: 1px 2px 27px rgb(171, 130, 236);
+    margin-bottom: 21px;
+    max-width: 720px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid rgb(64, 108, 253);
+}
+
+#port_shadow {
+    text-shadow: 1px 2px 38px rgb(116, 70, 189);
+}
+#opp {
+    color: rgb(109, 109, 253);
+    text-shadow: 1px 1px 1px rgb(229, 234, 253);
+    border-bottom: 3px solid rgba(190, 138, 26, 0.897);
+    border-radius: 2px;
+    padding-bottom: 6px;
 }
 
 #welcome_msg > p {
-    margin-bottom: 5px;
+    line-height: 1.45;
+    letter-spacing: 0.4px;
+    margin-bottom: 35px;
+}
+
+#max_msg_ap {
+    max-width: 600px;
 }
 
 .portfolio {

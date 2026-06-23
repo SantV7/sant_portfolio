@@ -75,7 +75,8 @@ const AboutMe = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 63%',
-          end: 'center 80%'
+          end: 'center 80%',
+          scrub: true
         }
       })
 
@@ -269,6 +270,9 @@ const AboutMe = () => {
     return () => ctx.revert()
   }, [moreCurriculum])
 
+
+
+  
   return (
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
@@ -316,13 +320,16 @@ const AboutMe = () => {
                     <a className={styles.links_reference} href="https://github.com/SantV7" target='_blank' rel="noreferrer">
                       <FaGithub color="#b2c9ff" size={23}/> GitHub
                     </a>
-                    <a className={styles.links_reference} href="https://www.linkedin.com/in/viniciussant07" target='_blank' rel="noreferrer">
+                    <a className={styles.links_reference} href="https://www.linkedin.com/in/viniciussant07"
+                     target='_blank' rel="noreferrer">
                       <FaLinkedin color="#b2c9ff" size={23}/> LinkedIn
                     </a>
-                    <a className={styles.links_reference} href="https://www.instagram.com/__sant_v/" target='_blank' rel="noreferrer">
+                    <a className={styles.links_reference} href="https://www.instagram.com/__sant_v/"
+                     target='_blank' rel="noreferrer">
                       <FaInstagram color="#b2c9ff" size={23}/> Instagram
                     </a>
-                    <a id={styles.m_last} className={styles.links_reference} href="https://portfolio-santv7.vercel.app/" target='_blank' rel="noreferrer">
+                    <a id={styles.m_last} className={styles.links_reference} href="https://portfolio-santv7.vercel.app/"
+                     target='_blank' rel="noreferrer">
                       <GlobeOff color="#b2c9ff" size={23} /> Last Portfolio
                     </a>
                   </section>
@@ -455,7 +462,8 @@ const AboutMe = () => {
 
               <footer className={styles.info_card_footer}>
                 <div className={styles.footer_btns}>
-                  <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')} className={styles.hud_btn_sm}>
+                  <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')}
+                   className={styles.hud_btn_sm}>
                     CURRICULUM <Workflow color={curriculumSetter} size={29}/>
                   </button>
 
@@ -467,7 +475,8 @@ const AboutMe = () => {
                   </button>
 
                   {showMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)} onMouseLeave={() => setCloseIcon(false)} onClick={() => setShowMore(false)} className={styles.hud_btn_sm}>
+                    <button onMouseEnter={() => setCloseIcon(true)} onMouseLeave={() => setCloseIcon(false)} onClick={() => setShowMore(false)} 
+                    className={styles.hud_btn_sm}>
                       SHOW LESS {closeIcon ? <X size={38}/> : <CircleX size={38} />}
                     </button>
                   )}
@@ -475,7 +484,8 @@ const AboutMe = () => {
 
                 {curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)} onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
+                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)}
+                     onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
                       Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
                     </a>
                 
