@@ -32,24 +32,37 @@ interface GitHubProps {
 const Contact = () => {
   const [gitData, setGitData] = useState<GitHubProps | null>(null)
 
+useEffect(() => {
+  let isMounted = true;
+
   const requestMyDataGithub = async () => {
     try {
-      const request = await fetch('https://api.github.com/users/santv7')
+      const response = await fetch('https://api.github.com/users/santv7');
 
-      if(!request.ok) {
-        throw new Error(`Erro na requisição: ${request.status}`)
+      if (!response.ok) {
+        throw new Error(`Erro na requisição: ${response.status}`);
       }
 
-      const response = await request.json()
-      setGitData(response)
-    } catch (err: any) {
-       console.error(`ERROR: ${err}`)
-     }
+      const data: GitHubProps = await response.json();
+      
+      if (isMounted) {
+        setGitData(data);
+      }
+    } catch (err) {
+      if (isMounted) {
+        console.error('Erro ao buscar dados do GitHub:', err instanceof Error ? err.message : err);
+      }
     }
+  };
 
-  useEffect(() => {
-    requestMyDataGithub()
-  }, [])
+  requestMyDataGithub();
+
+  return () => {
+    isMounted = false;
+  };
+}, []);
+
+
 
   return (
     <>
