@@ -11,6 +11,7 @@ import Lenis from '@studio-freight/lenis'
 import Project from './components/Projects/Project'
 import Github from './components/github/Github';
 import { FormationData } from './components/Formation/FormationData';
+import Contact from './components/Contact/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,6 +160,7 @@ function App() {
           <Project />
           <Github />
           <FormationData />
+          <Contact />
         </>
       )}
     </div>

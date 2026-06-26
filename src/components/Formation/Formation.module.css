@@ -64,12 +64,14 @@
 }
 
 .about_my_course p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.25rem;
+  line-height: 1.65;
   color: #e2e2ee;
+  letter-spacing: 0.76px;
   text-align: justify;
   margin: 0;
   font-weight: 300;
+  font-family: "Pixelify Sans";
 }
 
 @media (max-width: 768px) {

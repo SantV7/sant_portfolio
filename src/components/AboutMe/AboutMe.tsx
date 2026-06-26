@@ -504,7 +504,6 @@ const AboutMe = () => {
             <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline>
               <source src={newPc} type='video/mp4' />
             </video>
-            <p className={styles.eye_issues}>DEVELOPING VISION ISSUES</p>
           </div>
         </div>
       </div>

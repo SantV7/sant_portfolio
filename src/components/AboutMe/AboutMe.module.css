@@ -209,27 +209,11 @@
     filter: blur(0);
 }
 
-.eye_issues { 
-    position: absolute;
-    top: 50%;
-    left: 62%;
-    transform: translate(-50%, -50%);
-    font-size: 2.1rem;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    pointer-events: none;
-    transition: opacity 1.2s;
-    z-index: 2;
-}
 
 .video_container video {
     transition: ease 0.85s;
 }
 
-.video_container:hover .eye_issues {
-    opacity: 0;
-}
 
 .more_data_title {
     display: flex;
@@ -510,14 +494,15 @@ a.links_reference:hover {
         height: auto;
     }
 
+
     .video_container {
         flex-direction: column;
     }
 
-    .eye_issues {
-        left: 50%;
-        font-size: 1rem;
+    .video_pc {
+        filter: blur(0);
     }
+
 
     .nt_img  {
         max-height: 250px;

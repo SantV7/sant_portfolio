@@ -37,7 +37,7 @@
 }
 
 .area_img_project img {
-    filter: saturate(35%);
+    filter: saturate(65%);
     width: 100%;
     height: 100%;
     transition: ease 0.7s;
@@ -46,7 +46,7 @@
 }
 
 .area_img_project img:hover {
-    filter: saturate(110%);
+    filter: saturate(100%);
 }
 
 .flex_circle {

@@ -10,6 +10,8 @@ import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 
+import pizzaProject from '../../assets/img/projects/pizza_landing.png'
+
 gsap.registerPlugin(ScrollTrigger);
 
 interface ProjectsProps {
@@ -45,7 +47,7 @@ const Project = () => {
         },
         {
             id: 3, 
-            imgProject: 'Pizzeria Landing Page',
+            imgProject: pizzaProject,
             nameProject: 'Landing Page - Pizzaria',
             descProject: 'An interactive application for viewing flavors, focusing on providing clients with a preview of the items they intend to order to enhance their experience.',
             urlProject: 'https://pizzaria-zeta-six.vercel.app/'

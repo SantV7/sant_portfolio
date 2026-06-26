@@ -1,0 +1,329 @@
+.contact_sect {
+    font-family: "Pixelify Sans";
+    background-color: rgb(235, 234, 236);
+    padding-top: 130px;
+    height: 100%;
+}
+
+.header_contact {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px 90px 15px;
+    text-align: center;
+    gap: 20px;
+    width: 87%;
+    margin: 0 auto;
+}
+
+.links_wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2px;
+}
+
+.link_orange {
+    font-size: 2rem;
+    text-align: center;
+    padding: 25px 45px;
+    background-color: orange;
+    text-shadow: 1px 1px 5px rgba(63, 25, 78, 0.466);
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(9, 3, 24, 0.24);
+    transition: ease-in 0.2s;
+}
+
+.header_contact > .link_orange:hover {
+    background-color: rgb(255, 184, 0);
+}
+
+.header_contact > h1 {
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0px 30px;
+    font-size: 2.6rem;
+    font-family: "Pixelify Sans", Arial, Helvetica, sans-serif;
+}
+
+.container_grid {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: rgb(42, 39, 70);
+    padding: 35px 20px;
+    justify-content: space-evenly;
+    gap: 5%;
+}
+
+.all_links {
+    height: 100%;
+    gap: 30px;
+    grid-column: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.card_data {
+    max-width: 620px;
+    flex: 1 1 auto;
+    min-height: 100%;
+    border-radius: 5px;
+    border: 6px solid rgba(0, 0, 0, 0.979);
+    padding: 23px;
+    background-color: orange;
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.884);
+    grid-column: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 1.6rem;
+}
+
+.main_github_data {
+    margin-top: 50px;
+}
+
+.js_bg {
+    background-color: #000;
+}
+
+.footer_g {
+    margin-top: auto;
+}
+
+.footer_g_border {
+    border-top: 1px solid rgba(0,0,0,0.3);
+    padding-top: 10px;
+}
+
+.one_links, .two_links {
+    letter-spacing: 0.6px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+
+.one_links a, .two_links a {
+    font-weight: 600;
+    font-size: 1.35rem;
+    border-radius: 4px;
+    padding: 13px 23px;
+    border: 1px solid rgba(20, 7, 27, 0.377);
+    background-color: rgb(31, 20, 58);
+    transition: ease-in 0.14s;
+}
+
+.one_links a:hover, .two_links a:hover {
+    background-color: rgb(45, 32, 78);
+}
+
+.one_links, .two_links a {
+    color: white;
+    text-align: 1px 1px 1px rgba(22, 6, 32, 0.295);
+}
+
+.one_links {
+    align-items: center;
+    justify-content: center;
+    transition: ease-in 0.14s;   
+}
+
+.one_links a {
+    color: white;
+    background-color: rgb(31, 20, 58);
+}
+.one_links a:hover {
+    background-color: rgb(45, 32, 78);
+}
+
+.two_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1px;
+}
+
+.h_click {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.my_links {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    margin-left: 20px;
+    font-size: 1.55rem;
+    color: rgb(19, 19, 99);
+    text-shadow: 1px 1px 2px rgba(249, 239, 252, 0.574);
+    text-decoration: none;
+    padding: 10px 25px;
+    min-height: 90px;
+    gap: 17px;
+    width: 100%;
+    border-radius: 3px;
+    border: 3px solid #000000;
+    background-color: rgb(156, 158, 180);
+    box-shadow: 8px 5px 0px #0d060f;
+    cursor: pointer;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    transition: ease 0.37s;
+}
+
+.my_links:hover {
+    color: white;
+    border-radius: 6px;
+    text-shadow: 1px 1px 1px rgba(22, 7, 26, 0.747);
+    background-color: rgb(152, 154, 194);
+    box-shadow: 9px -7px 0px hsla(224, 58%, 10%, 0.661);
+} 
+
+.statistics {
+    display: flex;
+    gap: 10px;
+}
+
+.link_span_d {
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    border-radius: 20px;
+    box-shadow: 6px 4px 0 rgba(0, 0, 0, 0.993);
+    display: inline-block;
+}
+
+.link_span_d:hover {
+    box-shadow: 8px 6px 0 rgb(0, 0, 0);
+}
+
+.link_span_m {
+    display: none;
+}  
+
+.my_links .show_links {
+    opacity: 0;
+    visibility: hidden;
+    color: orange;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: ease 1.2s;
+}
+
+.my_links:hover .show_links  {
+    opacity: 1;
+    visibility: visible;
+}
+
+.img_logo_g {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.share_this_portfolio {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    letter-spacing: 2.1px;
+    color: white;
+    margin: 0 auto;
+}
+
+.h_github_data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.37);
+    padding-bottom: 10px;
+}
+
+.icons_tech {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(6, 5, 34, 0.808);
+    width: 100%;
+    min-height: 130px;
+}
+
+.tech_icons {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.icons_tech svg {
+    transition: ease 0.2s;
+}
+.icons_tech svg:hover {
+    transform: scale(1.075);
+}
+
+@media screen and (max-width: 940px) {
+    .contact_sect {
+        padding-top: 60px;
+        height: auto;
+    }
+
+    .header_contact {
+        flex-flow: column nowrap;
+        gap: 20px;
+        padding: 0px 15px 40px 15px;
+        width: 100%;
+    }
+
+    .header_contact > h1 {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .link_span_d {
+        display: none;
+    }
+
+    .link_span_m {
+        display: inline-block;
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }    
+
+    .container_grid {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 30px;
+        padding: 25px 15px;
+    }
+
+    .all_links {
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .my_links {
+        margin-left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .my_links .show_links {
+        opacity: 1;
+        visibility: visible;
+        font-size: 1.1rem;
+        word-break: break-all;
+    }
+
+    .card_data {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .share_this_portfolio {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .h_github_data {
+        gap: 15px;
+    }
+}
