@@ -1,6 +1,6 @@
 import Welcome from './components/Welcome/Welcome'
 import './style/global.css'
-import firstIntro from './assets/video/pixel_three.mp4'
+import introBg from './assets/video/pixel_intro.mp4'
 import { useEffect, useState } from 'react';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -125,7 +125,7 @@ function App() {
 
 
 
-  
+
   return (
     <div>
       {isPageNotFound ? (
@@ -136,7 +136,7 @@ function App() {
           
           <section id='intro-video'>
             <video preload='auto' autoPlay muted loop playsInline id='bg-video'>
-              <source type='video/mp4' src={firstIntro}/>
+              <source type='video/mp4' src={introBg}/>
             </video>
             
             <div id='welcome_msg'>
