@@ -82,80 +82,67 @@ const Project = () => {
 
     useEffect(() => {
       const ctx = gsap.context(() => {
+        
+        const commonScrollTrigger = {
+          trigger: projectAreaRef.current,
+          start: 'top 85%', 
+          toggleActions: 'play none none none' 
+        };
+
         gsap.fromTo(mainBoxRef.current, {
           opacity: 0,
-          scale: 0.6,
-          y: 60
+          scale: 0.9,
+          y: 20
         }, {
-          ease: 'power2.in',
-          duration: 0.4,
+          ease: 'power2.out', 
+          duration: 0.5,
           y: 0,
           opacity: 1,
           scale: 1,
-          scrollTrigger: {
-            trigger: projectAreaRef.current,
-            start: 'top 80%',
-            end: 'bottom 30%'
-          }
+          scrollTrigger: commonScrollTrigger
         })
 
         gsap.fromTo(listRef.current, {
           x: -130,
           opacity: 0,
         }, {
-          x:0, 
-          delay: 0.5,
-          opacity:1,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: projectAreaRef.current,
-            start: 'top 80%',
-            end: 'center 20%'
-          }        
+          x: 0, 
+          delay: 0.2, 
+          opacity: 1,
+          duration: 0.67,
+          scrollTrigger: commonScrollTrigger
         })
 
         gsap.fromTo(titleTxtRef.current, {
           x: -100,
           opacity: 0,
         }, {
-          x:0, 
+          x: 0, 
           opacity: 1,
           duration: 0.68,
-          scrollTrigger: {
-            trigger: projectAreaRef.current,
-            start: 'top 22%',
-            end: 'center 66%'
-          }        
+          scrollTrigger: commonScrollTrigger 
         })
 
         gsap.fromTo(paragraphRef.current, {
           x: -90,
           opacity: 0,
-          scale: 0.92
+          scale: 0.9
         }, {
-          x:0, 
+          x: 0, 
           opacity: 1,
           scale: 1,
-          duration: 0.55,
-          scrollTrigger: {
-            trigger: projectAreaRef.current,
-            start: 'top 80%',
-            end: 'center 20%'
-          }        
+          duration: 0.65,
+          scrollTrigger: commonScrollTrigger
         })
 
         gsap.fromTo(imgCardRef.current, {
           x: 100,
           opacity: 0,
         }, {
-          x:0,
+          x: 0,
           opacity: 1,
           duration: 0.85,
-          scrollTrigger: {
-            trigger: projectAreaRef.current,
-            start: 'top 83%',
-            end: 'center 60%'
-          }        
+          scrollTrigger: commonScrollTrigger
         })
       }, projectAreaRef);
 
