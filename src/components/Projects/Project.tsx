@@ -10,7 +10,7 @@ import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 
-import pizzaProject from '../../assets/img/projects/pizza_landing.png'
+import pizzaProject from '../../assets/img/projects/pizzaria.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
