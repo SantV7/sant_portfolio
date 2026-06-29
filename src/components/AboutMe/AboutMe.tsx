@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// REMOVIDO: ScanEye do import abaixo
 import { 
   CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff, CodeXml, HardDriveDownload, CircleEllipsis, X, Mail 
 } from 'lucide-react'
@@ -270,9 +269,6 @@ const AboutMe = () => {
     return () => ctx.revert()
   }, [moreCurriculum])
 
-
-
-  
   return (
     <section ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>

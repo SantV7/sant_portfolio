@@ -1,18 +1,6 @@
 # React + TypeScript + Vite
 
-Já baixei o npm i gsap e o npm i lucidereact@next
 
-
-
-
-
-
-
-
-
-
-
- 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

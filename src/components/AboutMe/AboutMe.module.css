@@ -24,11 +24,13 @@
 }
 
 .container_card {
+    letter-spacing: 1px;
     margin:  0 auto;
     max-width: 1050px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .about_me_card {
@@ -209,11 +211,9 @@
     filter: blur(0);
 }
 
-
 .video_container video {
     transition: ease 0.85s;
 }
-
 
 .more_data_title {
     display: flex;
@@ -280,6 +280,7 @@
     border-bottom: none;
     color: #e8f0ff;
 }
+
 #m_last, #expected {
     padding-bottom: 17px;
 }
@@ -368,11 +369,11 @@
     font-family: poppins, Arial, Helvetica, sans-serif;
     transition: ease 0.67s;
     font-size: 1.17rem;
+    padding: 8px 3px;
 }
 
 a.links_reference:hover {
     border-radius: 10px;
-    padding: 5px 0;
     background-color: rgba(69, 54, 71, 0.156);
     color: rgb(194, 239, 252);
 }
@@ -437,10 +438,6 @@ a.links_reference:hover {
     background-color: rgba(128, 128, 128, 0.158);
 }
 
-
-
-
-
 @media screen and (max-width: 808px) {
     .gsap_wia {
         font-size: 2.3rem;
@@ -494,7 +491,6 @@ a.links_reference:hover {
         height: auto;
     }
 
-
     .video_container {
         flex-direction: column;
     }
@@ -503,9 +499,7 @@ a.links_reference:hover {
         filter: blur(0);
     }
 
-
     .nt_img  {
         max-height: 250px;
     }
-
 }
