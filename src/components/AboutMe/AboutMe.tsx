@@ -376,7 +376,7 @@ const AboutMe = () => {
                     <p><span>Weight:</span> 143 lbs</p> 
                     <p><span>Mother:</span> Maria</p> 
                     <p><span>Father:</span> José</p> 
-                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js), Backend (Java, Kotlin), APIs (GraphQL), Testing (Jest)</p>  
+                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js and TanStack), Backend (Nest.js), APIs (GraphQL), Testing (Jest and E2E)</p>  
                     <p></p>  
                     <p><span>IDE:</span>Visual Studio Code</p>  
                   </>
@@ -398,7 +398,7 @@ const AboutMe = () => {
                     </div>
 
                     <div className={styles.format_icons_about_me}>
-                      <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'}Technologies & design tools</h3>
+                      <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'} TECH STACK & TOOLS</h3>
                       <div className={styles.all_icons}>
                         <div className={styles.format_icons_skills}><FaHtml5 size={30} color="#E34F26" /> HTML5</div>
                         <div className={styles.format_icons_skills}><FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
@@ -408,11 +408,11 @@ const AboutMe = () => {
                         <div className={styles.format_icons_skills}><SiTypescript size={28} color="#3178C6" /> TypeScript</div>
                         <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
                         <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
+                        <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
                         <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills} rel="noreferrer">
                           <FaGithub size={30} color="#FFFFFF" /> GitHub
                         </a>
                         <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
-                        <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
                       </div>
                     </div>
                   </div>
