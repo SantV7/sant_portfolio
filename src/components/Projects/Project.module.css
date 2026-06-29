@@ -81,14 +81,16 @@
 }
 
 .context_paragraph {
+    
     display: flex;
     flex-flow: row wrap;
     text-align: left;
 }
 
 .context_paragraph  p {
-    font-size: 1.5rem;
-    font-family: "Tektur", sans-serif; 
+    font-size: 1.6rem;
+    letter-spacing: 0.6px;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .box_info > header > div > h3 {

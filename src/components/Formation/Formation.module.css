@@ -5,23 +5,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px;
+  padding: 10px 20px;
   background: linear-gradient(135deg, #0f0c1b 0%, #151531 50%, #2d1b4e 100%);
   box-sizing: border-box;
 }
 
-.title_formation {
-  margin-bottom: 4rem;
-}
 
 .title_formation h1 {
-  font-family: 'Tektur', sans-serif;
-  font-size: 3.2rem;
-  font-weight: 800;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 4.3rem;
+  margin-bottom: 80px;
   letter-spacing: 2px;
   color: #d7d7ff;
   text-shadow: 0 0 20px rgba(148, 129, 240, 0.6);
-  margin: 0;
   text-align: center;
 }
 
@@ -45,7 +41,7 @@
 }
 
 .about_my_course h2 {
-  font-family: 'Tektur', sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
   color: #ffffff;
