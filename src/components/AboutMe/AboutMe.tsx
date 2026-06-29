@@ -5,9 +5,10 @@ import {
   CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff, CodeXml, HardDriveDownload, CircleEllipsis, X, Mail 
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
-import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss } from "react-icons/si"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt } from "react-icons/fa"
+import { SiTypescript, SiTailwindcss, SiVercel } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" 
+import { BiLogoPostgresql } from "react-icons/bi"
 import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
@@ -20,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger)
 const AboutMe = () => {
   const WhoRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
 
   const [curriculumActive, setCurriculumActive] = useState<boolean>(false)
   const [showMore, setShowMore] = useState<boolean>(false)
@@ -43,6 +45,10 @@ const AboutMe = () => {
   const contactRef = useRef<HTMLDivElement| null>(null)
   const linksContainerRef = useRef<HTMLDivElement | null>(null)
   const aboutRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    ScrollTrigger.refresh()
+  }, [showMore, moreCurriculum])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -182,6 +188,27 @@ const AboutMe = () => {
           scrub: true
         }
       })   
+
+      // Controle estrito de performance do vídeo
+      gsap.to(videoRef.current, {
+        scrollTrigger: {
+          trigger: `.${styles.video_container}`,
+          start: 'top 85%',
+          end: 'bottom top',
+          onEnter: () => {
+            videoRef.current?.play().catch(err => console.log(err))
+          },
+          onLeave: () => {
+            videoRef.current?.pause()
+          },
+          onEnterBack: () => {
+            videoRef.current?.play().catch(err => console.log(err))
+          },
+          onLeaveBack: () => {
+            videoRef.current?.pause()
+          }
+        }
+      })
     }, sectionRef)
 
     return () => ctx.revert()
@@ -407,12 +434,18 @@ const AboutMe = () => {
                         <div className={styles.format_icons_skills}><FaReact size={30} color="#61DAFB" /> React</div>
                         <div className={styles.format_icons_skills}><SiTypescript size={28} color="#3178C6" /> TypeScript</div>
                         <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                        <div className={styles.format_icons_skills}><BiLogoPostgresql size={32} color="#4169E1" /> PostgreSQL</div>
                         <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
                         <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
+                        <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
+                        <div className={styles.format_icons_skills}><FaGitAlt size={30} color="#F05032" /> Git</div>
                         <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills} rel="noreferrer">
                           <FaGithub size={30} color="#FFFFFF" /> GitHub
                         </a>
-                        <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
+                        <div className={styles.format_icons_skills}><SiVercel size={26} color="#FFFFFF" /> Vercel</div>
+                        <div className={styles.format_icons_skills}>
+                          <span style={{ fontWeight: 'bold', color: '#61DAFB', marginRight: '5px' }}>⚡</span> GSAP
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -427,7 +460,7 @@ const AboutMe = () => {
                       <div className={styles.flex_skills}>
                         <div className={styles.skills_first}>
                           <h4>■ Languages:</h4>
-                          <p>- JavaScript, TypeScript, HTML5, CSS3</p>
+                          <p>- JavaScript, TypeScript, HTML5, CSS3, SQL</p>
                         </div>
                         <div className={styles.skills_first}>
                           <h4>■ Libraries and Frameworks:</h4>
@@ -435,11 +468,11 @@ const AboutMe = () => {
                         </div>      
                         <div className={styles.skills_first}>
                           <h4>■ Animation and UI:</h4>
-                          <p>- UI/UX Design Principles, Figma</p>
+                          <p>- UI/UX Design Principles, Figma, GSAP, Lenis</p>
                         </div>
                         <div className={styles.skills_first}>
                           <h4>■ Tools and Workflow:</h4>
-                          <p>- Git, GitHub, REST APIs, Responsive Web Development</p>
+                          <p>- Git, GitHub, Vercel, PostgreSQL, REST APIs, Responsive Web Development</p>
                         </div>      
                         <div className={styles.skills_first}>
                           <h4>■ Spoken Languages:</h4>
@@ -497,7 +530,7 @@ const AboutMe = () => {
 
           <div className={styles.video_container}>
             <img className={styles.nt_img} src={notebookImg} alt="Notebook " />
-            <video className={styles.video_pc} preload='auto' autoPlay muted loop playsInline>
+            <video ref={videoRef} className={styles.video_pc} preload='auto' muted loop playsInline>
               <source src={newPc} type='video/mp4' />
             </video>
           </div>

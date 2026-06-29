@@ -322,6 +322,10 @@
     margin-bottom: 15px;
 }
 
+.about_me_title > p {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
 #projects_box img {
     border: 1px solid rgba(255, 255, 255, 0.459);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.185);
@@ -344,6 +348,7 @@
     gap: 17px;
 }
 
+
 .format_txt {
     display: flex;
     align-items: center;
@@ -355,7 +360,7 @@
     font-weight: 500;
     color: #ecfbffe3;
     padding: 4px;
-    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .links_reference {
@@ -366,7 +371,7 @@
     gap: 12px;
     color: #ecfbffaf;
     letter-spacing: 0.7px;
-    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
     transition: ease 0.67s;
     font-size: 1.17rem;
     padding: 8px 3px;
