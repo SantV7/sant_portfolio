@@ -85,7 +85,7 @@ const Project = () => {
         
         const commonScrollTrigger = {
           trigger: projectAreaRef.current,
-          start: 'top 85%', 
+          start: 'top 63%', 
           toggleActions: 'play none none none' 
         };
 
@@ -114,7 +114,7 @@ const Project = () => {
         })
 
         gsap.fromTo(titleTxtRef.current, {
-          x: -100,
+          x: -110,
           opacity: 0,
         }, {
           x: 0, 
@@ -124,7 +124,7 @@ const Project = () => {
         })
 
         gsap.fromTo(paragraphRef.current, {
-          x: -90,
+          x: -120,
           opacity: 0,
           scale: 0.9
         }, {
@@ -148,6 +148,8 @@ const Project = () => {
 
       return () => ctx.revert();
     }, [])
+
+
 
   return (
     <>
