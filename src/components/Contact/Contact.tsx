@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './Contact.module.css'
 import { MapPin } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { 
   SiReact, 
@@ -18,6 +20,8 @@ import {
 } from 'react-icons/si';
 import { DiSqllite } from 'react-icons/di';
 
+gsap.registerPlugin(ScrollTrigger);
+
 interface GitHubProps {
   id: number ;
   avatar_url: string ;
@@ -31,38 +35,83 @@ interface GitHubProps {
 
 const Contact = () => {
   const [gitData, setGitData] = useState<GitHubProps | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const share_portfolio = useRef< HTMLParagraphElement | null>(null)
 
-useEffect(() => {
-  let isMounted = true;
+  useEffect(() => {
+    let isMounted = true;
 
-  const requestMyDataGithub = async () => {
-    try {
-      const response = await fetch('https://api.github.com/users/santv7');
+    const requestMyDataGithub = async () => {
+      try {
+        const response = await fetch('https://api.github.com/users/santv7');
 
-      if (!response.ok) {
-        throw new Error(`Erro na requisição: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`Erro na requisição: ${response.status}`);
+        }
+
+        const data: GitHubProps = await response.json();
+        
+        if (isMounted) {
+          setGitData(data);
+        }
+      } catch (err) {
+        if (isMounted) {
+          console.error('Erro ao buscar dados do GitHub:', err instanceof Error ? err.message : err);
+        }
       }
+    };
 
-      const data: GitHubProps = await response.json();
+    requestMyDataGithub();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const links = containerRef.current.querySelectorAll(`.${styles.my_links}`);
       
-      if (isMounted) {
-        setGitData(data);
-      }
-    } catch (err) {
-      if (isMounted) {
-        console.error('Erro ao buscar dados do GitHub:', err instanceof Error ? err.message : err);
-      }
+      gsap.fromTo(links, 
+        { 
+          opacity: 0, 
+          y: -50 
+        }, 
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.6, 
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 75%',
+            end: 'bottom 80%',
+            scrub: true
+          }
+        }
+      );
     }
-  };
-
-  requestMyDataGithub();
-
-  return () => {
-    isMounted = false;
-  };
-}, []);
+  }, []);
 
 
+  useEffect(() => {
+    gsap.fromTo(share_portfolio.current, {
+      x: -100,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1,
+      duration: 0.76,
+      ease: "power2",
+      scrollTrigger : {
+        trigger: share_portfolio.current,
+        start: 'top 98%' ,
+        end: 'top 76%',
+        scrub: 1.5
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -99,9 +148,9 @@ useEffect(() => {
                 </div>
         </header>
 
-        <main>
+        <main >
             <div className={styles.container_grid}>
-              <div className={styles.all_links}>
+              <div ref={containerRef} className={styles.all_links}>
                  <a
                     id='l_link'
                     className={styles.my_links}
@@ -145,7 +194,7 @@ useEffect(() => {
                 <p>
                    Share this portfolio via this link.
                 </p>
-                <p>
+                <p ref={share_portfolio}>
                    https://sant-portfolio.vercel.app/
                 </p>            
                </div>
