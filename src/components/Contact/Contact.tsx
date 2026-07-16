@@ -5,18 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { 
-  SiReact, 
-  SiTypescript, 
-  SiTailwindcss, 
-  SiHtml5, 
-  SiJavascript, 
-  SiCss, 
-  SiPostgresql, 
-  SiGit, 
-  SiGithub, 
-  SiFigma, 
-  SiVercel,
-  SiSass 
+  SiReact, SiTypescript, SiTailwindcss, SiHtml5, SiJavascript, SiCss, SiPostgresql, SiGit, SiGithub, SiFigma, SiVercel, SiSass 
 } from 'react-icons/si';
 import { DiSqllite } from 'react-icons/di';
 
@@ -43,7 +32,7 @@ const Contact = () => {
 
     const requestMyDataGithub = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/santv7');
+        const response: Response = await fetch('https://api.github.com/users/santv7');
 
         if (!response.ok) {
           throw new Error(`Erro na requisição: ${response.status}`);
@@ -54,7 +43,7 @@ const Contact = () => {
         if (isMounted) {
           setGitData(data);
         }
-      } catch (err) {
+      } catch (err: unknown) {
         if (isMounted) {
           console.error('Erro ao buscar dados do GitHub:', err instanceof Error ? err.message : err);
         }
