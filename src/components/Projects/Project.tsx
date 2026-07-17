@@ -1,7 +1,6 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useMemo } from "react"
 import dashboardProject from '../../assets/img/projects/dashboard_first.png'
 import fintechBank from '../../assets/img/projects/fintech_bank.png'
-
 import Card from "./Card/Card";
 import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
@@ -9,7 +8,6 @@ import { gsap } from 'gsap';
 import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
-
 import pizzaProject from '../../assets/img/projects/pizzaria.png'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +28,7 @@ const Project = () => {
     const paragraphRef = useRef<HTMLParagraphElement>(null);
     const imgCardRef = useRef<HTMLImageElement>(null);
 
-    const [myProjects] = useState<ProjectsProps[]>([
+    const myProjects = useMemo<ProjectsProps[]>(() => [
         {
             id: 1, 
             imgProject: fintechBank,
@@ -59,97 +57,94 @@ const Project = () => {
             descProject: 'An interactive word-guessing game applying state management logic and data processing handling.',
             urlProject: 'https://game-reveal.vercel.app/'
         }         
-    ])
+    ], []);
 
-    const [data, SetData] = useState<string>()
+    const [data, SetData] = useState<string>('')
 
     useEffect(() => {
-      const timerSetter = setInterval(() => {
-        const newD = new Date()
-        const hour = newD.getHours()
-        const minutes = newD.getMinutes()
-        const seconds = newD.getSeconds()
+        let animationFrameId: number;
+        let lastSecond = -1;
 
-        const hStr = hour.toString().padStart(2, '0')
-        const mStr = minutes.toString().padStart(2,'0')
-        const sStr = seconds.toString().padStart(2, '0')
+        const updateClock = () => {
+            const newD = new Date()
+            const seconds = newD.getSeconds()
 
-        SetData(`${hStr}:${mStr}:${sStr}h`)
-      }, 1000);
-      
-      return () => clearInterval(timerSetter)
+            if (seconds !== lastSecond) {
+                lastSecond = seconds;
+                const hour = newD.getHours()
+                const minutes = newD.getMinutes()
+
+                const hStr = hour.toString().padStart(2, '0')
+                const mStr = minutes.toString().padStart(2, '0')
+                const sStr = seconds.toString().padStart(2, '0')
+
+                SetData(`${hStr}:${mStr}:${sStr}h`)
+            }
+
+            animationFrameId = requestAnimationFrame(updateClock)
+        }
+
+        animationFrameId = requestAnimationFrame(updateClock)
+        return () => cancelAnimationFrame(animationFrameId)
     }, [])
 
     useEffect(() => {
-      const ctx = gsap.context(() => {
-        
-        const commonScrollTrigger = {
-          trigger: projectAreaRef.current,
-          start: 'top 63%', 
-          toggleActions: 'play none none none' 
-        };
+        const ctx = gsap.context(() => {
+            const commonScrollTrigger = {
+                trigger: projectAreaRef.current,
+                start: 'top 63%', 
+                toggleActions: 'play none none none' 
+            };
 
-        gsap.fromTo(mainBoxRef.current, {
-          opacity: 0,
-          scale: 0.9,
-          y: 20
-        }, {
-          ease: 'power2.out', 
-          duration: 0.5,
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          scrollTrigger: commonScrollTrigger
-        })
+            gsap.fromTo(mainBoxRef.current, {
+                opacity: 0,
+                scale: 0.9,
+                y: 20
+            }, {
+                ease: 'power2.out', 
+                duration: 0.5,
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: commonScrollTrigger
+            })
 
-        gsap.fromTo(listRef.current, {
-          x: -130,
-          opacity: 0,
-        }, {
-          x: 0, 
-          delay: 0.2, 
-          opacity: 1,
-          duration: 0.67,
-          scrollTrigger: commonScrollTrigger
-        })
+            gsap.fromTo([listRef.current, titleTxtRef.current], {
+                x: (index) => index === 0 ? -130 : -110,
+                opacity: 0,
+            }, {
+                x: 0, 
+                delay: (index) => index === 0 ? 0.2 : 0, 
+                opacity: 1,
+                duration: (index) => index === 0 ? 0.67 : 0.68,
+                scrollTrigger: commonScrollTrigger
+            })
 
-        gsap.fromTo(titleTxtRef.current, {
-          x: -110,
-          opacity: 0,
-        }, {
-          x: 0, 
-          opacity: 1,
-          duration: 0.68,
-          scrollTrigger: commonScrollTrigger 
-        })
+            gsap.fromTo(paragraphRef.current, {
+                x: -120,
+                opacity: 0,
+                scale: 0.9
+            }, {
+                x: 0, 
+                opacity: 1,
+                scale: 1,
+                duration: 0.65,
+                scrollTrigger: commonScrollTrigger
+            })
 
-        gsap.fromTo(paragraphRef.current, {
-          x: -120,
-          opacity: 0,
-          scale: 0.9
-        }, {
-          x: 0, 
-          opacity: 1,
-          scale: 1,
-          duration: 0.65,
-          scrollTrigger: commonScrollTrigger
-        })
+            gsap.fromTo(imgCardRef.current, {
+                x: 100,
+                opacity: 0,
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 0.85,
+                scrollTrigger: commonScrollTrigger
+            })
+        }, projectAreaRef);
 
-        gsap.fromTo(imgCardRef.current, {
-          x: 100,
-          opacity: 0,
-        }, {
-          x: 0,
-          opacity: 1,
-          duration: 0.85,
-          scrollTrigger: commonScrollTrigger
-        })
-      }, projectAreaRef);
-
-      return () => ctx.revert();
+        return () => ctx.revert();
     }, [])
-
-
 
   return (
     <>

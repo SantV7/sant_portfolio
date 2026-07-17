@@ -3,23 +3,27 @@ import gsap from 'gsap'
 import styles from './Formation.module.css'
 
 export const FormationData = () => {
-  const componentRef = useRef(null)
+  const componentRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(`.${styles.title_formation} h1`, 
+      const tl = gsap.timeline()
+
+      tl.fromTo(`.${styles.title_formation} h1`, 
         { opacity: 0, y: -30 }, 
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
       )
       
-      gsap.fromTo(`.${styles.about_my_course} h2`, 
+      .fromTo(`.${styles.about_my_course} h2`, 
         { opacity: 0, y: 30 }, 
-        { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+        '-=0.5'
       )
 
-      gsap.fromTo([`.${styles.about_my_course} h3`, `.${styles.about_my_course} p`], 
+      .fromTo([`.${styles.about_my_course} h3`, `.${styles.about_my_course} p`], 
         { opacity: 0, x: -20 }, 
-        { opacity: 1, x: 0, duration: 0.8, delay: 0.6, stiffness: 0.1, stagger: 0.2, ease: 'power2.out' }
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
+        '-=0.4'
       )
     }, componentRef)
 

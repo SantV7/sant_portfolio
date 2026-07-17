@@ -5,8 +5,8 @@ import {
   CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff, CodeXml, HardDriveDownload, CircleEllipsis, X, Mail 
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
-import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiVercel } from "react-icons/si"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt, FaNodeJs } from "react-icons/fa"
+import { SiTypescript, SiTailwindcss, SiVercel, SiExpress } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" 
 import { BiLogoPostgresql } from "react-icons/bi"
 import notebookImg from '../../assets/img/notebook.jpeg'
@@ -189,7 +189,6 @@ const AboutMe = () => {
         }
       })   
 
-      // Controle estrito de performance do vídeo
       gsap.to(videoRef.current, {
         scrollTrigger: {
           trigger: `.${styles.video_container}`,
@@ -275,7 +274,7 @@ const AboutMe = () => {
           x: 0,
           duration: 0.4,
           ease: 'power1.out',
-          strainer: 0.08
+          stagger: 0.08
         })
       }
 
@@ -403,7 +402,7 @@ const AboutMe = () => {
                     <p><span>Weight:</span> 143 lbs</p> 
                     <p><span>Mother:</span> Maria</p> 
                     <p><span>Father:</span> José</p> 
-                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js and TanStack), Backend (Nest.js), APIs (GraphQL), Testing (Jest and E2E)</p>  
+                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js and TanStack), Backend (Node.js, Express, Nest.js), APIs (GraphQL), Testing (Jest and E2E)</p>  
                     <p></p>  
                     <p><span>IDE:</span>Visual Studio Code</p>  
                   </>
@@ -434,6 +433,8 @@ const AboutMe = () => {
                         <div className={styles.format_icons_skills}><FaReact size={30} color="#61DAFB" /> React</div>
                         <div className={styles.format_icons_skills}><SiTypescript size={28} color="#3178C6" /> TypeScript</div>
                         <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                        <div className={styles.format_icons_skills}><FaNodeJs size={30} color="#339933" /> Node.js</div>
+                        <div className={styles.format_icons_skills}><SiExpress size={30} color="#FFFFFF" /> Express</div>
                         <div className={styles.format_icons_skills}><BiLogoPostgresql size={32} color="#4169E1" /> PostgreSQL</div>
                         <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
                         <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
@@ -464,7 +465,7 @@ const AboutMe = () => {
                         </div>
                         <div className={styles.skills_first}>
                           <h4>■ Libraries and Frameworks:</h4>
-                          <p>- React, Tailwind CSS, Sass & SCSS</p>
+                          <p>- React, Node.js, Express, Tailwind CSS, Sass & SCSS</p>
                         </div>      
                         <div className={styles.skills_first}>
                           <h4>■ Animation and UI:</h4>
@@ -503,7 +504,7 @@ const AboutMe = () => {
                     {moreCurriculum ? 'CLOSE' : 'MORE'} {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
                   </button>
 
-                  {showMore && (
+                  ={showMore && (
                     <button onMouseEnter={() => setCloseIcon(true)} onMouseLeave={() => setCloseIcon(false)} onClick={() => setShowMore(false)} 
                     className={styles.hud_btn_sm}>
                       SHOW LESS {closeIcon ? <X size={38}/> : <CircleX size={38} />}

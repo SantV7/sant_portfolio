@@ -22,70 +22,36 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
     const linkSkillsRef = useRef<HTMLLIElement | null>(null)
     const btnContactRef = useRef<HTMLAnchorElement | null>(null)
 
-    const showHomeIcon = () => {
-        setHomeIcon('white')
-    }
+    const showHomeIcon = () => setHomeIcon('white')
+    const hiddenHomeIcon = () => setHomeIcon('transparent')
 
-    const hiddenHomeIcon = () => {
-        setHomeIcon('transparent')
-    }
-
-    const showSkillsIcon = () => {
-        setSkillsIcon('white')
-    }
-
-    const hiddenSkillsIcon = () => {
-        setSkillsIcon('transparent')
-    }
+    const showSkillsIcon = () => setSkillsIcon('white')
+    const hiddenSkillsIcon = () => setSkillsIcon('transparent')
     
-    const showProjectIcon = () => {
-        setProjectIcon('white')
-    }
+    const showProjectIcon = () => setProjectIcon('white')
+    const hiddenProjectIcon = () => setProjectIcon('transparent')
 
-    const hiddenProjectIcon = () => {
-        setProjectIcon('transparent')
-    }
-
-    const showContactIcon = () => {
-        setContactIcon('white')
-    }
-
-    const hiddenContactIcon = () => {
-        setContactIcon('transparent')
-    }
+    const showContactIcon = () => setContactIcon('white')
+    const hiddenContactIcon = () => setContactIcon('transparent')
 
     useEffect(() => {
-        const animHome = gsap.fromTo(linkHomeRef.current, {
+        const targets = [linkHomeRef.current, linkSkillsRef.current, linkProjectRef.current].filter(Boolean);
+        
+        const animLinks = gsap.fromTo(targets, {
             opacity: 0, scale: 0.3
         }, {
             opacity: 1, scale: 1,
-            duration: 0.75, ease: 'power2'
-         })
-
-        const animSkills = gsap.fromTo(linkSkillsRef.current, {
-            opacity: 0, scale: 0.3
-        }, {
-            opacity: 1, scale: 1,
-            duration: 0.75, ease: 'power2'
-         })
-
-        const animProject = gsap.fromTo(linkProjectRef.current, {     
-            opacity: 0, scale: 0.3
-        }, {
-            opacity: 1, scale: 1,
-            duration: 0.75, ease: 'power2'
-         })   
+            duration: 0.75, ease: 'power2', stagger: 0.05
+        })
 
         const animContact = gsap.fromTo(btnContactRef.current, {     
              x: 50
         }, {
-            x: 0,  duration: 0.35, ease: 'power2'
-         })              
+            x: 0, duration: 0.35, ease: 'power2'
+        })              
 
         return () => {
-            animHome.kill()
-            animSkills.kill()
-            animProject.kill()
+            animLinks.kill()
             animContact.kill()
         }
     }, [])
@@ -97,11 +63,8 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
             <h1 className={styles.nick_name}>Sant v7</h1>
         </div>
 
-        {showMenu ? <ChartNoAxesGantt className={styles.menu_btn}
-          onClick={handleMenu}
-          size={37} color='white'/>
-          : <Menu className={styles.menu_btn}
-          color='white' onClick={handleMenu} size={37} /> }
+        {showMenu ? <ChartNoAxesGantt className={styles.menu_btn} onClick={handleMenu} size={37} color='white'/>
+          : <Menu className={styles.menu_btn} color='white' onClick={handleMenu} size={37} /> }
 
          <nav className={`${styles.main_navbar} ${showMenu ? styles.open : ""}`}>
             <ul className={styles.ul_list}>
@@ -111,8 +74,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseOut={hiddenHomeIcon}
                        href="#intro-video">
                         Home 
-                       <House className={styles.icons_navbar_hover}
-                       color={homeIcon} size={25} />
+                       <House className={styles.icons_navbar_hover} color={homeIcon} size={25} />
                     </a>
                 </li>
 
@@ -122,6 +84,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseOut={hiddenSkillsIcon} 
                        href="#about_me_sec">
                         About
+                         <BrainCircuit className={styles.icons_navbar_hover} color={skillsIcon} />
                     </a>
                 </li>
 
@@ -129,9 +92,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     <a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
-                       href="#project_area">Projects <SquaresExclude
-                       className={styles.icons_navbar_hover}
-                       color={projectIcon} />
+                       href="#project_area">Projects <SquaresExclude className={styles.icons_navbar_hover} color={projectIcon} />
                     </a>
                 </li>
 
@@ -140,11 +101,10 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseOut={hiddenContactIcon} 
                        href='#contact_sect_href'
                        className={styles.contact_btn}>Contact 
-                       <Headset className={styles.icons_navbar_hover}
-                       color={contactIcon} />
+                       <Headset className={styles.icons_navbar_hover} color={contactIcon} />
                     </a>
             </ul>
-        </nav>
+         </nav>
     </header>
     </>
   )

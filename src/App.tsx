@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 4.85,
+      duration: 2.85,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
@@ -39,7 +39,6 @@ function App() {
       rafId = requestAnimationFrame(raf)
     }
     rafId = requestAnimationFrame(raf)
-
 
     const ctx = gsap.context(() => {
       gsap.fromTo('#welcome_msg_gsap', {
@@ -71,16 +70,6 @@ function App() {
         ease: 'power2.out'
       })    
 
-      gsap.fromTo('.scroll_wellcome', {
-        y: -140,
-        opacity: 0
-      }, {
-        duration: 1.6,
-        opacity: 1,
-        y: 0,
-        ease: 'power2'
-      })
-
       gsap.to("#bg-video", {
         scrollTrigger: {
           trigger: "#intro-video", 
@@ -92,24 +81,19 @@ function App() {
         ease: "none"
       });
 
-      gsap.fromTo(`.${styles['change-bg']}`, 
-        { y: 40, scale: 0, opacity: 0 }, 
-        { y: 0, scale: 1, duration: 1.5, opacity: 1, ease: 'power2.out' }
-      )
-
       const timeLine = gsap.timeline();
 
       timeLine.fromTo('#scroll_wellcome_gsap', 
-        { y: -50, opacity: 0, scale: 2 }, 
+        { y: -50, opacity: 0, scale: 1.5 }, 
         { y: 0, delay: 0.85, opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }
       )
       
       timeLine.to('#scroll_wellcome_gsap', {
-        y: 40,
+        y: 25,
         duration: 1.12, 
         repeat: -1,
         yoyo: true, 
-        ease: 'linear'
+        ease: 'power1.inOut'
       })
     })
     
@@ -122,9 +106,6 @@ function App() {
   
   const toolTipActive = () => { if (!showMenu) setIsHovered(true) }
   const toolTipAllowed = () => { setIsHovered(false) }
-
-
-
 
   return (
     <div>
@@ -141,14 +122,9 @@ function App() {
             
             <div id='welcome_msg'>
               <div className='intro_tag' id='hi_there'>👾 HI THERE!</div>
-              <h1 id='welcome_msg_gsap'>Welcome to  my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
+              <h1 id='welcome_msg_gsap'>Welcome to my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
 
-              <p className='welcome_apresentation' id='max_msg_ap'>Driven <span className="portfolio">Software Engineer</span>
-               <span style={{color: "orange"}}>&</span>
-               <span className="portfolio">Frontend Developer</span> combining modern 
-               <span id='opp'>engineering</span>  principles with design to deliver clean,
-                scalable, and <span id='opp'>impactful</span> web solutions.
-              </p>
+              <p className='welcome_apresentation' id='max_msg_ap'>Driven <span className="portfolio">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio">Frontend Developer</span> combining modern <span id='opp'>engineering</span> principles with design to deliver clean, scalable, and <span id='opp'>impactful</span> web solutions.</p>
           
               <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>. Based in Brazil.</p>
             </div>

@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { 
-  SiReact, SiTypescript, SiTailwindcss, SiHtml5, SiJavascript, SiCss, SiPostgresql, SiGit, SiGithub, SiFigma, SiVercel, SiSass 
+  SiReact, SiTypescript, SiTailwindcss, SiHtml5, SiJavascript, SiCss, SiPostgresql, SiGit, SiGithub, SiFigma, SiVercel, SiSass, SiNodedotjs, SiExpress
 } from 'react-icons/si';
 import { DiSqllite } from 'react-icons/di';
 
@@ -29,10 +29,13 @@ const Contact = () => {
 
   useEffect(() => {
     let isMounted = true;
+    const controller = new AbortController();
 
     const requestMyDataGithub = async () => {
       try {
-        const response: Response = await fetch('https://api.github.com/users/santv7');
+        const response = await fetch('https://api.github.com/users/santv7', {
+          signal: controller.signal
+        });
 
         if (!response.ok) {
           throw new Error(`Erro na requisição: ${response.status}`);
@@ -44,7 +47,7 @@ const Contact = () => {
           setGitData(data);
         }
       } catch (err: unknown) {
-        if (isMounted) {
+        if (isMounted && (err as Error).name !== 'AbortError') {
           console.error('Erro ao buscar dados do GitHub:', err instanceof Error ? err.message : err);
         }
       }
@@ -54,53 +57,55 @@ const Contact = () => {
 
     return () => {
       isMounted = false;
+      controller.abort();
     };
   }, []);
 
   useEffect(() => {
-    if (containerRef.current) {
-      const links = containerRef.current.querySelectorAll(`.${styles.my_links}`);
-      
-      gsap.fromTo(links, 
-        { 
-          opacity: 0, 
-          y: -50 
-        }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.6, 
-          stagger: 0.15,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 75%',
-            end: 'bottom 80%',
-            scrub: true
+    const ctx = gsap.context(() => {
+      if (containerRef.current) {
+        const links = containerRef.current.querySelectorAll(`.${styles.my_links}`);
+        
+        gsap.fromTo(links, 
+          { 
+            opacity: 0, 
+            y: -50 
+          }, 
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.6, 
+            stagger: 0.15,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 75%',
+              end: 'bottom 80%',
+              scrub: true
+            }
           }
-        }
-      );
-    }
-  }, []);
-
-
-  useEffect(() => {
-    gsap.fromTo(share_portfolio.current, {
-      x: -100,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1,
-      duration: 0.76,
-      ease: "power2",
-      scrollTrigger : {
-        trigger: share_portfolio.current,
-        start: 'top 98%' ,
-        end: 'top 76%',
-        scrub: 1.5
+        );
       }
-    })
-  }, [])
+
+      gsap.fromTo(share_portfolio.current, {
+        x: -100,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.76,
+        ease: "power2",
+        scrollTrigger : {
+          trigger: share_portfolio.current,
+          start: 'top 98%' ,
+          end: 'top 76%',
+          scrub: 1.5
+        }
+      })
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
@@ -115,23 +120,23 @@ const Contact = () => {
                           target='_blank'
                           rel="noreferrer" 
                           href="https://github.com/santv7">
-                           Github
+                            Github
                         </a>
 
                         <a 
                           target='_blank' 
                           rel="noreferrer" 
                           href="https://linkedin.com/in/viniciussant07">
-                           LinkedIn
+                            LinkedIn
                         </a>
                     </div>
 
                     <div className={styles.one_links}>
                         <a 
                           target='_blank' 
-                          rel="noreferrer"
+                          rel="noreferrer" 
                           href="mailto:3izuna@gmail.com">
-                           E-mail 
+                            E-mail 
                         </a>
                     </div>
                 </div>
@@ -177,7 +182,7 @@ const Contact = () => {
                     rel="noreferrer">
                       <header className={styles.h_click}> Youtube <div className={styles.show_links}>Click</div></header>
                       <div className={styles.show_links}>  https://www.youtube.com/@vy.S17</div>
-                 </a>                  
+                 </a>                   
 
               <div className={styles.share_this_portfolio}>
                 <p>
@@ -187,7 +192,7 @@ const Contact = () => {
                    https://sant-portfolio.vercel.app/
                 </p>            
                </div>
-             </div>
+              </div>
 
               {gitData ? (
                   <div className={styles.card_data}>
@@ -210,6 +215,8 @@ const Contact = () => {
                            <SiJavascript title="JavaScript" color="#F7DF1E" size={43} className={styles.js_bg} />
                            <SiTypescript title="TypeScript" color="#3178C6" size={43} />
                            <SiReact title="React" color="#61DAFB" size={43} />
+                           <SiNodedotjs title="Node.js" color="#339933" size={43} />
+                           <SiExpress title="Express" color="#ffffff" size={43} />
                            <SiTailwindcss title="Tailwind CSS" color="#06B6D4" size={43} />
                            <SiSass title="Sass" color="#CC6699" size={43} />
                            <DiSqllite title="SQL" color="#003B57" size={43} />
@@ -247,4 +254,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;

@@ -5,6 +5,19 @@
     background-image: linear-gradient(to bottom, rgb(10, 6, 10), #111316);
 }
 
+.container_card, .gsap_wia, .data_grid, .format_txt, .links_reference, .about_me_title > p {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.container_card {
+    letter-spacing: 1px;
+    margin: 0 auto;
+    max-width: 1050px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .apresentation {
     text-align: center;
     position: relative;
@@ -17,20 +30,9 @@
 }
 
 .gsap_wia {
-    font-family: 'Pixelify Sans', sans-serif;
     color: white;
     font-size: clamp(2rem, 8vw, 4.3rem); 
     text-shadow: 0 0 10px rgba(220, 202, 250, 0.5);
-}
-
-.container_card {
-    letter-spacing: 1px;
-    margin:  0 auto;
-    max-width: 1050px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .about_me_card {
@@ -76,15 +78,14 @@
     padding: 30px 20px;
 }
 
-.sidebar {
+.sidebar, .photo_frame, .info_card_footer, .skills_first, .contact_more {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
+.sidebar { gap: 20px; }
+
 .photo_frame {
-    display: flex;
-    flex-direction: column;
     gap: 15px;
     border: 1px solid #3a5b63;
     padding: 5px;
@@ -132,11 +133,8 @@
 }
 
 .info_card_footer {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
+    margin: 25px 0 100px;
     gap: 20px;
-    margin-bottom: 100px;
 }
 
 .footer_btns {
@@ -164,7 +162,7 @@
 .hud_btn_sm:hover {
     border-right: 4px solid white;
     border-top-left-radius: 11px;
-    background-color:#23272e;
+    background-color: #23272e;
 }
 
 .sidebar_curriculum {
@@ -186,34 +184,28 @@
     background: black;
 }
 
-.nt_img {
-    width: 27%;
+.nt_img, .video_pc {
     height: 550px; 
     object-fit: cover;
+}
+
+.nt_img {
+    width: 27%;
     filter: saturate(40%);
     transition: 0.3s;
 }
 
-.nt_img:hover {
-    filter: saturate(100%);
-}
+.nt_img:hover { filter: saturate(100%); }
 
 .video_pc {
     width: 73%;
-    height: 550px; 
-    object-fit: cover;
     border-left: 1px solid #3a5b63;
     filter: blur(7px);
     transition: filter 0.9s ease;
 }
 
-.video_container:hover .video_pc {
-    filter: blur(0);
-}
-
-.video_container video {
-    transition: ease 0.85s;
-}
+.video_container:hover .video_pc { filter: blur(0); }
+.video_container video { transition: ease 0.85s; }
 
 .more_data_title {
     display: flex;
@@ -265,34 +257,29 @@
     backdrop-filter: blur(8px);
 }
 
+.box_info h4, .box_info p, .skills_first h4, .skills_first p {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+}
+
 .box_info h4 {
     font-size: 1.15rem;
-    font-family: poppins, Arial, Helvetica, sans-serif;
     color: #cbd9ff;
     margin-bottom: 12px;
 }
 
 .box_info p {
-    font-family: poppins, Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    margin-left: 0;
     line-height: 1.7;
-    border-bottom: none;
     color: #e8f0ff;
 }
 
-#m_last, #expected {
-    padding-bottom: 17px;
-}
+#m_last, #expected { padding-bottom: 17px; }
 
 .skills_first {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
     padding: 16px 18px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.04);
-    border-left: 3px solid #5f82d1;
     border: 1px solid transparent;
     transition: ease-in 0.25s;
 }
@@ -318,12 +305,7 @@
 #about_title, #technical_title, #projects_title, #tech_design_title {
     font-size: 1.1rem;
     font-weight: 550;
-    border: none;
     margin-bottom: 15px;
-}
-
-.about_me_title > p {
-    font-family: 'Pixelify Sans', sans-serif;
 }
 
 #projects_box img {
@@ -333,45 +315,36 @@
     border-radius: 5px;
 }
 
-#projects_box img:hover {
-    scale: 1.03;
-}
+#projects_box img:hover { scale: 1.03; }
 
 .flex_skills {
     display: grid;
     gap: 20px;
 }
 
-.contact_more {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 17px;
-}
+.contact_more { gap: 17px; }
 
-
-.format_txt {
+.format_txt, .links_reference {
     display: flex;
     align-items: center;
+    gap: 12px;
+}
+
+.format_txt {
     justify-content: center;
     text-align: left;
     flex-flow: column nowrap;
-    gap: 10px;
     font-size: 1.14rem;
     font-weight: 500;
     color: #ecfbffe3;
     padding: 4px;
-    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .links_reference {
-    display: flex;
     flex-flow: row nowrap;
     margin-left: 6px;
-    align-items: center;
-    gap: 12px;
     color: #ecfbffaf;
     letter-spacing: 0.7px;
-    font-family: 'Pixelify Sans', sans-serif;
     transition: ease 0.67s;
     font-size: 1.17rem;
     padding: 8px 3px;
@@ -383,11 +356,14 @@ a.links_reference:hover {
     color: rgb(194, 239, 252);
 }
 
-.design_area_icons {
+.design_area_icons, .all_icons {
     display: flex;
+    justify-content: center;
+}
+
+.design_area_icons {
     gap: 10px;
     flex-flow: row nowrap;
-    justify-content: center;
 }
 
 .design_area_icons > div {
@@ -402,7 +378,6 @@ a.links_reference:hover {
 }
 
 .design_area_icons > div:hover {
-    border-radius: 7px;
     background-color: rgba(128, 128, 128, 0.158);
     box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.656);
 }
@@ -416,15 +391,13 @@ a.links_reference:hover {
 }
 
 .all_icons {
-    display: flex;
     gap: 20px;
-    justify-content: center;
     align-items: center;
     flex-flow: row wrap;
 }
 
 .format_icons_skills {
-    padding: 5px ;
+    padding: 5px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -444,9 +417,7 @@ a.links_reference:hover {
 }
 
 @media screen and (max-width: 808px) {
-    .gsap_wia {
-        font-size: 2.3rem;
-    }
+    .gsap_wia { font-size: 2.3rem; }
 
     .old_pc {
         width: 84vw;
@@ -457,7 +428,6 @@ a.links_reference:hover {
     .about_me { 
         padding-left: 0;
         padding-right: 0;
-        min-width: 100%;
         padding-top: 100px;
     }
     
@@ -472,9 +442,7 @@ a.links_reference:hover {
         align-items: flex-start;
     }
 
-    .sidebar {
-        align-items: center;
-    }
+    .sidebar, .format_icons_skills { align-items: center; }
 
     .photo_frame {
         width: 100%;
@@ -482,9 +450,7 @@ a.links_reference:hover {
         border-radius: 50%;
     }
 
-    .photo_frame img {
-         border-radius: 50%;
-    }
+    .photo_frame img { border-radius: 50%; }
 
     .hud_btn_sm {
         width: 100%; 
@@ -496,15 +462,7 @@ a.links_reference:hover {
         height: auto;
     }
 
-    .video_container {
-        flex-direction: column;
-    }
-
-    .video_pc {
-        filter: blur(0);
-    }
-
-    .nt_img  {
-        max-height: 250px;
-    }
+    .video_container { flex-direction: column; }
+    .video_pc { filter: blur(0); }
+    .nt_img { max-height: 250px; }
 }
