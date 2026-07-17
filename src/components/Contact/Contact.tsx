@@ -104,7 +104,7 @@ const Contact = () => {
 
   return (
     <>
-    <section className={styles.contact_sect}>
+    <section id='contact_sect_href' className={styles.contact_sect}>
         <header className={styles.header_contact}>
                 <span className={`${styles.link_orange} ${styles.link_span_d}`}>Links</span>
                 <h1>Find Me On <br /> Professional Networks</h1>

@@ -297,7 +297,7 @@ const AboutMe = () => {
   }, [moreCurriculum])
 
   return (
-    <section ref={sectionRef} className={styles['about_me']}>
+    <section id='about_me_sec' ref={sectionRef} className={styles['about_me']}>
       <div className={styles.apresentation}>
         <h1 ref={WhoRef} className={styles.gsap_wia}>Sant's <br />information</h1>
         <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />

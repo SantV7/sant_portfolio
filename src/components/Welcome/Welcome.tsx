@@ -109,19 +109,19 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     <a onMouseEnter={showHomeIcon}
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
-                       href="#">Home <House className={styles.icons_navbar_hover}
+                       href="#intro-video">
+                        Home 
+                       <House className={styles.icons_navbar_hover}
                        color={homeIcon} size={25} />
                     </a>
                 </li>
 
-
                 <li ref={linkSkillsRef}>    
-                    <a  onMouseEnter={showSkillsIcon}
+                    <a onMouseEnter={showSkillsIcon}
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
-                       href="#">Skills <BrainCircuit
-                       className={styles.icons_navbar_hover}
-                       color={skillsIcon} size={26} />
+                       href="#about_me_sec">
+                        About
                     </a>
                 </li>
 
@@ -129,7 +129,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     <a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
-                       href="#">Projects <SquaresExclude
+                       href="#project_area">Projects <SquaresExclude
                        className={styles.icons_navbar_hover}
                        color={projectIcon} />
                     </a>
@@ -138,7 +138,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     <a ref={btnContactRef} onMouseEnter={showContactIcon}
                        onMouseMove={showContactIcon}
                        onMouseOut={hiddenContactIcon} 
-                       href='#'
+                       href='#contact_sect_href'
                        className={styles.contact_btn}>Contact 
                        <Headset className={styles.icons_navbar_hover}
                        color={contactIcon} />
