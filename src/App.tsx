@@ -28,8 +28,8 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.85,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.05,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
     })
 
