@@ -9,6 +9,7 @@ import gameReveal from '../../assets/img/projects/gameReveal.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 import pizzaProject from '../../assets/img/projects/pizzaria.png'
+import goalImg from '../../assets/img/projects/goal_img.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,15 @@ const Project = () => {
             nameProject: 'Game Reveal',
             descProject: 'An interactive word-guessing game applying state management logic and data processing handling.',
             urlProject: 'https://game-reveal.vercel.app/'
-        }         
+        },
+        {
+            id:5,
+            imgProject: goalImg,
+            nameProject: 'YourGoals',
+            descProject: 'A dynamic task and habits manager built with React and TypeScript, featuring localStorage persistence, customized UI theme configurations, and complete CRUD functionality.',
+            urlProject: 'https://sant-goal-manager.vercel.app/'         
+
+        } 
     ], []);
 
     const [data, SetData] = useState<string>('')
@@ -165,7 +174,11 @@ const Project = () => {
                 </header>
                 <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
                 <div className={styles.context_paragraph}>
-                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive design with clean code. My focus is on transforming complex ideas into functional, fast, and visually appealing web applications, delivering an exceptional user experience and optimized performance.</p>
+                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive 
+                    design with clean code. My focus is on transforming complex
+                    ideas into functional, fast, and visually appealing web applications,
+                    delivering an exceptional user experience and optimized performance.
+                 </p>
                 </div>
               </div>
               <div ref={imgCardRef} className={styles.img_older_pc}>
