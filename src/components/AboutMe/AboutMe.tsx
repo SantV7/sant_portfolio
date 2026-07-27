@@ -13,7 +13,7 @@ import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import photo_anime from '../../assets/img/photo_anime.png'
-import curriculumDownload from '../../assets/curriculum/vinicius_software_engineer.pdf'
+import curriculumDownload from '../../assets/curriculum/software_engineer.pdf'
 import styles from './AboutMe.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -514,7 +514,7 @@ const AboutMe = () => {
 
                 {curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a href={curriculumDownload} download="Vinicius_Software_Engineer.pdf" onMouseEnter={() => setDownloadIcon(true)}
+                    <a href={curriculumDownload} download="software_engineer.pdf" onMouseEnter={() => setDownloadIcon(true)}
                      onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
                       Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
                     </a>
