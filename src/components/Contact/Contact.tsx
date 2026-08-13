@@ -184,6 +184,15 @@ const Contact = () => {
                       <div className={styles.show_links}>  https://www.youtube.com/@vy.S17</div>
                  </a>                   
 
+                 <a 
+                    id='y_link'
+                    className={styles.my_links}
+                    href="https://www.instagram.com/__sant_v"
+                    target='_blank'
+                    rel="noreferrer">
+                      <header className={styles.h_click}> Instagram <div className={styles.show_links}>Click</div></header>
+                      <div className={styles.show_links}>  https://www.instagram.com/__sant_v</div>
+                 </a>  
               <div className={styles.share_this_portfolio}>
                 <p>
                    Share this portfolio via this link.

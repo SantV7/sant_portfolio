@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FaReact, FaCode } from 'react-icons/fa';
 import { SiTypescript, SiGreensock, SiFigma } from 'react-icons/si';
+import { Ellipsis, Share2 } from 'lucide-react';
 import styles from './Card.module.css';
 
 import { gsap } from 'gsap';
@@ -104,10 +105,10 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
             className={styles.btn_toggle} 
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? 'Fechar' : 'Ler mais'}
+            {isOpen ? 'Fechar' : 'Ler mais'} <Ellipsis color='white' style={{marginBottom: '-6px'}}/>
           </button>
           <a className={styles.btn_project} target="_blank" rel="noreferrer" href={urlP}>
-            Ver projeto
+            Ver projeto <Share2 color='white' style={{marginBottom: '-6px'}} />
           </a>
         </div>
       </div>

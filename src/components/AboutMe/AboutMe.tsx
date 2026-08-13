@@ -385,26 +385,24 @@ const AboutMe = () => {
               <div className={styles.data_grid}>
                 <p><span>Player:</span> Vinícius</p>
                 <p><span>Last Name:</span> Santos Oliveira</p>
-                <p><span>Age:</span> 18y</p>
-                <p><span>Profession:</span> Software Engineer</p>
-                <p><span>Stack:</span> Front-End</p>
+                <p><span>Age:</span> 19y</p>
+                <p><span>Profession:</span> Software Developer</p>
+                <p><span>Stack:</span> Full-Stack</p>
 
                 {showMore && (
                   <>
-                    <p><span>NickName:</span>Sant | Aivy | Vy</p>
+                    <p><span>NickNames:</span>Sant | Aivy | Vy</p>
+                    <p><span>Stack:</span>TypeScript, React, JavaScript, Node.js, Express, SQL & PostgreeSQL, HTML5, CSS3, SCSS, Tailwind CSS, UI/UX, Figma</p>
+                    <p><span>IDE:</span>Visual Studio Code</p>  
                     <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
-                    <p><span>Front-End:</span>HTML, CSS, SCSS, Tailwind CSS, JavaScript, TypeScript, React, UI/UX, Figma, GSAP, Git, GitHub...</p>
                     <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
                     <p><span>Height:</span> 5'10</p>     
                     <p><span>Hair Color:</span>Dark Brown</p>  
                     <p><span>Eye Color:</span>Dark Brown</p> 
-                    <p><span>Dominant Hand:</span> Right-Handed</p>  
-                    <p><span>Weight:</span> 143 lbs</p> 
+                    <p><span>Dominant Hand:</span> Right-Handed</p>   
                     <p><span>Mother:</span> Maria</p> 
                     <p><span>Father:</span> José</p> 
-                    <p><span>Learning Goals:</span> Frontend (Angular, Next.js and TanStack), Backend (Node.js, Express, Nest.js), APIs (GraphQL), Testing (Jest and E2E)</p>  
                     <p></p>  
-                    <p><span>IDE:</span>Visual Studio Code</p>  
                   </>
                 )}
 

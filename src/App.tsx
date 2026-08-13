@@ -12,6 +12,7 @@ import Project from './components/Projects/Project'
 import Github from './components/github/Github';
 import { FormationData } from './components/Formation/FormationData';
 import Contact from './components/Contact/Contact';
+import FormContactMe from './components/Form/FormContactMe';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -147,6 +148,7 @@ function App() {
           <Github />
           <FormationData />
           <Contact />
+          <FormContactMe />
         </>
       )}
     </div>
