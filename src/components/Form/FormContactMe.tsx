@@ -3,6 +3,7 @@ import styles from './FormContactMe.module.css';
 import { Form, UserRoundPen, Mailbox, MessagesSquare} from 'lucide-react';
 
 const FormContactMe = () => {
+
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
@@ -43,7 +44,7 @@ const FormContactMe = () => {
         setLoading(true);
 
         try {
-            const res = await fetch('http://localhost:2007/contact', {
+            const res = await fetch(`http://localhost:3000/contact_aivy`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,8 +73,6 @@ const FormContactMe = () => {
         <section className={styles.contactSection}>
             <form onSubmit={handleSubmit} className={styles.formContainer}>
                 <Form color="white" size={30}/>
-                {error && <div className={styles.errorMessage}>{error}</div>}
-                {success && <div className={styles.successMessage}>{success}</div>}
 
                 <div className={styles.inputGroup}>
                     <label>Name <UserRoundPen  style={{marginBottom: '-4px'}}/></label>
@@ -83,7 +82,7 @@ const FormContactMe = () => {
                         value={name} 
                         onChange={(e) => setName(e.target.value)} 
                         placeholder="Your name"
-                    />
+                        />
                 </div>
 
                 <div className={styles.inputGroup}>
@@ -104,10 +103,16 @@ const FormContactMe = () => {
                         value={message} 
                         onChange={(e) => setMessage(e.target.value)} 
                         placeholder="Write your message here..."
-                    />
+                        />
                 </div>
+                  {error && <div className={styles.errorMessage}>{error}</div>}
+                  {success && <div className={styles.successMessage}>{success}</div>}
 
-                <button type="submit" disabled={loading} className={styles.submitButton}>
+                <button 
+                   type="submit" 
+                   disabled={loading} 
+                   className={styles.submitButton}
+                >
                     {loading ? 'Sending...' : 'Send Message'}
                 </button>
             </form>
