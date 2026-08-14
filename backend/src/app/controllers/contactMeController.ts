@@ -28,7 +28,7 @@ export async function ContactUser (req: Request, res: Response) {
             html: `<h3>Novo contato do Portfólio</h3><p><b>Nome:</b> ${name}</p><p><b>E-mail:</b> ${email}</p><p><b>Mensagem:</b> ${message}</p>`
         })
 
-        return res.status(200).json({sucess: 'Message sent sucessfully!'})
+        return res.status(200).json({success: 'Message sent sucessfully!'})
 
     } catch (err: any) {
             console.error("ERRO COMPLETO:", err);

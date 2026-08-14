@@ -148,7 +148,7 @@ function App() {
           <Github />
           <FormationData />
           <Contact />
-          <FormContactMe />
+          {/* <FormContactMe /> */}
         </>
       )}
     </div>
