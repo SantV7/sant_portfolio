@@ -44,7 +44,7 @@ const FormContactMe = () => {
         setLoading(true);
 
         try {
-            const res = await fetch(`http://localhost:3000/contact_aivy`, {
+            const res = await fetch(`https://sant-portfolio.onrender.com/contact_aivy`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,12 +71,16 @@ const FormContactMe = () => {
 
     return (
         <section className={styles.contactSection}>
-            <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <form
+              onSubmit={handleSubmit}
+              className={styles.formContainer}
+            >
                 <Form color="white" size={30}/>
 
                 <div className={styles.inputGroup}>
-                    <label>Name <UserRoundPen  style={{marginBottom: '-4px'}}/></label>
+                    <label htmlFor="nameUser">Name <UserRoundPen  style={{marginBottom: '-4px'}}/></label>
                     <input
+                        id="nameUser"
                         required 
                         type="text" 
                         value={name} 
@@ -86,8 +90,9 @@ const FormContactMe = () => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <label>Email <Mailbox  style={{marginBottom: '-4px'}}/></label>
+                    <label htmlFor="emailUser">Email <Mailbox  style={{marginBottom: '-4px'}}/></label>
                     <input
+                        id="emailUser"
                         required 
                         type="email" 
                         value={email} 
@@ -97,8 +102,9 @@ const FormContactMe = () => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <label>Message <MessagesSquare  style={{marginBottom: '-4px'}}/></label>
+                    <label htmlFor="msgUser">Message <MessagesSquare  style={{marginBottom: '-4px'}}/></label>
                     <textarea
+                        id="msgUser"
                         required 
                         value={message} 
                         onChange={(e) => setMessage(e.target.value)} 
