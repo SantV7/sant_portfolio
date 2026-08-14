@@ -30,9 +30,10 @@ export async function ContactUser (req: Request, res: Response) {
 
         return res.status(200).json({sucess: 'Message sent sucessfully!'})
 
-    } catch (err) {
+    } catch (err: any) {
         if(err instanceof Error) {
             console.log(`Error: ${err.message}`)
+            console.error("ERRO COMPLETO:", err);
             return res.status(500).json({ error: 'Internal server error while sending email.' });
         }
     } 
