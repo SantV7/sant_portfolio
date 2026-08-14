@@ -21,7 +21,7 @@ export async function ContactUser (req: Request, res: Response) {
         })
         
         await transporter.sendMail({
-            from: `Portfólio <${process.env.EMAIL_USER}>`,
+            from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: `Contato do Portfólio - ${name}`,
             text: `Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`,
