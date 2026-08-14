@@ -392,7 +392,7 @@ const AboutMe = () => {
                 {showMore && (
                   <>
                     <p><span>NickNames:</span>Sant | Aivy | Vy</p>
-                    <p><span>Stack:</span>TypeScript, React, JavaScript, Node.js, Express, SQL & PostgreeSQL, HTML5, CSS3, SCSS, Tailwind CSS, UI/UX, Figma</p>
+                    <p><span>Stack:</span>TypeScript, React, JavaScript, Node.js, Express, SQL & PostgreSQL, HTML5, CSS3, SCSS, Tailwind CSS, UI/UX, Figma</p>
                     <p><span>IDE:</span>Visual Studio Code</p>  
                     <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
                     <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
