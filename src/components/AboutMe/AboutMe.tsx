@@ -12,6 +12,7 @@ import { BiLogoPostgresql } from "react-icons/bi"
 import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
+import aboutBackgroundVideo from '../../assets/video/b_video_bg.mp4'
 import photo_anime from '../../assets/img/photo_anime.png'
 import curriculumDownload from '../../assets/curriculum/software_engineer.pdf'
 import styles from './AboutMe.module.css'
@@ -297,6 +298,20 @@ const AboutMe = () => {
 
   return (
     <section id='about_me_sec' ref={sectionRef} className={styles['about_me']}>
+      <video
+        className={styles.background_video}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        onCanPlay={(event) => {
+          event.currentTarget.playbackRate = 0.65
+        }}
+      >
+        <source src={aboutBackgroundVideo} type="video/mp4" />
+      </video>
+      <div className={styles.background_overlay} aria-hidden="true" />
       <div className={styles.apresentation}>
         <h1 ref={WhoRef} className={styles.gsap_wia}>Sant's <br />information</h1>
         <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />

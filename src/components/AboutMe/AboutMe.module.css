@@ -2,7 +2,32 @@
     min-height: 100vh;
     width: 100%;
     padding: 90px 20px 30px;
-    background-image: linear-gradient(to bottom, rgb(10, 6, 10), #111316);
+    position: relative;
+    overflow: hidden;
+    background: #111316;
+}
+
+.background_video,
+.background_overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background_video {
+    z-index: 0;
+    object-fit: cover;
+}
+
+.background_overlay {
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(10, 6, 10, 0.84), rgba(17, 19, 22, 0.1));
+}
+
+.about_me > :not(.background_video):not(.background_overlay) {
+    position: relative;
+    z-index: 2;
 }
 
 .container_card, .gsap_wia, .data_grid, .format_txt, .links_reference, .about_me_title > p {
