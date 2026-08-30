@@ -125,9 +125,9 @@ function App() {
               <div className='intro_tag' id='hi_there'>👾 HI THERE!</div>
               <h1 id='welcome_msg_gsap'>Welcome to my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
 
-              <p className='welcome_apresentation' id='max_msg_ap'>Driven <span className="portfolio">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio">Frontend Developer</span> combining modern <span id='opp'>engineering</span> principles with design to deliver clean, scalable, and <span id='opp'>impactful</span> web solutions.</p>
+              <p className='welcome_apresentation' id='max_msg_ap'> <span className="portfolio">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio">UI/UX Designer</span> building RESTful APIs, <span id='opp'>modern</span> applications, and intuitive interfaces to deliver clean, scalable, and <span id='opp'>impactful</span> solutions and digital products.</p>
           
-              <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>. Based in Brazil.</p>
+              <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>.</p>
             </div>
 
             <div className={styles.scroller_indicator}>
