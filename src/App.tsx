@@ -132,7 +132,7 @@ function App() {
 
             <div className={styles.scroller_indicator}>
               <div className={`${styles['tooltip-message']} ${isHovered ? styles.visible : ''}`}>  
-                Scroll down to learn more about this Frontend Software Engineer | Frontend Developer.
+                Scroll down to learn more about this Full-Stack Software Engineer.
               </div>
 
               <h1 id='scroll_wellcome_gsap' className={styles.scroll_wellcome} 
