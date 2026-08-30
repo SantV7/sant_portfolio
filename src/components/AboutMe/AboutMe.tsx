@@ -6,15 +6,15 @@ import {
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
 import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt, FaNodeJs } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiVercel, SiExpress } from "react-icons/si"
-import { MdOutlineDesignServices, MdOutlineDevices } from "react-icons/md" 
+import { SiTypescript, SiTailwindcss, SiVercel, SiExpress, SiPrisma, SiPython, SiZod } from "react-icons/si"
+import { MdOutlineDesignServices, MdOutlineDevices, MdOutlineEditNote } from "react-icons/md" 
 import { BiLogoPostgresql } from "react-icons/bi"
 import notebookImg from '../../assets/img/notebook.jpeg'
 import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import aboutBackgroundVideo from '../../assets/video/b_video_bg.mp4'
 import photo_anime from '../../assets/img/photo_anime.png'
-import curriculumDownload from '../../assets/curriculum/software_engineer.pdf'
+import curriculumDownload from '../../assets/curriculum/software_engineer_vinicius.pdf'
 import styles from './AboutMe.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -27,7 +27,6 @@ const AboutMe = () => {
   const [curriculumActive, setCurriculumActive] = useState<boolean>(false)
   const [showMore, setShowMore] = useState<boolean>(false)
   const [downloadIcon, setDownloadIcon] = useState<boolean>(false)
-  const [closeIcon, setCloseIcon] = useState<boolean>(false)
   const [curriculumSetter, setCurriculumSetter] = useState<string>('gray')
   const [emailIcon, setEmailIcon] = useState<boolean>(false)
   const [moreCurriculum, setMoreCurriculum] = useState<boolean>(false)
@@ -379,7 +378,7 @@ const AboutMe = () => {
                   </section>
 
                   <section className={styles.contact_more}>
-                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Design & UX Skills</h3>
+                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/>  UX/UI Skills</h3>
                     <div className={styles.design_area_icons}>
                       <div>
                         <p className={styles.format_txt}><FaFigma size={31} color="#F24E1E" /> Figma</p>
@@ -389,6 +388,9 @@ const AboutMe = () => {
                       </div>
                       <div>
                         <p className={styles.format_txt}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</p>
+                      </div>
+                      <div>
+                        <p className={styles.format_txt}><MdOutlineEditNote size={30} color="#a3c9d1" /> UX Writing</p>
                       </div>
                     </div>
                   </section>
@@ -406,14 +408,13 @@ const AboutMe = () => {
                 {showMore && (
                   <>
                     <p><span>Specializations:</span>Software Engineer and UI/UX Design</p>
-                    <p><span>Programming languages:</span>TypeScript, JavaScript, Python</p>
-                    <p><span>Frontend:</span>React, HTML5, CSS3, SASS/SCSS, Tailwind CSS</p>
-                    <p><span>Backend:</span>Node.JS, Express</p>  
+                    <p><span>Programming languages:</span>TypeScript / JavaScript, Python</p>
+                    <p><span>Frontend:</span>React, HTML, CSS, SASS/SCSS, Tailwind CSS</p>
+                    <p><span>Backend:</span>Node.JS (Express + TypeScript / JavaScript), APIs Restful</p>  
                     <p><span>Database & ORMs:</span>SQL & PostgreSQL | Prisma & Sequelize</p>  
-                    <p><span>Design Tools:</span>Figma, Handbrake, Caesium</p>  
-                    <p><span>IDE:</span>VS Code</p>  
-                    <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
-                    <p><span>Favorite Anime:</span> Monster </p>   
+                    <p><span>Tools & Deployment:</span>Git, GitHub, Vercel, Postman, Figma</p>
+                    <p><span>Methodologies:</span>Scrum, Kanban (Trello, Jira)</p>
+                    <p><span>IDE:</span>VS Code</p>   
                   </>
                 )}
 
@@ -423,8 +424,8 @@ const AboutMe = () => {
                       <header>
                         <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
                       </header>
-                      <p>
-                        Software Engineer focused on Full-Stack development using React, TypeScript, and Node.js. Experienced in building and integrating RESTful APIs, relational databases (PostgreSQL/MySQL), and ORMs (Prisma). Skilled in creating responsive, high-performance interfaces with GSAP animations and UI/UX best practices in Figma. Committed to Clean Code, structured version control (Git/GitHub), and agile methodologies, leveraging AI tools with human critical analysis for effective decision-making.
+                      <p className={styles.p_readme}>
+                        Software Engineer. Main stack: React + TypeScript + Node.js. Experienced in building and integrating RESTful APIs, relational databases (PostgreSQL/MySQL), and ORMs (Prisma). Skilled in creating responsive, high-performance interfaces with GSAP animations and UI/UX best practices in Figma. Committed to Clean Code, structured version control (Git/GitHub), and agile methodologies, leveraging AI tools with human critical analysis for effective decision-making.
                       </p>
                     </div>
 
@@ -441,8 +442,12 @@ const AboutMe = () => {
                         <div className={styles.format_icons_skills}><FaNodeJs size={30} color="#339933" /> Node.js</div>
                         <div className={styles.format_icons_skills}><SiExpress size={30} color="#FFFFFF" /> Express</div>
                         <div className={styles.format_icons_skills}><BiLogoPostgresql size={32} color="#4169E1" /> PostgreSQL</div>
+                        <div className={styles.format_icons_skills}><SiPrisma size={28} color="#2D3748" /> Prisma</div>
+                        <div className={styles.format_icons_skills}><SiPython size={28} color="#3776AB" /> Python</div>
+                        <div className={styles.format_icons_skills}><SiZod size={28} color="#3E67B1" /> Zod</div>
                         <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
                         <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
+                        <div className={styles.format_icons_skills}><MdOutlineEditNote size={30} color="#a3c9d1" /> UX Writing</div>
                         <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
                         <div className={styles.format_icons_skills}><FaGitAlt size={30} color="#F05032" /> Git</div>
                         <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills} rel="noreferrer">
@@ -466,24 +471,24 @@ const AboutMe = () => {
                       <div className={styles.flex_skills}>
                         <div className={styles.skills_first}>
                           <h4>■ Languages:</h4>
-                          <p>- JavaScript, TypeScript, HTML5, CSS3, SQL</p>
+                          <p>- JavaScript, TypeScript, Python</p>
                         </div>
                         <div className={styles.skills_first}>
                           <h4>■ Libraries and Frameworks:</h4>
-                          <p>- React, Node.js, Express, Tailwind CSS, Sass & SCSS</p>
+                          <p>- React, Node.js (Express + TypeScript), Tailwind CSS</p>
                         </div>      
                         <div className={styles.skills_first}>
                           <h4>■ Animation and UI:</h4>
-                          <p>- UI/UX Design Principles, Figma, GSAP, Lenis</p>
+                          <p>- UI/UX Design & Writing, Figma (Prototype, Components...), GSAP, Lenis</p>
                         </div>
                         <div className={styles.skills_first}>
                           <h4>■ Tools and Workflow:</h4>
-                          <p>- Git, GitHub, Vercel, PostgreSQL, REST APIs, Responsive Web Development</p>
+                          <p>- Git, GitHub, Vercel, PostgreSQL, Postman / Insomnia</p>
                         </div>      
                         <div className={styles.skills_first}>
                           <h4>■ Spoken Languages:</h4>
-                          <p>- Portuguese - Native</p>
-                          <p>- English - Intermediate</p>
+                          <p>- Portuguese</p>
+                          <p>- English</p>
                         </div>  
                         <div className={styles.skills_first}>
                           <h4>■ Agile Methodologies:</h4>
@@ -508,13 +513,6 @@ const AboutMe = () => {
                   }} className={styles.hud_btn_sm}>
                     {moreCurriculum ? 'CLOSE' : 'MORE'} {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
                   </button>
-
-                  ={showMore && (
-                    <button onMouseEnter={() => setCloseIcon(true)} onMouseLeave={() => setCloseIcon(false)} onClick={() => setShowMore(false)} 
-                    className={styles.hud_btn_sm}>
-                      SHOW LESS {closeIcon ? <X size={38}/> : <CircleX size={38} />}
-                    </button>
-                  )}
                 </div>
 
                 {curriculumActive && (

@@ -261,7 +261,9 @@
     border: 1px solid rgba(216, 182, 255, 0.404);
 }
 
+
 #about_me_area p {
+    font-family: 'Pixelify Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -388,7 +390,7 @@ a.links_reference:hover {
 
 .design_area_icons {
     gap: 10px;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 
 .design_area_icons > div {
