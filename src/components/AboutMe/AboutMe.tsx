@@ -399,25 +399,21 @@ const AboutMe = () => {
             <section className={styles.personal_data}>
               <div className={styles.data_grid}>
                 <p><span>Player:</span> Vinícius</p>
-                <p><span>Last Name:</span> Santos Oliveira</p>
-                <p><span>Age:</span> 19y</p>
+                <p><span>Age:</span> 19</p>
                 <p><span>Profession:</span> Software Developer</p>
                 <p><span>Stack:</span> Full-Stack</p>
 
                 {showMore && (
                   <>
-                    <p><span>NickNames:</span>Sant | Aivy | Vy</p>
-                    <p><span>Stack:</span>TypeScript, React, JavaScript, Node.js, Express, SQL & PostgreSQL, HTML5, CSS3, SCSS, Tailwind CSS, UI/UX, Figma</p>
-                    <p><span>IDE:</span>Visual Studio Code</p>  
+                    <p><span>Specializations:</span>Software Engineer and UI/UX Design</p>
+                    <p><span>Programming languages:</span>TypeScript, JavaScript, Python</p>
+                    <p><span>Frontend:</span>React, HTML5, CSS3, SASS/SCSS, Tailwind CSS</p>
+                    <p><span>Backend:</span>Node.JS, Express</p>  
+                    <p><span>Database & ORMs:</span>SQL & PostgreSQL | Prisma & Sequelize</p>  
+                    <p><span>Design Tools:</span>Figma, Handbrake, Caesium</p>  
+                    <p><span>IDE:</span>VS Code</p>  
                     <p><span>Favorite Games:</span>The Last Of Us / Uncharted / Fortnite / Valorant / Warzone...</p>
-                    <p><span>Favorite Anime:</span> Tokyo Ghoul </p>
-                    <p><span>Height:</span> 5'10</p>     
-                    <p><span>Hair Color:</span>Dark Brown</p>  
-                    <p><span>Eye Color:</span>Dark Brown</p> 
-                    <p><span>Dominant Hand:</span> Right-Handed</p>   
-                    <p><span>Mother:</span> Maria</p> 
-                    <p><span>Father:</span> José</p> 
-                    <p></p>  
+                    <p><span>Favorite Anime:</span> Monster </p>   
                   </>
                 )}
 
@@ -428,11 +424,7 @@ const AboutMe = () => {
                         <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
                       </header>
                       <p>
-                        Frontend Software Engineer with 2 years of experience in the frontend stack, specializing in React,
-                        JavaScript, and Modern CSS, Sass/SCSS. I create fluid animations and engaging visual experiences using GSAP.
-                        Committed to Clean Code principles, I maintain a critical, analytical approach to problem-solving. I am experienced
-                        in seamless REST API integration, version control with Git/GitHub, and collaborative project management. Additionally,
-                        I leverage my UI/UX Design knowledge and Figma skills to optimize layouts for both performance and aesthetics.
+                        Software Engineer focused on Full-Stack development using React, TypeScript, and Node.js. Experienced in building and integrating RESTful APIs, relational databases (PostgreSQL/MySQL), and ORMs (Prisma). Skilled in creating responsive, high-performance interfaces with GSAP animations and UI/UX best practices in Figma. Committed to Clean Code, structured version control (Git/GitHub), and agile methodologies, leveraging AI tools with human critical analysis for effective decision-making.
                       </p>
                     </div>
 
