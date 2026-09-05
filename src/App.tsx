@@ -12,7 +12,9 @@ import Project from './components/Projects/Project'
 import Github from './components/github/Github';
 import { FormationData } from './components/Formation/FormationData';
 import Contact from './components/Contact/Contact';
-// import FormContactMe from './components/Form/FormContactMe';
+
+// Importação do Anime.js v4 com o scrambleText
+import { animate, scrambleText } from 'animejs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,6 +99,17 @@ function App() {
         ease: 'power1.inOut'
       })
     })
+
+
+animate('.scramble-target', {
+  innerHTML: scrambleText({
+    chars: 'uppercase',    
+    from: 'left',     
+  }),
+  duration: 4000,     
+  delay: 1050,
+  easing: 'linear',   // 'linear' mantém o embaralhamento numa velocidade constante
+});
     
     return () => {
       cancelAnimationFrame(rafId);
@@ -125,7 +138,9 @@ function App() {
               <div className='intro_tag' id='hi_there'>👾 HI THERE!</div>
               <h1 id='welcome_msg_gsap'>Welcome to my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
 
-              <p className='welcome_apresentation' id='max_msg_ap'> <span className="portfolio">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio">UI/UX Designer</span> building RESTful APIs, <span id='opp'>modern</span> applications, and intuitive interfaces to deliver clean, scalable, and <span id='opp'>impactful</span> solutions and digital products.</p>
+              <p className='welcome_apresentation' id='max_msg_ap'> 
+                <span className="portfolio scramble-target">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio scramble-target">UI/UX Designer</span> building RESTful APIs, <span id='opp' className="scramble-target">modern</span> applications, and intuitive interfaces to deliver clean, scalable, and <span id='opp'>impactful</span> solutions and digital products.
+              </p>
           
               <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>.</p>
             </div>
@@ -148,7 +163,6 @@ function App() {
           <Github />
           <FormationData />
           <Contact />
-          {/* <FormContactMe /> */}
         </>
       )}
     </div>
