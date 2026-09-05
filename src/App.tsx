@@ -12,8 +12,6 @@ import Project from './components/Projects/Project'
 import Github from './components/github/Github';
 import { FormationData } from './components/Formation/FormationData';
 import Contact from './components/Contact/Contact';
-
-// Importação do Anime.js v4 com o scrambleText
 import { animate, scrambleText } from 'animejs';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -108,7 +106,7 @@ animate('.scramble-target', {
   }),
   duration: 4000,     
   delay: 1050,
-  easing: 'linear',   // 'linear' mantém o embaralhamento numa velocidade constante
+  easing: 'linear', 
 });
     
     return () => {

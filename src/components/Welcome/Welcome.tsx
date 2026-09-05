@@ -3,9 +3,12 @@ import styles from './welcome.module.css'
 import { Menu, Headset, House, SquaresExclude, BrainCircuit, ChartNoAxesGantt } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+// Importação das funções do Anime.js v4
+import { splitText, animate, stagger } from 'animejs';
+
 interface MenuProps {
- showMenu: boolean;
- setShowMenu: (value: boolean) => void
+  showMenu: boolean;
+  setShowMenu: (value: boolean) => void
 }
 
 const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
@@ -35,6 +38,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
     const hiddenContactIcon = () => setContactIcon('transparent')
 
     useEffect(() => {
+        // 1. Animações de entrada do GSAP
         const targets = [linkHomeRef.current, linkSkillsRef.current, linkProjectRef.current].filter(Boolean);
         
         const animLinks = gsap.fromTo(targets, {
@@ -48,7 +52,29 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
              x: 50
         }, {
             x: 0, duration: 0.35, ease: 'power2'
-        })              
+        }) 
+
+        // 2. Aplica o splitText individualmente para cada palavra da navbar
+        const elements = document.querySelectorAll('.nav-split-text');
+        const allChars: Element[] = [];
+
+        elements.forEach((el) => {
+          const { chars } = splitText(el, { chars: true });
+          if (chars) {
+            allChars.push(...chars);
+          }
+        });
+
+        if (allChars.length > 0) {
+          animate(allChars, {
+            translateY: ['100%', '0%'],
+            rotateZ: [4, 0],
+            opacity: [0, 1],
+            delay: stagger(30, { start: 380 }),
+            duration: 600,
+            easing: 'outBack'
+          });
+        }
 
         return () => {
             animLinks.kill()
@@ -73,7 +99,7 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showHomeIcon}
                        onMouseOut={hiddenHomeIcon}
                        href="#intro-video">
-                        Home 
+                       <span className="nav-split-text">Home</span>
                        <House className={styles.icons_navbar_hover} color={homeIcon} size={25} />
                     </a>
                 </li>
@@ -83,8 +109,8 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                        onMouseMove={showSkillsIcon}
                        onMouseOut={hiddenSkillsIcon} 
                        href="#about_me_sec">
-                        About
-                         <BrainCircuit className={styles.icons_navbar_hover} color={skillsIcon} />
+                       <span className="nav-split-text">About</span>
+                       <BrainCircuit className={styles.icons_navbar_hover} color={skillsIcon} />
                     </a>
                 </li>
 
@@ -92,17 +118,21 @@ const Wellcome = ({showMenu, setShowMenu}: MenuProps) => {
                     <a onMouseEnter={showProjectIcon}
                        onMouseMove={showProjectIcon}
                        onMouseOut={hiddenProjectIcon}
-                       href="#project_area">Projects <SquaresExclude className={styles.icons_navbar_hover} color={projectIcon} />
+                       href="#project_area">
+                       <span className="nav-split-text">Projects</span>
+                       <SquaresExclude className={styles.icons_navbar_hover} color={projectIcon} />
                     </a>
                 </li>
 
-                    <a ref={btnContactRef} onMouseEnter={showContactIcon}
-                       onMouseMove={showContactIcon}
-                       onMouseOut={hiddenContactIcon} 
-                       href='#contact_sect_href'
-                       className={styles.contact_btn}>Contact 
-                       <Headset className={styles.icons_navbar_hover} color={contactIcon} />
-                    </a>
+                <a ref={btnContactRef} 
+                   onMouseEnter={showContactIcon}
+                   onMouseMove={showContactIcon}
+                   onMouseOut={hiddenContactIcon} 
+                   href='#contact_sect_href'
+                   className={styles.contact_btn}>
+                   <span className="nav-split-text">Contact</span>
+                   <Headset className={styles.icons_navbar_hover} color={contactIcon} />
+                </a>
             </ul>
          </nav>
     </header>
