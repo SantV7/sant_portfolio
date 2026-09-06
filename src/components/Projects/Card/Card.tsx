@@ -52,6 +52,8 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
     };
   }, []);
 
+  
+
   const renderTechBadges = (projectName: string) => {
     const name = projectName.toLowerCase();
 
@@ -105,10 +107,10 @@ const Card = ({ id, imgP, nameP, descP, urlP }: CardPros) => {
             className={styles.btn_toggle} 
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? 'Fechar' : 'Ler mais'} <Ellipsis color='white' style={{marginBottom: '-6px'}}/>
+            {isOpen ? 'Close' : 'Read more'} <Ellipsis color='white' style={{marginBottom: '-6px'}}/>
           </button>
           <a className={styles.btn_project} target="_blank" rel="noreferrer" href={urlP}>
-            Ver projeto <Share2 color='white' style={{marginBottom: '-6px'}} />
+            View <Share2 color='white' style={{marginBottom: '-6px'}} />
           </a>
         </div>
       </div>
