@@ -6,10 +6,11 @@
 
 ## 🕹️ (`Sobre o Projeto`)
 
+Link: https://sant-portfolio.vercel.app/
 
 Este repositório guarda um pouco do Vinícius. Mais do que uma vitrine de projetos ou códigos jogados ao vento, esta aplicação funciona como um **laboratório vivo de experiências**, onde testo novas bibliotecas de animação, conceitos de UI/UX, componentes dinâmicos, testes (Jest) e integrações em tempo real.
 
-Pra mim é mais do que um portfólio, mas um ACUMULO de conhecimentos ao longo de cada pequena experiência que eu tive no mundo Tech 👾
+Pra mim é mais do que um portfólio, é ACUMULO de conhecimentos ao longo de cada pequena experiência que eu tive no mundo Tech 👾
 
 O projeto foi construído do zero por mim, unindo o gosto de **Pixel Art** com uma **estética tecnológica, futurista e cyberpunk**, oferecendo uma navegação fluida, interativa e cheia de personalidade. 👑☕
 
@@ -47,15 +48,14 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 
 ---
 
-## 🎮 (`Principais Funcionalidades`)
+## 🎮 (`Principais temas`)
 
 - **Laboratório Experimental:** Componentes criados para testar animações complexas, manipulação de DOM e performance.
 - **Dynamic GitHub Feed:** Consumo da API do GitHub para trazer dados atualizados de repositórios e atividade.
 - **Navegação Imersiva:** Scroll suave com Lenis alinhado a gatilhos visuais via GSAP.
 - **Interface Pixel-Art & HUD:** Estética inspirada em retrogames e interfaces cyberpunk (com estatísticas no estilo card de jogador).
 - **Design Responsivo:** Adaptado para todos os tamanhos de tela com foco em Mobile-First Workflow.
-
-
+- 
 ---
 
 <p align="center">
