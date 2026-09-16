@@ -48,7 +48,7 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 
 ---
 
-## 🎮 (`Principais temas`)
+## 🎮 `Principais temas`
 
 - **Laboratório Experimental:** Componentes criados para testar animações complexas, manipulação de DOM e performance.
 - **Dynamic GitHub Feed:** Consumo da API do GitHub para trazer dados atualizados de repositórios e atividade.
