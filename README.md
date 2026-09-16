@@ -4,9 +4,12 @@
 
 ---
 
-## 🕹️ Sobre o Projeto
+## 🕹️ (`Sobre o Projeto`)
+
 
 Este repositório guarda um pouco do Vinícius. Mais do que uma vitrine de projetos ou códigos jogados ao vento, esta aplicação funciona como um **laboratório vivo de experiências**, onde testo novas bibliotecas de animação, conceitos de UI/UX, componentes dinâmicos, testes (Jest) e integrações em tempo real.
+
+Pra mim é mais do que um portfólio, mas um ACUMULO de conhecimentos ao longo de cada pequena experiência que eu tive no mundo Tech 👾
 
 O projeto foi construído do zero por mim, unindo o gosto de **Pixel Art** com uma **estética tecnológica, futurista e cyberpunk**, oferecendo uma navegação fluida, interativa e cheia de personalidade. 👑☕
 
@@ -24,7 +27,7 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 
 ---
 
-## 🛠️ Tech Stack & Ferramentas
+## 🛠️ (`Tech Stack & Ferramentas`)
 
 ### 🎨 Front-End & Estilização
 - **React** (Componentização limpa e modular)
@@ -44,7 +47,7 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 
 ---
 
-## 🎮 Principais Funcionalidades
+## 🎮 (`Principais Funcionalidades`)
 
 - **Laboratório Experimental:** Componentes criados para testar animações complexas, manipulação de DOM e performance.
 - **Dynamic GitHub Feed:** Consumo da API do GitHub para trazer dados atualizados de repositórios e atividade.
@@ -56,5 +59,5 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 ---
 
 <p align="center">
-  Created with 💜 and ☕ by <b>Vinícius dos Santos (Sant)</b> • 2026 🕹️
+   🕹️ (`Created with 💜 and ☕ by <b>Vinícius dos Santos (Sant)</b> • 2026`)
 </p>
