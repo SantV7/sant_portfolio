@@ -4,7 +4,7 @@
 
 ---
 
-## 🕹️ (`Sobre o Projeto`)
+## 🕹️ `Sobre o Projeto`
 
 Link: https://sant-portfolio.vercel.app/
 
@@ -16,7 +16,7 @@ O projeto foi construído do zero por mim, unindo o gosto de **Pixel Art** com u
 
 ---
 
-## ☕ (`Sobre Mim`)
+## ☕ `Sobre Mim`
 
 - **Nome:** Vinícius dos Santos Oliveira 🐉
 - **Idade:** 19
@@ -28,7 +28,7 @@ Sou movido pelo desafio de transformar conceitos complexos e ideias visuais em i
 
 ---
 
-## 🛠️ (`Tech Stack & Ferramentas`)
+## 🛠️ `Tech Stack & Ferramentas`
 
 ### 🎨 Front-End & Estilização
 - **React** (Componentização limpa e modular)
