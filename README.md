@@ -6,9 +6,9 @@
 
 ## 🕹️ Sobre o Projeto
 
-Este repositório guarda o código-fonte do meu portfólio pessoal (**Sant v7**). Mais do que uma vitrine de projetos, esta aplicação funciona como um **laboratório vivo de experiências**, onde testo novas bibliotecas de animação, conceitos avançados de UI/UX, componentes dinâmicos e integrações em tempo real.
+Este repositório guarda um pouco do Vinícius. Mais do que uma vitrine de projetos ou códigos jogados ao vento, esta aplicação funciona como um **laboratório vivo de experiências**, onde testo novas bibliotecas de animação, conceitos de UI/UX, componentes dinâmicos, testes (Jest) e integrações em tempo real.
 
-O projeto foi construído do zero, unindo o gosto de **pixel art** com uma **estética tecnológica, futurista e cyberpunk**, oferecendo uma navegação fluida, interativa e cheia de personalidade. 👑☕
+O projeto foi construído do zero por mim, unindo o gosto de **Pixel Art** com uma **estética tecnológica, futurista e cyberpunk**, oferecendo uma navegação fluida, interativa e cheia de personalidade. 👑☕
 
 ---
 
