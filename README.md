@@ -12,7 +12,7 @@ O projeto foi construído do zero por mim, unindo o gosto de **Pixel Art** com u
 
 ---
 
-## ☕ Sobre Mim (`Player Profile`)
+## ☕ (`Sobre Mim`)
 
 - **Nome:** Vinícius dos Santos Oliveira 🐉
 - **Idade:** 19
