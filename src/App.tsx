@@ -137,10 +137,10 @@ animate('.scramble-target', {
               <h1 id='welcome_msg_gsap'>Welcome to my <span id='port_shadow' className="portfolio">Portfolio</span></h1>
 
               <p className='welcome_apresentation' id='max_msg_ap'> 
-                <span className="portfolio scramble-target">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio scramble-target">UI/UX Designer</span> building RESTful APIs, <span id='opp' className="scramble-target">modern</span> applications, and intuitive interfaces to deliver clean, scalable, and <span id='opp'>impactful</span> solutions and digital products.
+                <span className="portfolio scramble-target">Software Engineer</span> <span style={{color: "orange"}}>&</span> <span className="portfolio scramble-target">Software Developer</span> building RESTful APIs, <span id='opp' className="scramble-target">modern</span> applications, and intuitive interfaces to deliver clean, scalable, and <span id='opp'>impactful</span> solutions and digital products.
               </p>
           
-              <p className='welcome_apresentation'>🎮 Created by Sant in <span className="portfolio">2026</span>.</p>
+              <p className='welcome_apresentation' id='created_date'>Created in <span className="portfolio">2026</span>.</p>
             </div>
 
             <div className={styles.scroller_indicator}>
