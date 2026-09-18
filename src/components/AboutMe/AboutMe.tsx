@@ -374,11 +374,11 @@ const AboutMe = () => {
                     <h3 className={styles.more_data_title}><Info size={19} color='orange'/> Education</h3>
                     <h4 className={styles.format_txt}>Associate Degree in Systems Analysis and Development</h4>
                     <p ref={p1_g} className={styles.format_txt}>Universidade Católica de Brasília</p>
-                    <p ref={p2_g} id={styles.expected} className={styles.format_txt}>Expected graduation: 2028</p>
+                    <p ref={p2_g} id={styles.expected} className={styles.format_txt}>Expected graduation: 06/2028</p>
                   </section>
 
                   <section className={styles.contact_more}>
-                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/>  UX/UI Skills</h3>
+                    <h3 className={styles.more_data_title}><Info size={19} color='orange'/> UX/UI Skills</h3>
                     <div className={styles.design_area_icons}>
                       <div>
                         <p className={styles.format_txt}><FaFigma size={31} color="#F24E1E" /> Figma</p>
@@ -400,21 +400,21 @@ const AboutMe = () => {
             
             <section className={styles.personal_data}>
               <div className={styles.data_grid}>
-                <p><span>Player:</span> Vinícius</p>
-                <p><span>Age:</span> 19</p>
-                <p><span>Profession:</span> Software Developer</p>
+                <p><span>Player:</span> Vinícius dos Santos Oliveira</p>
+                <p><span>Age:</span> 19y</p>
+                <p><span>Profession:</span> Software Engineer</p>
                 <p><span>Stack:</span> Full-Stack</p>
 
                 {showMore && (
                   <>
                     <p><span>Specializations:</span>Software Engineer and UI/UX Design</p>
-                    <p><span>Programming languages:</span>TypeScript / JavaScript, Python</p>
-                    <p><span>Frontend:</span>React, HTML, CSS, SASS/SCSS, Tailwind CSS</p>
+                    <p><span>Languages:</span>TypeScript, Python, SQL</p>
+                    <p><span>Frontend:</span>React, HTML5, CSS3, SCSS, Tailwind CSS</p>
                     <p><span>Backend:</span>Node.JS (Express + TypeScript / JavaScript), APIs Restful</p>  
                     <p><span>Database & ORMs:</span>SQL & PostgreSQL | Prisma & Sequelize</p>  
                     <p><span>Tools & Deployment:</span>Git, GitHub, Vercel, Postman, Figma</p>
-                    <p><span>Methodologies:</span>Scrum, Kanban (Trello, Jira)</p>
-                    <p><span>IDE:</span>VS Code</p>   
+                    <p><span>Methodologies:</span>Scrum, Kanban</p>
+                    <p><span>IDE:</span>VS Code 🕹️</p>   
                   </>
                 )}
 
@@ -425,79 +425,34 @@ const AboutMe = () => {
                         <h3 id={styles.about_title} className={styles.more_data_title}> <ListTree /> ABOUT ME</h3>
                       </header>
                       <p className={styles.p_readme}>
-                        Software Engineer. Main stack: React + TypeScript + Node.js. Experienced in building and integrating RESTful APIs, relational databases (PostgreSQL/MySQL), and ORMs (Prisma). Skilled in creating responsive, high-performance interfaces with GSAP animations and UI/UX best practices in Figma. Committed to Clean Code, structured version control (Git/GitHub), and agile methodologies, leveraging AI tools with human critical analysis for effective decision-making.
+                        Software Engineer focused on Full-Stack with React, TypeScript, and Node.js. Experienced in building scalable RESTful APIs, implementing robust data validation, and handling backend error management. Skilled in PostgreSQL, ORMs (Prisma), database design, and creating responsive front-end interfaces aligned with UI/UX best practices from Figma. Focused on clean code, performance, and structured web applications.
                       </p>
                     </div>
 
                     <div className={styles.format_icons_about_me}>
-                      <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'} TECH STACK & TOOLS</h3>
+                      <h3 id={styles.tech_design_title} className={styles.more_data_title}> {'>_'} TECH SKILLS</h3>
                       <div className={styles.all_icons}>
-                        <div className={styles.format_icons_skills}><FaHtml5 size={30} color="#E34F26" /> HTML5</div>
-                        <div className={styles.format_icons_skills}><FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
-                        <div className={styles.format_icons_skills}><SiTailwindcss size={30} color="#06B6D4" /> Tailwind</div>
-                        <div className={styles.format_icons_skills}><FaSass size={30} color="#CC6699" /> SCSS</div>
-                        <div className={styles.format_icons_skills}><FaReact size={30} color="#61DAFB" /> React</div>
                         <div className={styles.format_icons_skills}><SiTypescript size={28} color="#3178C6" /> TypeScript</div>
-                        <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
+                        <div className={styles.format_icons_skills}><FaReact size={30} color="#61DAFB" /> React</div>
+                        <div className={styles.format_icons_skills}><SiPython size={28} color="#3776AB" /> Python</div>
                         <div className={styles.format_icons_skills}><FaNodeJs size={30} color="#339933" /> Node.js</div>
-                        <div className={styles.format_icons_skills}><SiExpress size={30} color="#FFFFFF" /> Express</div>
                         <div className={styles.format_icons_skills}><BiLogoPostgresql size={32} color="#4169E1" /> PostgreSQL</div>
                         <div className={styles.format_icons_skills}><SiPrisma size={28} color="#2D3748" /> Prisma</div>
-                        <div className={styles.format_icons_skills}><SiPython size={28} color="#3776AB" /> Python</div>
-                        <div className={styles.format_icons_skills}><SiZod size={28} color="#3E67B1" /> Zod</div>
-                        <div className={styles.format_icons_skills}><MdOutlineDesignServices size={30} color="#a3c9d1"/> UI Design</div>
-                        <div className={styles.format_icons_skills}><MdOutlineDevices size={30} color="#a3c9d1" /> UX Design</div>
-                        <div className={styles.format_icons_skills}><MdOutlineEditNote size={30} color="#a3c9d1" /> UX Writing</div>
-                        <div className={styles.format_icons_skills}><FaFigma size={28} color="#F24E1E" /> Figma</div>
+                        <div className={styles.format_icons_skills}><FaJs size={30} color="#F7DF1E" /> JavaScript</div>
                         <div className={styles.format_icons_skills}><FaGitAlt size={30} color="#F05032" /> Git</div>
                         <a target='_blank' href='https://github.com/SantV7' className={styles.format_icons_skills} rel="noreferrer">
                           <FaGithub size={30} color="#FFFFFF" /> GitHub
                         </a>
+                        <div className={styles.format_icons_skills}><SiTailwindcss size={30} color="#06B6D4" /> Tailwind CSS</div>
+                        <div className={styles.format_icons_skills}><FaHtml5 size={30} color="#E34F26" /> HTML5</div>
+                        <div className={styles.format_icons_skills}><FaCss3Alt size={30} color="#1572B6" /> CSS3</div>
+                        <div className={styles.format_icons_skills}><FaSass size={30} color="#CC6699" /> SCSS</div>
                         <div className={styles.format_icons_skills}><SiVercel size={26} color="#FFFFFF" /> Vercel</div>
-                        <div className={styles.format_icons_skills}>
-                          <span style={{ fontWeight: 'bold', color: '#61DAFB', marginRight: '5px' }}>⚡</span> GSAP
-                        </div>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {moreCurriculum && (
-                  <div className={styles.more_data_flex}>
-                    <div id={styles.technical_box} className={styles.box_info}>
-                      <header>
-                        <h3 id={styles.technical_title} className={styles.more_data_title}><CodeXml /> TECHNICAL SKILLS</h3>
-                      </header>
-                      <div className={styles.flex_skills}>
-                        <div className={styles.skills_first}>
-                          <h4>■ Languages:</h4>
-                          <p>- JavaScript, TypeScript, Python</p>
-                        </div>
-                        <div className={styles.skills_first}>
-                          <h4>■ Libraries and Frameworks:</h4>
-                          <p>- React, Node.js (Express + TypeScript), Tailwind CSS</p>
-                        </div>      
-                        <div className={styles.skills_first}>
-                          <h4>■ Animation and UI:</h4>
-                          <p>- UI/UX Design & Writing, Figma (Prototype, Components...), GSAP, Lenis</p>
-                        </div>
-                        <div className={styles.skills_first}>
-                          <h4>■ Tools and Workflow:</h4>
-                          <p>- Git, GitHub, Vercel, PostgreSQL, Postman / Insomnia</p>
-                        </div>      
-                        <div className={styles.skills_first}>
-                          <h4>■ Spoken Languages:</h4>
-                          <p>- Portuguese</p>
-                          <p>- English</p>
-                        </div>  
-                        <div className={styles.skills_first}>
-                          <h4>■ Agile Methodologies:</h4>
-                          <p>- Scrum, Kanban</p>
-                        </div>           
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
 
               <footer className={styles.info_card_footer}>

@@ -64,33 +64,33 @@ const myProjects = useMemo<ProjectsProps[]>(() => [
         nameProject: 'YourGoals',
         descProject: 'Task and habit management tool with complete CRUD functionality, built using React and TypeScript. Features browser localStorage persistence and custom theme toggling.',
         urlProject: 'https://sant-goal-manager.vercel.app/'        
-    } 
+    }
 ], []);
 
-    const [data, SetData] = useState<string>('')
+    const [data, SetData] = useState<string>('') ;
 
     useEffect(() => {
-        let animationFrameId: number;
-        let lastSecond = -1;
+        let animationFrameId: number ;
+        let lastSecond = -1 ;
 
         const updateClock = () => {
-            const newD = new Date()
-            const seconds = newD.getSeconds()
+            const newD = new Date() ;
+            const seconds = newD.getSeconds() ;
 
             if (seconds !== lastSecond) {
-                lastSecond = seconds;
-                const hour = newD.getHours()
-                const minutes = newD.getMinutes()
+                lastSecond = seconds ;
+                const hour = newD.getHours() ;
+                const minutes = newD.getMinutes() ;
 
-                const hStr = hour.toString().padStart(2, '0')
-                const mStr = minutes.toString().padStart(2, '0')
-                const sStr = seconds.toString().padStart(2, '0')
+                const hStr = hour.toString().padStart(2, '0') ;
+                const mStr = minutes.toString().padStart(2, '0') ;
+                const sStr = seconds.toString().padStart(2, '0') ;
 
-                SetData(`${hStr}:${mStr}:${sStr}h`)
+                SetData(`${hStr}:${mStr}:${sStr}h`) ;
             }
 
-            animationFrameId = requestAnimationFrame(updateClock)
-        }
+            animationFrameId = requestAnimationFrame(updateClock) ;
+        } ;
 
         animationFrameId = requestAnimationFrame(updateClock)
         return () => cancelAnimationFrame(animationFrameId)
@@ -173,10 +173,7 @@ const myProjects = useMemo<ProjectsProps[]>(() => [
                 </header>
                 <h3 ref={titleTxtRef} className={styles.main_title_card}>My projects in <span className={styles.font_orange}>2026</span></h3>
                 <div className={styles.context_paragraph}>
-                  <p ref={paragraphRef}>Developing modern, intuitive interfaces by combining responsive 
-                    design with clean code. My focus is on transforming complex
-                    ideas into functional, fast, and visually appealing web applications,
-                    delivering an exceptional user experience and optimized performance.
+                  <p ref={paragraphRef}>Developing scalable full-stack web applications by connecting responsive React interfaces with robust Node.js backend services. Focused on clean architecture, secure RESTful APIs, data validation, and databases to deliver high-performance user experiences.
                  </p>
                 </div>
               </div>

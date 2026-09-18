@@ -133,7 +133,7 @@
     cursor: pointer;
     width: 110px;
     clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
-    transition: 0.3s;
+    transition: 0.32s;
 }
 
 .data_grid {
@@ -144,7 +144,7 @@
 
 .data_grid p {
     color: #fff;
-    font-size: 1.15rem;
+    font-size: 1rem;
     border-bottom: 1px solid rgba(58, 91, 99, 0.2);
     padding-bottom: 5px;
     word-break: break-word;
@@ -270,7 +270,7 @@
     flex-flow: column nowrap;
     margin: 0 auto;
     max-width: 650px;
-    font-size: 1.25rem;
+    font-size: 1.11rem;
     text-align: left;
     padding-bottom: 20px;
 }
@@ -295,8 +295,7 @@
 }
 
 .box_info p {
-    font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.33;
     color: #e8f0ff;
 }
 
@@ -349,7 +348,9 @@
     gap: 20px;
 }
 
-.contact_more { gap: 17px; }
+.contact_more { 
+    gap: 17px;
+}
 
 .format_txt, .links_reference {
     display: flex;
@@ -361,7 +362,7 @@
     justify-content: center;
     text-align: left;
     flex-flow: column nowrap;
-    font-size: 1.14rem;
+    font-size: 1.04rem;
     font-weight: 500;
     color: #ecfbffe3;
     padding: 4px;
@@ -389,19 +390,24 @@ a.links_reference:hover {
 }
 
 .design_area_icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    flex-flow: row wrap;
+    width: 100%;
 }
 
 .design_area_icons > div {
     border: 1px solid rgba(217, 201, 253, 0.274);
-    padding: 10px 5px;
+    padding: 12px 8px;
     border-radius: 7px;
     display: flex;
-    gap: 8px;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0px 0px 10px rgba(2, 0, 2, 0.356);
     transition: 0.25s;
+    aspect-ratio: 1 / 1;
+    width: 100%;
 }
 
 .design_area_icons > div:hover {
@@ -410,6 +416,7 @@ a.links_reference:hover {
 }
 
 .format_icons_about_me {
+   
     padding: 20px;
     width: 100%;
     margin-top: 30px;
@@ -418,20 +425,21 @@ a.links_reference:hover {
 }
 
 .all_icons {
-    gap: 20px;
+    gap: 11px;
     align-items: center;
     flex-flow: row wrap;
 }
 
 .format_icons_skills {
     padding: 5px;
+    background-color: rgba(49, 31, 65, 0.039);
     display: flex;
     flex-flow: column;
     align-items: center;
     gap: 5px;
     text-align: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 7px;
     color: rgba(255, 255, 255, 0.897);
     transition: 0.23s;
@@ -492,4 +500,13 @@ a.links_reference:hover {
     .video_container { flex-direction: column; }
     .video_pc { filter: blur(0); }
     .nt_img { max-height: 250px; }
+
+    .design_area_icons > div {
+        padding: 8px 4px;
+    }
+
+    .design_area_icons .format_txt {
+        font-size: 0.95rem;
+        gap: 6px;
+    }
 }
