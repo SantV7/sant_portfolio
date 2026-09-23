@@ -11,6 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 import pizzaProject from '../../assets/img/projects/pizzaria.png'
 import goalImg from '../../assets/img/projects/goal_img.png'
+import financialImg from '../../assets/img/projects/financial_api.jpg'
 import profileImg from '../../assets/img/projects/profile_api.jpg'
 
 
@@ -42,7 +43,7 @@ const myProjects = useMemo<ProjectsProps[]>(() => [
     },
     {
         id: 2,
-        imgProject: '', 
+        imgProject: financialImg, 
         nameProject: 'Financial API (Backend)',
         descProject: 'RESTful API built with TypeScript, Node.js, Express, and PostgreSQL using Prisma ORM. Implements Clean Architecture, JWT authentication, RBAC, bcrypt hashing, and atomic transaction handling.',
         urlProject: 'https://github.com/SantV7/financial-api'     
