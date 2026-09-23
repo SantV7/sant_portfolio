@@ -3,7 +3,6 @@ import styles from './welcome.module.css'
 import { Menu, Headset, House, SquaresExclude, BrainCircuit, ChartNoAxesGantt } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-// Importação das funções do Anime.js v4
 import { splitText, animate, stagger } from 'animejs';
 
 interface MenuProps {

@@ -312,7 +312,7 @@ const AboutMe = () => {
       </video>
       <div className={styles.background_overlay} aria-hidden="true" />
       <div className={styles.apresentation}>
-        <h1 ref={WhoRef} className={styles.gsap_wia}>Sant's <br />information</h1>
+        <h1 ref={WhoRef} className={styles.gsap_wia}> <br />Hello, World!</h1>
         <img ref={pczin} className={styles.old_pc} src={oldPc} alt="Old PC" />
       </div>
 
