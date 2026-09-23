@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { 
-  CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff, CodeXml, HardDriveDownload, CircleEllipsis, X, Mail 
+  CircleX, Download, MailOpen, ListTree, Workflow, Info, GlobeOff,  HardDriveDownload, CircleEllipsis, X, Mail 
 } from 'lucide-react'
 import { HiLocationMarker } from "react-icons/hi"
 import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaSass, FaFigma, FaGitAlt, FaNodeJs } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiVercel, SiExpress, SiPrisma, SiPython, SiZod } from "react-icons/si"
+import { SiTypescript, SiTailwindcss, SiVercel, SiPrisma, SiPython } from "react-icons/si"
 import { MdOutlineDesignServices, MdOutlineDevices, MdOutlineEditNote } from "react-icons/md" 
 import { BiLogoPostgresql } from "react-icons/bi"
 import notebookImg from '../../assets/img/notebook.jpeg'
