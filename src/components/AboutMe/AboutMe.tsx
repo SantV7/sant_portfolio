@@ -14,7 +14,7 @@ import oldPc from '../../assets/img/pcimg.png'
 import newPc from '../../../src/assets/video/new_pc.mp4'
 import aboutBackgroundVideo from '../../assets/video/b_video_bg.mp4'
 import photo_anime from '../../assets/img/photo_anime.png'
-import curriculumDownload from '../../assets/curriculum/software_engineer_vinicius.pdf'
+import curriculumDownload from '../../assets/curriculum/curriculo_vinicius_santos_o_dev.pdf'
 import styles from './AboutMe.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -459,27 +459,31 @@ const AboutMe = () => {
                 <div className={styles.footer_btns}>
                   <button onClick={() => setCurriculumActive(true)} onMouseEnter={() => setCurriculumSetter('white')}
                    className={styles.hud_btn_sm}>
-                    CURRICULUM <Workflow color={curriculumSetter} size={29}/>
+                    <Workflow color={curriculumSetter} size={29}/>
+                    CURRICULUM 
                   </button>
 
                   <button onClick={() => {
                     setMoreCurriculum(!moreCurriculum)
                     setShowMore(!moreCurriculum)
                   }} className={styles.hud_btn_sm}>
-                    {moreCurriculum ? 'CLOSE' : 'MORE'} {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
+                    {moreCurriculum ? <X size={32}/> : <CircleEllipsis size={30} />}
+                    {moreCurriculum ? 'CLOSE' : 'MORE'} 
                   </button>
                 </div>
 
                 {curriculumActive && (
                   <div className={styles.sidebar_curriculum}>
-                    <a href={curriculumDownload} download="software_engineer.pdf" onMouseEnter={() => setDownloadIcon(true)}
+                    <a href={curriculumDownload} download="curriculo_vinicius_santos_o_dev.pdf" onMouseEnter={() => setDownloadIcon(true)}
                      onMouseLeave={() => setDownloadIcon(false)} className={styles.hud_btn_sm}>
-                      Download {downloadIcon ? <HardDriveDownload /> : <Download/>}
+                       {downloadIcon ? <HardDriveDownload /> : <Download/>}
+                      Download 
                     </a>
                 
                     <br />
                     <button onClick={() => setCurriculumActive(false)} className={styles.hud_btn_sm}>
-                      CLOSE THE RESUME <CircleX size={30}/>
+                      <CircleX size={30}/>
+                      CLOSE THE RESUME 
                     </button>
                   </div>
                 )}
