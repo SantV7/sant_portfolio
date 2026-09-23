@@ -6,10 +6,13 @@ import pc_project from '../../assets/img/projects/pc_project.jpeg'
 import styles from './Project.module.css'
 import { gsap } from 'gsap';
 import gameReveal from '../../assets/img/projects/gameReveal.png'
+import uploadImg from '../../assets/img/projects/upload_picture.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutProjects from "./AboutProjects/AboutProjects";
 import pizzaProject from '../../assets/img/projects/pizzaria.png'
 import goalImg from '../../assets/img/projects/goal_img.png'
+import profileImg from '../../assets/img/projects/profile_api.jpg'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,40 +33,61 @@ const Project = () => {
     const imgCardRef = useRef<HTMLImageElement>(null);
 
 const myProjects = useMemo<ProjectsProps[]>(() => [
-    {
-        id: 1, 
-        imgProject: fintechBank,
-        nameProject: 'Fintech Bank MO',
-        descProject: 'Financial SPA built with React and TypeScript for tracking invoices and financial statements. Features strict type safety, state management, dynamic calculation logic, and responsive UI design.',
-        urlProject: 'https://invoice-manager-mobile-vy.vercel.app/'
+{
+        id: 1,
+        imgProject: uploadImg, 
+        nameProject: 'Upload Manager (Full-Stack)',
+        descProject: 'Full-stack document and archive management application built with React, TypeScript, Node.js, and PostgreSQL. Features secure file uploads, comment integration, and RESTful API communication.',
+        urlProject: 'https://upload-maneger.vercel.app/'        
     },
     {
-        id: 2, 
-        imgProject: dashboardProject,
-        nameProject: 'Coins and Weather Dashboard',
-        descProject: 'Real-time financial and weather dashboard integrating multiple REST APIs. Features asynchronous data fetching, currency conversion tools, local time zone monitoring, and robust error handling.',
-        urlProject: 'https://dashboard-coins.vercel.app/'
+        id: 2,
+        imgProject: '', 
+        nameProject: 'Financial API (Backend)',
+        descProject: 'RESTful API built with TypeScript, Node.js, Express, and PostgreSQL using Prisma ORM. Implements Clean Architecture, JWT authentication, RBAC, bcrypt hashing, and atomic transaction handling.',
+        urlProject: 'https://github.com/SantV7/financial-api'     
     },
     {
         id: 3, 
         imgProject: pizzaProject,
-        nameProject: 'Landing Page - Pizzaria',
+        nameProject: 'Landing Page - Pizzaria (Frontend)',
         descProject: 'High-performance interactive landing page built with React and GSAP animations. Focuses on smooth micro-interactions, media optimization, and intuitive UI/UX for seamless menu navigation.',
         urlProject: 'https://pizzaria-zeta-six.vercel.app/'
     },
     {
         id: 4, 
+        imgProject: fintechBank,
+        nameProject: 'Fintech Bank MO (Frontend)',
+        descProject: 'Financial SPA built with React and TypeScript for tracking invoices and financial statements. Features strict type safety, state management, dynamic calculation logic, and responsive UI design.',
+        urlProject: 'https://invoice-manager-mobile-vy.vercel.app/'
+    },
+    {
+        id: 5, 
+        imgProject: dashboardProject,
+        nameProject: 'data analysis dashboard (Frontend)',
+        descProject: 'Real-time financial and weather dashboard integrating multiple REST APIs. Features asynchronous data fetching, currency conversion tools, local time zone monitoring, and robust error handling.',
+        urlProject: 'https://dashboard-coins.vercel.app/'
+    },
+    {
+        id: 6, 
         imgProject: gameReveal,
-        nameProject: 'Game Reveal',
+        nameProject: 'Game Reveal (Frontend)',
         descProject: 'Interactive word-guessing web game designed to demonstrate React state logic, complex conditional rendering, dynamic user input handling, and clean component architecture.',
         urlProject: 'https://game-reveal.vercel.app/'
     },
     {
-        id: 5,
+        id: 7,
         imgProject: goalImg,
-        nameProject: 'YourGoals',
+        nameProject: 'YourGoals (Frontend)',
         descProject: 'Task and habit management tool with complete CRUD functionality, built using React and TypeScript. Features browser localStorage persistence and custom theme toggling.',
         urlProject: 'https://sant-goal-manager.vercel.app/'        
+    },
+    {
+        id: 8,
+        imgProject: profileImg, 
+        nameProject: 'Profile API (Backend)',
+        descProject: 'Node.js and TypeScript backend service managing users, profiles, and post publications. Integrates PostgreSQL with Prisma ORM, featuring JWT authentication and role-based access control.',
+        urlProject: 'https://github.com/SantV7/instagram-api'        
     }
 ], []);
 
